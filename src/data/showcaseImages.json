@@ -8,10 +8,10 @@
     "render": "/process/render.webp"
   },
   "features": {
-    "photoreal": "/features/photoreal.webp",
-    "animation": "/features/animation.webp",
-    "interactive": "/features/interactive.webp",
-    "scroll-sync": "/features/scroll-sync.webp"
+    "materials": "/features/materials.webp",
+    "comfort": "/features/comfort.webp",
+    "performance": "/features/performance.webp",
+    "style": "/features/style.webp"
   },
   "gallery": [
     "/showcase/slide-1.webp",

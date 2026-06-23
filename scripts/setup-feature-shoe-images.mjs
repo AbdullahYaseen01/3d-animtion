@@ -1,5 +1,5 @@
 /**
- * Downloads HQ shoe-only photos for the Features section cards.
+ * Downloads 4 visually distinct HQ sneaker photos for the Features section.
  */
 import { spawnSync } from 'node:child_process'
 import fs from 'node:fs'
@@ -13,20 +13,24 @@ const outDir = path.join(root, 'public', 'features')
 
 const FEATURE_IMAGES = [
   {
-    id: 'photoreal',
+    id: 'materials',
+    label: 'Green Nike product — premium build',
+    url: 'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1920&q=92&auto=format&fit=crop',
+  },
+  {
+    id: 'comfort',
+    label: 'Lifestyle pair on feet',
+    url: 'https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=1920&q=92&auto=format&fit=crop',
+  },
+  {
+    id: 'performance',
+    label: 'Bold orange athletic sneaker',
     url: 'https://images.pexels.com/photos/1032110/pexels-photo-1032110.jpeg?auto=compress&cs=tinysrgb&w=1920',
   },
   {
-    id: 'animation',
-    url: 'https://images.pexels.com/photos/267301/pexels-photo-267301.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  },
-  {
-    id: 'interactive',
-    url: 'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  },
-  {
-    id: 'scroll-sync',
-    url: 'https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    id: 'style',
+    label: 'Yellow canvas street classic',
+    url: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1920&q=92&auto=format&fit=crop',
   },
 ]
 
@@ -54,7 +58,7 @@ fs.mkdirSync(outDir, { recursive: true })
 const tmpDir = path.join(root, 'scripts', '.tmp-features')
 fs.mkdirSync(tmpDir, { recursive: true })
 
-console.log('Downloading HQ shoe images for Features section...\n')
+console.log('Downloading 4 distinct HQ shoe images for Features section...\n')
 
 const manifestFeatures = {}
 
@@ -62,7 +66,7 @@ for (const item of FEATURE_IMAGES) {
   try {
     const tmp = path.join(tmpDir, `${item.id}.jpg`)
     const dest = path.join(outDir, `${item.id}.webp`)
-    process.stdout.write(`→ ${item.id}... `)
+    process.stdout.write(`→ ${item.id} (${item.label})... `)
     fs.writeFileSync(tmp, await download(item.url))
     if (toWebp(tmp, dest)) {
       manifestFeatures[item.id] = `/features/${item.id}.webp`
@@ -76,14 +80,14 @@ for (const item of FEATURE_IMAGES) {
 }
 
 const manifestPath = path.join(root, 'src', 'data', 'showcaseImages.json')
-let existing = { process: {} }
+let existing = {}
 if (fs.existsSync(manifestPath)) {
   existing = JSON.parse(fs.readFileSync(manifestPath, 'utf8'))
 }
 
 fs.writeFileSync(
   manifestPath,
-  JSON.stringify({ process: existing.process ?? {}, features: manifestFeatures }, null, 2) + '\n',
+  JSON.stringify({ ...existing, features: manifestFeatures }, null, 2) + '\n',
 )
 fs.rmSync(tmpDir, { recursive: true, force: true })
-console.log('\nDone — shoe images saved to public/features/')
+console.log('\nDone — 4 unique feature images saved to public/features/')
