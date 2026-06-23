@@ -1,0 +1,17 @@
+node_modules
+dist
+.DS_Store
+*.local
+.env
+.env.*
+
+# Large source assets — not required for Vercel deploy
+public/shoe-animation.mp4
+public/frames/
+public/models/
+scripts/.tmp-*
+*.mp4
+!public/hero-loop.mp4
+
+# Duplicate PNG exports (WebP versions are used)
+public/process/*.png

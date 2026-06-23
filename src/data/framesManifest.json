@@ -1,0 +1,8 @@
+{
+  "fps": 24,
+  "totalFrames": 120,
+  "pattern": "/frames/frame_%04d.webp",
+  "padLength": 4,
+  "format": "webp",
+  "width": 960
+}

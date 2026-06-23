@@ -1,0 +1,198 @@
+.scroll-video {
+  position: relative;
+  background: #050505;
+}
+
+.scroll-video-stage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: #050505;
+}
+
+/* ── Full-screen HD video — matches hero ── */
+.scroll-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.scroll-video-player {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+  display: block;
+  filter: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.scroll-video-shine {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 50%, rgba(255, 120, 40, 0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ── Hero-matching vignette ── */
+.scroll-video-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(5, 5, 5, 0.72) 0%, rgba(5, 5, 5, 0.08) 28%, rgba(5, 5, 5, 0.05) 50%, rgba(5, 5, 5, 0.12) 68%, rgba(5, 5, 5, 0.82) 100%),
+    linear-gradient(to right, rgba(5, 5, 5, 0.4) 0%, transparent 15%, transparent 85%, rgba(5, 5, 5, 0.4) 100%);
+}
+
+.scroll-video-top {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 4.5rem 1.5rem 0;
+  pointer-events: none;
+}
+
+.scroll-video-headline {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 12vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0.25rem 0 0;
+}
+
+.scroll-video-headline--top {
+  color: rgba(245, 240, 232, 0.95);
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.95);
+}
+
+.scroll-video-headline--bottom {
+  color: var(--accent);
+  text-shadow:
+    0 0 50px var(--accent-glow),
+    0 4px 40px rgba(0, 0, 0, 0.95);
+  margin-bottom: 0.75rem;
+}
+
+.scroll-video-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  text-align: center;
+  padding: 0 1.5rem 1.75rem;
+  pointer-events: none;
+}
+
+.scroll-video-subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.65);
+  line-height: 1.75;
+  max-width: 44ch;
+  margin-inline: auto;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95);
+}
+
+.scroll-video-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.scroll-video-indicator span {
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.45);
+}
+
+.scroll-video-line {
+  width: 1px;
+  height: 2.5rem;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  transform-origin: top;
+}
+
+.scroll-video-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 5, 5, 0.92);
+  z-index: 5;
+  backdrop-filter: blur(12px);
+}
+
+.loading-ring {
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+
+.loading-ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.loading-ring-bg {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 2;
+}
+
+.loading-ring-fill {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-dasharray: 283;
+  transition: stroke-dashoffset 0.2s ease;
+}
+
+.loading-ring span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .scroll-video-top {
+    padding-top: 5rem;
+  }
+
+  .scroll-video-headline {
+    font-size: clamp(2.5rem, 14vw, 4.5rem);
+  }
+
+  .scroll-video-player {
+    object-position: center 48%;
+  }
+
+  .scroll-video-bottom {
+    padding-bottom: 2rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .scroll-video-player {
+    object-position: center 52%;
+  }
+}

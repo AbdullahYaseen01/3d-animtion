@@ -1,0 +1,16 @@
+{
+  "process": {
+    "concept": "/process/concept.webp",
+    "modeling": "/process/modeling.webp",
+    "texturing": "/process/texturing.webp",
+    "rigging": "/process/rigging.webp",
+    "animation": "/process/animation.webp",
+    "render": "/process/render.webp"
+  },
+  "features": {
+    "photoreal": "/features/photoreal.webp",
+    "animation": "/features/animation.webp",
+    "interactive": "/features/interactive.webp",
+    "scroll-sync": "/features/scroll-sync.webp"
+  }
+}

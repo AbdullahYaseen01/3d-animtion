@@ -1,0 +1,41 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.loading-logo {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 5rem);
+  letter-spacing: 0.3em;
+  color: var(--accent);
+}
+
+.loading-bar-track {
+  width: min(280px, 60vw);
+  height: 1px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent));
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.loading-percent {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}

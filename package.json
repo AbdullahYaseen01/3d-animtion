@@ -1,0 +1,41 @@
+{
+  "name": "shoe-3d-showcase",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "extract-frames": "node scripts/extract-frames.mjs",
+    "optimize-frames": "node scripts/optimize-frames.mjs",
+    "setup-process-images": "node scripts/setup-process-images.mjs",
+    "create-hero-loop": "node scripts/create-hero-loop.mjs",
+    "setup-showcase-images": "node scripts/setup-showcase-images.mjs",
+    "setup-process-stock": "node scripts/setup-process-stock-images.mjs",
+    "setup-process-shoes": "node scripts/setup-process-shoe-images.mjs",
+    "setup-feature-shoes": "node scripts/setup-feature-shoe-images.mjs",
+    "prepare-assets": "node scripts/extract-frames.mjs && node scripts/optimize-frames.mjs && node scripts/setup-showcase-images.mjs && node scripts/create-hero-loop.mjs"
+  },
+  "dependencies": {
+    "@react-spring/three": "^10.1.1",
+    "@react-three/drei": "^10.0.6",
+    "@react-three/fiber": "^9.1.2",
+    "framer-motion": "^12.6.3",
+    "gsap": "^3.12.7",
+    "lenis": "^1.2.3",
+    "maath": "^0.10.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "three": "^0.175.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/three": "^0.175.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "ffmpeg-static": "^5.3.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  }
+}

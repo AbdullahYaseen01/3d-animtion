@@ -1,0 +1,32 @@
+.parallax-image-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.parallax-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+.parallax-image-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(201, 169, 98, 0.08) 0%,
+    transparent 45%,
+    transparent 55%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.parallax-image-wrap:hover .parallax-image-shine {
+  opacity: 1;
+}
