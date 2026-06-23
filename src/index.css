@@ -11,7 +11,7 @@
   --font-display: 'Bebas Neue', sans-serif;
   --font-body: 'Outfit', sans-serif;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --section-padding: clamp(1.25rem, 3vw, 2.5rem);
+  --section-padding: clamp(1rem, 2.5vw, 2rem);
 }
 
 *,
@@ -71,8 +71,14 @@ section {
 }
 
 .container {
-  width: min(1280px, calc(100% - 3rem));
+  width: min(1280px, calc(100% - 1.5rem));
   margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: min(1280px, calc(100% - 2.5rem));
+  }
 }
 
 .section-label {

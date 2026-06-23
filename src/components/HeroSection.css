@@ -52,7 +52,7 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 4.5rem 1.5rem 0;
+  padding: 3.5rem 1rem 0;
   pointer-events: none;
 }
 
@@ -85,7 +85,7 @@
   right: 0;
   z-index: 2;
   text-align: center;
-  padding: 0 1.5rem 1.75rem;
+  padding: 0 1rem 1.25rem;
   pointer-events: none;
 }
 
@@ -135,19 +135,37 @@
 
 @media (max-width: 768px) {
   .hero-top {
-    padding-top: 5rem;
+    padding-top: 3.25rem;
   }
 
   .hero-headline {
-    font-size: clamp(2.8rem, 15vw, 5rem);
+    font-size: clamp(2.5rem, 14vw, 4rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+  }
+
+  .hero-scroll-indicator {
+    margin-top: 1rem;
   }
 
   .hero-video {
     object-position: center 48%;
-  }
-
-  .hero-bottom {
-    padding-bottom: 2rem;
   }
 }
 
