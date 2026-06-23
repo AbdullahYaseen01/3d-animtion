@@ -1,5 +1,6 @@
 /**
- * Downloads HQ sneaker photos for the scroll gallery showcase section.
+ * Downloads 4 visually distinct HQ sneaker photos for the scroll gallery.
+ * Each slide uses a different style, color, and composition.
  */
 import { spawnSync } from 'node:child_process'
 import fs from 'node:fs'
@@ -12,10 +13,26 @@ const root = path.resolve(__dirname, '..')
 const outDir = path.join(root, 'public', 'showcase')
 
 const GALLERY = [
-  { id: 'slide-1', url: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1920&q=90&auto=format&fit=crop' },
-  { id: 'slide-2', url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1920&q=90&auto=format&fit=crop' },
-  { id: 'slide-3', url: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=1920&q=90&auto=format&fit=crop' },
-  { id: 'slide-4', url: 'https://images.pexels.com/photos/1032110/pexels-photo-1032110.jpeg?auto=compress&cs=tinysrgb&w=1920' },
+  {
+    id: 'slide-1',
+    label: 'Yellow canvas lifestyle shot',
+    url: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1920&q=92&auto=format&fit=crop',
+  },
+  {
+    id: 'slide-2',
+    label: 'Colorful sneakers on bright background',
+    url: 'https://images.pexels.com/photos/267301/pexels-photo-267301.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  },
+  {
+    id: 'slide-3',
+    label: 'Clean white product shot',
+    url: 'https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  },
+  {
+    id: 'slide-4',
+    label: 'Bold orange performance sneaker',
+    url: 'https://images.pexels.com/photos/1032110/pexels-photo-1032110.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  },
 ]
 
 if (!ffmpegPath) process.exit(1)
@@ -29,7 +46,7 @@ async function download(url) {
 function toWebp(input, dest) {
   return spawnSync(
     ffmpegPath,
-    ['-y', '-i', input, '-vf', 'scale=1920:-2', '-c:v', 'libwebp', '-quality', '92', dest],
+    ['-y', '-i', input, '-vf', 'scale=1920:-2', '-c:v', 'libwebp', '-quality', '93', dest],
     { stdio: 'pipe' },
   ).status === 0
 }
@@ -40,15 +57,17 @@ fs.mkdirSync(tmp, { recursive: true })
 
 const galleryPaths = []
 
+console.log('Downloading 4 distinct HQ gallery images...\n')
+
 for (const item of GALLERY) {
   const dest = path.join(outDir, `${item.id}.webp`)
-  process.stdout.write(`${item.id}... `)
+  process.stdout.write(`→ ${item.id} (${item.label})... `)
   try {
     fs.writeFileSync(path.join(tmp, `${item.id}.jpg`), await download(item.url))
     if (toWebp(path.join(tmp, `${item.id}.jpg`), dest)) {
       galleryPaths.push(`/showcase/${item.id}.webp`)
-      console.log('✓')
-    } else console.log('✗')
+      console.log(`✓ ${Math.round(fs.statSync(dest).size / 1024)} KB`)
+    } else console.log('✗ convert failed')
   } catch (e) {
     console.log(`✗ ${e.message}`)
   }
@@ -62,4 +81,4 @@ fs.writeFileSync(
   JSON.stringify({ ...existing, gallery: galleryPaths }, null, 2) + '\n',
 )
 fs.rmSync(tmp, { recursive: true, force: true })
-console.log('Done — gallery images in public/showcase/')
+console.log('\nDone — 4 unique gallery images saved.')
