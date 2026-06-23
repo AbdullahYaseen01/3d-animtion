@@ -12,5 +12,11 @@
     "animation": "/features/animation.webp",
     "interactive": "/features/interactive.webp",
     "scroll-sync": "/features/scroll-sync.webp"
-  }
+  },
+  "gallery": [
+    "/showcase/slide-1.webp",
+    "/showcase/slide-2.webp",
+    "/showcase/slide-3.webp",
+    "/showcase/slide-4.webp"
+  ]
 }

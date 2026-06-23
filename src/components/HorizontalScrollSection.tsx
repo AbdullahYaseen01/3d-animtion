@@ -45,13 +45,6 @@ const panels = [
     tag: 'Testing',
     image: imgs.animation,
   },
-  {
-    number: '06',
-    title: 'Launch',
-    description: 'The finished pair — ready to wear, built to turn heads wherever you go.',
-    tag: 'Release',
-    image: imgs.render,
-  },
 ]
 
 function ProcessPanel({

@@ -15,6 +15,7 @@
     "setup-process-stock": "node scripts/setup-process-stock-images.mjs",
     "setup-process-shoes": "node scripts/setup-process-shoe-images.mjs",
     "setup-feature-shoes": "node scripts/setup-feature-shoe-images.mjs",
+    "setup-showcase-gallery": "node scripts/setup-showcase-gallery.mjs",
     "prepare-assets": "node scripts/extract-frames.mjs && node scripts/optimize-frames.mjs && node scripts/setup-showcase-images.mjs && node scripts/create-hero-loop.mjs"
   },
   "dependencies": {
