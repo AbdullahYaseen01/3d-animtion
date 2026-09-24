@@ -1,26 +1,21 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router'
-import { activeCategories, getColor, getProduct, productsInCategory } from '../catalog'
+import { campaignCategories, campaignHero } from '../campaign/styleInMotion'
+import { getProduct } from '../catalog'
 import { store } from '../config/store'
 import { productItem, track } from '../lib/analytics'
-import { formatMoney } from '../lib/money'
 import { organizationLd, Seo, websiteLd } from '../lib/seo'
 import { ProductCard } from '../components/product/ProductCard'
 import { QuickShop, type QuickShopTarget } from '../components/product/QuickShop'
 import { Icon } from '../components/ui/Icon'
-import { ProductImage, imageBg } from '../components/ui/ProductImage'
+import { ProductImage } from '../components/ui/ProductImage'
 import './Home.css'
 import '../components/product/ProductCard.css'
 
 const FEATURED = ['stride-runner', 'mini-crossbody', 'day-jacket', 'line-watch']
 
 export default function Home() {
-  const flagship = getProduct('stride-runner')!
-  const [heroColor, setHeroColor] = useState(flagship.colors[0].slug)
   const [quick, setQuick] = useState<QuickShopTarget | null>(null)
-  const categories = activeCategories()
-  const color = getColor(flagship, heroColor)
-  const heroImage = color.images[0]
   const featured = useMemo(() => FEATURED.map((id) => getProduct(id)).filter((p) => !!p), [])
   const bags = ['mini-crossbody', 'slim-wallet', 'commute-pack'].map((id) => getProduct(id)).filter((p) => !!p)
   const jewels = ['arc-earrings', 'line-watch'].map((id) => getProduct(id)).filter((p) => !!p)
@@ -39,103 +34,65 @@ export default function Home() {
         jsonLd={[organizationLd(), websiteLd()]}
       />
 
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="hero__canvas">
-          <div className="hero__copy">
-            <p className="eyebrow eyebrow--ember">The NOVA edit</p>
-            <h1 id="hero-title" className="hero__title">
-              Make your
-              <br />
-              next move.
-            </h1>
-            <p className="hero__lede">Discover standout footwear and everyday essentials.</p>
-            <div className="hero__ctas">
-              <Link to="/collections/shoes" className="btn btn--lg">
-                Shop shoes <Icon name="arrow" size={18} />
-              </Link>
-              <Link to="/shop" className="btn btn--lg btn--secondary">
-                Explore all
-              </Link>
-            </div>
-            <ul role="list" className="hero__facts">
-              {store.shipping.standard.priceCents === 0 && (
-                <li>
-                  <Icon name="check" size={16} /> Free US shipping
-                </li>
-              )}
-              <li>
-                <Icon name="check" size={16} /> {store.returns.windowDays}-day returns
-              </li>
-            </ul>
-          </div>
-          <div className="hero__visual">
-            <Link
-              to={`/products/${flagship.slug}?color=${color.slug}`}
-              className="hero__plate"
-              style={{ background: imageBg(heroImage) }}
-            >
-              <ProductImage
-                key={heroImage}
-                image={heroImage}
-                alt={`${flagship.name} in ${color.name}`}
-                sizes="(min-width: 64rem) 42vw, 92vw"
-                priority
-              />
+      <section className="motion" aria-labelledby="hero-title">
+        <div className="motion__photo" style={{ backgroundPosition: campaignHero.position }}>
+          {campaignHero.src && (
+            <img
+              src={campaignHero.src}
+              alt={campaignHero.alt}
+              width={campaignHero.width}
+              height={campaignHero.height}
+              fetchPriority="high"
+              decoding="sync"
+            />
+          )}
+        </div>
+        <div className="motion__copy">
+          <p className="motion__eyebrow">The NOVA edit</p>
+          <h1 id="hero-title" className="motion__title">
+            Style in
+            <br />
+            motion.
+          </h1>
+          <p className="motion__lede">Everyday pieces. Extraordinary presence.</p>
+          <div className="motion__actions">
+            <a href="#edit" className="motion__btn motion__btn--solid">
+              Shop the Edit
+            </a>
+            <Link to="/shop" className="motion__btn motion__btn--ghost">
+              Explore All
             </Link>
-            <div className="hero__meta">
-              <Link to={`/products/${flagship.slug}?color=${color.slug}`} className="hero__caption">
-                <span className="hero__caption-name">{flagship.name}</span>
-                <span className="muted">
-                  {color.name} · {formatMoney(flagship.priceCents)}
-                </span>
-              </Link>
-              <div className="hero__swatches" role="group" aria-label={`${flagship.name} colors`}>
-                {flagship.colors.map((c) => (
-                  <button
-                    key={c.slug}
-                    type="button"
-                    className={`product-card__swatch${c.slug === color.slug ? ' is-active' : ''}`}
-                    aria-pressed={c.slug === color.slug}
-                    aria-label={c.name}
-                    onClick={() => setHeroColor(c.slug)}
-                  >
-                    <span className="swatch" style={{ '--swatch-a': c.swatch[0], '--swatch-b': c.swatch[1] ?? c.swatch[0] } as React.CSSProperties} />
-                  </button>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <section id="shop-categories" className="section section--tight" aria-labelledby="cats-title">
-        <div className="container">
-          <div className="section-head">
-            <h2 id="cats-title">Shop by category</h2>
-            <Link to="/shop" className="link-arrow">
-              Shop all <Icon name="arrow" size={18} />
-            </Link>
-          </div>
-          <ul role="list" className="cat-tiles">
-            {categories.map((c) => {
-              const lead = productsInCategory(c.slug)[0]
-              const img = lead?.colors[0].images[0]
-              return (
-                <li key={c.slug}>
-                  <Link to={`/collections/${c.slug}`} className="cat-tile">
-                    <span className="cat-tile__media" style={img ? { background: imageBg(img) } : undefined}>
-                      {img && <ProductImage image={img} alt="" sizes="(min-width: 64rem) 14vw, 46vw" />}
-                    </span>
-                    <span className="cat-tile__name">{c.name}</span>
-                  </Link>
-                </li>
-              )
-            })}
+      <section className="edit-cats" aria-labelledby="cats-title">
+        <h2 id="cats-title" className="visually-hidden">
+          Shop by category
+        </h2>
+        <div className="edit-cats__scroller">
+          <ul role="list" className="edit-cats__list">
+            {campaignCategories.map((category) => (
+              <li key={category.href}>
+                <Link to={category.href} className="edit-cats__link">
+                  <span className="edit-cats__media">
+                    <ProductImage
+                      image={category.image}
+                      group={category.group}
+                      alt={category.alt}
+                      sizes="(min-width: 64rem) 12vw, 42vw"
+                      objectPosition={category.position}
+                    />
+                  </span>
+                  <span className="edit-cats__label">{category.label}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="featured-title">
+      <section id="edit" className="section" aria-labelledby="featured-title">
         <div className="container">
           <div className="section-head">
             <div>

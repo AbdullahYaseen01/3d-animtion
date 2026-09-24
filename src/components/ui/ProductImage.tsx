@@ -11,10 +11,11 @@ interface Props {
   priority?: boolean
   className?: string
   group?: 'products' | 'editorial'
+  objectPosition?: string
 }
 
 /** Responsive AVIF/WebP picture with intrinsic dimensions and a graceful failure state. */
-export function ProductImage({ image, alt, sizes, priority = false, className, group = 'products' }: Props) {
+export function ProductImage({ image, alt, sizes, priority = false, className, group = 'products', objectPosition }: Props) {
   const entry = images[image]
   const [failed, setFailed] = useState(false)
   if (!entry || failed) {
@@ -37,6 +38,7 @@ export function ProductImage({ image, alt, sizes, priority = false, className, g
         alt={alt}
         width={entry.w}
         height={entry.h}
+        style={objectPosition ? { objectPosition } : undefined}
         loading={priority ? 'eager' : 'lazy'}
         decoding={priority ? 'sync' : 'async'}
         fetchPriority={priority ? 'high' : 'auto'}

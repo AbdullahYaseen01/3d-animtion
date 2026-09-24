@@ -65,8 +65,9 @@
   --container-max: 90rem;
   --container-narrow: 46rem;
   --gutter: clamp(1rem, 0.5rem + 2.6vw, 3rem);
-  --announcement-h: 2.25rem;
-  --header-h: 4rem;
+  --announcement-h: 0;
+  --header-h: 4.25rem;
+  --frame-inset: clamp(1.25rem, 5.4vw, 5.5rem);
 
   /* Shape */
   --radius-xs: 2px;

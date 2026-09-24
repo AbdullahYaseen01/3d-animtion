@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router'
 import { allProducts, getCategory } from '../../catalog'
 import { store } from '../../config/store'
-import { formatMoney } from '../../lib/money'
 import { useCart } from '../../state/CartProvider'
 import { useWishlist } from '../../state/WishlistProvider'
 import { Dialog } from '../ui/Dialog'
@@ -18,24 +17,8 @@ const BAG_LINKS = [
 ] as const
 
 const MOBILE_CATS = ['shoes', 'handbags', 'wallets', 'jackets', 'womens-jewelry', 'backpacks', 'watches'] as const
-
-export function AnnouncementBar() {
-  const { standard, freeThresholdCents } = store.shipping
-  const shipping =
-    standard.priceCents === 0
-      ? 'Free standard shipping on every US order'
-      : freeThresholdCents != null
-        ? `Free standard shipping on US orders over ${formatMoney(freeThresholdCents)}`
-        : null
-  return (
-    <div className="announcement">
-      <p className="container announcement__inner">
-        {shipping && <span>{shipping}</span>}
-        <span className="announcement__sep" aria-hidden="true" />
-        <Link to="/returns">{store.returns.windowDays}-day returns</Link>
-      </p>
-    </div>
-  )
+const MOBILE_LABELS: Partial<Record<(typeof MOBILE_CATS)[number], string>> = {
+  'womens-jewelry': 'Jewelry',
 }
 
 export function Header() {
@@ -91,7 +74,7 @@ export function Header() {
           <ul role="list">
             <li>
               <NavLink to="/shop" end>
-                Shop all
+                Shop All
               </NavLink>
             </li>
             <li>
@@ -106,8 +89,19 @@ export function Header() {
                 if (!bagsRef.current?.contains(e.relatedTarget as Node)) setBagsOpen(false)
               }}
             >
-              <NavLink to="/collections/handbags" aria-expanded={bagsOpen} onFocus={() => setBagsOpen(true)}>
-                Bags & wallets
+              <NavLink
+                to="/collections/handbags"
+                aria-expanded={bagsOpen}
+                aria-haspopup="true"
+                onFocus={() => setBagsOpen(true)}
+                onClick={(event) => {
+                  if (window.matchMedia('(hover: none)').matches && !bagsOpen) {
+                    event.preventDefault()
+                    setBagsOpen(true)
+                  }
+                }}
+              >
+                Bags & Wallets
               </NavLink>
               <ul className="nav-drop__panel" role="list">
                 {BAG_LINKS.map((item) => (
@@ -121,7 +115,7 @@ export function Header() {
               <NavLink to="/collections/jackets">Jackets</NavLink>
             </li>
             <li>
-              <NavLink to="/collections/womens-jewelry">Women&apos;s jewelry</NavLink>
+              <NavLink to="/collections/womens-jewelry">Jewelry</NavLink>
             </li>
             <li>
               <NavLink to="/collections/watches">Watches</NavLink>
@@ -164,7 +158,7 @@ export function Header() {
               <Link to="/shop" className="mobile-menu__cat">
                 <span className="mobile-menu__thumb mobile-menu__thumb--all" aria-hidden="true">All</span>
                 <span>
-                  <strong>Shop all</strong>
+                  <strong>Shop All</strong>
                   <span className="muted">{allProducts().length} styles</span>
                 </span>
                 <Icon name="chevron" size={18} />
@@ -181,7 +175,7 @@ export function Header() {
                       {first && <ProductImage image={first.colors[0].images[0]} alt="" sizes="56px" />}
                     </span>
                     <span>
-                      <strong>{c.name}</strong>
+                      <strong>{MOBILE_LABELS[slug] ?? c.name}</strong>
                       <span className="muted">{c.summary}</span>
                     </span>
                     <Icon name="chevron" size={18} />

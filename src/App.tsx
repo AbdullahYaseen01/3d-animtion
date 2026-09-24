@@ -3,7 +3,7 @@ import { Outlet, Route, Routes, useLocation, useNavigate, useNavigationType } fr
 import { MiniCart } from './components/cart/MiniCart'
 import { ErrorBoundary } from './components/layout/ErrorBoundary'
 import { Footer } from './components/layout/Footer'
-import { AnnouncementBar, Header } from './components/layout/Header'
+import { Header } from './components/layout/Header'
 import { PurchaseToast } from './components/product/PurchaseToast'
 import { AnnouncerProvider, useAnnounce } from './state/Announcer'
 import { CartProvider } from './state/CartProvider'
@@ -66,7 +66,6 @@ function Layout() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <AnnouncementBar />
       <Header />
       <main id="main" ref={mainRef} tabIndex={-1}>
         <ErrorBoundary key={location.pathname}>
