@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router'
 import { Icon } from '../components/ui/Icon'
 import { trackPurchaseOnce } from '../lib/analytics'
+import { rememberPurchases, purchasesFromOrder } from '../commerce/purchaseActivity'
 import { formatMoney } from '../lib/money'
 import { Seo } from '../lib/seo'
 import { useCart } from '../state/CartProvider'
@@ -68,6 +69,7 @@ export default function CheckoutSuccess() {
         shipping: order.shippingCents / 100,
         items: order.lines.map((l) => ({ item_id: l.sku ?? l.name, item_name: l.name, quantity: l.quantity, price: l.unitCents / 100 })),
       })
+      rememberPurchases(purchasesFromOrder(order))
     }
   }, [state, clear])
 

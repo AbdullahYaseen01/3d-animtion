@@ -18,6 +18,7 @@ import { VariantPicker } from '../components/product/VariantPicker'
 import { Breadcrumbs } from '../components/ui/Breadcrumbs'
 import { Icon } from '../components/ui/Icon'
 import { Price } from '../components/ui/Price'
+import { PurchaseNote } from '../components/product/PurchaseNote'
 import { useCart } from '../state/CartProvider'
 import NotFound from './NotFound'
 import './Product.css'
@@ -153,6 +154,7 @@ function ProductView({ product }: { product: ProductT }) {
               <h1>{product.name}</h1>
               <p className="pdp__tagline">{product.tagline}</p>
               <Price cents={product.priceCents} compareAtCents={product.compareAtPriceCents} className="pdp__price" />
+              <PurchaseNote productId={product.id} className="pdp__purchase" />
             </div>
 
             {available ? (

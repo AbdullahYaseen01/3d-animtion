@@ -4,11 +4,11 @@ import {
   buildSku,
   formatSize,
   isColorAvailable,
-  LOW_STOCK_THRESHOLD,
   sizeLabel,
   stockFor,
   type Product,
 } from '../../catalog'
+import { stockUrgencyLabel } from '../../catalog/urgency'
 import { conversionFor, fmt } from '../../catalog/sizing'
 import { Icon } from '../ui/Icon'
 import './VariantPicker.css'
@@ -33,13 +33,8 @@ export const VariantPicker = forwardRef<HTMLFieldSetElement, Props>(function Var
   const name = (k: string) => `${idPrefix ?? uid}-${k}`
   const color = product.colors.find((c) => c.slug === colorSlug) ?? product.colors[0]
   const width = product.widths.find((w) => w.code === widthCode) ?? product.widths[0]
-  const stockSku =
-    product.variant === 'simple'
-      ? buildSku(product.id, color.slug, 0, width.code)
-      : size != null
-        ? buildSku(product.id, color.slug, size, width.code)
-        : null
-  const selectedStock = stockSku ? stockFor(product, stockSku) : null
+  const stockLabel = stockUrgencyLabel(product, color.slug, product.variant === 'simple' ? 0 : size, width.code)
+  const stockUrgent = stockLabel?.startsWith('Only') ?? false
   const conv = size != null ? conversionFor(size) : undefined
   const errorId = `${name('size')}-error`
 
@@ -166,16 +161,11 @@ export const VariantPicker = forwardRef<HTMLFieldSetElement, Props>(function Var
             </p>
           )}
           {product.variant === 'apparel' && <p className="vp-help">Jacket sizes. This is not a shoe size.</p>}
-          {selectedStock != null && selectedStock > 0 && selectedStock <= LOW_STOCK_THRESHOLD && (
-            <p className="vp-stock" role="status">
-              Only {selectedStock} left in stock
-            </p>
-          )}
         </fieldset>
       )}
-      {product.variant === 'simple' && selectedStock != null && selectedStock > 0 && selectedStock <= LOW_STOCK_THRESHOLD && (
-        <p className="vp-stock" role="status">
-          Only {selectedStock} left in stock
+      {stockLabel && (
+        <p className={`vp-stock${stockUrgent ? '' : ' vp-stock--quiet'}`} role="status">
+          {stockLabel}
         </p>
       )}
     </div>

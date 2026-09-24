@@ -219,3 +219,8 @@
   font-weight: 600;
   color: var(--color-ember-strong);
 }
+
+.vp-stock--quiet {
+  font-weight: 500;
+  color: var(--color-muted);
+}

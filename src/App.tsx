@@ -4,6 +4,7 @@ import { MiniCart } from './components/cart/MiniCart'
 import { ErrorBoundary } from './components/layout/ErrorBoundary'
 import { Footer } from './components/layout/Footer'
 import { AnnouncementBar, Header } from './components/layout/Header'
+import { PurchaseToast } from './components/product/PurchaseToast'
 import { AnnouncerProvider, useAnnounce } from './state/Announcer'
 import { CartProvider } from './state/CartProvider'
 import { WishlistProvider } from './state/WishlistProvider'
@@ -74,6 +75,7 @@ function Layout() {
       </main>
       <Footer />
       <MiniCart />
+      <PurchaseToast />
     </>
   )
 }

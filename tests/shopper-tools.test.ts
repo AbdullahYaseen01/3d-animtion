@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
-import { LOW_STOCK_THRESHOLD, buildSku, getProduct, stockFor } from '../src/catalog'
+import { LOW_STOCK_THRESHOLD, allProducts, buildSku, getProduct, stockFor } from '../src/catalog'
+import { stockUrgencyLabel } from '../src/catalog/urgency'
 import { sizeForLength } from '../src/catalog/sizing'
 import { applyFilters, parseFilters } from '../src/catalog/filters'
-import { allProducts } from '../src/catalog'
 import { deliveryWindow } from '../src/lib/delivery'
 
 describe('stock, delivery, size', () => {
@@ -13,6 +13,21 @@ describe('stock, delivery, size', () => {
     expect(qty).toBe(3)
     expect(qty).toBeLessThanOrEqual(LOW_STOCK_THRESHOLD)
     expect(product.compareAtPriceCents).toBeUndefined()
+    expect(stockUrgencyLabel(product, 'chalk-ember', 10, 'D')).toBe('Only 3 left in stock')
+  })
+
+  it('shows real stock urgency on every product', () => {
+    for (const product of allProducts()) {
+      const label = stockUrgencyLabel(product, product.colors[0].slug, product.variant === 'simple' ? 0 : null, product.widths[0].code)
+      expect(label, product.slug).toBeTruthy()
+    }
+    const pack = getProduct('commute-pack')!
+    expect(stockFor(pack, buildSku(pack.id, 'charcoal', 0, 'OS'))).toBe(7)
+    expect(stockUrgencyLabel(pack, 'charcoal', 0, 'OS')).toBe('Only 7 left in stock')
+    const watch = getProduct('line-watch')!
+    expect(stockUrgencyLabel(watch, 'tan-leather', 0, 'OS')).toBe('Only 5 left in stock')
+    const earrings = getProduct('arc-earrings')!
+    expect(stockUrgencyLabel(earrings, 'gold-tone', 0, 'OS')).toBe('12 in stock')
   })
 
   it('searches across categories and respects a written budget', () => {

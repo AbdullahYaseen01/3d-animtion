@@ -4,7 +4,8 @@ import type { Category, CategorySlug, ColorOption, Product, Variant } from './ty
 export { CATALOG_IS_SAMPLE } from './products.js'
 export type * from './types.js'
 
-export const LOW_STOCK_THRESHOLD = 3
+/** Urgency copy is used only when the real SKU quantity is at or below this. */
+export const LOW_STOCK_THRESHOLD = 10
 
 export function allProducts(): Product[] {
   return products

@@ -1,0 +1,41 @@
+.purchase-toast {
+  position: fixed;
+  z-index: 35;
+  left: var(--gutter);
+  bottom: calc(var(--space-4) + env(safe-area-inset-bottom));
+  display: grid;
+  gap: var(--space-2);
+  width: min(22rem, calc(100vw - var(--gutter) * 2));
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-paper-raised);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-raised);
+}
+
+.purchase-toast p {
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+.purchase-toast__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.purchase-toast__actions a {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+body.has-buy-bar .purchase-toast {
+  bottom: calc(5.5rem + env(safe-area-inset-bottom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .purchase-toast {
+    transition: none;
+  }
+}

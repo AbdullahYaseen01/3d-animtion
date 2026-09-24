@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import type { PricedLine } from '../../commerce/cart'
-import { formatSize, LOW_STOCK_THRESHOLD } from '../../catalog'
+import { formatSize } from '../../catalog'
+import { stockUrgencyLabel } from '../../catalog/urgency'
 import { store } from '../../config/store'
 import { formatMoney } from '../../lib/money'
 import { useCart } from '../../state/CartProvider'
@@ -12,6 +13,7 @@ export function CartLineItem({ line, compact = false, onNavigate }: { line: Pric
   const { product, color, size, widthCode, quantity } = line
   const width = product.widths.find((w) => w.code === widthCode)
   const max = Math.min(store.checkout.maxQuantityPerLine, line.stock)
+  const stockLabel = stockUrgencyLabel(product, color.slug, size, widthCode)
   const href = `/products/${product.slug}?color=${color.slug}`
   const image = color.images[0]
   return (
@@ -54,9 +56,7 @@ export function CartLineItem({ line, compact = false, onNavigate }: { line: Pric
             </div>
           )}
         </dl>
-        {line.stock <= LOW_STOCK_THRESHOLD && (
-          <p className="cart-line__stock">Only {line.stock} left{product.variant === 'simple' ? '' : ' in this size'}</p>
-        )}
+        {stockLabel?.startsWith('Only') && <p className="cart-line__stock">{stockLabel}</p>}
         <div className="cart-line__actions">
           <div className="qty" role="group" aria-label={`Quantity for ${product.name}`}>
             <button
