@@ -29,4 +29,11 @@ export function conversionFor(usM: number): SizeRow | undefined {
   return SIZE_CHART.find((r) => r.usM === usM)
 }
 
+/** Smallest chart size whose foot length is at least the measurement. */
+export function sizeForLength(cm: number): SizeRow | 'short' | 'long' | null {
+  if (!Number.isFinite(cm) || cm <= 0) return null
+  if (cm < SIZE_CHART[0].cm - 0.5) return 'short'
+  return SIZE_CHART.find((r) => cm <= r.cm) ?? 'long'
+}
+
 export const fmt = (n: number) => (Number.isInteger(n) ? String(n) : n.toFixed(1))

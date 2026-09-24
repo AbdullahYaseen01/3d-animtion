@@ -4,6 +4,7 @@ import { allProducts, getCategory, getColor, getProduct, isProductAvailable, pro
 import { store } from '../config/store'
 import { getGuide } from '../data/guides'
 import { productItem, track } from '../lib/analytics'
+import { deliveryWindow } from '../lib/delivery'
 import { formatMoney } from '../lib/money'
 import { productGroupLd } from '../lib/productLd'
 import { breadcrumbLd, Seo } from '../lib/seo'
@@ -12,6 +13,7 @@ import { Gallery } from '../components/product/Gallery'
 import { ProductCard } from '../components/product/ProductCard'
 import { QuickShop, type QuickShopTarget } from '../components/product/QuickShop'
 import { useVariantSelection } from '../components/product/useVariantSelection'
+import { SizeFinder } from '../components/product/SizeFinder'
 import { VariantPicker } from '../components/product/VariantPicker'
 import { Breadcrumbs } from '../components/ui/Breadcrumbs'
 import { Icon } from '../components/ui/Icon'
@@ -19,6 +21,27 @@ import { Price } from '../components/ui/Price'
 import { useCart } from '../state/CartProvider'
 import NotFound from './NotFound'
 import './Product.css'
+
+function DeliveryLine() {
+  const [label, setLabel] = useState<string | null>(null)
+  useEffect(() => setLabel(deliveryWindow().label), [])
+  const ship = store.shipping.standard
+  const process = store.shipping.processingBusinessDays
+  if (!label) {
+    return (
+      <>
+        Processed in {process} business {process === 1 ? 'day' : 'days'}, then {ship.minBusinessDays}–{ship.maxBusinessDays} business days.
+      </>
+    )
+  }
+  return (
+    <>
+      <strong>Estimated delivery: {label}.</strong> US standard shipping from today ({process} business{' '}
+      {process === 1 ? 'day' : 'days'} to process, then {ship.minBusinessDays}–{ship.maxBusinessDays} business days). The
+      window is the same for every US address.
+    </>
+  )
+}
 
 export default function Product() {
   const { slug = '' } = useParams()
@@ -149,6 +172,7 @@ function ProductView({ product }: { product: ProductT }) {
                 <p className="pdp__fit">
                   <strong>Fit:</strong> {product.fit.summary} {product.fit.advice}
                 </p>
+                <SizeFinder product={product} onPick={sel.setSize} />
                 <div className="pdp__actions">
                   <button ref={buyRef} type="button" className="btn btn--lg pdp__add" onClick={handleAdd}>
                     {sel.justAdded ? (
@@ -184,9 +208,8 @@ function ProductView({ product }: { product: ProductT }) {
               <li>
                 <Icon name="truck" size={20} />
                 <span>
-                  <strong>{s.priceCents === 0 ? 'Free standard shipping' : s.label}</strong> to US addresses. Processed within{' '}
-                  {store.shipping.processingBusinessDays} business {store.shipping.processingBusinessDays === 1 ? 'day' : 'days'}, then arrives in{' '}
-                  {s.minBusinessDays}–{s.maxBusinessDays} business days. <Link to="/shipping">Details</Link>
+                  <strong>{s.priceCents === 0 ? 'Free standard shipping' : s.label}</strong> to US addresses.{' '}
+                  <DeliveryLine /> <Link to="/shipping">Details</Link>
                 </span>
               </li>
               <li>

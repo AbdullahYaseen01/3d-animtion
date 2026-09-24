@@ -52,6 +52,12 @@
   font-weight: 400;
 }
 
+.price__save {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ember-strong);
+}
+
 .chip-list {
   display: flex;
   flex-wrap: wrap;

@@ -1,7 +1,7 @@
 import { useId, useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { activeCategories, allProducts } from '../../catalog'
-import { matchesQuery } from '../../catalog/filters'
+import { searchScore } from '../../catalog/filters'
 import { formatMoney } from '../../lib/money'
 import { Dialog } from '../ui/Dialog'
 import { Icon } from '../ui/Icon'
@@ -13,7 +13,18 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
   const [q, setQ] = useState('')
   const navigate = useNavigate()
   const inputId = useId()
-  const matches = useMemo(() => (q.trim() ? allProducts().filter((p) => matchesQuery(p, q)).slice(0, 4) : []), [q])
+  const matches = useMemo(
+    () =>
+      q.trim()
+        ? allProducts()
+            .map((p) => ({ p, score: searchScore(p, q) }))
+            .filter((x) => x.score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 4)
+            .map((x) => x.p)
+        : [],
+    [q],
+  )
   const cats = useMemo(
     () => (q.trim() ? activeCategories().filter((c) => c.name.toLowerCase().includes(q.trim().toLowerCase())) : []),
     [q],
@@ -44,7 +55,7 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
           id={inputId}
           type="search"
           className="search-dialog__input"
-          placeholder="Search shoes, colors, activities"
+          placeholder="Try: comfortable shoes for walking all day"
           value={q}
           onChange={(e) => setQ(e.target.value)}
           autoComplete="off"

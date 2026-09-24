@@ -315,7 +315,7 @@ function SearchBox({ initial, onSearch }: { initial: string; onSearch: (q: strin
         className="input"
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Search shoes, colors, activities"
+        placeholder="Try: comfortable shoes for walking all day"
         maxLength={80}
         enterKeyHint="search"
       />

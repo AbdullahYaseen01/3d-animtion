@@ -10,6 +10,7 @@ export function Price({ cents, compareAtCents, className }: { cents: number; com
           <span className="price__now price__now--sale">{formatMoney(cents)}</span>
           <span className="visually-hidden"> Original price </span>
           <s className="price__was">{formatMoney(compareAtCents)}</s>
+          <span className="price__save">Save {formatMoney(compareAtCents - cents)}</span>
         </>
       ) : (
         <span className="price__now">{formatMoney(cents)}</span>

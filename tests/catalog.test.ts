@@ -77,4 +77,13 @@ describe('filters', () => {
     const res = applyFilters(allProducts(), parseFilters(new URLSearchParams('q=hiking')))
     expect(res.items.map((p) => p.id)).toContain('ridge-trail')
   })
+
+  it('ranks a plain-language request against catalog text', () => {
+    const res = applyFilters(allProducts(), parseFilters(new URLSearchParams('q=comfortable shoes for walking all day')))
+    const ids = res.items.map((p) => p.id)
+    expect(ids).toContain('stride-runner')
+    expect(ids).toContain('glide-slip-on')
+    expect(ids.indexOf('glide-slip-on')).toBeLessThan(ids.indexOf('court-low'))
+    expect(applyFilters(allProducts(), parseFilters(new URLSearchParams('q=zzzz-not-a-shoe'))).total).toBe(0)
+  })
 })

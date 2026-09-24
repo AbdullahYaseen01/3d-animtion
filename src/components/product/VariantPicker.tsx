@@ -154,7 +154,9 @@ export const VariantPicker = forwardRef<HTMLFieldSetElement, Props>(function Var
           )}
         </p>
         {selectedStock != null && selectedStock > 0 && selectedStock <= LOW_STOCK_THRESHOLD && (
-          <p className="vp-stock">Only {selectedStock} left in this size</p>
+          <p className="vp-stock" role="status">
+            Only {selectedStock} left in stock
+          </p>
         )}
       </fieldset>
     </div>

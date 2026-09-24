@@ -98,6 +98,8 @@ export function searchText(product: Product): string {
     [
       product.name,
       product.tagline,
+      product.description,
+      product.fit.summary,
       category?.name,
       category?.summary,
       product.colors.map((c) => c.name).join(' '),
@@ -120,21 +122,48 @@ const SYNONYMS: Record<string, string[]> = {
   slipon: ['slip'],
   loafer: ['slip'],
   casual: ['lifestyle', 'everyday'],
-  walking: ['everyday', 'walks', 'walk'],
+  walking: ['walks', 'walk', 'commute', 'errand'],
+  comfortable: ['cushion', 'comfort'],
+}
+
+const STOP = new Set([
+  'i', 'im', 'need', 'a', 'an', 'the', 'for', 'me', 'my', 'want', 'looking', 'some', 'with', 'and', 'or', 'to', 'of',
+  'all', 'day', 'please', 'that', 'are', 'can', 'you', 'get', 'pair', 'pairs', 'shoe', 'shoes', 'sneaker', 'sneakers',
+  'nova', 'men', 'mens', 'women', 'womens',
+])
+
+/** Phrase → words that actually appear in the catalog. No product is suggested unless one of these hits. */
+const INTENTS: { test: RegExp; needles: string[] }[] = [
+  { test: /comfort|cushion|soft|all day|standing/, needles: ['cushion', 'all day', 'standing'] },
+  { test: /walk|commute|errand/, needles: ['walk', 'commute', 'errand', 'standing', 'all day'] },
+  { test: /\brun\b|jog|trainer/, needles: ['running', 'run', 'trainer'] },
+  { test: /trail|hike|outdoor/, needles: ['trail', 'grip'] },
+  { test: /leather/, needles: ['leather'] },
+  { test: /wide/, needles: ['wide'] },
+]
+
+/** Higher means a closer match. Zero means the catalog has nothing for this request. */
+export function searchScore(product: Product, q: string): number {
+  const haystack = searchText(product)
+  const tokens = normalize(q).split(/\s+/).filter((t) => t && !STOP.has(t))
+  let score = 0
+  for (const t of tokens) {
+    const hit =
+      haystack.includes(t) ||
+      (SYNONYMS[t] ?? []).some((s) => haystack.includes(s)) ||
+      (t.length > 3 && haystack.includes(t.replace(/s$/, '')))
+    if (hit) score += 2
+  }
+  const raw = q.toLowerCase()
+  for (const intent of INTENTS) {
+    if (intent.test.test(raw) && intent.needles.some((n) => haystack.includes(n))) score += 3
+  }
+  return score
 }
 
 export function matchesQuery(product: Product, q: string): boolean {
-  const tokens = normalize(q).split(/\s+/).filter(Boolean)
-  if (!tokens.length) return true
-  const haystack = searchText(product)
-  const generic = new Set(['shoe', 'shoes', 'sneaker', 'sneakers', 'nova', 'men', 'mens', 'women', 'womens'])
-  return tokens.every(
-    (t) =>
-      generic.has(t) ||
-      haystack.includes(t) ||
-      (SYNONYMS[t] ?? []).some((s) => haystack.includes(s)) ||
-      (t.length > 3 && haystack.includes(t.replace(/s$/, ''))),
-  )
+  if (!normalize(q).trim()) return true
+  return searchScore(product, q) > 0
 }
 
 export interface FilterResult {
@@ -178,6 +207,9 @@ export function applyFilters(source: Product[], s: FilterState): FilterResult {
       sorted.sort((a, b) => Number(!!b.isNew) - Number(!!a.isNew) || order.get(a.id)! - order.get(b.id)!)
       break
     default:
+      if (s.q.trim()) {
+        sorted.sort((a, b) => searchScore(b, s.q) - searchScore(a, s.q) || order.get(a.id)! - order.get(b.id)!)
+      }
       break
   }
 
