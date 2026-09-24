@@ -46,6 +46,12 @@
   font-size: var(--text-lg);
 }
 
+.quick-shop__purchase {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
 @media (max-width: 40rem) {
   .quick-shop__grid {
     grid-template-columns: 1fr;

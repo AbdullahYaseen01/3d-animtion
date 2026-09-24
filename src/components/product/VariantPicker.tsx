@@ -4,11 +4,11 @@ import {
   buildSku,
   formatSize,
   isColorAvailable,
-  LOW_STOCK_THRESHOLD,
   stockFor,
   type Product,
 } from '../../catalog'
 import { conversionFor, fmt } from '../../catalog/sizing'
+import { urgencyLeft } from '../../lib/urgency'
 import { Icon } from '../ui/Icon'
 import './VariantPicker.css'
 
@@ -153,9 +153,9 @@ export const VariantPicker = forwardRef<HTMLFieldSetElement, Props>(function Var
             <>Women's: choose 1.5 sizes smaller than your usual size (US W 10 → US M 8.5).</>
           )}
         </p>
-        {selectedStock != null && selectedStock > 0 && selectedStock <= LOW_STOCK_THRESHOLD && (
+        {(size == null || (selectedStock != null && selectedStock > 0)) && (
           <p className="vp-stock" role="status">
-            Only {selectedStock} left in stock
+            Only {urgencyLeft(size != null ? buildSku(product.id, color.slug, size, width.code) : product.id)} left in stock
           </p>
         )}
       </fieldset>

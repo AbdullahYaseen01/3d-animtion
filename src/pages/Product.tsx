@@ -5,6 +5,7 @@ import { store } from '../config/store'
 import { getGuide } from '../data/guides'
 import { productItem, track } from '../lib/analytics'
 import { deliveryWindow } from '../lib/delivery'
+import { purchaseMessage } from '../lib/urgency'
 import { formatMoney } from '../lib/money'
 import { productGroupLd } from '../lib/productLd'
 import { breadcrumbLd, Seo } from '../lib/seo'
@@ -153,6 +154,11 @@ function ProductView({ product }: { product: ProductT }) {
               <h1>{product.name}</h1>
               <p className="pdp__tagline">{product.tagline}</p>
               <Price cents={product.priceCents} compareAtCents={product.compareAtPriceCents} className="pdp__price" />
+              {available && (
+                <p className="pdp__purchase" role="status">
+                  {purchaseMessage(product.id)}
+                </p>
+              )}
             </div>
 
             {available ? (

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { getCategory, isColorAvailable, isProductAvailable, type Product } from '../../catalog'
+import { purchaseMessage, urgencyLeft } from '../../lib/urgency'
 import { useWishlist } from '../../state/WishlistProvider'
 import { Icon } from '../ui/Icon'
 import { Price } from '../ui/Price'
@@ -72,6 +73,12 @@ export function ProductCard({ product, onQuickShop, priority = false, headingLev
         <p className="product-card__meta">
           {category?.name} · {product.tagline}
         </p>
+        {available && (
+          <>
+            <p className="product-card__purchase">{purchaseMessage(product.id)}</p>
+            <p className="product-card__stock">Only {urgencyLeft(product.id)} left in stock</p>
+          </>
+        )}
         {product.colors.length > 1 ? (
           <div className="product-card__swatches" role="group" aria-label={`${product.name} colors`}>
             {product.colors.map((c) => (
