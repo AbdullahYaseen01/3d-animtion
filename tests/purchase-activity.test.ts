@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { buildSku, getProduct } from '../src/catalog'
+import { allProducts, buildSku, getProduct } from '../src/catalog'
 import { purchaseSentence, purchasesFromOrder, regionFromShipTo, relativeAgo } from '../src/commerce/purchaseActivity'
+import { samplePurchaseFor, samplePurchases } from '../src/commerce/samplePurchases'
 
 describe('confirmed purchase activity', () => {
   const at = new Date('2026-09-24T17:00:00.000Z')
@@ -28,6 +29,19 @@ describe('confirmed purchase activity', () => {
     expect(purchasesFromOrder({ orderNumber: 'NV-1', status: 'processing', firstName: 'Sarah', shipTo: 'Austin, TX', lines: [{ sku }] }, at)).toEqual([])
     expect(purchasesFromOrder({ orderNumber: 'NV-2', status: 'paid', firstName: 'Sarah', shipTo: null, lines: [{ sku }] }, at)).toEqual([])
     expect(purchasesFromOrder({ orderNumber: 'NV-3', status: 'paid', firstName: null, shipTo: 'Austin, TX', lines: [{ sku }] }, at)).toEqual([])
+  })
+
+  it('gives every product a different preview buyer', () => {
+    const now = new Date('2026-09-24T17:00:00.000Z')
+    const samples = samplePurchases(now)
+    const products = allProducts()
+    expect(samples.map((item) => item.productId).sort()).toEqual(products.map((product) => product.id).sort())
+    const names = samples.map((item) => item.firstName)
+    expect(new Set(names).size).toBe(names.length)
+    expect(purchaseSentence(samplePurchaseFor('stride-runner', now)!, now)).toBe('Sarah from Texas purchased Stride Runner 8 minutes ago.')
+    expect(samplePurchaseFor('ridge-trail', now)?.firstName).toBe('Mike')
+    expect(samplePurchaseFor('court-low', now)?.firstName).toBe('John')
+    expect(samplePurchaseFor('missing')).toBeNull()
   })
 
   it('formats short elapsed times', () => {

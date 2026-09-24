@@ -159,8 +159,21 @@
 }
 
 .product-card__purchase {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
   font-size: var(--text-xs);
   color: var(--color-ink-soft);
+}
+
+.product-card__purchase::before {
+  content: '';
+  flex: none;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-top: 0.28rem;
+  border-radius: 50%;
+  background: var(--color-ember);
 }
 
 .product-card__stock {
