@@ -1,4 +1,4 @@
-import { formatSize, type Product } from '../../catalog'
+import type { Product } from '../../catalog'
 import { applyFilters, facetsFor, type FilterState } from '../../catalog/filters'
 import './Catalog.css'
 
@@ -45,28 +45,78 @@ export function FilterPanel({ source, state, onChange, showCategory, idPrefix }:
         </details>
       )}
 
-      <details className="filter-group" open>
-        <summary>
-          Size <span className="muted">(US men's, in stock)</span>
-        </summary>
-        <div className="filter-sizes" role="group" aria-label="Sizes">
-          {facets.sizes.map((s) => {
-            const on = state.size.includes(s)
-            return (
-              <button
-                key={s}
-                type="button"
-                className={`filter-size${on ? ' is-on' : ''}`}
-                aria-pressed={on}
-                aria-label={`Size ${formatSize(s)}`}
-                onClick={() => onChange({ size: toggle(state.size, s), page: 1 })}
-              >
-                {formatSize(s)}
-              </button>
-            )
-          })}
-        </div>
-      </details>
+      {facets.sizes.length > 0 && (
+        <details className="filter-group" open>
+          <summary>
+            Size{' '}
+            <span className="muted">{source.every((p) => p.variant === 'footwear') ? '(US men\'s, in stock)' : '(in stock)'}</span>
+          </summary>
+          <div className="filter-sizes" role="group" aria-label="Sizes">
+            {facets.sizes.map((s) => {
+              const on = state.size.includes(s.value)
+              return (
+                <button
+                  key={s.value}
+                  type="button"
+                  className={`filter-size${on ? ' is-on' : ''}`}
+                  aria-pressed={on}
+                  aria-label={`Size ${s.label}`}
+                  onClick={() => onChange({ size: toggle(state.size, s.value), page: 1 })}
+                >
+                  {s.label}
+                </button>
+              )
+            })}
+          </div>
+        </details>
+      )}
+
+      {facets.uses.length > 1 && (
+        <details className="filter-group" open>
+          <summary>Use</summary>
+          <ul role="list" className="filter-options">
+            {facets.uses.map((u) => (
+              <li key={u.slug}>
+                <label className="checkbox filter-check">
+                  <input
+                    type="checkbox"
+                    checked={state.use.includes(u.slug as 'running')}
+                    onChange={() => onChange({ use: toggle(state.use, u.slug as 'running'), page: 1 })}
+                  />
+                  <span>
+                    {u.name} <span className="muted">({countWith({ use: [u.slug as 'running'] })})</span>
+                  </span>
+                </label>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+
+      {facets.traits.map((group) => (
+        <details key={group.group} className="filter-group" open>
+          <summary>{group.group}</summary>
+          <ul role="list" className="filter-options">
+            {group.values.map((value) => {
+              const key = `${group.group}:${value}`
+              return (
+                <li key={key}>
+                  <label className="checkbox filter-check">
+                    <input
+                      type="checkbox"
+                      checked={state.trait.includes(key)}
+                      onChange={() => onChange({ trait: toggle(state.trait, key), page: 1 })}
+                    />
+                    <span>
+                      {value} <span className="muted">({countWith({ trait: [key] })})</span>
+                    </span>
+                  </label>
+                </li>
+              )
+            })}
+          </ul>
+        </details>
+      ))}
 
       {facets.widths.length > 1 && (
         <details className="filter-group" open>

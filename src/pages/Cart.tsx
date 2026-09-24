@@ -13,7 +13,7 @@ export default function Cart() {
 
   return (
     <>
-      <Seo title="Your Cart" description="Review the shoes in your NOVA cart." path="/cart" noindex />
+      <Seo title="Your Cart" description="Review the items in your NOVA cart." path="/cart" noindex />
       <div className="container">
         <div className="page-head">
           <h1>Your cart</h1>
@@ -55,7 +55,7 @@ export default function Cart() {
             <p>Browse running, trail, lifestyle and everyday styles, or pick up where you left off in your saved items.</p>
             <div className="hero__ctas" style={{ justifyContent: 'center' }}>
               <Link to="/shop" className="btn">
-                Shop all shoes
+                Shop all
               </Link>
               <Link to="/wishlist" className="btn btn--secondary">
                 Saved items

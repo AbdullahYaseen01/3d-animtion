@@ -7,7 +7,7 @@
 export const store = {
   name: 'NOVA',
   legalName: 'NOVA Footwear',
-  tagline: 'Footwear for people who never stand still.',
+  tagline: 'Style for every side of you.',
   /** LAUNCH BLOCKER: confirm the mailbox exists and is monitored. Carried over from the previous site. */
   supportEmail: 'hello@novafootwear.com',
   /** Only list profiles that exist. Empty entries are hidden. */
@@ -31,7 +31,7 @@ export const store = {
   returns: {
     /** LAUNCH BLOCKER: "30-day returns" was claimed on the previous site; confirm the terms below. */
     windowDays: 30,
-    condition: 'unworn, in original condition and packaging',
+    condition: 'unused or unworn, in original condition and packaging',
   },
 
   checkout: {

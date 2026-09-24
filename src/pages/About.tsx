@@ -34,7 +34,7 @@ export default function About() {
     <>
       <Seo
         title="Our Craft"
-        description="How NOVA designs running, trail and everyday sneakers: fit first, considered materials and straight answers about every pair."
+        description="How NOVA designs shoes, bags and the rest of the edit: considered materials, clear measurements and straight answers."
         path="/about"
         image="/images/editorial/editorial-materials-1024.webp"
         imageAlt="Shoe materials laid out on a workbench"

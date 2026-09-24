@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
 import { App } from './App'
-import { activeCategories, allProducts } from './catalog'
+import { activeCategories, allProducts, shoeCollections } from './catalog'
 import { guides } from './data/guides'
 import { HeadContext, headToString, type HeadCollector } from './lib/seo'
 
@@ -26,6 +26,7 @@ export function prerenderRoutes(): { path: string; sitemap: boolean }[] {
     '/',
     '/shop',
     ...activeCategories().map((c) => `/collections/${c.slug}`),
+    ...shoeCollections().map((c) => `/collections/${c.slug}`),
     ...allProducts().map((p) => `/products/${p.slug}`),
     '/about',
     '/fit-guide',

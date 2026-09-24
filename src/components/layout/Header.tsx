@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router'
-import { activeCategories } from '../../catalog'
+import { allProducts, getCategory } from '../../catalog'
 import { store } from '../../config/store'
 import { formatMoney } from '../../lib/money'
 import { useCart } from '../../state/CartProvider'
@@ -9,8 +9,15 @@ import { Dialog } from '../ui/Dialog'
 import { Icon } from '../ui/Icon'
 import { ProductImage } from '../ui/ProductImage'
 import { SearchDialog } from './SearchDialog'
-import { allProducts } from '../../catalog'
 import './Header.css'
+
+const BAG_LINKS = [
+  { slug: 'handbags', label: 'Handbags' },
+  { slug: 'wallets', label: 'Wallets' },
+  { slug: 'backpacks', label: 'Backpacks' },
+] as const
+
+const MOBILE_CATS = ['shoes', 'handbags', 'wallets', 'jackets', 'womens-jewelry', 'backpacks', 'watches'] as const
 
 export function AnnouncementBar() {
   const { standard, freeThresholdCents } = store.shipping
@@ -25,7 +32,7 @@ export function AnnouncementBar() {
       <p className="container announcement__inner">
         {shipping && <span>{shipping}</span>}
         <span className="announcement__sep" aria-hidden="true" />
-        <Link to="/returns">{store.returns.windowDays}-day returns on unworn pairs</Link>
+        <Link to="/returns">{store.returns.windowDays}-day returns</Link>
       </p>
     </div>
   )
@@ -37,8 +44,6 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const location = useLocation()
-  const categories = activeCategories()
-
   useEffect(() => {
     setMenuOpen(false)
     setSearchOpen(false)
@@ -70,16 +75,27 @@ export function Header() {
                 Shop all
               </NavLink>
             </li>
-            {categories.map((c) => (
-              <li key={c.slug}>
-                <NavLink to={`/collections/${c.slug}`}>{c.name}</NavLink>
-              </li>
-            ))}
-            <li className="primary-nav__secondary">
-              <NavLink to="/fit-guide">Fit guide</NavLink>
+            <li>
+              <NavLink to="/collections/shoes">Shoes</NavLink>
             </li>
-            <li className="primary-nav__secondary">
-              <NavLink to="/about">Our craft</NavLink>
+            <li className="nav-drop">
+              <NavLink to="/collections/handbags">Bags & wallets</NavLink>
+              <ul className="nav-drop__panel" role="list">
+                {BAG_LINKS.map((item) => (
+                  <li key={item.slug}>
+                    <Link to={`/collections/${item.slug}`}>{item.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+            <li>
+              <NavLink to="/collections/jackets">Jackets</NavLink>
+            </li>
+            <li>
+              <NavLink to="/collections/womens-jewelry">Women&apos;s jewelry</NavLink>
+            </li>
+            <li>
+              <NavLink to="/collections/watches">Watches</NavLink>
             </li>
           </ul>
         </nav>
@@ -125,13 +141,15 @@ export function Header() {
                 <Icon name="chevron" size={18} />
               </Link>
             </li>
-            {categories.map((c) => {
-              const first = allProducts().find((p) => p.category === c.slug)!
+            {MOBILE_CATS.map((slug) => {
+              const c = getCategory(slug)
+              const first = allProducts().find((p) => p.category === slug)
+              if (!c) return null
               return (
-                <li key={c.slug}>
-                  <Link to={`/collections/${c.slug}`} className="mobile-menu__cat">
+                <li key={slug}>
+                  <Link to={`/collections/${slug}`} className="mobile-menu__cat">
                     <span className="mobile-menu__thumb" aria-hidden="true">
-                      <ProductImage image={first.colors[0].images[0]} alt="" sizes="56px" />
+                      {first && <ProductImage image={first.colors[0].images[0]} alt="" sizes="56px" />}
                     </span>
                     <span>
                       <strong>{c.name}</strong>

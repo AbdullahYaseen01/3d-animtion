@@ -1,5 +1,5 @@
-import { activeCategories, formatSize, isColorAvailable, isProductAvailable, isSizeAvailable } from './index'
-import type { CategorySlug, ColorOption, Product } from './types'
+import { activeCategories, formatSize, isColorAvailable, isProductAvailable, isSizeAvailable, shoeCollections } from './index'
+import type { CategorySlug, ColorOption, Product, ShoeUse } from './types'
 
 export type SortKey = 'featured' | 'newest' | 'price-asc' | 'price-desc'
 
@@ -25,6 +25,8 @@ export const COLOR_FAMILIES: { value: ColorOption['family']; label: string; hex:
   { value: 'neutral', label: 'Neutral', hex: '#CDB99A' },
 ]
 
+const SHOE_USES = new Set<ShoeUse>(['running', 'trail', 'lifestyle', 'everyday'])
+
 export interface FilterState {
   q: string
   category: CategorySlug[]
@@ -32,6 +34,8 @@ export interface FilterState {
   size: number[]
   width: string[]
   price: string[]
+  use: ShoeUse[]
+  trait: string[]
   inStock: boolean
   sort: SortKey
   page: number
@@ -46,7 +50,7 @@ const list = (params: URLSearchParams, key: string) =>
     .filter(Boolean)
 
 export function parseFilters(params: URLSearchParams): FilterState {
-  const validCategories = new Set(activeCategories().map((c) => c.slug))
+  const validCategories = new Set<CategorySlug>([...activeCategories(), ...shoeCollections()].map((c) => c.slug))
   const validColors = new Set(COLOR_FAMILIES.map((c) => c.value))
   const validPrices = new Set<string>(PRICE_BUCKETS.map((b) => b.value))
   const sort = params.get('sort') as SortKey
@@ -60,6 +64,8 @@ export function parseFilters(params: URLSearchParams): FilterState {
       .filter((n) => Number.isFinite(n) && n > 0 && n < 20),
     width: list(params, 'width').filter((w) => /^[A-Z0-9]{1,3}$/.test(w)),
     price: list(params, 'price').filter((p) => validPrices.has(p)),
+    use: list(params, 'use').filter((u): u is ShoeUse => SHOE_USES.has(u as ShoeUse)),
+    trait: list(params, 'trait').filter((t) => /^[^:]{1,40}:[^:]{1,40}$/.test(t)),
     inStock: params.get('availability') === 'in-stock',
     sort: SORT_OPTIONS.some((o) => o.value === sort) ? sort : 'featured',
     page: Number.isInteger(page) && page > 1 ? page : 1,
@@ -75,6 +81,8 @@ export function serializeFilters(state: Partial<FilterState>): URLSearchParams {
   if (state.size?.length) p.set('size', [...state.size].sort((a, b) => a - b).map(formatSize).join(','))
   if (state.width?.length) p.set('width', state.width.join(','))
   if (state.price?.length) p.set('price', state.price.join(','))
+  if (state.use?.length) p.set('use', state.use.join(','))
+  if (state.trait?.length) p.set('trait', state.trait.join(','))
   if (state.inStock) p.set('availability', 'in-stock')
   if (state.sort && state.sort !== 'featured') p.set('sort', state.sort)
   if (state.page && state.page > 1) p.set('page', String(state.page))
@@ -82,7 +90,7 @@ export function serializeFilters(state: Partial<FilterState>): URLSearchParams {
 }
 
 export function activeFilterCount(s: FilterState): number {
-  return s.category.length + s.color.length + s.size.length + s.width.length + s.price.length + (s.inStock ? 1 : 0)
+  return s.category.length + s.color.length + s.size.length + s.width.length + s.price.length + s.use.length + s.trait.length + (s.inStock ? 1 : 0)
 }
 
 function normalize(text: string): string {
@@ -102,10 +110,13 @@ export function searchText(product: Product): string {
       product.fit.summary,
       category?.name,
       category?.summary,
-      product.colors.map((c) => c.name).join(' '),
+      product.colors.map((c) => `${c.name} ${c.family}`).join(' '),
       product.bestFor.join(' '),
       product.materials,
       product.highlights.join(' '),
+      product.shoeUse ?? '',
+      product.specs.map((s) => `${s.label} ${s.value}`).join(' '),
+      (product.traits ?? []).map((t) => `${t.group} ${t.value}`).join(' '),
     ].join(' '),
   )
 }
@@ -127,7 +138,7 @@ const SYNONYMS: Record<string, string[]> = {
 }
 
 const STOP = new Set([
-  'i', 'im', 'need', 'a', 'an', 'the', 'for', 'me', 'my', 'want', 'looking', 'some', 'with', 'and', 'or', 'to', 'of',
+  'i', 'im', 'need', 'a', 'an', 'the', 'for', 'me', 'my', 'want', 'looking', 'some', 'with', 'and', 'or', 'to', 'of', 'not',
   'all', 'day', 'please', 'that', 'are', 'can', 'you', 'get', 'pair', 'pairs', 'shoe', 'shoes', 'sneaker', 'sneakers',
   'nova', 'men', 'mens', 'women', 'womens',
 ])
@@ -140,7 +151,20 @@ const INTENTS: { test: RegExp; needles: string[] }[] = [
   { test: /trail|hike|outdoor/, needles: ['trail', 'grip'] },
   { test: /leather/, needles: ['leather'] },
   { test: /wide/, needles: ['wide'] },
+  { test: /handbag|purse|tote|crossbody/, needles: ['handbag', 'bag', 'crossbody', 'tote'] },
+  { test: /wallet/, needles: ['wallet'] },
+  { test: /jacket|coat|fall/, needles: ['jacket', 'fall'] },
+  { test: /earring|jewelry|jewellery|gold/, needles: ['earring', 'gold', 'jewelry'] },
+  { test: /backpack|laptop/, needles: ['backpack', 'laptop'] },
+  { test: /watch|minimal/, needles: ['watch', 'minimal'] },
 ]
+
+/** Dollar cap written into a query, such as "under $100". */
+export function budgetMaxCents(q: string): number | undefined {
+  const match = q.toLowerCase().match(/under\s*\$?\s*(\d{2,5})\b/)
+  if (!match) return undefined
+  return Number(match[1]) * 100
+}
 
 /** Higher means a closer match. Zero means the catalog has nothing for this request. */
 export function searchScore(product: Product, q: string): number {
@@ -163,6 +187,8 @@ export function searchScore(product: Product, q: string): number {
 
 export function matchesQuery(product: Product, q: string): boolean {
   if (!normalize(q).trim()) return true
+  const max = budgetMaxCents(q)
+  if (max != null && product.priceCents > max) return false
   return searchScore(product, q) > 0
 }
 
@@ -174,7 +200,11 @@ export interface FilterResult {
 
 export function applyFilters(source: Product[], s: FilterState): FilterResult {
   let items = source.filter((p) => matchesQuery(p, s.q))
-  if (s.category.length) items = items.filter((p) => s.category.includes(p.category))
+  if (s.category.length) items = items.filter((p) => s.category.some((c) => p.category === c || p.shoeUse === c))
+  if (s.use.length) items = items.filter((p) => p.shoeUse != null && s.use.includes(p.shoeUse))
+  if (s.trait.length) {
+    items = items.filter((p) => s.trait.every((t) => (p.traits ?? []).some((trait) => `${trait.group}:${trait.value}` === t)))
+  }
   if (s.color.length) items = items.filter((p) => p.colors.some((c) => s.color.includes(c.family)))
   if (s.width.length) items = items.filter((p) => p.widths.some((w) => s.width.includes(w.code)))
   if (s.price.length) {
@@ -224,16 +254,39 @@ export function applyFilters(source: Product[], s: FilterState): FilterResult {
 
 /** Filter facets derived from the products being browsed. */
 export function facetsFor(source: Product[]) {
-  const sizes = [...new Set(source.flatMap((p) => p.sizes))].sort((a, b) => a - b)
+  const sized = source.filter((p) => p.variant !== 'simple')
+  const systems = new Set(sized.map((p) => p.variant))
+  const oneSystem = systems.size === 1
+  const sizes = oneSystem
+    ? [...new Set(sized.flatMap((p) => p.sizes))]
+        .sort((a, b) => a - b)
+        .map((value) => ({
+          value,
+          label: sized.find((p) => p.sizeLabels?.[value])?.sizeLabels?.[value] ?? formatSize(value),
+        }))
+    : []
   const widthMap = new Map<string, string>()
-  source.forEach((p) => p.widths.forEach((w) => widthMap.set(w.code, w.label)))
+  if (oneSystem && systems.has('footwear')) {
+    sized.forEach((p) => p.widths.forEach((w) => widthMap.set(w.code, w.label)))
+  }
   const families = new Set(source.flatMap((p) => p.colors.map((c) => c.family)))
-  const cats = new Set(source.map((p) => p.category))
+  const cats = new Set<string>(source.map((p) => p.category))
+  const useSlugs = new Set(source.map((p) => p.shoeUse).filter((u): u is ShoeUse => !!u))
+  const traitMap = new Map<string, Set<string>>()
+  for (const p of source) {
+    for (const trait of p.traits ?? []) {
+      const set = traitMap.get(trait.group) ?? new Set<string>()
+      set.add(trait.value)
+      traitMap.set(trait.group, set)
+    }
+  }
   return {
     categories: activeCategories().filter((c) => cats.has(c.slug)),
     colors: COLOR_FAMILIES.filter((c) => families.has(c.value)),
     sizes,
     widths: [...widthMap].map(([code, label]) => ({ code, label })),
+    uses: shoeCollections().filter((c) => useSlugs.has(c.slug as ShoeUse)),
+    traits: [...traitMap].map(([group, values]) => ({ group, values: [...values].sort() })),
     prices: PRICE_BUCKETS.filter((b) => source.some((p) => p.priceCents >= b.min && p.priceCents <= b.max)),
   }
 }

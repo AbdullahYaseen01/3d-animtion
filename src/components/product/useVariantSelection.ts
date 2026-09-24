@@ -6,7 +6,7 @@ export function useVariantSelection(product: Product, initialColor?: string | nu
   const { add } = useCart()
   const [colorSlug, setColorSlug] = useState(() => getColor(product, initialColor).slug)
   const [widthCode, setWidthCode] = useState(product.widths[0].code)
-  const [size, setSize] = useState<number | null>(null)
+  const [size, setSize] = useState<number | null>(product.variant === 'simple' ? 0 : null)
   const [error, setError] = useState<string | null>(null)
   const [justAdded, setJustAdded] = useState(false)
   const sizeRef = useRef<HTMLFieldSetElement>(null)
@@ -36,7 +36,8 @@ export function useVariantSelection(product: Product, initialColor?: string | nu
   /** Validates the selection, adds to cart, and returns true on success. */
   const addToCart = useCallback((): boolean => {
     if (size == null) {
-      setError(colorSoldOut ? 'This color is sold out in this width.' : 'Select a size to add this pair to your cart.')
+      const need = product.variant === 'footwear' ? 'Select a size to add this pair to your cart.' : 'Select a size.'
+      setError(colorSoldOut ? 'This color is sold out.' : need)
       requestAnimationFrame(() => {
         const first = sizeRef.current?.querySelector<HTMLInputElement>('input:not(:disabled)')
         ;(first ?? sizeRef.current)?.focus()

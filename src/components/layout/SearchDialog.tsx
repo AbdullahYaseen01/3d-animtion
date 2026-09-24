@@ -48,14 +48,14 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
         }}
       >
         <label htmlFor={inputId} className="visually-hidden">
-          Search shoes
+          Search NOVA
         </label>
         <Icon name="search" />
         <input
           id={inputId}
           type="search"
           className="search-dialog__input"
-          placeholder="Try: comfortable shoes for walking all day"
+          placeholder="Try: black handbag under $100"
           value={q}
           onChange={(e) => setQ(e.target.value)}
           autoComplete="off"
@@ -113,7 +113,7 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
             </ul>
           ) : (
             <p className="muted">
-              No matching shoes yet. Press Search to see all results, or <Link to="/shop" onClick={onClose}>browse every style</Link>.
+              No matches yet. Press Search to see all results, or <Link to="/shop" onClick={onClose}>browse the edit</Link>.
             </p>
           )}
         </div>

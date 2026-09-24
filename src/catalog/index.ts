@@ -18,19 +18,40 @@ export function getProductById(id: string): Product | undefined {
   return products.find((p) => p.id === id)
 }
 
-/** Categories that currently contain at least one product. */
-export function activeCategories(): (Category & { count: number })[] {
-  return categories
-    .map((c) => ({ ...c, count: products.filter((p) => p.category === c.slug).length }))
-    .filter((c) => c.count > 0)
+function withCount(list: Category[]): (Category & { count: number })[] {
+  return list.map((c) => ({
+    ...c,
+    count: products.filter((p) => (c.kind === 'shoe-use' ? p.shoeUse === c.slug : p.category === c.slug)).length,
+  }))
 }
 
-export function getCategory(slug: string): Category | undefined {
-  return activeCategories().find((c) => c.slug === slug)
+/** Top-level departments that currently contain at least one product. */
+export function activeCategories(): (Category & { count: number })[] {
+  return withCount(categories.filter((c) => c.kind === 'department')).filter((c) => c.count > 0)
+}
+
+/** Existing footwear activity URLs: /collections/running and the rest. */
+export function shoeCollections(): (Category & { count: number })[] {
+  return withCount(categories.filter((c) => c.kind === 'shoe-use'))
+}
+
+export function getCategory(slug: string): (Category & { count: number }) | undefined {
+  return activeCategories().find((c) => c.slug === slug) ?? shoeCollections().find((c) => c.slug === slug)
 }
 
 export function productsInCategory(slug: CategorySlug): Product[] {
+  const category = categories.find((c) => c.slug === slug)
+  if (!category) return []
+  if (category.kind === 'shoe-use') return products.filter((p) => p.shoeUse === slug)
   return products.filter((p) => p.category === slug)
+}
+
+export function showsSize(product: Product): boolean {
+  return product.variant !== 'simple'
+}
+
+export function sizeLabel(product: Product, size: number): string {
+  return product.sizeLabels?.[size] ?? formatSize(size)
 }
 
 export function getColor(product: Product, colorSlug?: string | null): ColorOption {
@@ -87,9 +108,11 @@ export function isSizeAvailable(product: Product, size: number, widthCode?: stri
 }
 
 export function variantLabel(product: Product, color: ColorOption, size: number, widthCode: string): string {
+  if (product.variant === 'simple') return color.name
   const width = product.widths.find((w) => w.code === widthCode)
-  const widthText = product.widths.length > 1 && width ? `, ${width.label} (${width.code})` : ''
-  return `${color.name} · US M ${formatSize(size)}${widthText}`
+  const widthText = product.variant === 'footwear' && product.widths.length > 1 && width ? `, ${width.label} (${width.code})` : ''
+  const sizeText = product.variant === 'footwear' ? `US M ${formatSize(size)}` : sizeLabel(product, size)
+  return `${color.name} · ${sizeText}${widthText}`
 }
 
 export function productImagePath(key: string, width = 700, format: 'webp' | 'avif' = 'webp'): string {

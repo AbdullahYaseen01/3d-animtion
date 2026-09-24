@@ -19,8 +19,7 @@ export default function Faq() {
           q: 'What size should I order?',
           a: (
             <p>
-              NOVA shoes use US men’s sizing. Women should pick their usual US women’s size in our <Link to="/fit-guide">size chart</Link>, which converts it for you. Every product
-              page also has a fit note.
+              Shoes use US men’s sizing. Women should pick their usual US women’s size in our <Link to="/fit-guide">size chart</Link>, which converts it for you. Jackets use their own sizes. Bags, jewelry and watches do not use a shoe size.
             </p>
           ),
         },
@@ -67,7 +66,7 @@ export default function Faq() {
           q: 'What is your return policy?',
           a: (
             <p>
-              Unworn shoes in their original packaging can be returned within {store.returns.windowDays} days of delivery. <Link to="/returns">Read the full policy</Link>.
+              Eligible items can be returned within {store.returns.windowDays} days of delivery. Shoes must be unworn. <Link to="/returns">Read the full policy</Link>.
             </p>
           ),
         },

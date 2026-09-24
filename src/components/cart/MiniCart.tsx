@@ -32,7 +32,7 @@ export function MiniCart() {
           <h3 className="display">Your cart is empty</h3>
           <p>Find a pair for your next run, commute or weekend.</p>
           <Link to="/shop" className="btn" onClick={closeCart}>
-            Shop all shoes
+            Shop all
           </Link>
           <Link to="/wishlist" className="link-arrow" onClick={closeCart}>
             View saved items
