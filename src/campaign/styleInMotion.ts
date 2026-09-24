@@ -1,72 +1,99 @@
 /**
  * Approved “Style in motion” campaign.
- * Swap the hero file in one place when the text-free photograph is available.
- * Leave `src` empty until then — do not point it at the low-resolution mock.
+ * Originals live in public/campaign. Responsive AVIF/WebP siblings are produced by
+ * `node scripts/build-images.mjs --campaign` and must use these same widths.
  */
+export const HERO_WIDTHS = [768, 1200, 1600, 1910] as const
+export const CATEGORY_WIDTHS = [480, 800, 1200] as const
+
 export const campaignHero = {
-  src: '',
+  src: '/campaign/hero-style-in-motion.png',
   alt: 'A woman in cream and a man in a dark jacket walking a sunlit autumn sidewalk, carrying a burgundy handbag and a backpack',
-  width: 2400,
-  height: 1039,
-  /** Models sit center-right; the left side stays open for the headline. */
-  position: '70% center',
+  width: 1910,
+  height: 823,
+  widths: HERO_WIDTHS,
+  /** Couple stays right of center; the left building remains behind the headline. */
+  focal: {
+    desktop: '42% center',
+    tablet: '58% 40%',
+    mobile: '58% 42%',
+  },
 }
 
 export const campaignCategories = [
   {
     label: 'Shoes',
     href: '/collections/shoes',
-    image: 'editorial-onfoot',
-    group: 'editorial' as const,
-    alt: 'Light sneakers worn while walking on a sunlit sidewalk',
-    position: 'center 62%',
+    src: '/campaign/category-shoes.png',
+    alt: 'Cream sneakers worn on stone steps',
+    width: 1536,
+    height: 1024,
+    widths: CATEGORY_WIDTHS,
+    position: 'center 58%',
   },
   {
     label: 'Handbags',
     href: '/collections/handbags',
-    image: 'nova-handbag-side',
-    group: 'products' as const,
-    alt: 'Mini Crossbody handbag',
+    src: '/campaign/category-handbags.png',
+    alt: 'Burgundy structured handbag',
+    width: 1536,
+    height: 1024,
+    widths: CATEGORY_WIDTHS,
     position: 'center',
   },
   {
     label: 'Wallets',
     href: '/collections/wallets',
-    image: 'nova-wallet-side',
-    group: 'products' as const,
-    alt: 'Slim Wallet',
+    src: '/campaign/category-wallets.png',
+    alt: 'Burgundy leather wallet',
+    width: 1536,
+    height: 1024,
+    widths: CATEGORY_WIDTHS,
     position: 'center',
   },
   {
     label: 'Jackets',
     href: '/collections/jackets',
-    image: 'nova-jacket-side',
-    group: 'products' as const,
-    alt: 'Day Jacket',
+    src: '/campaign/category-jackets.png',
+    alt: 'Tan jacket close-up',
+    width: 1536,
+    height: 1024,
+    widths: CATEGORY_WIDTHS,
     position: 'center 40%',
   },
   {
     label: 'Jewelry',
     href: '/collections/womens-jewelry',
-    image: 'nova-earrings-side',
-    group: 'products' as const,
-    alt: 'Arc Earrings',
-    position: 'center',
+    src: '/campaign/category-jewelry.png',
+    alt: 'Gold necklace worn with a cream jacket',
+    width: 1536,
+    height: 1024,
+    widths: CATEGORY_WIDTHS,
+    position: 'center 55%',
   },
   {
     label: 'Backpacks',
     href: '/collections/backpacks',
-    image: 'nova-backpack-side',
-    group: 'products' as const,
-    alt: 'Commute Pack backpack',
+    src: '/campaign/category-backpacks.png',
+    alt: 'Dark backpack',
+    width: 1536,
+    height: 1024,
+    widths: CATEGORY_WIDTHS,
     position: 'center',
   },
   {
     label: 'Watches',
     href: '/collections/watches',
-    image: 'nova-watch-side',
-    group: 'products' as const,
-    alt: 'Line Watch on a leather strap',
+    src: '/campaign/category-watches.png',
+    alt: 'Watch worn on a wrist',
+    width: 1536,
+    height: 1024,
+    widths: CATEGORY_WIDTHS,
     position: 'center',
   },
 ]
+
+export function campaignSrcSet(src: string, widths: readonly number[], ext: 'avif' | 'webp'): string {
+  const base = src.replace(/\.png$/, '')
+  return widths.map((w) => `${base}-${w}.${ext} ${w}w`).join(', ')
+}

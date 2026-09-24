@@ -2,6 +2,7 @@
  * Generates responsive AVIF + WebP variants from assets-src/generated/*.png
  * into public/images/, a social share image, and the compressed hero video.
  * Run: npm run images
+ * Campaign stills only: node scripts/build-images.mjs --campaign
  */
 import sharp from 'sharp'
 import fs from 'node:fs'
@@ -11,6 +12,34 @@ import { fileURLToPath } from 'node:url'
 import ffmpegPath from 'ffmpeg-static'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+const campaignOnly = process.argv.includes('--campaign')
+
+/** Widths must match HERO_WIDTHS and CATEGORY_WIDTHS in src/campaign/styleInMotion.ts. */
+async function emitCampaign() {
+  const dir = path.join(root, 'public', 'campaign')
+  if (!fs.existsSync(dir)) return
+  const heroWidths = [768, 1200, 1600, 1910]
+  const thumbWidths = [480, 800, 1200]
+  for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.png') && !/-\d+\.png$/.test(f))) {
+    const name = path.basename(file, '.png')
+    const input = path.join(dir, file)
+    const meta = await sharp(input).metadata()
+    const widths = (name.startsWith('hero-') ? heroWidths : thumbWidths).filter((w) => w <= (meta.width ?? 0))
+    const avifQuality = name.startsWith('hero-') ? 62 : 56
+    const webpQuality = name.startsWith('hero-') ? 82 : 78
+    for (const w of widths) {
+      const base = path.join(dir, `${name}-${w}`)
+      await sharp(input).resize({ width: w, withoutEnlargement: true }).avif({ quality: avifQuality, effort: 5 }).toFile(`${base}.avif`)
+      await sharp(input).resize({ width: w, withoutEnlargement: true }).webp({ quality: webpQuality }).toFile(`${base}.webp`)
+    }
+    process.stdout.write(`✓ campaign/${name} (${widths.join(', ')})\n`)
+  }
+}
+
+if (campaignOnly) {
+  await emitCampaign()
+  process.exit(0)
+}
 const srcDir = path.join(root, 'assets-src', 'generated')
 const outDir = path.join(root, 'public', 'images')
 
@@ -73,3 +102,5 @@ if (ffmpegPath && fs.existsSync(video)) {
   fs.rmSync(path.join(mediaDir, 'stride-film-poster.png'))
   console.log(`✓ media/stride-film.mp4 ${Math.round(fs.statSync(path.join(mediaDir, 'stride-film.mp4')).size / 1024)} KB`)
 }
+
+await emitCampaign()

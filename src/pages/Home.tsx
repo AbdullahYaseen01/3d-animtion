@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router'
-import { campaignCategories, campaignHero } from '../campaign/styleInMotion'
+import { campaignCategories, campaignHero, campaignSrcSet } from '../campaign/styleInMotion'
 import { getProduct } from '../catalog'
 import { store } from '../config/store'
 import { productItem, track } from '../lib/analytics'
@@ -8,7 +8,6 @@ import { organizationLd, Seo, websiteLd } from '../lib/seo'
 import { ProductCard } from '../components/product/ProductCard'
 import { QuickShop, type QuickShopTarget } from '../components/product/QuickShop'
 import { Icon } from '../components/ui/Icon'
-import { ProductImage } from '../components/ui/ProductImage'
 import './Home.css'
 import '../components/product/ProductCard.css'
 
@@ -34,18 +33,31 @@ export default function Home() {
         jsonLd={[organizationLd(), websiteLd()]}
       />
 
-      <section className="motion" aria-labelledby="hero-title">
-        <div className="motion__photo" style={{ backgroundPosition: campaignHero.position }}>
-          {campaignHero.src && (
+      <section
+        className="motion"
+        aria-labelledby="hero-title"
+        style={
+          {
+            '--motion-pos': campaignHero.focal.desktop,
+            '--motion-pos-tablet': campaignHero.focal.tablet,
+            '--motion-pos-mobile': campaignHero.focal.mobile,
+          } as React.CSSProperties
+        }
+      >
+        <div className="motion__photo">
+          <picture>
+            <source type="image/avif" srcSet={campaignSrcSet(campaignHero.src, campaignHero.widths, 'avif')} sizes="100vw" />
+            <source type="image/webp" srcSet={campaignSrcSet(campaignHero.src, campaignHero.widths, 'webp')} sizes="100vw" />
             <img
               src={campaignHero.src}
               alt={campaignHero.alt}
               width={campaignHero.width}
               height={campaignHero.height}
+              sizes="100vw"
               fetchPriority="high"
-              decoding="sync"
+              decoding="async"
             />
-          )}
+          </picture>
         </div>
         <div className="motion__copy">
           <p className="motion__eyebrow">The NOVA edit</p>
@@ -76,13 +88,20 @@ export default function Home() {
               <li key={category.href}>
                 <Link to={category.href} className="edit-cats__link">
                   <span className="edit-cats__media">
-                    <ProductImage
-                      image={category.image}
-                      group={category.group}
-                      alt={category.alt}
-                      sizes="(min-width: 64rem) 12vw, 42vw"
-                      objectPosition={category.position}
-                    />
+                    <picture>
+                      <source type="image/avif" srcSet={campaignSrcSet(category.src, category.widths, 'avif')} sizes="(min-width: 64rem) 12vw, 42vw" />
+                      <source type="image/webp" srcSet={campaignSrcSet(category.src, category.widths, 'webp')} sizes="(min-width: 64rem) 12vw, 42vw" />
+                      <img
+                        src={category.src}
+                        alt={category.alt}
+                        width={category.width}
+                        height={category.height}
+                        sizes="(min-width: 64rem) 12vw, 42vw"
+                        loading="lazy"
+                        decoding="async"
+                        style={{ objectPosition: category.position }}
+                      />
+                    </picture>
                   </span>
                   <span className="edit-cats__label">{category.label}</span>
                 </Link>

@@ -18,11 +18,13 @@ const tree = (
   </StrictMode>
 )
 
-// Pages are prerendered without query strings, so URLs with filters or a selected
-// color would not match the static HTML; render those fresh instead of hydrating.
-if (container.hasChildNodes() && !window.location.search) {
+// Element children mean this HTML was prerendered. The dev placeholder is only a
+// comment, and query URLs are not prerendered, so those render from scratch.
+const prerendered = container.children.length > 0 && !window.location.search
+if (prerendered) {
   hydrateRoot(container, tree)
 } else {
+  container.replaceChildren()
   createRoot(container).render(tree)
 }
 
