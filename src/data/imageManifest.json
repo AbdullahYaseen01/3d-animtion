@@ -1,0 +1,241 @@
+{
+  "arc-oxblood-angle": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e9d9ca"
+  },
+  "arc-oxblood-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e8d9ca"
+  },
+  "court-black-angle": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e9d9cc"
+  },
+  "court-black-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e7d8ca"
+  },
+  "court-bone-gum-angle": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e8d9cc"
+  },
+  "court-bone-gum-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e6d8c9"
+  },
+  "drift-sage-angle": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f6ede6"
+  },
+  "drift-sage-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f6ede6"
+  },
+  "drift-stone-angle": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f5ede6"
+  },
+  "drift-stone-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4ede5"
+  },
+  "editorial-materials": {
+    "w": 1152,
+    "h": 864,
+    "widths": [
+      480,
+      768,
+      1024
+    ],
+    "bg": "#e9e4dd"
+  },
+  "editorial-onfoot": {
+    "w": 864,
+    "h": 1152,
+    "widths": [
+      480,
+      768
+    ],
+    "bg": "#f5cd9b"
+  },
+  "glide-charcoal-angle": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f3e9e0"
+  },
+  "glide-charcoal-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#efe5dc"
+  },
+  "glide-sand-angle": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4eae0"
+  },
+  "glide-sand-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f1e8de"
+  },
+  "ridge-moss-angle": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e3d2c2"
+  },
+  "ridge-moss-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#decebd"
+  },
+  "ridge-slate-angle": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e2d1c0"
+  },
+  "ridge-slate-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#dfcfbf"
+  },
+  "stride-carbon-angle": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e1d3ca"
+  },
+  "stride-carbon-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#dfd2c7"
+  },
+  "stride-chalk-ember-angle": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#dfd2c8"
+  },
+  "stride-chalk-ember-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ded1c6"
+  }
+}

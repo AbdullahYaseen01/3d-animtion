@@ -1,0 +1,153 @@
+.dialog {
+  padding: 0;
+  border: 0;
+  max-width: none;
+  max-height: none;
+  background: transparent;
+  color: var(--color-ink);
+  overflow: visible;
+}
+
+.dialog::backdrop {
+  background: var(--color-scrim);
+  animation: fade-in var(--dur-med) var(--ease-out);
+}
+
+.dialog__panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-paper);
+  box-shadow: var(--shadow-overlay);
+}
+
+.dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-5);
+  border-bottom: var(--border);
+}
+
+.dialog__title {
+  font-family: var(--font-display);
+  font-size: var(--display-xs);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.dialog__body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--space-5);
+}
+
+.dialog__footer {
+  padding: var(--space-4) var(--space-5) calc(var(--space-4) + env(safe-area-inset-bottom));
+  border-top: var(--border);
+  background: var(--color-paper-raised);
+}
+
+/* Drawers */
+.dialog--drawer-right,
+.dialog--drawer-left {
+  position: fixed;
+  inset: 0 0 0 auto;
+  height: 100dvh;
+  width: min(28rem, 100vw);
+  margin: 0;
+}
+
+.dialog--drawer-left {
+  inset: 0 auto 0 0;
+}
+
+.dialog--drawer-right .dialog__panel,
+.dialog--drawer-left .dialog__panel {
+  height: 100%;
+}
+
+.dialog--drawer-right[open] .dialog__panel {
+  animation: slide-in-right var(--dur-med) var(--ease-out);
+}
+
+.dialog--drawer-left[open] .dialog__panel {
+  animation: slide-in-left var(--dur-med) var(--ease-out);
+}
+
+/* Centered modal, becomes a bottom sheet on small screens */
+.dialog--modal {
+  width: min(56rem, calc(100vw - 2 * var(--gutter)));
+  margin: auto;
+}
+
+.dialog--modal .dialog__panel {
+  max-height: min(90dvh, 52rem);
+  border-radius: var(--radius-md);
+}
+
+.dialog--modal[open] .dialog__panel {
+  animation: rise-in var(--dur-med) var(--ease-out);
+}
+
+@media (max-width: 40rem) {
+  .dialog--modal,
+  .dialog--sheet {
+    width: 100vw;
+    margin: auto 0 0;
+  }
+
+  .dialog--modal .dialog__panel,
+  .dialog--sheet .dialog__panel {
+    max-height: 92dvh;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+}
+
+.dialog--sheet {
+  width: min(40rem, 100vw);
+  margin: auto auto 0;
+}
+
+.dialog--sheet .dialog__panel {
+  max-height: 90dvh;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.dialog--sheet[open] .dialog__panel {
+  animation: rise-in var(--dur-med) var(--ease-out);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dialog *,
+  .dialog::backdrop {
+    animation: none !important;
+  }
+}

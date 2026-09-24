@@ -1,0 +1,55 @@
+[
+  {
+    "path": "/",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shop",
+    "width": 375,
+    "status": 404,
+    "horizontalOverflowPx": 0,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 ()",
+      "Failed to load resource: the server responded with a status of 404 ()"
+    ]
+  },
+  {
+    "path": "/products/x",
+    "width": 375,
+    "status": 404,
+    "horizontalOverflowPx": 0,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 ()"
+    ]
+  },
+  {
+    "path": "/",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": [
+      "NotFoundError: Failed to execute 'insertBefore' on 'Node': The node before which the new node is to be inserted is not a child of this node."
+    ]
+  },
+  {
+    "path": "/shop",
+    "width": 1440,
+    "status": 404,
+    "horizontalOverflowPx": 0,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 ()"
+    ]
+  },
+  {
+    "path": "/products/x",
+    "width": 1440,
+    "status": 404,
+    "horizontalOverflowPx": 0,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 ()"
+    ]
+  }
+]

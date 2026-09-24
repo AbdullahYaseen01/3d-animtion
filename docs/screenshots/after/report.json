@@ -1,0 +1,812 @@
+[
+  {
+    "path": "/",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shop",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/collections/trail",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/search?q=trail",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/products/stride-runner",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/cart",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/wishlist",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/checkout/success",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/about",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/fit-guide",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shipping",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/returns",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/faq",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/contact",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/privacy",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/terms",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/guides",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/guides/how-to-choose-running-shoes",
+    "width": 320,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/missing-page",
+    "width": 320,
+    "status": 404,
+    "horizontalOverflowPx": 0,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  {
+    "path": "/",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shop",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/collections/trail",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/search?q=trail",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/products/stride-runner",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/cart",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/wishlist",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/checkout/success",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/about",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/fit-guide",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shipping",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/returns",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/faq",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/contact",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/privacy",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/terms",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/guides",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/guides/how-to-choose-running-shoes",
+    "width": 375,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/missing-page",
+    "width": 375,
+    "status": 404,
+    "horizontalOverflowPx": 0,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  {
+    "path": "/",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shop",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/collections/trail",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/search?q=trail",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/products/stride-runner",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/cart",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/wishlist",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/checkout/success",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/about",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/fit-guide",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shipping",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/returns",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/faq",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/contact",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/privacy",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/terms",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/guides",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/guides/how-to-choose-running-shoes",
+    "width": 390,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/missing-page",
+    "width": 390,
+    "status": 404,
+    "horizontalOverflowPx": 0,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  {
+    "path": "/",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shop",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/collections/trail",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/search?q=trail",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/products/stride-runner",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/cart",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/wishlist",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/checkout/success",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/about",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/fit-guide",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shipping",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/returns",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/faq",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/contact",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/privacy",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/terms",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/guides",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/guides/how-to-choose-running-shoes",
+    "width": 768,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/missing-page",
+    "width": 768,
+    "status": 404,
+    "horizontalOverflowPx": 0,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  {
+    "path": "/",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shop",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/collections/trail",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/search?q=trail",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/products/stride-runner",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/cart",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/wishlist",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/checkout/success",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/about",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/fit-guide",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shipping",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/returns",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/faq",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/contact",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/privacy",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/terms",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/guides",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/guides/how-to-choose-running-shoes",
+    "width": 1024,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/missing-page",
+    "width": 1024,
+    "status": 404,
+    "horizontalOverflowPx": 0,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  {
+    "path": "/",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shop",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/collections/trail",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/search?q=trail",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/products/stride-runner",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/cart",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/wishlist",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/checkout/success",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/about",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/fit-guide",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/shipping",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/returns",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/faq",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/contact",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/privacy",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/terms",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/guides",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/guides/how-to-choose-running-shoes",
+    "width": 1440,
+    "status": 200,
+    "horizontalOverflowPx": 0,
+    "errors": []
+  },
+  {
+    "path": "/missing-page",
+    "width": 1440,
+    "status": 404,
+    "horizontalOverflowPx": 0,
+    "errors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  }
+]

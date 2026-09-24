@@ -1,17 +1,18 @@
 node_modules
 dist
+dist-ssr
+.vercel
 .DS_Store
 *.local
 .env
 .env.*
+!.env.example
 
-# Large source assets — not required for Vercel deploy
-public/shoe-animation.mp4
-public/frames/
-public/models/
+# QA output (screenshots/perf runs are regenerated; committed baselines live in docs/)
+qa-output/
 scripts/.tmp-*
-*.mp4
-!public/hero-loop.mp4
 
-# Duplicate PNG exports (WebP versions are used)
-public/process/*.png
+# Large source media: only the optimized web film and the source loop are tracked
+*.mp4
+!assets-src/hero-loop.mp4
+!public/media/*.mp4

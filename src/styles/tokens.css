@@ -1,0 +1,97 @@
+/*
+ * NOVA design tokens.
+ * Contrast (WCAG 2.2) on --color-paper: ink 17.2:1, muted 6.3:1, ember 5.4:1, danger 6.1:1.
+ * On --color-night: on-night 16.6:1, on-night-muted 8.4:1.
+ */
+:root {
+  /* Color */
+  --color-paper: #f6f4ef;
+  --color-paper-raised: #fbfaf7;
+  --color-stone: #e9e6de;
+  --color-stone-strong: #d6d0c3;
+  --color-line: #d9d4c9;
+  --color-ink: #161616;
+  --color-ink-soft: #33312e;
+  --color-muted: #5e5a53;
+  --color-ember: #a8442b;
+  --color-ember-strong: #8b3722;
+  --color-ember-tint: #f3e3dc;
+  --color-night: #121110;
+  --color-night-raised: #1d1b19;
+  --color-on-night: #f3f0ea;
+  --color-on-night-muted: #b5afa5;
+  --color-success: #2f6b3f;
+  --color-success-tint: #e3efe5;
+  --color-danger: #a1261b;
+  --color-danger-tint: #f7e1de;
+  --color-focus: #a8442b;
+  --color-scrim: rgb(18 17 16 / 0.52);
+
+  /* Type */
+  --font-display: 'Big Shoulders Display Variable', 'Arial Narrow', 'Roboto Condensed', sans-serif-condensed, sans-serif;
+  --font-body: 'Instrument Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --text-2xs: 0.6875rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1.06rem + 0.3vw, 1.25rem);
+  --text-xl: clamp(1.3rem, 1.18rem + 0.6vw, 1.625rem);
+  --display-xs: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
+  --display-sm: clamp(1.875rem, 1.5rem + 1.7vw, 2.75rem);
+  --display-md: clamp(2.375rem, 1.7rem + 3vw, 4.25rem);
+  --display-lg: clamp(3rem, 1.9rem + 5.2vw, 6.5rem);
+  --display-xl: clamp(3.4rem, 1.6rem + 8.4vw, 9.5rem);
+
+  --leading-tight: 0.92;
+  --leading-snug: 1.2;
+  --leading-body: 1.6;
+  --tracking-display: 0.005em;
+  --tracking-caps: 0.14em;
+
+  /* Space (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-section: clamp(3.5rem, 2.2rem + 5.5vw, 7.5rem);
+
+  /* Layout */
+  --container-max: 90rem;
+  --container-narrow: 46rem;
+  --gutter: clamp(1rem, 0.5rem + 2.6vw, 3rem);
+  --announcement-h: 2.25rem;
+  --header-h: 4rem;
+
+  /* Shape */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+  --border: 1px solid var(--color-line);
+  --shadow-raised: 0 1px 2px rgb(22 22 22 / 0.06), 0 8px 24px -12px rgb(22 22 22 / 0.18);
+  --shadow-overlay: 0 30px 80px -24px rgb(18 17 16 / 0.45);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-med: 260ms;
+  --dur-slow: 520ms;
+
+  /* Touch */
+  --tap: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-med: 0ms;
+    --dur-slow: 0ms;
+  }
+}

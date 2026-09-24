@@ -1,0 +1,30 @@
+{
+  "base": "http://localhost:4173",
+  "routes": [
+    "/",
+    "/shop",
+    "/collections/trail",
+    "/search?q=leather",
+    "/products/stride-runner",
+    "/products/arc-high",
+    "/cart",
+    "/wishlist",
+    "/checkout/success",
+    "/about",
+    "/fit-guide",
+    "/shipping",
+    "/returns",
+    "/faq",
+    "/contact",
+    "/privacy",
+    "/terms",
+    "/guides",
+    "/guides/how-to-measure-your-feet",
+    "/missing-page"
+  ],
+  "widths": [
+    390,
+    1280
+  ],
+  "violations": []
+}

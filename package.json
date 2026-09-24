@@ -1,42 +1,47 @@
 {
-  "name": "shoe-3d-showcase",
+  "name": "nova-storefront",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview",
-    "extract-frames": "node scripts/extract-frames.mjs",
-    "optimize-frames": "node scripts/optimize-frames.mjs",
-    "setup-process-images": "node scripts/setup-process-images.mjs",
-    "create-hero-loop": "node scripts/create-hero-loop.mjs",
-    "setup-showcase-images": "node scripts/setup-showcase-images.mjs",
-    "setup-process-stock": "node scripts/setup-process-stock-images.mjs",
-    "setup-process-shoes": "node scripts/setup-process-shoe-images.mjs",
-    "setup-feature-shoes": "node scripts/setup-feature-shoe-images.mjs",
-    "setup-showcase-gallery": "node scripts/setup-showcase-gallery.mjs",
-    "prepare-assets": "node scripts/extract-frames.mjs && node scripts/optimize-frames.mjs && node scripts/setup-showcase-images.mjs && node scripts/create-hero-loop.mjs"
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "serve": "node scripts/serve.mjs",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "images": "node scripts/build-images.mjs",
+    "qa:screens": "node scripts/qa/screenshots.mjs",
+    "qa:perf": "node scripts/qa/perf.mjs",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@react-spring/three": "^10.1.1",
-    "@react-three/drei": "^10.0.6",
-    "@react-three/fiber": "^9.1.2",
-    "framer-motion": "^12.6.3",
-    "gsap": "^3.12.7",
-    "lenis": "^1.2.3",
-    "maath": "^0.10.8",
+    "@fontsource-variable/big-shoulders-display": "^5.3.0",
+    "@fontsource-variable/instrument-sans": "^5.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "three": "^0.175.0"
+    "react-router": "^7.18.4",
+    "stripe": "^22.6.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^26.6.2",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@types/three": "^0.175.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "axe-core": "^4.13.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "ffmpeg-static": "^5.3.0",
+    "globals": "^17.12.0",
+    "playwright": "^1.63.0",
+    "sharp": "^0.35.4",
     "typescript": "~5.7.2",
-    "vite": "^6.2.0"
+    "typescript-eslint": "^8.70.1",
+    "vite": "^6.2.0",
+    "vitest": "^3.2.7"
   }
 }

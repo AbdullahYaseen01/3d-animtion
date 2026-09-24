@@ -1,0 +1,221 @@
+.variant-picker {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.vp-group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.vp-group:focus {
+  outline: none;
+}
+
+.vp-group:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 6px;
+}
+
+.vp-legend {
+  display: block;
+  width: 100%;
+  margin-bottom: var(--space-3);
+  padding: 0;
+  font-size: var(--text-sm);
+}
+
+.vp-legend strong {
+  font-weight: 600;
+}
+
+.vp-legend--row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.vp-guide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: var(--tap);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.vp-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.vp-swatch {
+  display: grid;
+  place-items: center;
+  width: var(--tap);
+  height: var(--tap);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.vp-swatch__chip {
+  --swatch-a: #ccc;
+  --swatch-b: var(--swatch-a);
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--swatch-a) 50%, var(--swatch-b) 50%);
+  box-shadow:
+    inset 0 0 0 1px rgb(22 22 22 / 0.18),
+    0 0 0 3px var(--color-paper),
+    0 0 0 4px transparent;
+  transition: box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.vp-swatch:hover .vp-swatch__chip {
+  box-shadow:
+    inset 0 0 0 1px rgb(22 22 22 / 0.18),
+    0 0 0 3px var(--color-paper),
+    0 0 0 4px var(--color-stone-strong);
+}
+
+.vp-swatch input:checked + .vp-swatch__chip {
+  box-shadow:
+    inset 0 0 0 1px rgb(22 22 22 / 0.18),
+    0 0 0 3px var(--color-paper),
+    0 0 0 5px var(--color-ink);
+}
+
+.vp-swatch input:focus-visible + .vp-swatch__chip {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 6px;
+}
+
+.vp-swatch__chip--out::after {
+  content: '';
+  position: absolute;
+  inset: 45% -2px auto;
+  height: 2px;
+  background: var(--color-ink);
+  transform: rotate(-45deg);
+}
+
+.vp-segmented {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.vp-option,
+.vp-size {
+  position: relative;
+  display: grid;
+  cursor: pointer;
+}
+
+.vp-option input,
+.vp-size input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: inherit;
+}
+
+.vp-option > span,
+.vp-size > span[aria-hidden] {
+  display: grid;
+  place-items: center;
+  min-height: 3rem;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--color-stone-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-paper-raised);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+
+.vp-option:hover > span,
+.vp-size:hover > span[aria-hidden] {
+  border-color: var(--color-ink);
+}
+
+.vp-option input:checked + span,
+.vp-size input:checked + span {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.vp-option input:checked + span .muted {
+  color: inherit;
+}
+
+.vp-option input:focus-visible + span,
+.vp-size input:focus-visible + span {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.vp-sizes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3.75rem, 1fr));
+  gap: var(--space-2);
+}
+
+.vp-sizes .vp-size > span[aria-hidden] {
+  padding: 0 var(--space-1);
+}
+
+.vp-size--out {
+  cursor: not-allowed;
+}
+
+.vp-size--out > span[aria-hidden] {
+  color: var(--color-muted);
+  background:
+    linear-gradient(
+      to top right,
+      transparent calc(50% - 0.5px),
+      var(--color-stone-strong) calc(50% - 0.5px),
+      var(--color-stone-strong) calc(50% + 0.5px),
+      transparent calc(50% + 0.5px)
+    ),
+    var(--color-stone);
+  border-style: dashed;
+}
+
+.vp-size--out:hover > span[aria-hidden] {
+  border-color: var(--color-stone-strong);
+}
+
+.vp-group--error .vp-sizes > .vp-size:not(.vp-size--out) > span[aria-hidden] {
+  border-color: var(--color-danger);
+}
+
+.vp-error {
+  margin-bottom: var(--space-3);
+}
+
+.vp-help {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+.vp-stock {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ember-strong);
+}

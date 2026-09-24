@@ -1,0 +1,124 @@
+.about-head {
+  padding-top: var(--space-4);
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: var(--space-7);
+  align-items: center;
+  padding-block: var(--space-6) var(--space-4);
+}
+
+.about-hero h1 {
+  font-size: var(--display-lg);
+  margin-block: var(--space-3) var(--space-5);
+}
+
+.about-hero__media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  max-height: 40rem;
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: var(--space-6) var(--space-5);
+  list-style: none;
+  padding: 0;
+}
+
+.principles li {
+  display: grid;
+  gap: var(--space-2);
+  align-content: start;
+  padding-top: var(--space-4);
+  border-top: 2px solid var(--color-ink);
+}
+
+.principles__num {
+  font-family: var(--font-display);
+  font-size: var(--display-xs);
+  font-weight: 700;
+  color: var(--color-ember);
+}
+
+.principles h3 {
+  font-size: var(--text-lg);
+}
+
+.principles p {
+  color: var(--color-ink-soft);
+}
+
+.about-materials__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.about-materials__media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.about-materials__copy {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.about-materials__copy h2 {
+  font-size: var(--display-md);
+}
+
+.about-materials__copy p {
+  color: var(--color-on-night-muted);
+}
+
+.about-materials__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin-top: var(--space-3);
+}
+
+.about-materials__list a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--tap);
+  font-weight: 600;
+  color: var(--color-on-night);
+  text-decoration: none;
+}
+
+.about-materials__list a:hover {
+  text-decoration: underline;
+}
+
+.about-promise {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: center;
+  text-align: center;
+}
+
+.about-promise h2 {
+  font-size: var(--display-md);
+}
+
+@media (max-width: 64rem) {
+  .about-hero,
+  .about-materials__grid {
+    grid-template-columns: 1fr;
+  }
+  .about-hero__media img {
+    aspect-ratio: 4 / 3;
+  }
+}

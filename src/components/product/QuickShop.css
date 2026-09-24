@@ -1,0 +1,64 @@
+.quick-shop .dialog__header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  border: 0;
+  padding: var(--space-2);
+}
+
+.quick-shop .dialog__panel {
+  position: relative;
+}
+
+.quick-shop .dialog__body {
+  padding: 0;
+}
+
+.quick-shop__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.quick-shop__media {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+}
+
+.quick-shop__info {
+  display: grid;
+  gap: var(--space-5);
+  align-content: start;
+  padding: var(--space-7) var(--space-6) var(--space-6);
+}
+
+.quick-shop__name {
+  font-family: var(--font-display);
+  font-size: var(--display-sm);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-block: var(--space-2);
+}
+
+.quick-shop__price {
+  font-size: var(--text-lg);
+}
+
+@media (max-width: 40rem) {
+  .quick-shop__grid {
+    grid-template-columns: 1fr;
+  }
+  .quick-shop__media {
+    max-height: 38vh;
+    overflow: hidden;
+  }
+  .quick-shop__media img {
+    max-height: 38vh;
+    width: auto;
+  }
+  .quick-shop__info {
+    padding: var(--space-5);
+  }
+}
