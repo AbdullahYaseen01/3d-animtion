@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router'
-import { activeCategories, getProduct, productsInCategory } from '../catalog'
+import { activeCategories, getColor, getProduct, productsInCategory } from '../catalog'
 import { store } from '../config/store'
 import { productItem, track } from '../lib/analytics'
+import { formatMoney } from '../lib/money'
 import { organizationLd, Seo, websiteLd } from '../lib/seo'
 import { ProductCard } from '../components/product/ProductCard'
 import { QuickShop, type QuickShopTarget } from '../components/product/QuickShop'
@@ -14,8 +15,12 @@ import '../components/product/ProductCard.css'
 const FEATURED = ['stride-runner', 'mini-crossbody', 'day-jacket', 'line-watch']
 
 export default function Home() {
+  const flagship = getProduct('stride-runner')!
+  const [heroColor, setHeroColor] = useState(flagship.colors[0].slug)
   const [quick, setQuick] = useState<QuickShopTarget | null>(null)
   const categories = activeCategories()
+  const color = getColor(flagship, heroColor)
+  const heroImage = color.images[0]
   const featured = useMemo(() => FEATURED.map((id) => getProduct(id)).filter((p) => !!p), [])
   const bags = ['mini-crossbody', 'slim-wallet', 'commute-pack'].map((id) => getProduct(id)).filter((p) => !!p)
   const jewels = ['arc-earrings', 'line-watch'].map((id) => getProduct(id)).filter((p) => !!p)
@@ -35,35 +40,70 @@ export default function Home() {
       />
 
       <section className="hero" aria-labelledby="hero-title">
-        <div className="hero__layout">
+        <div className="hero__canvas">
           <div className="hero__copy">
             <p className="eyebrow eyebrow--ember">The NOVA edit</p>
             <h1 id="hero-title" className="hero__title">
-              Style for every side of you.
+              Make your
+              <br />
+              next move.
             </h1>
-            <p className="lede hero__lede">Discover shoes, bags, jackets, jewelry, and watches for your everyday rotation.</p>
+            <p className="hero__lede">Discover standout footwear and everyday essentials.</p>
             <div className="hero__ctas">
-              <Link to="/shop" className="btn btn--lg">
-                Shop all <Icon name="arrow" size={18} />
+              <Link to="/collections/shoes" className="btn btn--lg">
+                Shop shoes <Icon name="arrow" size={18} />
               </Link>
-              <a href="#shop-categories" className="btn btn--lg btn--secondary">
-                Explore collections
-              </a>
+              <Link to="/shop" className="btn btn--lg btn--secondary">
+                Explore all
+              </Link>
             </div>
+            <ul role="list" className="hero__facts">
+              {store.shipping.standard.priceCents === 0 && (
+                <li>
+                  <Icon name="check" size={16} /> Free US shipping
+                </li>
+              )}
+              <li>
+                <Icon name="check" size={16} /> {store.returns.windowDays}-day returns
+              </li>
+            </ul>
           </div>
-          <div className="hero__stage" aria-hidden="true">
-            <Link to="/products/stride-runner" className="hero__shot hero__shot--lead" style={{ background: imageBg('stride-chalk-ember-side') }} tabIndex={-1}>
-              <ProductImage image="stride-chalk-ember-side" alt="" sizes="(min-width: 64rem) 36vw, 70vw" priority />
+          <div className="hero__visual">
+            <Link
+              to={`/products/${flagship.slug}?color=${color.slug}`}
+              className="hero__plate"
+              style={{ background: imageBg(heroImage) }}
+            >
+              <ProductImage
+                key={heroImage}
+                image={heroImage}
+                alt={`${flagship.name} in ${color.name}`}
+                sizes="(min-width: 64rem) 42vw, 92vw"
+                priority
+              />
             </Link>
-            <Link to="/products/mini-crossbody" className="hero__shot" style={{ background: imageBg('nova-handbag-side') }} tabIndex={-1}>
-              <ProductImage image="nova-handbag-side" alt="" sizes="(min-width: 64rem) 18vw, 40vw" />
-            </Link>
-            <Link to="/products/day-jacket" className="hero__shot" style={{ background: imageBg('nova-jacket-side') }} tabIndex={-1}>
-              <ProductImage image="nova-jacket-side" alt="" sizes="(min-width: 64rem) 18vw, 40vw" />
-            </Link>
-            <Link to="/products/line-watch" className="hero__shot" style={{ background: imageBg('nova-watch-side') }} tabIndex={-1}>
-              <ProductImage image="nova-watch-side" alt="" sizes="(min-width: 64rem) 18vw, 40vw" />
-            </Link>
+            <div className="hero__meta">
+              <Link to={`/products/${flagship.slug}?color=${color.slug}`} className="hero__caption">
+                <span className="hero__caption-name">{flagship.name}</span>
+                <span className="muted">
+                  {color.name} · {formatMoney(flagship.priceCents)}
+                </span>
+              </Link>
+              <div className="hero__swatches" role="group" aria-label={`${flagship.name} colors`}>
+                {flagship.colors.map((c) => (
+                  <button
+                    key={c.slug}
+                    type="button"
+                    className={`product-card__swatch${c.slug === color.slug ? ' is-active' : ''}`}
+                    aria-pressed={c.slug === color.slug}
+                    aria-label={c.name}
+                    onClick={() => setHeroColor(c.slug)}
+                  >
+                    <span className="swatch" style={{ '--swatch-a': c.swatch[0], '--swatch-b': c.swatch[1] ?? c.swatch[0] } as React.CSSProperties} />
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

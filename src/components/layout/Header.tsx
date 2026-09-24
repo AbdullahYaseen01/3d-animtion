@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router'
 import { allProducts, getCategory } from '../../catalog'
 import { store } from '../../config/store'
@@ -43,11 +43,30 @@ export function Header() {
   const wishlist = useWishlist()
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
+  const [bagsOpen, setBagsOpen] = useState(false)
+  const bagsRef = useRef<HTMLLIElement>(null)
   const location = useLocation()
   useEffect(() => {
     setMenuOpen(false)
     setSearchOpen(false)
+    setBagsOpen(false)
   }, [location.pathname, location.search])
+
+  useEffect(() => {
+    if (!bagsOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setBagsOpen(false)
+    }
+    const onPointer = (e: PointerEvent) => {
+      if (!bagsRef.current?.contains(e.target as Node)) setBagsOpen(false)
+    }
+    document.addEventListener('keydown', onKey)
+    document.addEventListener('pointerdown', onPointer)
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.removeEventListener('pointerdown', onPointer)
+    }
+  }, [bagsOpen])
 
   const count = hydrated ? cart.itemCount : 0
 
@@ -78,8 +97,18 @@ export function Header() {
             <li>
               <NavLink to="/collections/shoes">Shoes</NavLink>
             </li>
-            <li className="nav-drop">
-              <NavLink to="/collections/handbags">Bags & wallets</NavLink>
+            <li
+              className={`nav-drop${bagsOpen ? ' is-open' : ''}`}
+              ref={bagsRef}
+              onMouseEnter={() => setBagsOpen(true)}
+              onMouseLeave={() => setBagsOpen(false)}
+              onBlur={(e) => {
+                if (!bagsRef.current?.contains(e.relatedTarget as Node)) setBagsOpen(false)
+              }}
+            >
+              <NavLink to="/collections/handbags" aria-expanded={bagsOpen} onFocus={() => setBagsOpen(true)}>
+                Bags & wallets
+              </NavLink>
               <ul className="nav-drop__panel" role="list">
                 {BAG_LINKS.map((item) => (
                   <li key={item.slug}>
