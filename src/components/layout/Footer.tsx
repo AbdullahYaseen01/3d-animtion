@@ -11,8 +11,8 @@ export function Footer() {
       <div className="container">
         <div className="site-footer__signup">
           <div>
-            <h2 className="site-footer__title">Stay in step</h2>
-            <p className="muted">New releases, restocks and fit notes. Unsubscribe anytime.</p>
+            <h2 className="site-footer__title">Notes from NOVA</h2>
+            <p className="muted">New arrivals and restocks. Unsubscribe anytime.</p>
           </div>
           <NewsletterForm source="footer" tone="dark" />
         </div>
@@ -21,7 +21,7 @@ export function Footer() {
           <nav aria-labelledby="footer-shop">
             <h3 id="footer-shop">Shop</h3>
             <ul role="list">
-              <li><Link to="/shop">All shoes</Link></li>
+              <li><Link to="/shop">Shop all</Link></li>
               {categories.map((c) => (
                 <li key={c.slug}>
                   <Link to={`/collections/${c.slug}`}>{c.name}</Link>
@@ -33,7 +33,7 @@ export function Footer() {
           <nav aria-labelledby="footer-help">
             <h3 id="footer-help">Help</h3>
             <ul role="list">
-              <li><Link to="/fit-guide">Size & fit guide</Link></li>
+              <li><Link to="/fit-guide">Shoe size & fit</Link></li>
               <li><Link to="/shipping">Shipping</Link></li>
               <li><Link to="/returns">Returns</Link></li>
               <li><Link to="/faq">FAQ</Link></li>

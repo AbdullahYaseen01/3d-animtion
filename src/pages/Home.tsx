@@ -1,12 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router'
-import { activeCategories, allProducts, getProduct, productsInCategory } from '../catalog'
+import { activeCategories, getProduct, productsInCategory } from '../catalog'
 import { store } from '../config/store'
-import { guides } from '../data/guides'
 import { productItem, track } from '../lib/analytics'
-import { formatMoney } from '../lib/money'
 import { organizationLd, Seo, websiteLd } from '../lib/seo'
-import { CampaignFilm } from '../components/home/CampaignFilm'
 import { ProductCard } from '../components/product/ProductCard'
 import { QuickShop, type QuickShopTarget } from '../components/product/QuickShop'
 import { Icon } from '../components/ui/Icon'
@@ -14,137 +11,82 @@ import { ProductImage, imageBg } from '../components/ui/ProductImage'
 import './Home.css'
 import '../components/product/ProductCard.css'
 
-const FLAGSHIP = 'stride-runner'
+const FEATURED = ['stride-runner', 'mini-crossbody', 'day-jacket', 'line-watch']
 
 export default function Home() {
-  const flagship = getProduct(FLAGSHIP)!
-  const [heroColor, setHeroColor] = useState(flagship.colors[0].slug)
   const [quick, setQuick] = useState<QuickShopTarget | null>(null)
-  const products = allProducts()
   const categories = activeCategories()
-  const heroImage = flagship.colors.find((c) => c.slug === heroColor)!.images[0]
-  const drop = flagship.specs.find((s) => s.label === 'Heel-to-toe drop')?.value
-  const weight = flagship.specs.find((s) => s.label === 'Weight')?.value
+  const featured = useMemo(() => FEATURED.map((id) => getProduct(id)).filter((p) => !!p), [])
+  const bags = ['mini-crossbody', 'slim-wallet', 'commute-pack'].map((id) => getProduct(id)).filter((p) => !!p)
+  const jewels = ['arc-earrings', 'line-watch'].map((id) => getProduct(id)).filter((p) => !!p)
 
   useEffect(() => {
-    track('view_item_list', { item_list_id: 'home_lineup', item_list_name: 'Home lineup', items: products.map((p) => productItem(p)) })
-  }, [products])
-
-  const facts = useMemo(
-    () => [
-      store.shipping.standard.priceCents === 0 ? 'Free US shipping' : null,
-      `${store.returns.windowDays}-day returns`,
-      products.some((p) => p.widths.length > 1) ? 'Standard & wide widths' : null,
-    ].filter(Boolean) as string[],
-    [products],
-  )
+    track('view_item_list', { item_list_id: 'home_featured', item_list_name: 'Featured picks', items: featured.map((p) => productItem(p)) })
+  }, [featured])
 
   return (
     <>
       <Seo
-        title="NOVA | Running, Trail & Everyday Sneakers"
+        title="NOVA | Shoes, Bags, Jackets, Jewelry & Watches"
         rawTitle
-        description="Shop NOVA sneakers: cushioned running shoes, grippy trail shoes, leather lifestyle styles and lightweight everyday knits. US sizing, wide widths and 30-day returns."
+        description="Shop the NOVA edit: shoes, handbags, wallets, jackets, women's jewelry, backpacks and watches. US shipping and 30-day returns."
         path="/"
         jsonLd={[organizationLd(), websiteLd()]}
       />
 
       <section className="hero" aria-labelledby="hero-title">
-        <div className="container hero__grid">
+        <div className="hero__layout">
           <div className="hero__copy">
-            <p className="eyebrow eyebrow--ember">New season · {products.length} styles</p>
+            <p className="eyebrow eyebrow--ember">The NOVA edit</p>
             <h1 id="hero-title" className="hero__title">
-              Step beyond <span>the everyday</span>
+              Style for every side of you.
             </h1>
-            <p className="lede hero__lede">
-              Cushioned runners, grippy trail shoes and easy everyday sneakers, in US sizing with standard and wide options.
-            </p>
+            <p className="lede hero__lede">Discover shoes, bags, jackets, jewelry, and watches for your everyday rotation.</p>
             <div className="hero__ctas">
               <Link to="/shop" className="btn btn--lg">
-                Shop all shoes <Icon name="arrow" size={18} />
+                Shop all <Icon name="arrow" size={18} />
               </Link>
-              <Link to={`/products/${flagship.slug}`} className="btn btn--lg btn--secondary">
-                Shop the {flagship.name}
-              </Link>
+              <a href="#shop-categories" className="btn btn--lg btn--secondary">
+                Explore collections
+              </a>
             </div>
-            <ul role="list" className="hero__facts">
-              {facts.map((f) => (
-                <li key={f}>
-                  <Icon name="check" size={16} /> {f}
-                </li>
-              ))}
-            </ul>
           </div>
-
-          <div className="hero__stage">
-            <Link
-              to={`/products/${flagship.slug}?color=${heroColor}`}
-              className="hero__plate"
-              style={{ background: imageBg(heroImage) }}
-              aria-label={`${flagship.name}, ${formatMoney(flagship.priceCents)}. View product`}
-            >
-              {flagship.colors.map((c) => (
-                <span key={c.slug} className={`hero__shot${c.slug === heroColor ? ' is-active' : ''}`} aria-hidden={c.slug !== heroColor}>
-                  <ProductImage
-                    image={c.images[0]}
-                    alt={c.slug === heroColor ? `${flagship.name} in ${c.name}` : ''}
-                    sizes="(min-width: 64rem) 48vw, 100vw"
-                    priority={c.slug === flagship.colors[0].slug}
-                  />
-                </span>
-              ))}
+          <div className="hero__stage" aria-hidden="true">
+            <Link to="/products/stride-runner" className="hero__shot hero__shot--lead" style={{ background: imageBg('stride-chalk-ember-side') }} tabIndex={-1}>
+              <ProductImage image="stride-chalk-ember-side" alt="" sizes="(min-width: 64rem) 36vw, 70vw" priority />
             </Link>
-            <div className="hero__caption">
-              <div>
-                <p className="hero__caption-name">{flagship.name}</p>
-                <p className="muted">
-                  {flagship.tagline} · {formatMoney(flagship.priceCents)}
-                </p>
-              </div>
-              <div className="hero__swatches" role="group" aria-label="Preview colors">
-                {flagship.colors.map((c) => (
-                  <button
-                    key={c.slug}
-                    type="button"
-                    className={`product-card__swatch${c.slug === heroColor ? ' is-active' : ''}`}
-                    aria-pressed={c.slug === heroColor}
-                    aria-label={c.name}
-                    onClick={() => setHeroColor(c.slug)}
-                  >
-                    <span className="swatch" style={{ '--swatch-a': c.swatch[0], '--swatch-b': c.swatch[1] ?? c.swatch[0] } as React.CSSProperties} />
-                  </button>
-                ))}
-              </div>
-            </div>
+            <Link to="/products/mini-crossbody" className="hero__shot" style={{ background: imageBg('nova-handbag-side') }} tabIndex={-1}>
+              <ProductImage image="nova-handbag-side" alt="" sizes="(min-width: 64rem) 18vw, 40vw" />
+            </Link>
+            <Link to="/products/day-jacket" className="hero__shot" style={{ background: imageBg('nova-jacket-side') }} tabIndex={-1}>
+              <ProductImage image="nova-jacket-side" alt="" sizes="(min-width: 64rem) 18vw, 40vw" />
+            </Link>
+            <Link to="/products/line-watch" className="hero__shot" style={{ background: imageBg('nova-watch-side') }} tabIndex={-1}>
+              <ProductImage image="nova-watch-side" alt="" sizes="(min-width: 64rem) 18vw, 40vw" />
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="section section--tight" aria-labelledby="cats-title">
+      <section id="shop-categories" className="section section--tight" aria-labelledby="cats-title">
         <div className="container">
           <div className="section-head">
-            <h2 id="cats-title">Shop by activity</h2>
+            <h2 id="cats-title">Shop by category</h2>
             <Link to="/shop" className="link-arrow">
-              View all shoes <Icon name="arrow" size={18} />
+              Shop all <Icon name="arrow" size={18} />
             </Link>
           </div>
           <ul role="list" className="cat-tiles">
             {categories.map((c) => {
               const lead = productsInCategory(c.slug)[0]
-              const img = lead.colors[0].images[0]
+              const img = lead?.colors[0].images[0]
               return (
                 <li key={c.slug}>
                   <Link to={`/collections/${c.slug}`} className="cat-tile">
-                    <span className="cat-tile__media" style={{ background: imageBg(img) }}>
-                      <ProductImage image={img} alt="" sizes="(min-width: 64rem) 22vw, 46vw" />
+                    <span className="cat-tile__media" style={img ? { background: imageBg(img) } : undefined}>
+                      {img && <ProductImage image={img} alt="" sizes="(min-width: 64rem) 14vw, 46vw" />}
                     </span>
-                    <span className="cat-tile__text">
-                      <span className="cat-tile__name">{c.name}</span>
-                      <span className="cat-tile__summary">{c.summary}</span>
-                      <span className="cat-tile__count">
-                        {c.count} {c.count === 1 ? 'style' : 'styles'} <Icon name="arrow" size={16} />
-                      </span>
-                    </span>
+                    <span className="cat-tile__name">{c.name}</span>
                   </Link>
                 </li>
               )
@@ -153,63 +95,66 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="lineup-title">
+      <section className="section" aria-labelledby="featured-title">
         <div className="container">
           <div className="section-head">
             <div>
-              <p className="eyebrow">The lineup</p>
-              <h2 id="lineup-title">Find your next pair</h2>
+              <p className="eyebrow">From the edit</p>
+              <h2 id="featured-title">Featured picks</h2>
             </div>
-            <p>Every style, with real-time size availability. Use Quick shop to pick your size without leaving the page.</p>
+            <p>A few styles across shoes, bags, jackets and watches. Prices and stock on each page come from the catalog.</p>
           </div>
-          <div className="product-grid product-grid--3">
-            {products.map((p) => (
+          <div className="product-grid">
+            {featured.map((p) => (
               <ProductCard key={p.id} product={p} onQuickShop={(product, colorSlug) => setQuick({ product, colorSlug })} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="campaign on-night" aria-labelledby="campaign-title">
-        <div className="container campaign__grid">
-          <CampaignFilm />
-          <div className="campaign__copy">
-            <p className="eyebrow">Stride Runner</p>
-            <h2 id="campaign-title" className="campaign__title">
-              Built for daily miles
-            </h2>
-            <p className="campaign__lede">{flagship.description}</p>
-            <dl className="campaign__specs">
-              {drop && (
-                <div>
-                  <dt>Drop</dt>
-                  <dd>{drop}</dd>
-                </div>
-              )}
-              {weight && (
-                <div>
-                  <dt>Weight</dt>
-                  <dd>{weight.replace(/\s*\(.+\)/, '')}</dd>
-                </div>
-              )}
-              <div>
-                <dt>Widths</dt>
-                <dd>{flagship.widths.map((w) => w.code).join(' / ')}</dd>
-              </div>
-            </dl>
-            <div className="hero__ctas">
-              <Link to={`/products/${flagship.slug}`} className="btn btn--light btn--lg">
-                Shop Stride Runner
-              </Link>
-              <Link to="/collections/running" className="btn btn--ghost-light btn--lg">
-                All running
-              </Link>
+      <section className="section section--tight edit-band" aria-labelledby="bags-title">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow">Carry</p>
+              <h2 id="bags-title">Bags and everyday pieces</h2>
             </div>
+            <Link to="/collections/handbags" className="link-arrow">
+              Handbags <Icon name="arrow" size={18} />
+            </Link>
+          </div>
+          <div className="product-grid">
+            {bags.map((p) => (
+              <ProductCard key={p.id} product={p} onQuickShop={(product, colorSlug) => setQuick({ product, colorSlug })} />
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="features" className="section section--tight assurance" aria-labelledby="assure-title">
+      <section className="section jewelry-band" aria-labelledby="jewel-title">
+        <div className="container jewelry-band__grid">
+          <div>
+            <p className="eyebrow">Finish the outfit</p>
+            <h2 id="jewel-title">Watches and jewelry</h2>
+            <p className="lede">Small pieces with the measurements and materials written on the product, including strap fit and finish.</p>
+            <div className="hero__ctas">
+              <Link to="/collections/watches" className="btn">
+                Shop watches
+              </Link>
+              <Link to="/collections/womens-jewelry" className="btn btn--secondary">
+                Shop jewelry
+              </Link>
+            </div>
+          </div>
+          <div className="product-grid">
+            {jewels.map((p) => (
+              <ProductCard key={p.id} product={p} onQuickShop={(product, colorSlug) => setQuick({ product, colorSlug })} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--tight assurance" aria-labelledby="assure-title">
         <div className="container">
           <h2 id="assure-title" className="visually-hidden">
             Buying with confidence
@@ -217,13 +162,13 @@ export default function Home() {
           <ul role="list" className="assurance__grid">
             <li>
               <Icon name="ruler" size={28} />
-              <h3>Find your fit</h3>
-              <p>US men's sizing with women's, UK and EU conversions, plus wide widths on select styles.</p>
-              <Link to="/fit-guide">Size & fit guide</Link>
+              <h3>Shoe sizing stays with shoes</h3>
+              <p>The size chart is for footwear. Jackets use their own sizes. Bags, jewelry and watches list the measurements that apply.</p>
+              <Link to="/fit-guide">Shoe size & fit guide</Link>
             </li>
             <li>
               <Icon name="truck" size={28} />
-              <h3>{store.shipping.standard.priceCents === 0 ? 'Free standard shipping' : 'Fast US shipping'}</h3>
+              <h3>{store.shipping.standard.priceCents === 0 ? 'Free standard shipping' : 'US shipping'}</h3>
               <p>
                 Orders ship to US addresses in {store.shipping.standard.minBusinessDays}–{store.shipping.standard.maxBusinessDays} business days after
                 processing.
@@ -233,61 +178,15 @@ export default function Home() {
             <li>
               <Icon name="return" size={28} />
               <h3>{store.returns.windowDays}-day returns</h3>
-              <p>Changed your mind or need another size? Return unworn pairs within {store.returns.windowDays} days of delivery.</p>
+              <p>Return eligible items in original condition within {store.returns.windowDays} days. Shoes still need to be unworn.</p>
               <Link to="/returns">Return policy</Link>
             </li>
             <li>
               <Icon name="mail" size={28} />
               <h3>Questions before you buy?</h3>
-              <p>Ask about sizing, materials or an order and we will reply by email.</p>
+              <p>Ask about a product or an order and we will reply by email.</p>
               <Link to="/contact">Contact us</Link>
             </li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="section story" aria-labelledby="story-title">
-        <div className="container story__grid">
-          <div className="story__media">
-            <ProductImage group="editorial" image="editorial-materials" alt="Mesh, suede, laces, foam and outsole samples laid out beside a shoe sketch" sizes="(min-width: 64rem) 50vw, 100vw" />
-          </div>
-          <div className="story__copy">
-            <p className="eyebrow">Our craft</p>
-            <h2 id="story-title">Considered from the sole up</h2>
-            <p className="lede">
-              Every NOVA shoe starts with the job it has to do: absorb road miles, grip loose trail, or look sharp through a full day. We choose each
-              material for that job, then remove anything that does not earn its place.
-            </p>
-            <Link to="/about" className="link-arrow">
-              How we make our shoes <Icon name="arrow" size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--tight guides-teaser" aria-labelledby="guides-title">
-        <div className="container">
-          <div className="section-head">
-            <h2 id="guides-title">Guides</h2>
-            <Link to="/guides" className="link-arrow">
-              All guides <Icon name="arrow" size={18} />
-            </Link>
-          </div>
-          <ul role="list" className="guide-cards">
-            {guides.map((g, i) => (
-              <li key={g.slug}>
-                <Link to={`/guides/${g.slug}`} className="guide-card">
-                  <span className="guide-card__num" aria-hidden="true">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span className="guide-card__title">{g.title}</span>
-                  <span className="guide-card__desc">{g.description}</span>
-                  <span className="guide-card__more">
-                    Read guide <Icon name="arrow" size={16} />
-                  </span>
-                </Link>
-              </li>
-            ))}
           </ul>
         </div>
       </section>

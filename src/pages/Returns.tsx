@@ -8,18 +8,19 @@ export default function Returns() {
     <InfoPage
       seo={{
         title: 'Returns Policy',
-        description: `Return unworn NOVA shoes within ${windowDays} days of delivery. How to start a return and when to expect your refund.`,
+        description: `Return eligible NOVA items within ${windowDays} days of delivery. Shoes must be unworn. How to start a return and when to expect your refund.`,
         path: '/returns',
       }}
       eyebrow="Help"
       title="Returns"
-      intro={<p>If your shoes are not right, you can return them within {windowDays} days of delivery for a refund to your original payment method.</p>}
+      intro={<p>If an item is not right, you can return it within {windowDays} days of delivery for a refund to your original payment method.</p>}
     >
       <h2>What can be returned</h2>
       <ul>
-        <li>Shoes returned within {windowDays} days of the delivery date.</li>
-        <li>Pairs that are {condition}.</li>
-        <li>Try shoes on indoors on a clean surface. Shoes with outdoor wear on the outsole cannot be accepted.</li>
+        <li>Items returned within {windowDays} days of the delivery date.</li>
+        <li>Items that are {condition}.</li>
+        <li>Shoes: try them on indoors on a clean surface. Pairs with outdoor wear on the outsole cannot be accepted.</li>
+        <li>Bags, jackets, jewelry and watches: unused, with tags and packaging. Worn or damaged items cannot be accepted.</li>
       </ul>
 
       <h2>How to start a return</h2>
@@ -29,7 +30,7 @@ export default function Returns() {
           return.
         </li>
         <li>We will reply with return instructions and the shipping address.</li>
-        <li>Pack the shoes in their original box inside a shipping box, and send them using a tracked service.</li>
+        <li>Pack the item in its original packaging inside a shipping box, and send it using a tracked service.</li>
       </ol>
 
       <h2>Refunds</h2>

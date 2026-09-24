@@ -25,9 +25,9 @@ export default function Wishlist() {
         ) : products.length === 0 ? (
           <div className="empty-state">
             <h2>Nothing saved yet</h2>
-            <p>Tap the heart on any shoe to keep it here while you decide.</p>
+            <p>Tap the heart on a product to keep it here while you decide.</p>
             <Link to="/shop" className="btn">
-              Shop all shoes
+              Shop all
             </Link>
           </div>
         ) : (

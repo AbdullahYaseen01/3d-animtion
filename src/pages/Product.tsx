@@ -5,7 +5,6 @@ import { store } from '../config/store'
 import { getGuide } from '../data/guides'
 import { productItem, track } from '../lib/analytics'
 import { deliveryWindow } from '../lib/delivery'
-import { purchaseMessage } from '../lib/urgency'
 import { formatMoney } from '../lib/money'
 import { productGroupLd } from '../lib/productLd'
 import { breadcrumbLd, Seo } from '../lib/seo'
@@ -125,7 +124,7 @@ function ProductView({ product }: { product: ProductT }) {
         title={`${product.name} – ${product.tagline}`}
         description={
           `Shop the NOVA ${product.name}, ${product.tagline.toLowerCase()}. ` +
-          `${formatMoney(product.priceCents)}, US sizes ${product.sizes[0]}–${product.sizes[product.sizes.length - 1]}${product.widths.length > 1 ? ' in standard and wide' : ''}. ` +
+          `${formatMoney(product.priceCents)}${product.variant === 'footwear' ? `, US sizes ${product.sizes[0]}–${product.sizes[product.sizes.length - 1]}${product.widths.length > 1 ? ' in standard and wide' : ''}` : ''}. ` +
           `${s.priceCents === 0 ? 'Free US shipping and ' : ''}${store.returns.windowDays}-day returns.`
         }
         path={`/products/${product.slug}`}
@@ -154,11 +153,6 @@ function ProductView({ product }: { product: ProductT }) {
               <h1>{product.name}</h1>
               <p className="pdp__tagline">{product.tagline}</p>
               <Price cents={product.priceCents} compareAtCents={product.compareAtPriceCents} className="pdp__price" />
-              {available && (
-                <p className="pdp__purchase" role="status">
-                  {purchaseMessage(product.id)}
-                </p>
-              )}
             </div>
 
             {available ? (
@@ -175,10 +169,12 @@ function ProductView({ product }: { product: ProductT }) {
                   sizeError={sel.error}
                   idPrefix="pdp"
                 />
-                <p className="pdp__fit">
-                  <strong>Fit:</strong> {product.fit.summary} {product.fit.advice}
-                </p>
-                <SizeFinder product={product} onPick={sel.setSize} />
+                {product.variant !== 'simple' && (
+                  <p className="pdp__fit">
+                    <strong>Fit:</strong> {product.fit.summary} {product.fit.advice}
+                  </p>
+                )}
+                {product.variant === 'footwear' && <SizeFinder product={product} onPick={sel.setSize} />}
                 <div className="pdp__actions">
                   <button ref={buyRef} type="button" className="btn btn--lg pdp__add" onClick={handleAdd}>
                     {sel.justAdded ? (
@@ -221,15 +217,17 @@ function ProductView({ product }: { product: ProductT }) {
               <li>
                 <Icon name="return" size={20} />
                 <span>
-                  <strong>{store.returns.windowDays}-day returns</strong> on unworn pairs. <Link to="/returns">Return policy</Link>
+                  <strong>{store.returns.windowDays}-day returns</strong> on items in original condition. <Link to="/returns">Return policy</Link>
                 </span>
               </li>
-              <li>
-                <Icon name="ruler" size={20} />
-                <span>
-                  Unsure about size? <Link to="/fit-guide">Use the size & fit guide</Link> or <Link to="/contact">ask us</Link>.
-                </span>
-              </li>
+                {product.variant === 'footwear' && (
+                <li>
+                  <Icon name="ruler" size={20} />
+                  <span>
+                    Unsure about shoe size? <Link to="/fit-guide">Use the size & fit guide</Link> or <Link to="/contact">ask us</Link>.
+                  </span>
+                </li>
+                )}
             </ul>
           </div>
         </div>
@@ -262,18 +260,29 @@ function ProductView({ product }: { product: ProductT }) {
                     <dd>{sp.value}</dd>
                   </div>
                 ))}
-                <div>
-                  <dt>Sizes</dt>
-                  <dd>
-                    US men's {product.sizes[0]}–{product.sizes[product.sizes.length - 1]}
-                  </dd>
-                </div>
-                <div>
-                  <dt>Widths</dt>
-                  <dd>{product.widths.map((w) => `${w.label} (${w.code})`).join(', ')}</dd>
-                </div>
+                {product.variant === 'footwear' && (
+                  <>
+                    <div>
+                      <dt>Sizes</dt>
+                      <dd>
+                        US men's {product.sizes[0]}–{product.sizes[product.sizes.length - 1]}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Widths</dt>
+                      <dd>{product.widths.map((w) => `${w.label} (${w.code})`).join(', ')}</dd>
+                    </div>
+                  </>
+                )}
+                {product.variant === 'apparel' && (
+                  <div>
+                    <dt>Sizes</dt>
+                    <dd>{product.sizes.map((s) => product.sizeLabels?.[s] ?? s).join(', ')}</dd>
+                  </div>
+                )}
               </dl>
             </details>
+            {product.variant !== 'simple' && (
             <details className="accordion">
               <summary>
                 <h3>Fit & sizing</h3>
@@ -281,10 +290,13 @@ function ProductView({ product }: { product: ProductT }) {
               <p>
                 {product.fit.summary} {product.fit.advice}
               </p>
-              <p>
-                Sizes are US men's. For US women's, choose 1.5 sizes smaller than your usual size. <Link to="/fit-guide">Full size chart and measuring guide</Link>.
-              </p>
+              {product.variant === 'footwear' && (
+                <p>
+                  Sizes are US men's. For US women's, choose 1.5 sizes smaller than your usual size. <Link to="/fit-guide">Full size chart and measuring guide</Link>.
+                </p>
+              )}
             </details>
+            )}
             <details className="accordion">
               <summary>
                 <h3>Materials & care</h3>
@@ -301,7 +313,7 @@ function ProductView({ product }: { product: ProductT }) {
                 {s.minBusinessDays}–{s.maxBusinessDays} business days after dispatch. Sales tax, where applicable, is calculated at checkout.
               </p>
               <p>
-                Return unworn pairs within {store.returns.windowDays} days of delivery. <Link to="/returns">Read the return policy</Link>.
+                Return eligible items within {store.returns.windowDays} days of delivery. <Link to="/returns">Read the return policy</Link>.
               </p>
             </details>
           </div>

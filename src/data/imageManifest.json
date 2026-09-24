@@ -237,5 +237,65 @@
       1024
     ],
     "bg": "#ded1c6"
+  },
+  "nova-backpack-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f6eddf"
+  },
+  "nova-earrings-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ede5da"
+  },
+  "nova-handbag-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f2ebe1"
+  },
+  "nova-jacket-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4ede6"
+  },
+  "nova-wallet-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ebdfcf"
+  },
+  "nova-watch-side": {
+    "w": 1024,
+    "h": 1024,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f7efe5"
   }
 }

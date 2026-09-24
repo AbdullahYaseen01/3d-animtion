@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router'
-import { activeCategories, allProducts, formatSize, getCategory, productsInCategory, type Category } from '../catalog'
+import { activeCategories, allProducts, formatSize, getCategory, productsInCategory, shoeCollections, type Category } from '../catalog'
 import {
   activeFilterCount,
   applyFilters,
@@ -72,7 +72,7 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
   }, [result.items])
 
   const basePath = category ? `/collections/${category.slug}` : isSearch ? '/search' : '/shop'
-  const title = category ? `${category.name} shoes` : isSearch ? (state.q ? `Results for “${state.q}”` : 'Search') : 'Shop all shoes'
+  const title = category ? category.name : isSearch ? (state.q ? `Results for “${state.q}”` : 'Search') : 'Shop all'
   const crumbs = [
     { name: 'Home', path: '/' },
     ...(category || isSearch ? [{ name: 'Shop', path: '/shop' }] : []),
@@ -82,22 +82,27 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
   const seo = category
     ? { title: category.seoTitle, description: category.seoDescription }
     : isSearch
-      ? { title: state.q ? `Search: ${state.q}` : 'Search', description: 'Search NOVA shoes by style, color, size or activity.' }
+      ? { title: state.q ? `Search: ${state.q}` : 'Search', description: 'Search NOVA shoes, bags, jackets, jewelry and watches.' }
       : {
-          title: 'Shop All Shoes',
-          description: 'Shop every NOVA style: running, trail, lifestyle and everyday sneakers in US sizing, with wide widths on select styles.',
+          title: 'Shop All',
+          description: 'Shop the NOVA edit: shoes, handbags, wallets, jackets, jewelry, backpacks and watches.',
         }
 
   const chips = [
-    ...state.category.map((c) => ({ label: activeCategories().find((x) => x.slug === c)?.name ?? c, remove: { category: state.category.filter((x) => x !== c) } })),
-    ...state.size.map((s) => ({ label: `Size ${formatSize(s)}`, remove: { size: state.size.filter((x) => x !== s) } })),
+    ...state.category.map((c) => ({ label: getCategory(c)?.name ?? c, remove: { category: state.category.filter((x) => x !== c) } })),
+    ...state.use.map((u) => ({ label: shoeCollections().find((x) => x.slug === u)?.name ?? u, remove: { use: state.use.filter((x) => x !== u) } })),
+    ...state.trait.map((t) => ({ label: t.split(':')[1] ?? t, remove: { trait: state.trait.filter((x) => x !== t) } })),
+    ...state.size.map((s) => ({
+      label: `Size ${source.find((p) => p.sizeLabels?.[s])?.sizeLabels?.[s] ?? formatSize(s)}`,
+      remove: { size: state.size.filter((x) => x !== s) },
+    })),
     ...state.width.map((w) => ({ label: w === '2E' ? 'Wide (2E)' : w === 'D' ? 'Standard (D)' : w, remove: { width: state.width.filter((x) => x !== w) } })),
     ...state.color.map((c) => ({ label: COLOR_FAMILIES.find((x) => x.value === c)?.label ?? c, remove: { color: state.color.filter((x) => x !== c) } })),
     ...state.price.map((p) => ({ label: PRICE_BUCKETS.find((x) => x.value === p)?.label ?? p, remove: { price: state.price.filter((x) => x !== p) } })),
     ...(state.inStock ? [{ label: 'In stock', remove: { inStock: false } }] : []),
   ]
 
-  const clearAll = () => update({ category: [], size: [], width: [], color: [], price: [], inStock: false, page: 1 })
+  const clearAll = () => update({ category: [], size: [], width: [], color: [], price: [], use: [], trait: [], inStock: false, page: 1 })
   const pageHref = (page: number) => {
     const qs = serializeFilters({ ...state, page }).toString()
     return `${basePath}${qs ? `?${qs}` : ''}`
@@ -117,8 +122,21 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
           <Breadcrumbs items={crumbs} />
           <h1>{title}</h1>
           {category && <p className="lede">{category.intro}</p>}
+          {category?.slug === 'shoes' && (
+            <nav aria-label="Shoe types" className="catalog-cats">
+              <ul role="list" className="chip-list">
+                {shoeCollections().map((c) => (
+                  <li key={c.slug}>
+                    <Link className="chip" to={`/collections/${c.slug}`}>
+                      {c.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
           {!category && !isSearch && (
-            <p className="lede">Road runners, trail shoes, leather classics and lightweight everyday pairs. Filter by your size to see what is in stock.</p>
+            <p className="lede">Shoes, bags, jackets, jewelry and watches. Filter by what each category actually offers.</p>
           )}
           {isSearch && <SearchBox initial={state.q} onSearch={(q) => update({ q, page: 1 })} />}
         </div>
@@ -187,11 +205,11 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
             </p>
             {result.total === 0 ? (
               <div className="empty-state">
-                <h2>{isSearch && state.q ? `No results for “${state.q}”` : 'No shoes match these filters'}</h2>
+                <h2>{isSearch && state.q ? `No results for “${state.q}”` : 'Nothing matches these filters'}</h2>
                 <p>
                   {filterCount
-                    ? 'Try removing a filter, or choose a nearby size. Sizes shown are in stock only.'
-                    : 'Try a broader term like “running”, “leather” or “wide”, or browse the collections below.'}
+                    ? 'Try removing a filter. Size filters only list options this category actually sells.'
+                    : 'Try a broader term, or browse the collections below.'}
                 </p>
                 <div className="hero__ctas" style={{ justifyContent: 'center' }}>
                   {filterCount > 0 && (
@@ -200,7 +218,7 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
                     </button>
                   )}
                   <Link to="/shop" className="btn btn--secondary">
-                    Shop all shoes
+                    Shop all
                   </Link>
                 </div>
                 <ul role="list" className="chip-list" style={{ justifyContent: 'center' }}>
@@ -259,11 +277,13 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
                     </Link>
                   </li>
                 ))}
-              <li>
-                <Link className="chip" to="/fit-guide">
-                  Size & fit guide
-                </Link>
-              </li>
+              {category.slug === 'shoes' || category.kind === 'shoe-use' ? (
+                <li>
+                  <Link className="chip" to="/fit-guide">
+                    Shoe size & fit guide
+                  </Link>
+                </li>
+              ) : null}
             </ul>
           </section>
         )}
@@ -307,7 +327,7 @@ function SearchBox({ initial, onSearch }: { initial: string; onSearch: (q: strin
       }}
     >
       <label htmlFor="catalog-q" className="visually-hidden">
-        Search shoes
+        Search the edit
       </label>
       <input
         id="catalog-q"
@@ -315,7 +335,7 @@ function SearchBox({ initial, onSearch }: { initial: string; onSearch: (q: strin
         className="input"
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Try: comfortable shoes for walking all day"
+        placeholder="Try: black handbag under $100"
         maxLength={80}
         enterKeyHint="search"
       />

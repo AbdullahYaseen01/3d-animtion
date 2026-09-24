@@ -33,11 +33,13 @@ export function CartLineItem({ line, compact = false, onNavigate }: { line: Pric
             <dt>Color</dt>
             <dd>{color.name}</dd>
           </div>
-          <div>
-            <dt>Size</dt>
-            <dd>US M {formatSize(size)}</dd>
-          </div>
-          {product.widths.length > 1 && width && (
+          {product.variant !== 'simple' && (
+            <div>
+              <dt>Size</dt>
+              <dd>{product.variant === 'footwear' ? `US M ${formatSize(size)}` : product.sizeLabels?.[size] ?? formatSize(size)}</dd>
+            </div>
+          )}
+          {product.variant === 'footwear' && product.widths.length > 1 && width && (
             <div>
               <dt>Width</dt>
               <dd>
@@ -52,7 +54,9 @@ export function CartLineItem({ line, compact = false, onNavigate }: { line: Pric
             </div>
           )}
         </dl>
-        {line.stock <= LOW_STOCK_THRESHOLD && <p className="cart-line__stock">Only {line.stock} left in this size</p>}
+        {line.stock <= LOW_STOCK_THRESHOLD && (
+          <p className="cart-line__stock">Only {line.stock} left{product.variant === 'simple' ? '' : ' in this size'}</p>
+        )}
         <div className="cart-line__actions">
           <div className="qty" role="group" aria-label={`Quantity for ${product.name}`}>
             <button

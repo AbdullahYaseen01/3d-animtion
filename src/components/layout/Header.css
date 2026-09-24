@@ -120,6 +120,36 @@
   font-weight: 650;
 }
 
+.nav-drop {
+  position: relative;
+}
+
+.nav-drop__panel {
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 0;
+  z-index: 5;
+  display: none;
+  min-width: 12rem;
+  padding: var(--space-2);
+  background: var(--color-paper);
+  border: var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.nav-drop:hover .nav-drop__panel,
+.nav-drop:focus-within .nav-drop__panel {
+  display: grid;
+}
+
+.nav-drop__panel a {
+  min-height: 2.5rem;
+}
+
+.nav-drop__panel a::after {
+  display: none;
+}
+
 .primary-nav__secondary:first-of-type {
   margin-left: auto;
 }

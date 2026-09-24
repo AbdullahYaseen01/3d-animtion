@@ -98,7 +98,7 @@ export function CartAssurances() {
       <li>
         <Icon name="return" size={20} />
         <span>
-          {store.returns.windowDays}-day returns on unworn pairs. <Link to="/returns">Return policy</Link>
+          {store.returns.windowDays}-day returns on eligible items. <Link to="/returns">Return policy</Link>
         </span>
       </li>
     </ul>

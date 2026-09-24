@@ -33,23 +33,32 @@ export function productGroupLd(product: Product) {
   const category = getCategory(product.category)
   const shipping = shippingDetails()
   const returns = returnPolicy()
-  const variesBy = ['https://schema.org/color', 'https://schema.org/size']
+  const variesBy = product.variant === 'simple' ? ['https://schema.org/color'] : ['https://schema.org/color', 'https://schema.org/size']
   const variants = product.colors.flatMap((color) =>
     product.sizes.flatMap((size) =>
       product.widths.map((width) => {
         const sku = buildSku(product.id, color.slug, size, width.code)
-        const widthText = product.widths.length > 1 ? ` ${width.label}` : ''
+        const widthText = product.variant === 'footwear' && product.widths.length > 1 ? ` ${width.label}` : ''
+        const sizeName = product.variant === 'footwear' ? `US M ${formatSize(size)}` : product.variant === 'apparel' ? (product.sizeLabels?.[size] ?? formatSize(size)) : ''
         return {
           '@type': 'Product',
           sku,
-          name: `${store.name} ${product.name} – ${color.name}, US M ${formatSize(size)}${widthText}`,
+          name: `${store.name} ${product.name} – ${color.name}${sizeName ? `, ${sizeName}` : ''}${widthText}`,
           color: color.name,
-          size: {
-            '@type': 'SizeSpecification',
-            name: formatSize(size),
-            sizeSystem: 'https://schema.org/WearableSizeSystemUS',
-            sizeGroup: 'https://schema.org/WearableSizeGroupMens',
-          },
+          ...(product.variant === 'simple'
+            ? {}
+            : {
+                size: {
+                  '@type': 'SizeSpecification',
+                  name: sizeName,
+                  ...(product.variant === 'footwear'
+                    ? {
+                        sizeSystem: 'https://schema.org/WearableSizeSystemUS',
+                        sizeGroup: 'https://schema.org/WearableSizeGroupMens',
+                      }
+                    : {}),
+                },
+              }),
           image: color.images.map((k) => absoluteUrl(productImagePath(k, 1024))),
           ...(product.widths.length > 1
             ? { additionalProperty: { '@type': 'PropertyValue', name: 'Width', value: `${width.label} (${width.code})` } }
