@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { getColor, type Product } from '../../catalog'
+import { purchaseMessage } from '../../lib/urgency'
 import { useCart } from '../../state/CartProvider'
 import { Dialog } from '../ui/Dialog'
 import { Icon } from '../ui/Icon'
@@ -38,6 +39,7 @@ function QuickShopBody({ target, onClose }: { target: QuickShopTarget; onClose: 
           <p className="eyebrow">{product.tagline}</p>
           <h3 className="quick-shop__name">{product.name}</h3>
           <Price cents={product.priceCents} compareAtCents={product.compareAtPriceCents} className="quick-shop__price" />
+          <p className="quick-shop__purchase">{purchaseMessage(product.id)}</p>
         </div>
         <VariantPicker
           ref={sel.sizeRef}

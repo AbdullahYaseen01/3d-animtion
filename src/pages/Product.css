@@ -44,6 +44,11 @@
   font-size: var(--text-xl);
 }
 
+.pdp__purchase {
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
 .pdp__fit {
   padding: var(--space-3) var(--space-4);
   border-left: 3px solid var(--color-ember);
