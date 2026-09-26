@@ -1,40 +1,59 @@
 /**
  * Lab performance probe (not field data). Loads each URL in Chrome with
- * simulated mobile throttling and reports FCP, LCP, CLS and transfer sizes.
- * Usage: node scripts/qa/perf.mjs <url> [url...]
+ * simulated throttling and reports FCP, LCP, CLS and transfer sizes.
+ * Usage: node scripts/qa/perf.mjs [--desktop] [--timeline] <url> [url...]
+ *   --desktop   1440x900 viewport, DPR 1, no CPU slowdown, faster network (Lighthouse desktop-like)
+ *   --timeline  also print when each request finished, to see what delays first paint
  */
 import { chromium } from 'playwright'
 
-const urls = process.argv.slice(2)
+const args = process.argv.slice(2)
+const desktop = args.includes('--desktop')
+const timeline = args.includes('--timeline')
+const urls = args.filter((a) => !a.startsWith('--'))
 const browser = await chromium.launch({ channel: 'chrome' })
 const results = []
 
 for (const url of urls) {
-  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true })
+  const context = await browser.newContext(
+    desktop
+      ? { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 }
+      : { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true },
+  )
   const page = await context.newPage()
   const cdp = await context.newCDPSession(page)
   await cdp.send('Network.enable')
   await cdp.send('Network.setCacheDisabled', { cacheDisabled: true })
-  // Approximates Lighthouse "Slow 4G" + 4x CPU slowdown.
+  // Mobile approximates Lighthouse "Slow 4G" + 4x CPU; desktop approximates its 10 Mbps / 40 ms profile.
   await cdp.send('Network.emulateNetworkConditions', {
     offline: false,
-    latency: 150,
-    downloadThroughput: (1.6 * 1024 * 1024) / 8,
-    uploadThroughput: (750 * 1024) / 8,
+    latency: desktop ? 40 : 150,
+    downloadThroughput: ((desktop ? 10 : 1.6) * 1024 * 1024) / 8,
+    uploadThroughput: ((desktop ? 5 : 0.75) * 1024 * 1024) / 8,
   })
-  await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 })
+  await cdp.send('Emulation.setCPUThrottlingRate', { rate: desktop ? 1 : 4 })
 
   let bytes = 0
   let jsBytes = 0
   let requests = 0
+  const types = new Map()
+  const names = new Map()
+  const finished = []
+  let start = 0
+  cdp.on('Network.requestWillBeSent', (e) => {
+    if (!start) start = e.timestamp
+    names.set(e.requestId, e.request.url)
+  })
+  cdp.on('Network.responseReceived', (e) => types.set(e.requestId, e.type))
   cdp.on('Network.loadingFinished', (e) => {
     bytes += e.encodedDataLength
     requests++
-  })
-  const types = new Map()
-  cdp.on('Network.responseReceived', (e) => types.set(e.requestId, e.type))
-  cdp.on('Network.loadingFinished', (e) => {
     if (types.get(e.requestId) === 'Script') jsBytes += e.encodedDataLength
+    finished.push({
+      at: Math.round((e.timestamp - start) * 1000),
+      kb: Math.round(e.encodedDataLength / 1024),
+      url: (names.get(e.requestId) ?? '').replace(/^https?:\/\/[^/]+/, ''),
+    })
   })
 
   await page.addInitScript(() => {
@@ -59,6 +78,7 @@ for (const url of urls) {
   const v = await page.evaluate(() => window.__vitals)
   results.push({
     url,
+    profile: desktop ? 'desktop-1440' : 'mobile-390',
     fcpMs: Math.round(v.fcp),
     lcpMs: Math.round(v.lcp),
     lcpElement: v.lcpEl,
@@ -67,6 +87,7 @@ for (const url of urls) {
     jsTransferKB: Math.round(jsBytes / 1024),
     requests,
     loadEventMs: Date.now() - t0,
+    ...(timeline ? { timeline: finished.sort((a, b) => a.at - b.at).map((f) => `${f.at}ms ${f.kb}KB ${f.url}`) } : {}),
   })
   await context.close()
 }

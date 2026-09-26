@@ -1,9 +1,11 @@
-import { describe, expect, it } from 'vitest'
-import { prerenderRoutes, render } from '../src/entry-server'
+import { beforeAll, describe, expect, it } from 'vitest'
+import { preloadAllPages, prerenderRoutes, render } from '../src/entry-server'
 import { buildHead } from '../src/lib/seo'
 import { getProduct } from '../src/catalog'
 
 const h1Count = (html: string) => (html.match(/<h1[\s>]/g) ?? []).length
+
+beforeAll(() => preloadAllPages())
 
 describe('prerendered HTML', () => {
   it('renders exactly one h1 and a head on every route', () => {
