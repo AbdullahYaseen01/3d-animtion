@@ -14,12 +14,18 @@ import ffmpegPath from 'ffmpeg-static'
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const campaignOnly = process.argv.includes('--campaign')
 
-/** Widths must match HERO_WIDTHS and CATEGORY_WIDTHS in src/campaign/styleInMotion.ts. */
+/**
+ * Widths must match HERO_WIDTHS and CATEGORY_WIDTHS in src/campaign/styleInMotion.ts.
+ * Each category still also becomes a 1200×630 share image at public/og/collection-<name>.jpg,
+ * and the hero becomes public/og/home.jpg.
+ */
 async function emitCampaign() {
   const dir = path.join(root, 'public', 'campaign')
   if (!fs.existsSync(dir)) return
-  const heroWidths = [768, 1200, 1600, 1910]
-  const thumbWidths = [480, 800, 1200]
+  const ogDir = path.join(root, 'public', 'og')
+  fs.mkdirSync(ogDir, { recursive: true })
+  const heroWidths = [480, 768, 1200, 1600, 1910]
+  const thumbWidths = [320, 480, 800, 1200]
   for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.png') && !/-\d+\.png$/.test(f))) {
     const name = path.basename(file, '.png')
     const input = path.join(dir, file)
@@ -31,6 +37,10 @@ async function emitCampaign() {
       const base = path.join(dir, `${name}-${w}`)
       await sharp(input).resize({ width: w, withoutEnlargement: true }).avif({ quality: avifQuality, effort: 5 }).toFile(`${base}.avif`)
       await sharp(input).resize({ width: w, withoutEnlargement: true }).webp({ quality: webpQuality }).toFile(`${base}.webp`)
+    }
+    if (name.startsWith('category-') || name.startsWith('hero-')) {
+      const og = path.join(ogDir, name.startsWith('hero-') ? 'home.jpg' : `${name.replace(/^category-/, 'collection-')}.jpg`)
+      await sharp(input).resize({ width: 1200, height: 630, fit: 'cover', position: 'attention' }).jpeg({ quality: 80, mozjpeg: true }).toFile(og)
     }
     process.stdout.write(`✓ campaign/${name} (${widths.join(', ')})\n`)
   }

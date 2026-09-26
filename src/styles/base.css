@@ -276,6 +276,11 @@ a[href^='mailto:'] {
   transform: translateY(0);
 }
 
+/* Held while a page's code loads on client navigation, so the footer does not jump up. */
+.page-loading {
+  min-height: 100vh;
+}
+
 /* Buttons */
 .btn {
   --btn-bg: var(--color-ink);
