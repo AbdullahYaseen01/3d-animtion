@@ -31,6 +31,9 @@ const TYPES = {
   '.png': 'image/png',
   '.woff2': 'font/woff2',
   '.mp4': 'video/mp4',
+  '.webm': 'video/webm',
+  '.ico': 'image/x-icon',
+  '.webmanifest': 'application/manifest+json',
   '.xml': 'application/xml',
   '.txt': 'text/plain; charset=utf-8',
 }
@@ -57,13 +60,33 @@ async function resolveFile(urlPath) {
 
 const COMPRESSIBLE = new Set(['.html', '.js', '.css', '.json', '.xml', '.txt', '.svg', '.webmanifest'])
 
+/** Mirrors the Cache-Control rules in vercel.json. */
+function cacheControl(urlPath) {
+  if (urlPath.startsWith('/assets/')) return 'public, max-age=31536000, immutable'
+  if (/^\/(images|media|campaign|og)\//.test(urlPath)) return 'public, max-age=2592000, stale-while-revalidate=31536000'
+  if (urlPath === '/favicon.svg' || urlPath === '/og-default.jpg') return 'public, max-age=86400, stale-while-revalidate=604800'
+  return 'no-cache'
+}
+
+/** Mirrors the X-Robots-Tag rules in vercel.json. */
+const FACET_KEYS = ['q', 'color', 'size', 'width', 'price', 'availability', 'sort', 'category', 'use', 'trait', 'page']
+function robotsHeader(url) {
+  if (/^\/(cart|wishlist|search|checkout\/success)$/.test(url.pathname)) return 'noindex, follow'
+  if (url.pathname.startsWith('/api/')) return 'noindex'
+  if (/^\/(shop|collections\/.+)$/.test(url.pathname) && FACET_KEYS.some((k) => url.searchParams.has(k))) return 'noindex, follow'
+  return undefined
+}
+
 function send(req, res, file, status = 200) {
   const ext = path.extname(file)
   const gzip = COMPRESSIBLE.has(ext) && /\bgzip\b/.test(req.headers['accept-encoding'] ?? '')
+  const url = new URL(req.url ?? '/', 'http://localhost')
+  const robots = robotsHeader(url)
   res.writeHead(status, {
     'Content-Type': TYPES[ext] ?? 'application/octet-stream',
-    'Cache-Control': file.includes(`${path.sep}assets${path.sep}`) ? 'public, max-age=31536000, immutable' : 'no-cache',
+    'Cache-Control': status === 200 ? cacheControl(url.pathname) : 'no-cache',
     Vary: 'Accept-Encoding',
+    ...(robots ? { 'X-Robots-Tag': robots } : {}),
     ...(gzip ? { 'Content-Encoding': 'gzip' } : {}),
   })
   const stream = createReadStream(file)
@@ -75,7 +98,12 @@ http
   .createServer(async (req, res) => {
     const url = new URL(req.url ?? '/', 'http://localhost')
     if (url.pathname !== '/' && url.pathname.endsWith('/')) {
-      res.writeHead(308, { Location: url.pathname.replace(/\/+$/, '') + url.search })
+      res.writeHead(301, { Location: url.pathname.replace(/\/+$/, '') + url.search })
+      return res.end()
+    }
+    if (url.pathname.endsWith('.html')) {
+      const dest = (url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '') || '/') + url.search
+      res.writeHead(301, { Location: dest })
       return res.end()
     }
     if (url.pathname.startsWith('/api/')) {

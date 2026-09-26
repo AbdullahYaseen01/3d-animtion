@@ -1,6 +1,6 @@
 /**
  * Minimal commerce event layer. Events go to `window.dataLayer` (GTM/GA4
- * compatible) and to gtag when `VITE_GA4_ID` is configured. Nothing is sent
+ * compatible) and to gtag when `VITE_GA4_ID` (or `VITE_GA_ID`) is configured. Nothing is sent
  * when analytics is unconfigured or the visitor signals Global Privacy
  * Control / Do Not Track. Payloads must never include customer PII.
  */
@@ -38,7 +38,9 @@ declare global {
   }
 }
 
-const GA_ID = import.meta.env.VITE_GA4_ID as string | undefined
+/** `VITE_GA_ID` is accepted as an alias. Only a G- measurement ID is used. */
+const rawId = (import.meta.env.VITE_GA4_ID || import.meta.env.VITE_GA_ID || '').trim()
+const GA_ID = /^G-[A-Z0-9]+$/i.test(rawId) ? rawId : undefined
 
 function allowed(): boolean {
   if (typeof window === 'undefined') return false

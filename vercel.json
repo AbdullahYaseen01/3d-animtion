@@ -5,6 +5,10 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/:path(.*).html", "destination": "/:path", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -24,8 +28,12 @@
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
-      "source": "/(images|media)/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=2592000" }]
+      "source": "/(images|media|campaign|og)/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=31536000" }]
+    },
+    {
+      "source": "/(favicon.svg|og-default.jpg)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }]
     },
     {
       "source": "/(cart|wishlist|search|checkout/success)",
@@ -42,6 +50,9 @@
     { "source": "/(shop|collections/.*)", "has": [{ "type": "query", "key": "price" }], "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }] },
     { "source": "/(shop|collections/.*)", "has": [{ "type": "query", "key": "availability" }], "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }] },
     { "source": "/(shop|collections/.*)", "has": [{ "type": "query", "key": "sort" }], "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }] },
-    { "source": "/(shop|collections/.*)", "has": [{ "type": "query", "key": "category" }], "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }] }
+    { "source": "/(shop|collections/.*)", "has": [{ "type": "query", "key": "category" }], "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }] },
+    { "source": "/(shop|collections/.*)", "has": [{ "type": "query", "key": "use" }], "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }] },
+    { "source": "/(shop|collections/.*)", "has": [{ "type": "query", "key": "trait" }], "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }] },
+    { "source": "/(shop|collections/.*)", "has": [{ "type": "query", "key": "page" }], "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }] }
   ]
 }

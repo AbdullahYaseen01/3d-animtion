@@ -43,7 +43,11 @@ export const store = {
     /** LAUNCH BLOCKER: set to true only after counsel has reviewed the privacy policy and terms. */
     reviewed: false,
     updated: 'September 24, 2026',
+    updatedIso: '2026-09-24',
   },
+
+  /** Sitemap lastmod for shop, collection, product and help pages. Bump when their content changes. */
+  contentUpdated: '2026-09-26',
 } as const
 
 export type StoreConfig = typeof store

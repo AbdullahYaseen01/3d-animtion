@@ -56,7 +56,7 @@ function apiDevPlugin(): Plugin {
   }
 }
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, isSsrBuild }) => {
   const env = loadEnv(mode, process.cwd(), '')
   for (const [k, v] of Object.entries(env)) if (process.env[k] === undefined) process.env[k] = v
 
@@ -69,6 +69,12 @@ export default defineConfig(({ mode }) => {
       __ALLOW_INDEXING__: JSON.stringify(allowIndexing),
     },
     build: {
+      // The prerender reads the client manifest to add modulepreload hints per page.
+      manifest: !isSsrBuild,
+      // Framework code changes far less often than the app, so it gets its own long-cached chunk.
+      rollupOptions: isSsrBuild
+        ? undefined
+        : { output: { manualChunks: (id) => (/node_modules[\\/](react|react-dom|react-router|scheduler|cookie|set-cookie-parser)[\\/]/.test(id) ? 'vendor' : undefined) } },
       cssCodeSplit: false,
       assetsInlineLimit: 0,
       chunkSizeWarningLimit: 300,
@@ -76,6 +82,8 @@ export default defineConfig(({ mode }) => {
     test: {
       environment: 'node',
       include: ['tests/**/*.test.ts'],
+      // SEO tests render every prerendered route several times.
+      testTimeout: 30_000,
     },
   }
 })

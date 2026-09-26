@@ -1,7 +1,7 @@
 import { store } from '../config/store'
 import { buildSku, formatSize, getCategory, productImagePath, stockFor, type Product } from '../catalog'
 import { centsToDecimal } from './money'
-import { absoluteUrl } from './seo'
+import { absoluteUrl, orgRef } from './seo'
 
 function shippingDetails() {
   const s = store.shipping.standard
@@ -24,6 +24,7 @@ function returnPolicy() {
     returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
     merchantReturnDays: store.returns.windowDays,
     returnMethod: 'https://schema.org/ReturnByMail',
+    returnFees: 'https://schema.org/ReturnFeesCustomerResponsibility',
   }
 }
 
@@ -43,6 +44,7 @@ export function productGroupLd(product: Product) {
         return {
           '@type': 'Product',
           sku,
+          inProductGroupWithID: product.id,
           name: `${store.name} ${product.name} – ${color.name}${sizeName ? `, ${sizeName}` : ''}${widthText}`,
           color: color.name,
           ...(product.variant === 'simple'
@@ -70,6 +72,7 @@ export function productGroupLd(product: Product) {
             priceCurrency: 'USD',
             itemCondition: 'https://schema.org/NewCondition',
             availability: stockFor(product, sku) > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+            seller: orgRef(),
             shippingDetails: shipping,
             hasMerchantReturnPolicy: returns,
           },

@@ -1,30 +1,32 @@
-import { useEffect, useRef } from 'react'
+import { Suspense, useEffect, useRef } from 'react'
 import { Outlet, Route, Routes, useLocation, useNavigate, useNavigationType } from 'react-router'
 import { MiniCart } from './components/cart/MiniCart'
 import { ErrorBoundary } from './components/layout/ErrorBoundary'
 import { Footer } from './components/layout/Footer'
 import { Header } from './components/layout/Header'
 import { PurchaseToast } from './components/product/PurchaseToast'
+import { pages } from './routes'
 import { AnnouncerProvider, useAnnounce } from './state/Announcer'
 import { CartProvider } from './state/CartProvider'
 import { WishlistProvider } from './state/WishlistProvider'
-import About from './pages/About'
-import Cart from './pages/Cart'
-import Catalog from './pages/Catalog'
-import CheckoutSuccess from './pages/CheckoutSuccess'
-import Contact from './pages/Contact'
-import Faq from './pages/Faq'
-import FitGuide from './pages/FitGuide'
-import Guide from './pages/Guide'
-import Guides from './pages/Guides'
-import Home from './pages/Home'
-import NotFound from './pages/NotFound'
-import Privacy from './pages/Privacy'
-import Product from './pages/Product'
-import Returns from './pages/Returns'
-import Shipping from './pages/Shipping'
-import Terms from './pages/Terms'
-import Wishlist from './pages/Wishlist'
+
+const About = pages.about.page.Component
+const Cart = pages.cart.page.Component
+const Catalog = pages.catalog.page.Component
+const CheckoutSuccess = pages.checkoutSuccess.page.Component
+const Contact = pages.contact.page.Component
+const Faq = pages.faq.page.Component
+const FitGuide = pages.fitGuide.page.Component
+const Guide = pages.guide.page.Component
+const Guides = pages.guides.page.Component
+const Home = pages.home.page.Component
+const NotFound = pages.notFound.page.Component
+const Privacy = pages.privacy.page.Component
+const Product = pages.product.page.Component
+const Returns = pages.returns.page.Component
+const Shipping = pages.shipping.page.Component
+const Terms = pages.terms.page.Component
+const Wishlist = pages.wishlist.page.Component
 
 /** Section anchors from the previous single-page site. */
 const LEGACY_HASHES: Record<string, string> = {
@@ -69,7 +71,9 @@ function Layout() {
       <Header />
       <main id="main" ref={mainRef} tabIndex={-1}>
         <ErrorBoundary key={location.pathname}>
-          <Outlet />
+          <Suspense fallback={<div className="page-loading" aria-busy="true" />}>
+            <Outlet />
+          </Suspense>
         </ErrorBoundary>
       </main>
       <Footer />
