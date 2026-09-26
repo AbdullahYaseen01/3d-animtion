@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router'
-import { campaignCategories, campaignHero, campaignSrcSet } from '../campaign/styleInMotion'
+import { CATEGORY_SIZES, campaignCategories, campaignHero, campaignSrcSet } from '../campaign/styleInMotion'
 import { getProduct } from '../catalog'
 import { store } from '../config/store'
 import { productItem, track } from '../lib/analytics'
@@ -30,7 +30,10 @@ export default function Home() {
         rawTitle
         description="Shop the NOVA edit: shoes, handbags, wallets, jackets, women's jewelry, backpacks and watches. US shipping and 30-day returns."
         path="/"
+        image="/og/home.jpg"
+        imageAlt={campaignHero.alt}
         jsonLd={[organizationLd(), websiteLd()]}
+        preloadImage={{ type: 'image/avif', srcSet: campaignSrcSet(campaignHero.src, campaignHero.widths, 'avif'), sizes: '100vw' }}
       />
 
       <section
@@ -55,7 +58,7 @@ export default function Home() {
               height={campaignHero.height}
               sizes="100vw"
               fetchPriority="high"
-              decoding="async"
+              decoding="sync"
             />
           </picture>
         </div>
@@ -89,14 +92,14 @@ export default function Home() {
                 <Link to={category.href} className="edit-cats__link">
                   <span className="edit-cats__media">
                     <picture>
-                      <source type="image/avif" srcSet={campaignSrcSet(category.src, category.widths, 'avif')} sizes="(min-width: 64rem) 12vw, 42vw" />
-                      <source type="image/webp" srcSet={campaignSrcSet(category.src, category.widths, 'webp')} sizes="(min-width: 64rem) 12vw, 42vw" />
+                      <source type="image/avif" srcSet={campaignSrcSet(category.src, category.widths, 'avif')} sizes={CATEGORY_SIZES} />
+                      <source type="image/webp" srcSet={campaignSrcSet(category.src, category.widths, 'webp')} sizes={CATEGORY_SIZES} />
                       <img
                         src={category.src}
                         alt={category.alt}
                         width={category.width}
                         height={category.height}
-                        sizes="(min-width: 64rem) 12vw, 42vw"
+                        sizes={CATEGORY_SIZES}
                         loading="lazy"
                         decoding="async"
                         style={{ objectPosition: category.position }}

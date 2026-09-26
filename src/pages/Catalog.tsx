@@ -19,7 +19,10 @@ import { Breadcrumbs } from '../components/ui/Breadcrumbs'
 import { Dialog } from '../components/ui/Dialog'
 import { Icon } from '../components/ui/Icon'
 import { productItem, track } from '../lib/analytics'
-import { breadcrumbLd, Seo } from '../lib/seo'
+import { breadcrumbLd, itemListLd, Seo } from '../lib/seo'
+import { campaignHero, collectionOgImage } from '../campaign/styleInMotion'
+import { store } from '../config/store'
+import { guidesForCategory } from '../data/guides'
 import { useAnnounce } from '../state/Announcer'
 import NotFound from './NotFound'
 import '../components/catalog/Catalog.css'
@@ -79,14 +82,25 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
     { name: category ? category.name : isSearch ? 'Search' : 'Shop all', path: basePath },
   ]
   const hasRefinements = filterCount > 0 || state.sort !== 'featured'
+  const og = category ? collectionOgImage(category.slug) : { src: '/og/home.jpg', alt: campaignHero.alt }
   const seo = category
     ? { title: category.seoTitle, description: category.seoDescription }
     : isSearch
       ? { title: state.q ? `Search: ${state.q}` : 'Search', description: 'Search NOVA shoes, bags, jackets, jewelry and watches.' }
       : {
-          title: 'Shop All',
-          description: 'Shop the NOVA edit: shoes, handbags, wallets, jackets, jewelry, backpacks and watches.',
+          title: 'Shop All Shoes, Bags, Jackets & Watches',
+          description:
+            `Shop the full NOVA edit: running and lifestyle shoes, handbags, wallets, jackets, jewelry, backpacks and watches, with US shipping and ${store.returns.windowDays}-day returns.`,
         }
+  const guideLinks = category ? guidesForCategory(category.slug) : []
+  const jsonLd = isSearch
+    ? undefined
+    : [
+        breadcrumbLd(crumbs),
+        ...(hasRefinements || result.items.length === 0
+          ? []
+          : [itemListLd(category?.name ?? 'Shop all', result.items.map((p) => ({ name: `${store.name} ${p.name}`, path: `/products/${p.slug}` })))]),
+      ]
 
   const chips = [
     ...state.category.map((c) => ({ label: getCategory(c)?.name ?? c, remove: { category: state.category.filter((x) => x !== c) } })),
@@ -113,9 +127,13 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
       <Seo
         title={seo.title}
         description={seo.description}
-        path={state.page > 1 && !filterCount && !isSearch ? `${basePath}?page=${state.page}` : basePath}
-        noindex={isSearch || hasRefinements}
-        jsonLd={isSearch ? undefined : breadcrumbLd(crumbs)}
+        path={basePath}
+        noindex={isSearch || hasRefinements || state.page > 1}
+        prev={result.pageCount > 1 && state.page > 1 ? pageHref(state.page - 1) : undefined}
+        next={result.pageCount > 1 && state.page < result.pageCount ? pageHref(state.page + 1) : undefined}
+        image={og?.src}
+        imageAlt={og?.alt}
+        jsonLd={jsonLd}
       />
       <div className="container">
         <div className="page-head catalog-head">
@@ -261,6 +279,23 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
             )}
           </div>
         </div>
+
+        {guideLinks.length > 0 && (
+          <section className="catalog-more" aria-labelledby="collection-guides">
+            <h2 id="collection-guides" className="eyebrow">
+              Guides for {category?.name.toLowerCase()}
+            </h2>
+            <ul role="list" className="chip-list">
+              {guideLinks.map((g) => (
+                <li key={g.slug}>
+                  <Link className="chip" to={`/guides/${g.slug}`}>
+                    {g.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {category && (
           <section className="catalog-more" aria-labelledby="more-cats">

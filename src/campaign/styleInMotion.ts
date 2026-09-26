@@ -3,8 +3,10 @@
  * Originals live in public/campaign. Responsive AVIF/WebP siblings are produced by
  * `node scripts/build-images.mjs --campaign` and must use these same widths.
  */
-export const HERO_WIDTHS = [768, 1200, 1600, 1910] as const
-export const CATEGORY_WIDTHS = [480, 800, 1200] as const
+export const HERO_WIDTHS = [480, 768, 1200, 1600, 1910] as const
+export const CATEGORY_WIDTHS = [320, 480, 800, 1200] as const
+/** Category tiles are a fixed 8.75rem on phones and one of seven columns above that. */
+export const CATEGORY_SIZES = '(max-width: 40rem) 8.75rem, (max-width: 64rem) 14vw, 12vw'
 
 export const campaignHero = {
   src: '/campaign/hero-style-in-motion.png',
@@ -92,6 +94,13 @@ export const campaignCategories = [
     position: 'center',
   },
 ]
+
+/** 1200×630 share image for a collection, cut from its campaign still. Shoe types share the Shoes image. */
+export function collectionOgImage(slug: string): { src: string; alt: string } | undefined {
+  const category = campaignCategories.find((c) => c.href === `/collections/${slug}`) ?? (['running', 'trail', 'lifestyle', 'everyday'].includes(slug) ? campaignCategories[0] : undefined)
+  if (!category) return undefined
+  return { src: category.src.replace(/^\/campaign\/category-(.*)\.png$/, '/og/collection-$1.jpg'), alt: category.alt }
+}
 
 export function campaignSrcSet(src: string, widths: readonly number[], ext: 'avif' | 'webp'): string {
   const base = src.replace(/\.png$/, '')

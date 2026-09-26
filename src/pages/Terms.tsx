@@ -5,7 +5,7 @@ import { DraftNotice, InfoPage } from '../components/layout/InfoPage'
 export default function Terms() {
   return (
     <InfoPage
-      seo={{ title: 'Terms of Service', description: 'The terms that apply when you use the NOVA website and buy from us.', path: '/terms' }}
+      seo={{ title: 'Terms of Service', description: 'The terms that apply when you use the NOVA website and buy from us, covering orders, prices and payment, shipping, returns and product information.', path: '/terms' }}
       eyebrow="Legal"
       title="Terms of service"
       intro={<p>Last updated {store.legal.updated}</p>}

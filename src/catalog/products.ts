@@ -25,9 +25,9 @@ export const categories: Category[] = [
     summary: 'Runners, trail shoes and everyday pairs',
     intro:
       'The original NOVA footwear edit: cushioned road trainers, grippy trail shoes, leather lifestyle styles and lightweight everyday knits. US sizing, with wide widths on select styles.',
-    seoTitle: 'Shoes',
+    seoTitle: 'Shoes: Running, Trail & Lifestyle Sneakers',
     seoDescription:
-      'Shop NOVA shoes: running, trail, lifestyle and everyday styles in US sizing, with wide widths on select pairs.',
+      'Shop NOVA shoes: cushioned running shoes, grippy trail shoes, leather lifestyle sneakers and knit everyday pairs in US sizing, with wide widths on select styles.',
   },
   {
     slug: 'handbags',
@@ -35,8 +35,9 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Totes and crossbodies for the day',
     intro: 'Structured bags sized for a day out. Each style lists its dimensions, material, closure and how it is carried.',
-    seoTitle: 'Handbags',
-    seoDescription: 'Shop NOVA handbags. Preview styles list dimensions, material and closure before you add one to your bag.',
+    seoTitle: 'Handbags & Crossbody Bags',
+    seoDescription:
+      'Shop NOVA handbags and crossbody bags. Every style lists its dimensions, strap drop, material and closure, so you know what fits before you order.',
   },
   {
     slug: 'wallets',
@@ -44,8 +45,9 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Slim leather for cards and cash',
     intro: 'Compact wallets with listed dimensions, card slots and closure. Preview styles until the final leather goods arrive.',
-    seoTitle: 'Wallets',
-    seoDescription: 'Shop NOVA wallets. Each preview style lists dimensions, material, slots and closure.',
+    seoTitle: 'Slim Wallets & Bifolds',
+    seoDescription:
+      'Shop NOVA slim wallets. Each bifold lists its exact dimensions, number of card slots, cash pocket and closure, so you know what it will hold.',
   },
   {
     slug: 'jackets',
@@ -53,8 +55,9 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Light layers for changing weather',
     intro: 'Jackets with a stated fit, fabric and size range. The size chart on each product is the one to use — not the shoe chart.',
-    seoTitle: 'Jackets',
-    seoDescription: 'Shop NOVA jackets. Preview styles include fit, fabric, lining and alpha sizing.',
+    seoTitle: 'Lightweight Jackets for Fall',
+    seoDescription:
+      'Shop NOVA lightweight jackets for mild fall days. Each style lists its fit, fabric, lining and XS–XL size range, with its own size chart.',
   },
   {
     slug: 'womens-jewelry',
@@ -62,8 +65,9 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Small gold-tone pieces',
     intro: "Earrings and other women's jewelry with material, finish and measurements listed on the product page.",
-    seoTitle: "Women's Jewelry",
-    seoDescription: "Shop NOVA women's jewelry. Preview styles list material, finish and dimensions.",
+    seoTitle: "Women's Jewelry & Earrings",
+    seoDescription:
+      "Shop NOVA women's jewelry, including small gold-tone hoop earrings. Each piece lists its material, finish, closure and measurements.",
   },
   {
     slug: 'backpacks',
@@ -71,8 +75,9 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Carry for the commute',
     intro: 'Backpacks with stated capacity, dimensions and laptop fit. Only the compatibility written on the product is claimed.',
-    seoTitle: 'Backpacks',
-    seoDescription: 'Shop NOVA backpacks. Preview styles list capacity, dimensions and laptop compatibility when it has been measured.',
+    seoTitle: 'Laptop & Commuter Backpacks',
+    seoDescription:
+      'Shop NOVA commuter backpacks. Each pack lists its capacity in liters, dimensions and measured laptop sleeve fit, plus pockets and straps.',
   },
   {
     slug: 'watches',
@@ -80,8 +85,9 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Quiet dials, leather straps',
     intro: 'Watches with case size, movement and strap listed on the page. Water resistance is shown only when a rating is on file.',
-    seoTitle: 'Watches',
-    seoDescription: 'Shop NOVA watches. Preview styles list case size, movement and strap material.',
+    seoTitle: 'Minimalist Watches with Leather Straps',
+    seoDescription:
+      'Shop NOVA minimalist watches. Each style lists its case size, movement, strap material and wrist fit range, so you can check sizing first.',
   },
   {
     slug: 'running',
@@ -90,7 +96,7 @@ export const categories: Category[] = [
     summary: 'Cushioned trainers for road miles',
     intro:
       'Road shoes built around a high-rebound foam midsole and a breathable mesh upper. Start here if you log regular miles on pavement or treadmill and want a shoe that also works for the rest of your day.',
-    seoTitle: 'Running Shoes',
+    seoTitle: 'Running Shoes: Cushioned Road Trainers',
     seoDescription:
       'Shop NOVA running shoes: cushioned road trainers with breathable mesh uppers, US sizing and standard or wide widths.',
   },
@@ -101,7 +107,7 @@ export const categories: Category[] = [
     summary: 'Grip and protection off-road',
     intro:
       'Trail shoes with a lugged rubber outsole, a protective toe cap and a firmer, more stable platform for dirt, gravel and rocky paths.',
-    seoTitle: 'Trail Running Shoes',
+    seoTitle: 'Trail Running Shoes with Lugged Grip',
     seoDescription:
       'Shop NOVA trail shoes with lugged outsoles, protective toe caps and ripstop uppers for dirt, gravel and mixed terrain.',
   },
@@ -112,9 +118,9 @@ export const categories: Category[] = [
     summary: 'Leather and suede everyday classics',
     intro:
       'Clean low- and high-top silhouettes in leather and suede, set on durable rubber cupsoles. Designed to pair with denim, chinos and everything in between.',
-    seoTitle: 'Lifestyle Sneakers',
+    seoTitle: 'Leather & Suede Lifestyle Sneakers',
     seoDescription:
-      'Shop NOVA lifestyle sneakers: minimalist leather court shoes and suede high-tops on rubber cupsoles.',
+      'Shop NOVA lifestyle sneakers: a minimalist leather court shoe and a suede and leather high-top on durable rubber soles, in US men’s sizing.',
   },
   {
     slug: 'everyday',
@@ -123,9 +129,9 @@ export const categories: Category[] = [
     summary: 'Lightweight knits for all-day wear',
     intro:
       'Soft knit uppers and lightweight foam soles for commuting, travel and long days on your feet. Easy on, easy to live in.',
-    seoTitle: 'Everyday Comfort Shoes',
+    seoTitle: 'Everyday Knit Sneakers & Slip-Ons',
     seoDescription:
-      'Shop NOVA everyday shoes: lightweight knit sneakers and slip-ons with soft foam midsoles for all-day wear.',
+      'Shop NOVA everyday shoes: lightweight knit sneakers and slip-ons with soft foam midsoles for all-day wear, in standard and wide widths.',
   },
 ]
 
@@ -188,7 +194,7 @@ export const products: Product[] = [
       'stride-runner:carbon:7:2E': 0,
       'stride-runner:carbon:12:2E': 2,
     },
-    relatedGuides: ['how-to-choose-running-shoes', 'how-to-measure-your-feet'],
+    relatedGuides: ['how-to-choose-running-shoes', 'how-to-measure-your-feet', 'standard-vs-wide-shoes'],
   },
   {
     id: 'ridge-trail',
@@ -358,7 +364,7 @@ export const products: Product[] = [
       'drift-knit:sage:7:2E': 0,
       'drift-knit:sage:12:D': 2,
     },
-    relatedGuides: ['how-to-measure-your-feet'],
+    relatedGuides: ['how-to-measure-your-feet', 'standard-vs-wide-shoes'],
   },
   {
     id: 'arc-high',
@@ -464,7 +470,7 @@ export const products: Product[] = [
       'glide-slip-on:sand:7:2E': 0,
       'glide-slip-on:sand:13:2E': 0,
     },
-    relatedGuides: ['how-to-measure-your-feet'],
+    relatedGuides: ['how-to-measure-your-feet', 'standard-vs-wide-shoes'],
   },
   {
     id: 'mini-crossbody',
@@ -506,6 +512,7 @@ export const products: Product[] = [
     bestFor: ['Daytime', 'Light carry'],
     defaultStock: 8,
     stock: {},
+    relatedGuides: ['what-fits-in-a-crossbody-bag'],
   },
   {
     id: 'slim-wallet',
@@ -545,6 +552,7 @@ export const products: Product[] = [
     bestFor: ['Everyday carry'],
     defaultStock: 10,
     stock: {},
+    relatedGuides: ['what-fits-in-a-crossbody-bag'],
   },
   {
     id: 'day-jacket',
@@ -670,6 +678,7 @@ export const products: Product[] = [
     bestFor: ['Commute'],
     defaultStock: 7,
     stock: {},
+    relatedGuides: ['how-to-choose-a-laptop-backpack'],
   },
   {
     id: 'line-watch',
@@ -710,5 +719,6 @@ export const products: Product[] = [
     bestFor: ['Everyday'],
     defaultStock: 5,
     stock: {},
+    relatedGuides: ['watch-case-size-and-strap-fit'],
   },
 ]

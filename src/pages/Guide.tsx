@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router'
-import { getProduct } from '../catalog'
+import { getCategory, getProduct } from '../catalog'
 import { getGuide } from '../data/guides'
 import { ProductCard } from '../components/product/ProductCard'
 import { QuickShop, type QuickShopTarget } from '../components/product/QuickShop'
 import { Breadcrumbs } from '../components/ui/Breadcrumbs'
-import { breadcrumbLd, absoluteUrl, Seo } from '../lib/seo'
+import { Icon } from '../components/ui/Icon'
+import { breadcrumbLd, absoluteUrl, orgRef, Seo } from '../lib/seo'
 import { store } from '../config/store'
 import NotFound from './NotFound'
+import '../components/product/ProductCard.css'
+
+const formatDate = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
 
 export default function Guide() {
   const { slug = '' } = useParams()
@@ -15,12 +19,16 @@ export default function Guide() {
   const [quick, setQuick] = useState<QuickShopTarget | null>(null)
   if (!guide) return <NotFound />
   const products = guide.relatedProducts.map((s) => getProduct(s)).filter((p) => !!p)
+  const collections = guide.categories.map((c) => getCategory(c)).filter((c) => !!c)
+  const nextGuides = (guide.relatedGuides ?? []).map(getGuide).filter((g) => !!g)
   const path = `/guides/${guide.slug}`
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: 'Guides', path: '/guides' },
     { name: guide.title, path },
   ]
+  const wasUpdated = guide.updated !== guide.published
+  const aboutShoes = collections.some((c) => c.slug === 'shoes' || c.kind === 'shoe-use')
 
   return (
     <>
@@ -29,15 +37,23 @@ export default function Guide() {
         description={guide.description}
         path={path}
         type="article"
+        image={guide.image}
+        imageAlt={guide.imageAlt}
+        published={guide.published}
+        modified={guide.updated}
         jsonLd={[
           {
             '@context': 'https://schema.org',
             '@type': 'Article',
             headline: guide.title,
             description: guide.description,
-            mainEntityOfPage: absoluteUrl(path),
-            author: { '@type': 'Organization', name: store.legalName, url: absoluteUrl('/') },
-            publisher: { '@type': 'Organization', name: store.legalName, url: absoluteUrl('/') },
+            image: [absoluteUrl(guide.image)],
+            datePublished: guide.published,
+            dateModified: guide.updated,
+            inLanguage: store.locale,
+            mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(path) },
+            author: orgRef(),
+            publisher: { ...orgRef(), logo: { '@type': 'ImageObject', url: absoluteUrl('/favicon.svg') } },
           },
           breadcrumbLd(crumbs),
         ]}
@@ -48,6 +64,18 @@ export default function Guide() {
           <p className="eyebrow eyebrow--ember">Guide</p>
           <h1>{guide.title}</h1>
           <p className="lede">{guide.intro}</p>
+          <p className="guide-byline">
+            {`By the ${store.name} team · `}
+            {wasUpdated ? (
+              <>
+                Updated <time dateTime={guide.updated}>{formatDate(guide.updated)}</time>
+              </>
+            ) : (
+              <>
+                Published <time dateTime={guide.published}>{formatDate(guide.published)}</time>
+              </>
+            )}
+          </p>
         </header>
         <div className="prose">
           {guide.sections.map((s) => (
@@ -65,16 +93,53 @@ export default function Guide() {
               )}
             </section>
           ))}
-          <p>
-            More help: <Link to="/fit-guide">size & fit guide</Link> · <Link to="/guides">all guides</Link>
-          </p>
+          {collections.length > 0 && (
+            <p>
+              Ready to compare styles?{' '}
+              {collections.map((c, i) => (
+                <span key={c.slug}>
+                  {i > 0 && ' or '}
+                  <Link to={`/collections/${c.slug}`}>browse {c.name.toLowerCase()}</Link>
+                </span>
+              ))}
+              .
+            </p>
+          )}
         </div>
+        {nextGuides.length > 0 && (
+          <nav className="guide-next" aria-labelledby="guide-next-title">
+            <h2 id="guide-next-title" className="eyebrow">
+              Keep reading
+            </h2>
+            <ul role="list">
+              {nextGuides.map((g) => (
+                <li key={g.slug}>
+                  <Link to={`/guides/${g.slug}`} className="link-arrow">
+                    {g.title} <Icon name="arrow" size={16} />
+                  </Link>
+                </li>
+              ))}
+              {aboutShoes && (
+                <li>
+                  <Link to="/fit-guide" className="link-arrow">
+                    Shoe size & fit guide <Icon name="arrow" size={16} />
+                  </Link>
+                </li>
+              )}
+              <li>
+                <Link to="/guides" className="link-arrow">
+                  All guides <Icon name="arrow" size={16} />
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        )}
       </article>
       {products.length > 0 && (
         <section className="section" aria-labelledby="guide-products" style={{ paddingTop: 0 }}>
           <div className="container">
             <div className="section-head">
-              <h2 id="guide-products">Shoes mentioned in this guide</h2>
+              <h2 id="guide-products">{guide.productsHeading ?? 'Styles mentioned in this guide'}</h2>
             </div>
             <div className="product-grid">
               {products.map((p) => (
