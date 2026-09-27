@@ -71,7 +71,7 @@ function cacheControl(urlPath) {
 /** Mirrors the X-Robots-Tag rules in vercel.json. */
 const FACET_KEYS = ['q', 'color', 'size', 'width', 'price', 'availability', 'sort', 'category', 'use', 'trait', 'page']
 function robotsHeader(url) {
-  if (/^\/(cart|wishlist|search|checkout\/success)$/.test(url.pathname)) return 'noindex, follow'
+  if (/^\/(cart|wishlist|search|admin|checkout\/success)$/.test(url.pathname)) return 'noindex, follow'
   if (url.pathname.startsWith('/api/')) return 'noindex'
   if (/^\/(shop|collections\/.+)$/.test(url.pathname) && FACET_KEYS.some((k) => url.searchParams.has(k))) return 'noindex, follow'
   return undefined

@@ -23,7 +23,7 @@ describe('prerendered HTML', () => {
   })
 
   it('keeps utility pages out of the index and the sitemap', () => {
-    for (const path of ['/cart', '/search', '/wishlist', '/checkout/success']) {
+    for (const path of ['/cart', '/search', '/wishlist', '/checkout/success', '/admin']) {
       expect(render(path).head, path).toContain('noindex')
       expect(prerenderRoutes().find((r) => r.path === path)?.sitemap).toBe(false)
     }

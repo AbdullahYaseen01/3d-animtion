@@ -32,8 +32,8 @@ export default function Privacy() {
           you check out.
         </li>
         <li>
-          <strong>Usage analytics.</strong> If analytics is enabled, we measure page views and shopping events (such as adding to cart) without your name, email or address. We do
-          not load analytics when your browser sends a Global Privacy Control or Do Not Track signal.
+          <strong>Usage analytics.</strong> If analytics is enabled, Vercel Web Analytics records page views, and Google Analytics may record shopping events (such as adding to cart), without your name, email or address. We do
+          not load analytics when your browser sends a Global Privacy Control or Do Not Track signal. Visits to the private order desk are not measured.
         </li>
       </ul>
 
@@ -48,8 +48,8 @@ export default function Privacy() {
 
       <h2>Service providers</h2>
       <p>
-        We share information only with providers that help us run the store: Stripe (payments), Resend (email), and Vercel (website hosting), and, if enabled, Google Analytics
-        (usage measurement). We do not sell your personal information.
+        We share information only with providers that help us run the store: Stripe (payments), Resend (email), and Vercel (website hosting and page-view analytics), and, if enabled, Google Analytics
+        (shopping events). We do not sell your personal information.
       </p>
 
       <h2>Your choices and rights</h2>

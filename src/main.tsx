@@ -7,7 +7,7 @@ import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router'
 import { App } from './App'
-import { initAnalytics } from './lib/analytics'
+import { initAnalytics, initVercelAnalytics } from './lib/analytics'
 import { preloadAllPages, preloadPage } from './routes'
 
 const container = document.getElementById('root')!
@@ -41,6 +41,7 @@ Promise.all([preloadPage(window.location.pathname).catch(() => undefined), after
       createRoot(container).render(tree)
     }
     initAnalytics()
+    initVercelAnalytics()
     // Fetch the other pages after load, once idle, so later navigation does not wait on the network.
     const idle = window.requestIdleCallback ?? ((cb: () => void) => setTimeout(cb, 1500))
     const warm = () => idle(() => void preloadAllPages().catch(() => undefined))

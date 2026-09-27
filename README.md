@@ -84,18 +84,29 @@ How it works:
 
 ## Analytics
 
-GA4 loads only when `VITE_GA4_ID` is set, and never when the browser sends Global Privacy Control or Do Not Track.
-Events are pushed to `window.dataLayer`: `view_item_list`, `view_item`, `search`, `add_to_cart`, `remove_from_cart`,
-`begin_checkout`, `purchase` (only for server-confirmed paid orders, once per order), `sign_up` and `generate_lead`.
-Payloads contain product IDs, SKUs, prices and quantities only. No names, emails or addresses are sent. Server logs follow
-the same rule (`logEvent` in `server/http.ts`). There is no cookie banner. Add a consent tool before enabling
-ads or remarketing tags, or before serving visitors in regions that require opt-in consent.
+Vercel Web Analytics records page views after it is enabled in the Vercel project (Analytics tab). The script is already
+in the site. It does not load when the browser sends Global Privacy Control or Do Not Track, and it does not record
+visits to `/admin`.
+
+GA4 loads only when `VITE_GA4_ID` is set, with the same privacy signals. Events are pushed to `window.dataLayer`:
+`view_item_list`, `view_item`, `search`, `add_to_cart`, `remove_from_cart`, `begin_checkout`, `purchase` (only for
+server-confirmed paid orders, once per order), `sign_up` and `generate_lead`. Payloads contain product IDs, SKUs, prices
+and quantities only. No names, emails or addresses are sent. Server logs follow the same rule (`logEvent` in
+`server/http.ts`). There is no cookie banner. Add a consent tool before enabling ads or remarketing tags, or before
+serving visitors in regions that require opt-in consent.
+
+## Admin orders
+
+`/admin` is the owner’s order desk. It lists paid and completed Stripe checkouts (name, email, phone, shipping address,
+items and totals). Set `ADMIN_PASSWORD` (at least 10 characters) in Vercel. The password is checked on the server and
+kept in an HttpOnly cookie for 12 hours. It is not in the repo. Without the password, or without Stripe, the page says
+which part is missing instead of showing an empty order list.
 
 ## Environment variables
 
 See [`.env.example`](.env.example). The keys are `VITE_SITE_URL`, `ALLOW_INDEXING`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`,
 `STRIPE_AUTOMATIC_TAX`, `RESEND_API_KEY`, `RESEND_SEGMENT_ID`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`,
-`ORDER_NOTIFICATION_EMAIL`, `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` and `VITE_GA4_ID`. `VITE_*` values are public
+`ORDER_NOTIFICATION_EMAIL`, `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`, `ADMIN_PASSWORD` and `VITE_GA4_ID`. `VITE_*` values are public
 (bundled into the client). Everything else is server-only.
 
 ## Deploying (Vercel)
@@ -129,7 +140,7 @@ Each of these must be resolved by the business. None can be settled in code.
 
 - No inventory reservation. Stock is static catalog data, so two buyers can purchase the last unit.
 - Without Upstash, webhook fulfillment deduplication is best-effort (see Payments).
-- No customer accounts or order history, and no order-confirmation email of our own. Turn on Stripe's
+- No customer accounts. The store owner can review paid orders at `/admin`. There is no order-confirmation email of our own. Turn on Stripe's
   "Successful payments" customer emails so buyers get a receipt.
 - The client JS bundle is 376 KB raw / 116.6 KB gzip. Lab-probe FCP ranged from 3.1 to 5.3 s and LCP from 3.9 to 5.3 s on
   the throttled profile across repeated runs (baseline: FCP 4388 ms, LCP 5880 ms on a loading-screen logo). These are lab

@@ -49,6 +49,27 @@ function allowed(): boolean {
 }
 
 let loaded = false
+let vercelLoaded = false
+
+/** Page views for Vercel Web Analytics. Skipped for Global Privacy Control, Do Not Track, and the owner desk. */
+export function initVercelAnalytics(): void {
+  if (vercelLoaded || !allowed()) return
+  vercelLoaded = true
+  void import('@vercel/analytics').then(({ inject }) => {
+    inject({
+      beforeSend(event) {
+        try {
+          const path = new URL(event.url, window.location.origin).pathname
+          if (path === '/admin' || path.startsWith('/admin/')) return null
+        } catch {
+          return event
+        }
+        return event
+      },
+    })
+  })
+}
+
 export function initAnalytics(): void {
   if (loaded || !GA_ID || !allowed()) return
   loaded = true

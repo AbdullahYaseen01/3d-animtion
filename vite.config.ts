@@ -9,6 +9,8 @@ export const API_ROUTES: Record<string, string> = {
   '/api/stripe-webhook': 'stripeWebhook',
   '/api/newsletter': 'newsletter',
   '/api/contact': 'contact',
+  '/api/admin/orders': 'adminOrders',
+  '/api/admin/session': 'adminSession',
 }
 
 /** Bridges Node requests to the Web-standard handlers in server/handlers (same code Vercel runs). */
@@ -37,7 +39,13 @@ export function createApiMiddleware(load: (id: string) => Promise<Record<string,
       }
       const response = await handler(new Request(url, { method: req.method, headers, body }))
       res.statusCode = response.status
-      response.headers.forEach((v, k) => res.setHeader(k, v))
+      response.headers.forEach((v, k) => {
+        if (k.toLowerCase() === 'set-cookie') return
+        res.setHeader(k, v)
+      })
+      const cookies = typeof response.headers.getSetCookie === 'function' ? response.headers.getSetCookie() : []
+      const setCookie = cookies.length ? cookies : response.headers.get('set-cookie')
+      if (setCookie) res.setHeader('set-cookie', setCookie)
       res.end(Buffer.from(await response.arrayBuffer()))
     } catch (err) {
       console.error(err)

@@ -10,6 +10,7 @@ import { AnnouncerProvider, useAnnounce } from './state/Announcer'
 import { CartProvider } from './state/CartProvider'
 import { WishlistProvider } from './state/WishlistProvider'
 
+const Admin = pages.admin.page.Component
 const About = pages.about.page.Component
 const Cart = pages.cart.page.Component
 const Catalog = pages.catalog.page.Component
@@ -89,6 +90,7 @@ export function App() {
       <CartProvider>
         <WishlistProvider>
           <Routes>
+            <Route path="admin" element={<Admin />} />
             <Route element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="shop" element={<Catalog mode={{ kind: 'shop' }} />} />

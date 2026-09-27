@@ -66,6 +66,6 @@ export function prerenderRoutes(): PrerenderRoute[] {
     { path: '/guides', lastmod: latestGuide },
     ...guides.map((g) => ({ path: `/guides/${g.slug}`, lastmod: g.updated })),
   ]
-  const utility = ['/search', '/cart', '/wishlist', '/checkout/success']
+  const utility = ['/search', '/cart', '/wishlist', '/checkout/success', '/admin']
   return [...indexable.map((r) => ({ ...r, sitemap: true })), ...utility.map((path) => ({ path, sitemap: false }))]
 }
