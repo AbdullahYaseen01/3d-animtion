@@ -1937,5 +1937,1505 @@
       1024
     ],
     "bg": "#f6f6f6"
+  },
+  "bagx-monaco-choco-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-monaco-choco-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-monaco-choco-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-monaco-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-monaco-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-monaco-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-leo-maroon-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-leo-maroon-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-leo-maroon-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-nyra-beige-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-nyra-beige-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-nyra-beige-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-nyra-pink-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-nyra-pink-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-nyra-pink-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-opaline-silver-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-opaline-silver-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-opaline-silver-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-opaline-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-opaline-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-opaline-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-blue-palm-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-blue-palm-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-blue-palm-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-xyra-choco-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-xyra-choco-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-xyra-choco-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-xyra-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-xyra-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-xyra-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mulan-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mulan-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mulan-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mulan-choco-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mulan-choco-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mulan-choco-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-evline-beige-brown-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#fefefe"
+  },
+  "bagx-evline-beige-brown-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-evline-beige-brown-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-evline-brown-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-evline-brown-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-evline-brown-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-niro-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-niro-white-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-niro-white-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-jinx-choco-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-jinx-choco-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-jinx-choco-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-leo-brown-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-leo-brown-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-leo-brown-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-jinx-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-jinx-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-geneva-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-jinx-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-geneva-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-celine-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-geneva-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-celine-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-celine-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-aries-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-aries-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mars-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-aries-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mars-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mars-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-aries-maroon-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-aries-maroon-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-aries-maroon-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mars-choco-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mars-choco-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mars-choco-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-ayla-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-ayla-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-veya-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-ayla-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-veya-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-veya-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-ayla-choco-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-ayla-choco-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-ayla-choco-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-nice-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-nice-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-eli-brown-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-nice-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-eli-brown-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-eli-brown-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-lapin-brown-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f8faf9"
+  },
+  "bagx-lapin-brown-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#fdfdfd"
+  },
+  "bagx-lapin-brown-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#fefefe"
+  },
+  "bagx-kyoto-dusty-pink-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-april-choco-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-kyoto-dusty-pink-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-kyoto-dusty-pink-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-april-choco-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-april-choco-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-april-brown-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-april-brown-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-april-brown-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-cairo-beige-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-cairo-beige-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-cairo-beige-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-geneva-brown-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-geneva-brown-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-derby-maroon-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-geneva-brown-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-derby-maroon-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-derby-maroon-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-derby-brown-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-derby-brown-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-derby-brown-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-paris-choco-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-paris-choco-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#fdfffa"
+  },
+  "bagx-paris-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-paris-choco-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-paris-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-barcelona-maroon-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-paris-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-selena-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-barcelona-maroon-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-barcelona-maroon-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-selena-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-selena-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-lorene-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-lorene-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-lorene-beige-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-lorene-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#0e100d"
+  },
+  "bagx-lorene-beige-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-lorene-beige-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#c8baaa"
+  },
+  "bagx-kyoto-pink-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-kyoto-pink-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-kyoto-pink-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-cairo-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-cairo-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-west-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-cairo-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-west-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-west-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-mini-shein-beige-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-mini-shein-beige-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-mini-shein-maroon-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-mini-shein-beige-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-mini-shein-maroon-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-ashford-beige-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-mini-shein-maroon-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-ashford-beige-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-ashford-beige-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-ashford-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bagx-ashford-black-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "bagx-ashford-black-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
   }
 }

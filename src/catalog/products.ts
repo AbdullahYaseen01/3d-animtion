@@ -1,4 +1,5 @@
 import type { Category, Product, WidthOption } from './types.js'
+import { bagxHandbags } from './bagxHandbags.js'
 import { mensSneakers } from './mensSneakers.js'
 import { mensWatches } from './mensWatches.js'
 
@@ -35,11 +36,12 @@ export const categories: Category[] = [
     slug: 'handbags',
     name: 'Handbags',
     kind: 'department',
-    summary: 'Totes and crossbodies for the day',
-    intro: 'Structured bags sized for a day out. Each style lists its dimensions, material, closure and how it is carried.',
+    summary: 'Bag X new arrivals for the day',
+    intro:
+      'Handbags from Bag X new arrivals, each listed between 1,000 and 25,000 PKR at the source. Prices here are five times that listing, in US dollars. Every style includes its color, material, dimensions, and closure when Bag X published them.',
     seoTitle: 'Handbags & Crossbody Bags',
     seoDescription:
-      'Shop NOVA handbags and crossbody bags. Every style lists its dimensions, strap drop, material and closure, so you know what fits before you order.',
+      'Shop Bag X handbags, shoulder bags, and crossbody bags. Each style lists its color, material, dimensions, and closure, with US shipping and returns.',
   },
   {
     slug: 'wallets',
@@ -726,4 +728,5 @@ export const products: Product[] = [
   },
   ...mensWatches,
   ...mensSneakers,
+  ...bagxHandbags,
 ]
