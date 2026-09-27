@@ -84,12 +84,12 @@ export const categories: Category[] = [
     slug: 'watches',
     name: 'Watches',
     kind: 'department',
-    summary: 'Branded men’s watches',
+    summary: 'Men’s watches for every day',
     intro:
-      'Men’s watches from Seiko, Citizen, Casio, Tissot, Rado, Fossil and other houses. Every style lists its case, movement, strap and water resistance, with the current price in US dollars.',
+      'Men’s watches from Casio, Fossil, Naviforce, Daniel Klein and other houses. Every style lists its case, movement, strap and water resistance, with the current price in US dollars.',
     seoTitle: "Men's Watches",
     seoDescription:
-      "Shop men's watches from Seiko, Citizen, Casio, Tissot, Rado and Fossil. Each style lists case size, movement, strap and water resistance.",
+      "Shop men's watches from Casio, Fossil, Naviforce and Daniel Klein. Each style lists case size, movement, strap and water resistance.",
   },
   {
     slug: 'running',

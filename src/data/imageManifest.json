@@ -19,186 +19,6 @@
     ],
     "bg": "#e8d9ca"
   },
-  "casio-edifce-ecb-10db-1a9": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "casio-edifice-efr-s567d-1avudf": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "casio-edifice-efr-s567d-2avudf": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "casio-edifice-efr571db-1a1vudf": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "casio-edifice-efv-150dc-1a": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "casio-edifice-mens-watch-efs-s570db-2audf": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "casio-g-shock-aw-500e-1e": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "casio-g-shock-ga-140gb-1a1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "casio-g-shock-ga-400gb-1a9": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "casio-g-shock-gst-b500bd-1a9dr": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "citizen-analog-blue-dial-mens-solar-gold-s": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "citizen-at2243-87l-wrist-watch": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "citizen-au1062-56e-axiom-black-dial-gold-t": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "citizen-au1065-58e-mens-eco-drive-black-io": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "citizen-axiom-eco-drive-chronograph-black": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "citizen-mens-eco-drive-black-ion-plated-ax": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "claude-bernard-10252-37rngca-grn-aquarider": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "claude-bernard-10252-3nbm-buib-aquarider-c": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
   "court-black-angle": {
     "w": 1024,
     "h": 1024,
@@ -298,76 +118,6 @@
     ],
     "bg": "#f5cd9b"
   },
-  "emporio-armani-ar11483": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "emporio-armani-ar11498": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "emporio-armani-ar1868": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "fossil-fs-5024": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "fossil-fs-5348": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "fossil-me-1137": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "fossil-mens-grant-sport-fs5238": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
   "glide-charcoal-angle": {
     "w": 1024,
     "h": 1024,
@@ -407,96 +157,6 @@
       1024
     ],
     "bg": "#f1e8de"
-  },
-  "kenneth-cole-kcwga2234301": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "kenneth-cole-kcwga2234303": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "mathey-tissot-h709pqi": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "mathey-tissot-h901prn": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "mathey-tissot-h906anb": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "mathey-tissot-h906ar": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "movado-0607217": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "movado-0607278": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "movado-0607292": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
   },
   "nova-backpack-side": {
     "w": 1024,
@@ -558,106 +218,6 @@
     ],
     "bg": "#f7efe5"
   },
-  "rado-073-3912-4002-r48912023-florence-clas-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "rado-073-3912-4002-r48912023-florence-clas-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "rado-073-3912-4002-r48912023-florence-clas-3": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "rado-073-3912-4071-r48912713-florence-clas": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "rado-073-3912-4072-r48912723-florence-clas-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "rado-073-3912-4072-r48912723-florence-clas-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "rado-073-3912-4072-r48912723-florence-clas-3": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "rado-648-0413-3-003-for-men-analog-dress-w-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "rado-648-0413-3-003-for-men-analog-dress-w-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "rado-648-0413-3-003-for-men-analog-dress-w-3": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
   "ridge-moss-angle": {
     "w": 1024,
     "h": 1024,
@@ -697,106 +257,6 @@
       1024
     ],
     "bg": "#dfcfbf"
-  },
-  "roamer-949660415590-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "roamer-949660415590-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "roamer-957660472390-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "roamer-957660472390-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "seiko-5-srpk89k1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "seiko-sbdj061-prospex": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "seiko-sbdl097-prospex": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "seiko-sne595p1-prospex": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "seiko-sne597p1-prospex": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "seiko-sur377p1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
   },
   "stride-carbon-angle": {
     "w": 1024,
@@ -838,7 +298,7 @@
     ],
     "bg": "#ded1c6"
   },
-  "swiss-military-hanowa-smwgh0003203": {
+  "naviforce-nf5053g-ch-wht": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -848,7 +308,7 @@
     ],
     "bg": "#ffffff"
   },
-  "swiss-military-hanowa-smwgi0000404": {
+  "naviforce-nf8029g-ch-blu": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -858,7 +318,7 @@
     ],
     "bg": "#ffffff"
   },
-  "tissot-t063-617-22-037-00-tradition-watch": {
+  "naviforce-nf8032g-ch-blu": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -868,7 +328,7 @@
     ],
     "bg": "#ffffff"
   },
-  "tissot-t127-407-11-051-00-gentlemen-powerm-1": {
+  "naviforce-nf8032g-ch-wht": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -878,7 +338,7 @@
     ],
     "bg": "#ffffff"
   },
-  "tissot-t127-407-11-051-00-gentlemen-powerm-2": {
+  "naviforce-nf9231g-ch-blk": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -888,7 +348,587 @@
     ],
     "bg": "#ffffff"
   },
-  "tissot-t127-407-11-051-00-gentlemen-powerm-3": {
+  "naviforce-nf9238g-ch-blu": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "naviforce-nf9238g-ch-blk": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "naviforce-nf5053g-ttrg-wht": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "daniel-klein-dk12106-4": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "daniel-klein-dk12576-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "daniel-klein-dk13099-4": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "daniel-klein-dk12330-4": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "daniel-klein-dk12679-5": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "daniel-klein-dk13807-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "daniel-klein-dk13738-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "casio-lw-200-2a-resin-band-unisex-watch": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "daniel-klein-dk13666-5": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "casio-mens-sport-analog-dive-watch-mrw-200": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "casio-analog-standard-cream-dial": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "casio-ae-1000w-1bvdf-mens-avcf-resin-sport-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "casio-ae-1000w-1bvdf-mens-avcf-resin-sport-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "casio-mens-ae-1000w-1avcf-resin-sport-watc": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "casio-mens-10-year-battery-quartz-resin-wa": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "casio-youth-series-digital-silver-steel-ba": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "casio-mtp-1215a-2avdf-watch": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "mini-focus-mf0018g-02-mesh-chain": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "mini-focus-mf0158g-07-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "mini-focus-mf0158g-07-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "mini-focus-luxury-men-leather-strap-wrist": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "mini-focus-mf0158g-02-leather-strap": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "skmei-9273-rg-blk": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "skmei-9273-rsblk-blu": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "skmei-9273-rsbrn-grn": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "curren-8457g-ch-blu": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "curren-8425-gld-wht": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "skmei-9303-rs-wht-nylon-band": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "curren-8411-rose-blk": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "curren-9090-ch-grn": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "omax-hxm01r98i-men-leather-strap-watch": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "omax-vc06r38i-mens-wrist-watch": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "omax-vc06g21i-mens-wrist-watch": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "omax-pr0013iu04-men-leather-strap-watch": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bonito-k-5120-tt-wt-men-chain-strap-watch": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bonito-k-5127-ch-wt-men-chain-strap-watch": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "bonito-k-5134-ch-wt-men-chain-strap-watch": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "ferro-fm40110a-a6": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "ferro-f11253a-b2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "crysma-axen-crl812g-slr-whtgrn-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "ferro-f11479a-a": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "crysma-axen-crl812g-slr-whtgrn-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "crysma-axen-crl812g-ttgld-whtgrn-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "crysma-axen-crl812g-ttgld-whtgrn-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "crysma-axen-crl812g-blk-blkwht-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "crysma-axen-crl812g-blk-blkwht-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "fossil-fs-5843-retro-digital": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "fossil-fs-5846-retro-digital-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "fossil-fs-5846-retro-digital-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "fossil-bq-2380-privateer": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "slazenger-sl-9-6573-2-03-rubber-band": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "slazenger-sl-9-2081-1-05": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "seiko5-02933-pre-owned-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "seiko5-02933-pre-owned-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "royal-london-41369-13": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "royal-london-41275-01": {
     "w": 1200,
     "h": 1200,
     "widths": [

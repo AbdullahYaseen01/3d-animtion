@@ -1,8 +1,6 @@
 /**
- * Pulls 50 men's watches from the Rafiq Sons public catalog and writes
- * src/catalog/mensWatches.ts plus PNG sources for the image pipeline.
- *
- * Prices are converted from PKR to USD and rounded to the nearest dollar.
+ * Pulls men's watches listed between 1,000 and 25,000 PKR on Rafiq Sons.
+ * The store price is five times that listing, converted to USD.
  */
 import fs from 'node:fs'
 import https from 'node:https'
@@ -13,27 +11,30 @@ import sharp from 'sharp'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
-const TARGET = 50
-const POOL = 64
+const MIN_PKR = 1000
+const MAX_PKR = 25000
 
 const QUERIES = [
-  ['men watch', 60],
-  ['seiko men', 40],
-  ['citizen men', 40],
-  ['casio men', 40],
-  ['edifice', 30],
-  ['g-shock men', 20],
-  ['tissot men', 20],
-  ['rado men', 15],
-  ['fossil men', 20],
-  ['movado men', 10],
-  ['swiss military men', 15],
-  ['mathey tissot', 12],
-  ['emporio armani men', 12],
-  ['kenneth cole men', 10],
-  ['pierre cardin men', 10],
-  ['roamer men', 10],
-  ['claude bernard men', 8],
+  ['naviforce men', 60],
+  ['daniel klein men', 60],
+  ['casio men', 60],
+  ['skmei men', 60],
+  ['curren men', 60],
+  ['omax men', 60],
+  ['mini focus men', 60],
+  ['fossil men', 60],
+  ['citizen men', 60],
+  ['seiko men', 60],
+  ['kenneth cole men', 40],
+  ['pierre cardin men', 40],
+  ['bonito men', 40],
+  ['ferro men', 40],
+  ['crysma men', 40],
+  ['g-shock men', 40],
+  ['edifice men', 40],
+  ['titan men', 30],
+  ['slazenger men', 30],
+  ['royal london men', 30],
 ]
 
 const BRAND_PLAN = [
@@ -168,6 +169,24 @@ function brandOf(product) {
   return BRAND_PLAN.find((brand) => matchesBrand(product, brand)) ?? null
 }
 
+const BRAND_CAPS = [
+  [/naviforce/i, 8],
+  [/daniel klein/i, 8],
+  [/casio|g-?shock|edifice/i, 8],
+  [/mini focus/i, 4],
+  [/skmei|skemi/i, 4],
+  [/curren/i, 4],
+  [/omax/i, 4],
+  [/bonito/i, 3],
+  [/ferro/i, 3],
+  [/crysma/i, 3],
+  [/fossil/i, 3],
+  [/slazenger/i, 2],
+  [/seiko/i, 2],
+  [/citizen/i, 2],
+  [/royal london/i, 2],
+]
+
 function select(pool) {
   const mens = []
   const seen = new Set()
@@ -175,38 +194,34 @@ function select(pool) {
     if (!product?.handle || !product?.title || seen.has(product.id)) continue
     if (!isMens(product)) continue
     if (/women|woman|ladies|lady|couple|-copy(?:-|$)/i.test(product.handle)) continue
-    if (!product.image) continue
+    if (!inPriceBand(product.price)) continue
+    if (!product.image || !String(product.image).startsWith('https://cdn.shopify.com/')) continue
     seen.add(product.id)
     mens.push(product)
   }
 
   const picked = []
   const used = new Set()
-  const take = (product) => {
-    if (used.has(product.id) || picked.length >= POOL) return
-    used.add(product.id)
-    picked.push(product)
+  const take = (rows, cap) => {
+    const ordered = [...rows].sort((a, b) => Number(b.availableForSale) - Number(a.availableForSale) || Number(a.price) - Number(b.price))
+    let n = 0
+    for (const product of ordered) {
+      if (n >= cap || used.has(product.id)) continue
+      if (!product.availableForSale && ordered.some((row) => row.availableForSale && !used.has(row.id))) continue
+      used.add(product.id)
+      picked.push(product)
+      n += 1
+    }
   }
 
-  for (const brand of BRAND_PLAN) {
-    const rows = mens.filter((p) => matchesBrand(p, brand))
-      .sort((a, b) => Number(b.availableForSale) - Number(a.availableForSale) || Number(b.price) - Number(a.price))
-    const inStock = rows.filter((p) => p.availableForSale)
-    const source = inStock.length >= Math.min(2, brand.cap) ? inStock : rows
-    source.slice(0, brand.cap).forEach(take)
+  for (const [test, cap] of BRAND_CAPS) {
+    take(mens.filter((product) => test.test(`${product.title} ${product.vendor ?? ''}`)), cap)
   }
-
-  const rest = mens
-    .filter((p) => p.availableForSale && !/skmei|skemi|mini focus|halei|fantor|curren/i.test(p.title))
-    .sort((a, b) => (brandOf(b)?.rank ?? 10) - (brandOf(a)?.rank ?? 10) || Number(b.price) - Number(a.price))
-  rest.forEach(take)
-
-  mens
-    .filter((p) => p.availableForSale)
-    .sort((a, b) => Number(b.price) - Number(a.price))
-    .forEach(take)
-
-  return picked.slice(0, POOL)
+  take(
+    mens.filter((product) => product.availableForSale && !used.has(product.id)),
+    48 - picked.length,
+  )
+  return picked
 }
 
 function unescapeRsc(value) {
@@ -353,10 +368,21 @@ function colorMeta(dial, strap) {
   return { slug, name: dialHit.name, swatch, family: dialHit.family }
 }
 
-function toCents(amount, rate) {
+function pkrAmount(amount) {
   const pkr = Number(String(amount).replace(/,/g, ''))
-  if (!Number.isFinite(pkr) || pkr <= 0) return 0
-  return Math.max(100, Math.round(pkr / rate) * 100)
+  return Number.isFinite(pkr) ? pkr : 0
+}
+
+function inPriceBand(amount) {
+  const pkr = pkrAmount(amount)
+  return pkr >= MIN_PKR && pkr <= MAX_PKR
+}
+
+/** Five times the Rafiqson PKR price, expressed in US cents. */
+function toCents(amount, rate) {
+  const pkr = pkrAmount(amount)
+  if (pkr <= 0) return 0
+  return Math.max(100, Math.round((pkr * 5) / rate) * 100)
 }
 
 function fitId(handle) {
@@ -471,6 +497,7 @@ function buildProduct(summary, detail, rate) {
     brand,
     tagline: tagline || 'Men’s watch',
     description,
+    sourcePkr: pkrAmount(priceAmount),
     priceCents,
     compareAtPriceCents: compareAt > priceCents ? compareAt : undefined,
     color,
@@ -486,7 +513,7 @@ function buildProduct(summary, detail, rate) {
       `${strap}.`,
     ]),
     available,
-    imageUrls: [...new Set(images)].slice(0, 3),
+    imageUrls: [...new Set(images)].filter((url) => url.startsWith('https://cdn.shopify.com/')).slice(0, 2),
     sku: `${id}:${color.slug}:0:OS`,
   }
 }
@@ -543,7 +570,7 @@ ${traits.map(([group, value]) => `      { group: ${tsString(group)}, value: ${ts
       advice: 'This is a one-size watch. Check the case size and strap type above before ordering. Water resistance is only the rating listed in the specifications.',
     },
     bestFor: [${tsString(product.movement === 'Digital' ? 'Everyday' : 'Dress and everyday')}],
-    defaultStock: ${product.available ? 8 : 0},
+    defaultStock: 8,
     stock: {},
     relatedGuides: ['watch-case-size-and-strap-fit'],
   }`
@@ -555,8 +582,8 @@ ${traits.map(([group, value]) => `      { group: ${tsString(group)}, value: ${ts
 const ONE: WidthOption = { code: 'OS', label: 'One size' }
 
 /**
- * Fifty men's watches from the public Rafiq Sons catalog.
- * Prices were converted from PKR at ${rate.toFixed(2)} PKR per USD on 2026-09-27 and rounded to the nearest dollar.
+ * Men's watches listed between ${MIN_PKR.toLocaleString('en-US')} and ${MAX_PKR.toLocaleString('en-US')} PKR on Rafiq Sons.
+ * Each price is five times that listing, converted at ${rate.toFixed(2)} PKR per USD on 2026-09-27 and rounded to the nearest dollar.
  */
 export const mensWatches: Product[] = [
 ${body},
@@ -601,7 +628,16 @@ async function main() {
 
   const chosen = select(pool)
   console.log(`selected ${chosen.length}`)
-  if (chosen.length < TARGET) throw new Error(`Only found ${chosen.length} men's watches`)
+  if (process.argv.includes('--count')) {
+    const byBrand = new Map()
+    for (const product of chosen) {
+      const brand = brandOf(product)?.name || product.vendor || 'Other'
+      byBrand.set(brand, (byBrand.get(brand) ?? 0) + 1)
+    }
+    console.log([...byBrand].sort((a, b) => b[1] - a[1]).map(([brand, n]) => `${n}\t${brand}`).join('\n'))
+    return
+  }
+  if (!chosen.length) throw new Error('No watches in the 1,000–25,000 PKR band')
 
   const details = await mapPool(chosen, 4, async (product, index) => {
     const url = `https://rafiqsonsonline.com/product/${product.handle}`
@@ -621,8 +657,8 @@ async function main() {
   const built = []
   for (let i = 0; i < chosen.length; i++) {
     const product = buildProduct(chosen[i], details[i], rate)
-    if (!product.priceCents || !product.imageUrls.length) {
-      console.log('skip incomplete', product.name)
+    if (!inPriceBand(product.sourcePkr) || !product.priceCents || !product.imageUrls.length) {
+      console.log('skip', product.sourcePkr, product.name)
       continue
     }
     if (/women|ladies|\blady\b/i.test(product.name)) {
@@ -647,8 +683,8 @@ async function main() {
     seenIds.add(id)
   }
 
-  const candidates = built.filter((product) => product.imageUrls.length).slice(0, TARGET + 4)
-  if (candidates.length < TARGET) throw new Error(`Built ${candidates.length}, need ${TARGET}`)
+  const candidates = built.filter((product) => product.imageUrls.length)
+  if (!candidates.length) throw new Error('No watches left after checking product pages')
 
   const srcDir = path.join(root, 'assets-src', 'generated')
   fs.mkdirSync(srcDir, { recursive: true })
@@ -680,8 +716,49 @@ async function main() {
     product.imageKeys = keys
   })
 
-  const finalProducts = candidates.filter((product) => product.imageKeys?.length).slice(0, TARGET)
-  if (finalProducts.length < TARGET) throw new Error(`Pictured ${finalProducts.length}, need ${TARGET}`)
+  const finalProducts = candidates.filter((product) => product.imageKeys?.length)
+  if (!finalProducts.length) throw new Error('No watch photos downloaded')
+
+  const manifestPath = path.join(root, 'src', 'data', 'imageManifest.json')
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'))
+  const outDir = path.join(root, 'public', 'images', 'products')
+  const previousWatchText = fs.readFileSync(path.join(root, 'src', 'catalog', 'mensWatches.ts'), 'utf8')
+  const previousWatchKeys = new Set()
+  for (const match of previousWatchText.matchAll(/images: \[([^\]]+)\]/g)) {
+    for (const name of match[1].matchAll(/['"]([^'"]+)['"]/g)) previousWatchKeys.add(name[1])
+  }
+  const { execSync } = await import('node:child_process')
+  const headManifest = JSON.parse(execSync('git show HEAD:src/data/imageManifest.json', { encoding: 'utf8' }))
+  const keep = new Set(Object.keys(headManifest).filter((key) => !previousWatchKeys.has(key)))
+  await mapPool(finalProducts.flatMap((product) => product.imageKeys), 3, async (key) => {
+    keep.add(key)
+    const png = path.join(srcDir, `${key}.png`)
+    const meta = await sharp(png).metadata()
+    const sample = await sharp(png).extract({ left: 8, top: 8, width: 40, height: 40 }).resize(1, 1).raw().toBuffer()
+    const bg = `#${[...sample.subarray(0, 3)].map((v) => v.toString(16).padStart(2, '0')).join('')}`
+    const widths = [400, 700, 1024].filter((w) => w <= (meta.width ?? 0))
+    for (const w of widths) {
+      const base = path.join(outDir, `${key}-${w}`)
+      if (!fs.existsSync(`${base}.webp`)) await sharp(png).resize({ width: w }).webp({ quality: 78 }).toFile(`${base}.webp`)
+      if (!fs.existsSync(`${base}.avif`)) await sharp(png).resize({ width: w }).avif({ quality: 55, effort: 4 }).toFile(`${base}.avif`)
+    }
+    manifest[key] = { w: meta.width, h: meta.height, widths, bg }
+    console.log(`published ${key}`)
+  })
+
+  for (const key of Object.keys(manifest)) {
+    if (keep.has(key)) continue
+    delete manifest[key]
+    const png = path.join(srcDir, `${key}.png`)
+    if (fs.existsSync(png)) fs.rmSync(png)
+    for (const width of [400, 700, 1024]) {
+      for (const ext of ['avif', 'webp']) {
+        const file = path.join(outDir, `${key}-${width}.${ext}`)
+        if (fs.existsSync(file)) fs.rmSync(file)
+      }
+    }
+  }
+  fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n')
   const out = path.join(root, 'src', 'catalog', 'mensWatches.ts')
   fs.writeFileSync(out, renderModule(finalProducts, rate))
   console.log(`wrote ${finalProducts.length} watches`)

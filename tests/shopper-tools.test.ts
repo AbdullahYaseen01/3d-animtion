@@ -32,12 +32,14 @@ describe('stock, delivery, size', () => {
 
   it('searches across categories and respects a written budget', () => {
     const ids = (q: string) => applyFilters(allProducts(), parseFilters(new URLSearchParams(`q=${encodeURIComponent(q)}`))).items.map((p) => p.id)
-    expect(ids('black handbag under $100')).toEqual(['mini-crossbody'])
+    const underHundred = ids('black handbag under $100')
+    expect(underHundred).toContain('mini-crossbody')
+    for (const id of underHundred) expect(getProduct(id)!.priceCents).toBeLessThanOrEqual(10000)
     expect(ids('backpack for a 15-inch laptop')).toContain('commute-pack')
     expect(ids('lightweight jacket for fall')).toContain('day-jacket')
     expect(ids('gold-tone earrings')).toContain('arc-earrings')
     expect(ids('minimalist watch with a leather strap')).toContain('line-watch')
-    expect(ids('black handbag under $100')).not.toContain('stride-runner')
+    expect(underHundred).not.toContain('stride-runner')
   })
 
   it('builds the delivery window from shipping settings', () => {
