@@ -1,5 +1,6 @@
 import type { Category, Product, WidthOption } from './types.js'
 import { bagxHandbags } from './bagxHandbags.js'
+import { meerzahJewelry } from './meerzahJewelry.js'
 import { mensSneakers } from './mensSneakers.js'
 import { mensWallets } from './mensWallets.js'
 import { mensWatches } from './mensWatches.js'
@@ -69,11 +70,12 @@ export const categories: Category[] = [
     slug: 'womens-jewelry',
     name: "Women's Jewelry",
     kind: 'department',
-    summary: 'Small gold-tone pieces',
-    intro: "Earrings and other women's jewelry with material, finish and measurements listed on the product page.",
-    seoTitle: "Women's Jewelry & Earrings",
+    summary: 'Rings, bracelets, bangles, and necklace sets',
+    intro:
+      "Women’s jewelry from Meerzah, each listed between 1,000 and 25,000 PKR, alongside the original NOVA hoop. Every Meerzah price is five times that listing, in US dollars. The product page keeps the original price, color and size variants, and the material, weight, and finish Meerzah published.",
+    seoTitle: "Women's Jewelry: Rings, Bracelets & Necklace Sets",
     seoDescription:
-      "Shop NOVA women's jewelry, including small gold-tone hoop earrings. Each piece lists its material, finish, closure and measurements.",
+      "Shop women's jewelry from Meerzah, including rings, bracelets, bangles, earrings, pendants, and necklace sets. Each piece lists its original price, variants, material, and finish.",
   },
   {
     slug: 'backpacks',
@@ -732,4 +734,5 @@ export const products: Product[] = [
   ...mensWatches,
   ...mensSneakers,
   ...bagxHandbags,
+  ...meerzahJewelry,
 ]

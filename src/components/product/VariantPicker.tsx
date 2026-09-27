@@ -160,7 +160,13 @@ export const VariantPicker = forwardRef<HTMLFieldSetElement, Props>(function Var
               )}
             </p>
           )}
-          {product.variant === 'apparel' && <p className="vp-help">Jacket sizes. This is not a shoe size.</p>}
+          {product.variant === 'apparel' && (
+            <p className="vp-help">
+              {product.category === 'womens-jewelry'
+                ? 'Jewelry sizes. This is not a shoe size.'
+                : 'Jacket sizes. This is not a shoe size.'}
+            </p>
+          )}
         </fieldset>
       )}
       {stockLabel && (

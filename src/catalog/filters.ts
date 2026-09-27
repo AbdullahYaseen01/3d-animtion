@@ -156,7 +156,7 @@ const INTENTS: { test: RegExp; needles: string[] }[] = [
   { test: /handbag|purse|tote|crossbody/, needles: ['handbag', 'bag', 'crossbody', 'tote'] },
   { test: /wallet/, needles: ['wallet'] },
   { test: /jacket|coat|fall/, needles: ['jacket', 'fall'] },
-  { test: /earring|jewelry|jewellery|gold/, needles: ['earring', 'gold', 'jewelry'] },
+  { test: /earring|jewelry|jewellery|gold|bracelet|bangle|necklace|pendant|kundan|pearl/, needles: ['earring', 'gold', 'jewelry', 'bracelet', 'bangle', 'necklace', 'pendant', 'kundan', 'pearl', 'ring'] },
   { test: /backpack|laptop/, needles: ['backpack', 'laptop'] },
   { test: /watch|minimal/, needles: ['watch', 'minimal'] },
 ]

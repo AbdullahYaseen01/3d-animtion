@@ -3438,7 +3438,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-75-12-10-1": {
+  "metro-21-10-11-10-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3446,19 +3446,9 @@
       700,
       1024
     ],
-    "bg": "#c1c1c1"
+    "bg": "#888a4e"
   },
-  "metro-21-75-12-10-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-75-12-10-3": {
+  "metro-21-10-11-10-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3468,57 +3458,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-75-11-10-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-75-11-10-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-75-11-10-3": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-76-21-10-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-76-21-10-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-76-21-10-3": {
+  "metro-21-10-11-10-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3558,7 +3498,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-10-11-10-1": {
+  "metro-21-101-12-10-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3566,9 +3506,9 @@
       700,
       1024
     ],
-    "bg": "#888a4e"
+    "bg": "#080100"
   },
-  "metro-21-10-11-10-2": {
+  "metro-21-101-12-10-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3578,7 +3518,487 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-10-11-10-3": {
+  "metro-21-101-12-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-101-23-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#070100"
+  },
+  "metro-21-101-23-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-101-23-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-102-11-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#503417"
+  },
+  "metro-21-102-11-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-102-11-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-102-22-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#634329"
+  },
+  "metro-21-102-22-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-102-22-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-25-11-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-25-11-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-25-11-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-26-11-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-26-11-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-26-11-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-26-23-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-26-23-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-26-23-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-40-11-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#d3bcb7"
+  },
+  "metro-21-40-11-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-40-11-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-40-12-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#bea39c"
+  },
+  "metro-21-40-12-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-40-12-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-62-11-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#6f7173"
+  },
+  "metro-21-62-11-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-62-11-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-62-23-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#55565a"
+  },
+  "metro-21-62-23-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-62-23-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-6904-11-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-6904-11-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-6904-11-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-6904-12-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-6904-12-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-6904-12-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-6904-23-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-6904-23-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-6904-23-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-6904-49-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-6904-49-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-6904-49-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-7017-23-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-7017-23-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-7017-23-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-7017-45-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-7017-45-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-7017-45-10-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3708,17 +4128,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-97-11-10-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#070100"
-  },
-  "metro-21-97-11-10-2": {
+  "metro-21-75-11-10-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3728,7 +4138,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-97-11-10-3": {
+  "metro-21-75-11-10-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3738,17 +4148,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-62-23-10-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#55565a"
-  },
-  "metro-21-62-23-10-2": {
+  "metro-21-75-11-10-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3758,7 +4158,17 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-62-23-10-3": {
+  "metro-21-75-12-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#c1c1c1"
+  },
+  "metro-21-75-12-10-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3768,7 +4178,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-55-4-11-36-1": {
+  "metro-21-75-12-10-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3778,7 +4188,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-55-4-11-36-2": {
+  "metro-21-76-12-10-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3788,7 +4198,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-55-4-11-36-3": {
+  "metro-21-76-12-10-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3798,7 +4208,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-55-4-12-36-1": {
+  "metro-21-76-12-10-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3808,7 +4218,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-55-4-12-36-2": {
+  "metro-21-76-21-10-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3818,7 +4228,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-55-4-12-36-3": {
+  "metro-21-76-21-10-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3828,7 +4238,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-25-11-10-1": {
+  "metro-21-76-21-10-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3838,7 +4248,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-25-11-10-2": {
+  "metro-21-8250-44-10-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3848,7 +4258,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-25-11-10-3": {
+  "metro-21-8250-44-10-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3858,7 +4268,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-7017-23-10-1": {
+  "metro-21-8250-44-10-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3868,7 +4278,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-7017-23-10-2": {
+  "metro-21-8250-45-10-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3878,7 +4288,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-7017-23-10-3": {
+  "metro-21-8250-45-10-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -3888,147 +4298,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-7017-45-10-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-7017-45-10-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-7017-45-10-3": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-97-12-10-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#040100"
-  },
-  "metro-21-97-12-10-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-97-12-10-3": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-101-12-10-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#080100"
-  },
-  "metro-21-101-12-10-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-101-12-10-3": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-62-11-10-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#6f7173"
-  },
-  "metro-21-62-11-10-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-62-11-10-3": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-101-23-10-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#070100"
-  },
-  "metro-21-101-23-10-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-101-23-10-3": {
+  "metro-21-8250-45-10-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4098,7 +4368,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-40-12-10-1": {
+  "metro-21-97-11-10-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4106,9 +4376,9 @@
       700,
       1024
     ],
-    "bg": "#bea39c"
+    "bg": "#070100"
   },
-  "metro-21-40-12-10-2": {
+  "metro-21-97-11-10-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4118,7 +4388,37 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-40-12-10-3": {
+  "metro-21-97-11-10-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-97-12-10-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#040100"
+  },
+  "metro-21-97-12-10-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "metro-21-97-12-10-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4158,36 +4458,6 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-40-11-10-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#d3bcb7"
-  },
-  "metro-21-40-11-10-2": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
-  "metro-21-40-11-10-3": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#ffffff"
-  },
   "metro-21-99-12-10-1": {
     "w": 1200,
     "h": 1200,
@@ -4218,7 +4488,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-76-12-10-1": {
+  "metro-55-4-11-36-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4228,7 +4498,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-76-12-10-2": {
+  "metro-55-4-11-36-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4238,7 +4508,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-76-12-10-3": {
+  "metro-55-4-11-36-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4248,17 +4518,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-102-11-10-1": {
-    "w": 1200,
-    "h": 1200,
-    "widths": [
-      400,
-      700,
-      1024
-    ],
-    "bg": "#503417"
-  },
-  "metro-21-102-11-10-2": {
+  "metro-55-4-12-36-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4268,7 +4528,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-102-11-10-3": {
+  "metro-55-4-12-36-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4278,7 +4538,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-26-11-10-1": {
+  "metro-55-4-12-36-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4288,7 +4548,7 @@
     ],
     "bg": "#ffffff"
   },
-  "metro-21-26-11-10-2": {
+  "mz-solid-925-chandi-2-3-grams-18k-gold-plated-gold-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4296,9 +4556,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#a36d54"
   },
-  "metro-21-26-11-10-3": {
+  "mz-solid-925-chandi-2-3-grams-18k-gold-plated-gold-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4306,9 +4566,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#161923"
   },
-  "metro-21-102-22-10-1": {
+  "mz-solid-925-chandi-2-3-grams-18k-gold-plated-gold-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4316,9 +4576,9 @@
       700,
       1024
     ],
-    "bg": "#634329"
+    "bg": "#0a0809"
   },
-  "metro-21-102-22-10-2": {
+  "mz-solid-925-chandi-2-59-grams-18k-gold-plated-gold-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4326,9 +4586,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#c9c7cc"
   },
-  "metro-21-102-22-10-3": {
+  "mz-solid-925-chandi-1-90-grams-18k-gold-plated-gold-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4336,9 +4596,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#1f080c"
   },
-  "metro-21-26-23-10-1": {
+  "mz-925-chandi-2-3-grams-18k-silver-plated-earr-silver-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4346,9 +4606,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#000000"
   },
-  "metro-21-26-23-10-2": {
+  "mz-925-chandi-2-5-grams-18k-gold-plated-neckla-gold-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4356,9 +4616,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#414e1d"
   },
-  "metro-21-26-23-10-3": {
+  "mz-elegant-design-zircon-stone-gold-plated-ban-ruby-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4366,9 +4626,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#633e16"
   },
-  "metro-21-6904-23-10-1": {
+  "mz-elegant-design-zircon-stone-gold-plated-ban-blue-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4376,9 +4636,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#b56d48"
   },
-  "metro-21-6904-23-10-2": {
+  "mz-elegant-design-zircon-stone-gold-plated-ban-green-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4386,9 +4646,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#b58e57"
   },
-  "metro-21-6904-23-10-3": {
+  "mz-elegant-design-zircon-stone-gold-plated-ban-multi-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4396,9 +4656,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#744d20"
   },
-  "metro-21-6904-49-10-1": {
+  "mz-gorgeous-unique-design-gold-plated-pearl-st-black-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4406,9 +4666,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#e3a25e"
   },
-  "metro-21-6904-49-10-2": {
+  "mz-gorgeous-unique-design-gold-plated-pearl-st-baby-pink-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4416,9 +4676,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#ba871f"
   },
-  "metro-21-6904-49-10-3": {
+  "mz-gorgeous-unique-design-gold-plated-pearl-st-champagne-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4426,9 +4686,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#eaa262"
   },
-  "metro-21-6904-12-10-1": {
+  "mz-gorgeous-unique-design-gold-plated-pearl-st-blue-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4436,9 +4696,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#f4f1ea"
   },
-  "metro-21-6904-12-10-2": {
+  "mz-gorgeous-unique-design-gold-plated-pearl-st-red-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4446,9 +4706,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#985f13"
   },
-  "metro-21-6904-12-10-3": {
+  "mz-gorgeous-unique-design-gold-plated-pearl-st-purple-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4456,9 +4716,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#e7a568"
   },
-  "metro-21-6904-11-10-1": {
+  "mz-24k-gold-plated-farshi-kundan-necklace-set-baby-pink-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4466,9 +4726,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#e1c995"
   },
-  "metro-21-6904-11-10-2": {
+  "mz-24k-gold-plated-farshi-kundan-necklace-set-green-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4476,9 +4736,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#efe3c8"
   },
-  "metro-21-6904-11-10-3": {
+  "mz-24k-gold-plated-farshi-kundan-necklace-set-red-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4486,9 +4746,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#e9d8ad"
   },
-  "metro-21-8250-44-10-1": {
+  "mz-24k-gold-plated-farshi-kundan-necklace-set-blue-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4496,9 +4756,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#bea26d"
   },
-  "metro-21-8250-44-10-2": {
+  "mz-24k-gold-plated-farshi-kundan-necklace-set-champagne-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4506,9 +4766,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#f4eacc"
   },
-  "metro-21-8250-44-10-3": {
+  "mz-dazzling-unique-design-24k-rp-gold-plated-4-gold-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4516,9 +4776,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#90673b"
   },
-  "metro-21-8250-45-10-1": {
+  "mz-24k-gold-plated-farshi-kundan-necklace-set-black-1": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4526,9 +4786,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#eedbb0"
   },
-  "metro-21-8250-45-10-2": {
+  "mz-dazzling-unique-design-24k-rp-gold-plated-4-gold-2": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4536,9 +4796,9 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#120e1c"
   },
-  "metro-21-8250-45-10-3": {
+  "mz-dazzling-unique-design-24k-rp-gold-plated-4-gold-3": {
     "w": 1200,
     "h": 1200,
     "widths": [
@@ -4546,6 +4806,1406 @@
       700,
       1024
     ],
-    "bg": "#ffffff"
+    "bg": "#8a663c"
+  },
+  "mz-24k-rp-gold-coated-weight-24-grams-bangle-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#916946"
+  },
+  "mz-24k-rp-gold-coated-weight-24-grams-bangle-gold-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#bf9052"
+  },
+  "mz-24k-rp-gold-coated-weight-24-grams-bangle-gold-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-luminous-design-24k-rp-gold-plated-35-gram-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#cd9572"
+  },
+  "mz-luminous-design-24k-rp-gold-plated-35-gram-gold-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-luminous-design-24k-rp-gold-plated-35-gram-gold-3": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-fancy-design-gold-plated-real-stones-kundan-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#dac59a"
+  },
+  "mz-fancy-design-gold-plated-real-stones-kundan-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#c5ab7d"
+  },
+  "mz-fancy-design-gold-plated-real-stones-kundan-feroza-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ceb584"
+  },
+  "mz-flower-design-crystal-stones-gold-plated-ne-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e1aa6f"
+  },
+  "mz-flower-design-crystal-stones-gold-plated-ne-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#b88c27"
+  },
+  "mz-flower-design-crystal-stones-gold-plated-ne-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#af8523"
+  },
+  "mz-flower-design-crystal-stones-gold-plated-ne-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#dca46a"
+  },
+  "mz-unique-flower-design-gold-plated-real-stone-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#dbb472"
+  },
+  "mz-unique-flower-design-gold-plated-real-stone-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#d59248"
+  },
+  "mz-unique-flower-design-gold-plated-real-stone-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#eeac6a"
+  },
+  "mz-unique-flower-design-gold-plated-real-stone-silver-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e8aa6d"
+  },
+  "mz-unique-flower-design-gold-plated-real-stone-blue-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f5b473"
+  },
+  "mz-24k-gold-plated-real-zircon-stones-jarao-ch-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#b3884d"
+  },
+  "mz-unique-flower-design-gold-plated-real-stone-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ecae71"
+  },
+  "mz-24k-gold-plated-real-zircon-stones-jarao-ch-baby-pink-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#946530"
+  },
+  "mz-24k-gold-plated-real-zircon-stones-jarao-ch-blue-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#a8792e"
+  },
+  "mz-24k-gold-plated-real-zircon-stones-jarao-ch-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#906028"
+  },
+  "mz-24k-gold-plated-real-zircon-stones-jarao-ch-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#b69667"
+  },
+  "mz-viral-tulip-necklace-pink-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#d6c6ad"
+  },
+  "mz-24k-gold-plated-real-zircon-stones-jarao-ch-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#aa814b"
+  },
+  "mz-viral-tulip-necklace-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#c5b49c"
+  },
+  "mz-viral-tulip-necklace-blue-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e2d2b9"
+  },
+  "mz-viral-tulip-necklace-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#86643e"
+  },
+  "mz-viral-tulip-necklace-white-crystal-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#a08354"
+  },
+  "mz-viral-tulip-necklace-red-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#a4886a"
+  },
+  "mz-elegant-design-zircon-stone-gold-plated-kar-dark-blue-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#d79f55"
+  },
+  "mz-elegant-design-zircon-stone-gold-plated-kar-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#dcb78b"
+  },
+  "mz-elegant-design-zircon-stone-gold-plated-kar-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#d9af72"
+  },
+  "mz-elegant-design-zircon-stone-gold-plated-kar-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#d7ab6e"
+  },
+  "mz-glamorous-design-real-stones-pearls-bracele-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-elegant-design-zircon-stone-gold-plated-kar-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e5c296"
+  },
+  "mz-glamorous-design-real-stones-pearls-bracele-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-glamorous-design-real-stones-pearls-bracele-blue-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-glamorous-design-real-stones-pearls-bracele-multi-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-glamorous-design-real-stones-pearls-bracele-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-glamorous-unique-design-24k-gold-plated-5-5-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#967540"
+  },
+  "mz-glamorous-unique-design-24k-gold-plated-5-5-gold-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#c39e5e"
+  },
+  "mz-gorgeous-unique-design-24k-gold-plated-5-1-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#dab06d"
+  },
+  "mz-gorgeous-unique-design-24k-gold-plated-5-1-gold-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#81602d"
+  },
+  "mz-rp-weight-2-gram-gold-plated-ring-real-ston-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#cb9a3b"
+  },
+  "mz-rp-weight-2-gram-gold-plated-ring-real-ston-gold-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e2a566"
+  },
+  "mz-fancy-unique-design-22k-rp-3-5-gram-gold-pl-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#da9768"
+  },
+  "mz-fancy-unique-design-22k-rp-3-5-gram-gold-pl-gold-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#a57232"
+  },
+  "mz-stylish-unique-design-22k-rp-3-450-gram-gol-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#a06327"
+  },
+  "mz-stylish-unique-design-22k-rp-3-450-gram-gol-gold-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ae6f37"
+  },
+  "mz-sparkling-design-gold-plated-crystal-stones-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#cfcfce"
+  },
+  "mz-sparkling-design-gold-plated-crystal-stones-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#464446"
+  },
+  "mz-sparkling-design-gold-plated-crystal-stones-blue-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#918684"
+  },
+  "mz-sparkling-design-gold-plated-crystal-stones-baby-pink-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#444243"
+  },
+  "mz-sparkling-design-gold-plated-crystal-stones-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#424141"
+  },
+  "mz-sparkling-design-gold-plated-crystal-stones-champagne-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#49494a"
+  },
+  "mz-beautiful-unique-design-gold-plated-kundan-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#6b4402"
+  },
+  "mz-beautiful-unique-design-gold-plated-kundan-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#a37f5e"
+  },
+  "mz-beautiful-unique-design-gold-plated-kundan-blue-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#6f4902"
+  },
+  "mz-beautiful-unique-design-gold-plated-kundan-maroon-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#87621e"
+  },
+  "mz-beautiful-unique-design-gold-plated-kundan-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#7d5308"
+  },
+  "mz-beautiful-unique-design-gold-plated-kundan-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#5e3a01"
+  },
+  "mz-charming-design-rp-24k-gold-coated-12-5-gra-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#c79a6b"
+  },
+  "mz-charming-design-rp-24k-gold-coated-12-5-gra-gold-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#8b6747"
+  },
+  "mz-fancy-flower-shaped-inlaid-stones-necklace-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-fancy-flower-shaped-inlaid-stones-necklace-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-fancy-flower-shaped-inlaid-stones-necklace-blue-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-fancy-flower-shaped-inlaid-stones-necklace-purple-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-fancy-flower-shaped-inlaid-stones-necklace-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-fancy-flower-shaped-inlaid-stones-necklace-multi-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-elegant-fancy-golden-flower-zircon-necklace-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#241101"
+  },
+  "mz-elegant-fancy-golden-flower-zircon-necklace-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e0af6d"
+  },
+  "mz-elegant-design-real-jarai-zircon-pearl-earr-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#d4a25b"
+  },
+  "mz-elegant-fancy-golden-flower-zircon-necklace-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#e6ba7d"
+  },
+  "mz-elegant-fancy-golden-flower-zircon-necklace-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#dbab6b"
+  },
+  "mz-elegant-design-real-jarai-zircon-pearl-earr-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ecbc7c"
+  },
+  "mz-glamorous-design-gold-plated-jarao-stones-n-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-elegant-design-real-jarai-zircon-pearl-earr-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#d2a055"
+  },
+  "mz-stylish-flower-design-real-stones-jarao-ear-multi-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffbe7a"
+  },
+  "mz-stylish-flower-design-real-stones-jarao-ear-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffcf9a"
+  },
+  "mz-glamorous-design-gold-plated-jarao-stones-n-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-stylish-flower-design-real-stones-jarao-ear-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f5b06a"
+  },
+  "mz-stylish-flower-design-real-stones-jarao-ear-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffbe7a"
+  },
+  "mz-luminous-design-22k-rp-3-4-gram-gold-plated-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#b87a47"
+  },
+  "mz-diamond-cut-stones-exquisite-tennis-bracele-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#000000"
+  },
+  "mz-luminous-design-22k-rp-3-4-gram-gold-plated-gold-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#975d1f"
+  },
+  "mz-diamond-cut-stones-exquisite-tennis-bracele-silver-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#53321c"
+  },
+  "mz-luxury-design-gold-plated-crystal-stones-br-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#413e41"
+  },
+  "mz-luxury-design-gold-plated-crystal-stones-br-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#2b1807"
+  },
+  "mz-luxury-design-gold-plated-crystal-stones-br-blue-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#0e1110"
+  },
+  "mz-luxury-design-gold-plated-crystal-stones-br-feroza-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#837770"
+  },
+  "mz-luxury-design-gold-plated-crystal-stones-br-purple-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#b98c6b"
+  },
+  "mz-luxury-design-gold-plated-crystal-stones-br-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#1d1c1f"
+  },
+  "mz-elegant-silver-plated-tulip-bracelet-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#0d0e10"
+  },
+  "mz-elegant-silver-plated-tulip-bracelet-purple-pink-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#9a877a"
+  },
+  "mz-elegant-silver-plated-tulip-bracelet-pink-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#7b7066"
+  },
+  "mz-elegant-silver-plated-tulip-bracelet-red-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#7a6f67"
+  },
+  "mz-elegant-silver-plated-tulip-bracelet-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#685958"
+  },
+  "mz-elegant-silver-plated-tulip-bracelet-purple-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#5c5248"
+  },
+  "mz-luminous-design-gold-plated-crystal-stones-baby-pink-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#08060d"
+  },
+  "mz-luminous-design-gold-plated-crystal-stones-purple-pink-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#0c0c0e"
+  },
+  "mz-luminous-design-gold-plated-crystal-stones-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#7b6e66"
+  },
+  "mz-luminous-design-gold-plated-crystal-stones-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#796e65"
+  },
+  "mz-luminous-design-gold-plated-crystal-stones-pink-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#58504c"
+  },
+  "mz-luminous-design-gold-plated-crystal-stones-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#7b6f67"
+  },
+  "mz-tiny-tulip-pendant-red-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#814744"
+  },
+  "mz-tiny-tulip-pendant-pink-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#55301b"
+  },
+  "mz-tiny-tulip-pendant-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#6c332a"
+  },
+  "mz-elegant-design-black-stone-pearl-gold-plate-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#7b5528"
+  },
+  "mz-tiny-tulip-pendant-pink-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#814744"
+  },
+  "mz-gorgeous-design-real-stone-jarao-earrings-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#fabd86"
+  },
+  "mz-gorgeous-design-real-stone-jarao-earrings-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffb96a"
+  },
+  "mz-gorgeous-design-real-stone-jarao-earrings-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffce99"
+  },
+  "mz-stylish-design-real-stones-bracelet-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-stylish-design-real-stones-bracelet-purple-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-stylish-design-real-stones-bracelet-multi-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-stylish-design-real-stones-bracelet-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-beautiful-heart-design-gold-plated-crystal-silver-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#9d6838"
+  },
+  "mz-stylish-design-real-stones-bracelet-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#c9a364"
+  },
+  "mz-beautiful-heart-design-gold-plated-crystal-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#9d6838"
+  },
+  "mz-glamorous-elegant-design-real-stones-earrin-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#b88443"
+  },
+  "mz-glamorous-elegant-design-real-stones-earrin-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#b88443"
+  },
+  "mz-glamorous-elegant-design-real-stones-earrin-black-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#b88443"
+  },
+  "mz-glamorous-elegant-design-real-stones-earrin-multi-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#d3a171"
+  },
+  "mz-luxury-beautiful-design-gold-plated-earring-blue-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#d19f58"
+  },
+  "mz-luxury-beautiful-design-gold-plated-earring-green-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#cea467"
+  },
+  "mz-luxury-beautiful-design-gold-plated-earring-red-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#c89b61"
+  },
+  "mz-luxury-beautiful-design-gold-plated-earring-purple-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ac7d3a"
+  },
+  "mz-luminous-unique-heart-design-crystal-stones-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-luminous-unique-heart-design-crystal-stones-silver-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-elegant-unique-design-long-mala-silver-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-elegant-unique-design-long-mala-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "mz-luminous-design-gold-plated-crystal-sto-19-white-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ba7d52"
+  },
+  "mz-solid-925-chandi-2-2-grams-18k-gold-plated-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#4a473f"
+  },
+  "mz-solid-925-chandi-2-4-grams-18k-ring-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#0e1506"
+  },
+  "mz-luminous-design-gold-plated-crystal-sto-19-multi-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f3ab7d"
+  },
+  "mz-solid-925-chandi-2-2-grams-18k-silver-plate-silver-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#1dc3dd"
+  },
+  "mz-gorgeous-unique-design-22k-rp-2-5-gram-gold-gold-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#7f4e25"
+  },
+  "mz-gorgeous-unique-design-22k-rp-2-5-gram-gold-gold-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ae713b"
   }
 }
