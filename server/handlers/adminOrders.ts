@@ -10,7 +10,9 @@ export async function GET(request: Request): Promise<Response> {
   if (!requestIsAdmin(request)) return json({ error: 'Sign in required.' }, { status: 401 })
 
   const setup = getStripe({ purpose: 'read' })
-  if (!setup.ok) return json({ error: setup.reason, code: 'stripe' }, { status: 503 })
+  if (setup.ok === false) {
+    return json({ error: setup.reason, code: 'stripe' }, { status: 503 })
+  }
 
   try {
     const page = await listSessions(setup.stripe)

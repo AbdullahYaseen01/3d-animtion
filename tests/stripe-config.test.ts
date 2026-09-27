@@ -21,6 +21,11 @@ describe('getStripe', () => {
     expect(s.ok).toBe(false)
   })
 
+  it('allows live keys for order reads while the catalog is a sample', () => {
+    process.env.STRIPE_SECRET_KEY = 'sk_live_123'
+    expect(getStripe({ purpose: 'read' }).ok).toBe(true)
+  })
+
   it('accepts test keys', () => {
     process.env.STRIPE_SECRET_KEY = 'sk_test_123'
     expect(getStripe().ok).toBe(true)
