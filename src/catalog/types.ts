@@ -25,7 +25,7 @@ export interface ColorOption {
   /** Keys in the image manifest, first image is the primary card image. */
   images: string[]
   /** Base color family for filtering. */
-  family: 'white' | 'black' | 'grey' | 'green' | 'red' | 'neutral'
+  family: 'white' | 'black' | 'grey' | 'green' | 'red' | 'neutral' | 'blue' | 'gold'
 }
 
 export interface WidthOption {

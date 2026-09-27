@@ -1,4 +1,5 @@
 import type { Category, Product, WidthOption } from './types.js'
+import { mensWatches } from './mensWatches.js'
 
 /**
  * SAMPLE CATALOG — LAUNCH BLOCKER.
@@ -83,11 +84,12 @@ export const categories: Category[] = [
     slug: 'watches',
     name: 'Watches',
     kind: 'department',
-    summary: 'Quiet dials, leather straps',
-    intro: 'Watches with case size, movement and strap listed on the page. Water resistance is shown only when a rating is on file.',
-    seoTitle: 'Minimalist Watches with Leather Straps',
+    summary: 'Branded men’s watches',
+    intro:
+      'Men’s watches from Seiko, Citizen, Casio, Tissot, Rado, Fossil and other houses. Every style lists its case, movement, strap and water resistance, with the current price in US dollars.',
+    seoTitle: "Men's Watches",
     seoDescription:
-      'Shop NOVA minimalist watches. Each style lists its case size, movement, strap material and wrist fit range, so you can check sizing first.',
+      "Shop men's watches from Seiko, Citizen, Casio, Tissot, Rado and Fossil. Each style lists case size, movement, strap and water resistance.",
   },
   {
     slug: 'running',
@@ -721,4 +723,5 @@ export const products: Product[] = [
     stock: {},
     relatedGuides: ['watch-case-size-and-strap-fit'],
   },
+  ...mensWatches,
 ]

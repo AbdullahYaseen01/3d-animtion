@@ -23,6 +23,8 @@ export const COLOR_FAMILIES: { value: ColorOption['family']; label: string; hex:
   { value: 'green', label: 'Green', hex: '#6A7A55' },
   { value: 'red', label: 'Red', hex: '#6B1F26' },
   { value: 'neutral', label: 'Neutral', hex: '#CDB99A' },
+  { value: 'blue', label: 'Blue', hex: '#1D4E89' },
+  { value: 'gold', label: 'Gold', hex: '#C6A15B' },
 ]
 
 const SHOE_USES = new Set<ShoeUse>(['running', 'trail', 'lifestyle', 'everyday'])
