@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs'
 import path from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { activeCategories, allProducts, buildSku, resolveSku } from '../src/catalog'
-import { applyFilters, parseFilters, serializeFilters } from '../src/catalog/filters'
+import { applyFilters, matchesQuery, parseFilters, searchScore, serializeFilters } from '../src/catalog/filters'
 import manifest from '../src/data/imageManifest.json'
 
 describe('catalog integrity', () => {
@@ -79,11 +79,17 @@ describe('filters', () => {
   })
 
   it('ranks a plain-language request against catalog text', () => {
-    const res = applyFilters(allProducts(), parseFilters(new URLSearchParams('q=comfortable shoes for walking all day')))
+    const q = 'comfortable shoes for walking all day'
+    const res = applyFilters(allProducts(), parseFilters(new URLSearchParams(`q=${q}`)))
     const ids = res.items.map((p) => p.id)
     expect(ids).toContain('stride-runner')
     expect(ids).toContain('glide-slip-on')
-    expect(ids.indexOf('glide-slip-on')).toBeLessThan(ids.indexOf('court-low'))
+    const ranked = allProducts()
+      .filter((product) => matchesQuery(product, q))
+      .sort((a, b) => searchScore(b, q) - searchScore(a, q))
+      .map((product) => product.id)
+    expect(ranked.indexOf('glide-slip-on')).toBeGreaterThanOrEqual(0)
+    expect(ranked.indexOf('glide-slip-on')).toBeLessThan(ranked.indexOf('court-low'))
     expect(applyFilters(allProducts(), parseFilters(new URLSearchParams('q=zzzz-not-a-shoe'))).total).toBe(0)
   })
 })

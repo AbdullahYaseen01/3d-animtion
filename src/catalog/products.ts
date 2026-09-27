@@ -1,4 +1,5 @@
 import type { Category, Product, WidthOption } from './types.js'
+import { mensSneakers } from './mensSneakers.js'
 import { mensWatches } from './mensWatches.js'
 
 /**
@@ -23,9 +24,9 @@ export const categories: Category[] = [
     slug: 'shoes',
     name: 'Shoes',
     kind: 'department',
-    summary: 'Runners, trail shoes and everyday pairs',
+    summary: 'Ndure sneakers and joggers, plus the NOVA edit',
     intro:
-      'The original NOVA footwear edit: cushioned road trainers, grippy trail shoes, leather lifestyle styles and lightweight everyday knits. US sizing, with wide widths on select styles.',
+      'Men’s sneakers and jogger-style shoes from Ndure, alongside the original NOVA footwear edit. Ndure sizes are shown in US men’s sizing, converted from the EU/UK label, and each price is in US dollars.',
     seoTitle: 'Shoes: Running, Trail & Lifestyle Sneakers',
     seoDescription:
       'Shop NOVA shoes: cushioned running shoes, grippy trail shoes, leather lifestyle sneakers and knit everyday pairs in US sizing, with wide widths on select styles.',
@@ -724,4 +725,5 @@ export const products: Product[] = [
     relatedGuides: ['watch-case-size-and-strap-fit'],
   },
   ...mensWatches,
+  ...mensSneakers,
 ]
