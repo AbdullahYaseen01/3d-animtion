@@ -9,7 +9,7 @@ export async function GET(request: Request): Promise<Response> {
   const id = new URL(request.url).searchParams.get('session_id') ?? ''
   if (!SESSION_RE.test(id)) return json({ error: 'Order not found.' }, { status: 404 })
 
-  const setup = getStripe()
+  const setup = getStripe({ purpose: 'read' })
   if (!setup.ok) return json({ error: 'Order lookup is unavailable.' }, { status: 503 })
 
   try {

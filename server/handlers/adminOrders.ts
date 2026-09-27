@@ -9,8 +9,8 @@ const LIST_LIMIT = 50
 export async function GET(request: Request): Promise<Response> {
   if (!requestIsAdmin(request)) return json({ error: 'Sign in required.' }, { status: 401 })
 
-  const setup = getStripe()
-  if (!setup.ok) return json({ error: 'Order lookup is unavailable until Stripe is configured.', code: 'stripe' }, { status: 503 })
+  const setup = getStripe({ purpose: 'read' })
+  if (!setup.ok) return json({ error: setup.reason, code: 'stripe' }, { status: 503 })
 
   try {
     const page = await listSessions(setup.stripe)

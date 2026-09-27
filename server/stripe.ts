@@ -6,10 +6,15 @@ export type StripeSetup = { ok: true; stripe: Stripe } | { ok: false; missing: s
 
 let cached: { key: string; client: Stripe } | null = null
 
-export function getStripe(): StripeSetup {
+/**
+ * Checkout stays blocked with a live key while the catalog is sample.
+ * Pass `purpose: 'read'` for order lookup and the admin desk so past sessions can still be viewed.
+ */
+export function getStripe(opts: { purpose?: 'checkout' | 'read' } = {}): StripeSetup {
+  const purpose = opts.purpose ?? 'checkout'
   const key = env('STRIPE_SECRET_KEY')
   if (!key) return { ok: false, missing: ['STRIPE_SECRET_KEY'], reason: 'Checkout is not configured yet.' }
-  if (key.startsWith('sk_live_') && CATALOG_IS_SAMPLE) {
+  if (purpose === 'checkout' && key.startsWith('sk_live_') && CATALOG_IS_SAMPLE) {
     return {
       ok: false,
       missing: ['real catalog (CATALOG_IS_SAMPLE is true)'],
