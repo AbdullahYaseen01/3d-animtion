@@ -1,6 +1,6 @@
 import type { Category, Product, WidthOption } from './types.js'
-import { bagxHandbags } from './bagxHandbags.js'
 import { mensSneakers } from './mensSneakers.js'
+import { mensWallets } from './mensWallets.js'
 import { mensWatches } from './mensWatches.js'
 
 /**
@@ -36,22 +36,22 @@ export const categories: Category[] = [
     slug: 'handbags',
     name: 'Handbags',
     kind: 'department',
-    summary: 'Bag X new arrivals for the day',
-    intro:
-      'Handbags from Bag X new arrivals, each listed between 1,000 and 25,000 PKR at the source. Prices here are five times that listing, in US dollars. Every style includes its color, material, dimensions, and closure when Bag X published them.',
+    summary: 'Totes and crossbodies for the day',
+    intro: 'Structured bags sized for a day out. Each style lists its dimensions, material, closure and how it is carried.',
     seoTitle: 'Handbags & Crossbody Bags',
     seoDescription:
-      'Shop Bag X handbags, shoulder bags, and crossbody bags. Each style lists its color, material, dimensions, and closure, with US shipping and returns.',
+      'Shop NOVA handbags and crossbody bags. Every style lists its dimensions, strap drop, material and closure, so you know what fits before you order.',
   },
   {
     slug: 'wallets',
     name: 'Wallets',
     kind: 'department',
-    summary: 'Slim leather for cards and cash',
-    intro: 'Compact wallets with listed dimensions, card slots and closure. Preview styles until the final leather goods arrive.',
-    seoTitle: 'Slim Wallets & Bifolds',
+    summary: 'Men’s wallets for cards and cash',
+    intro:
+      'Men’s wallets from Metro, including bifolds, card holders and money clips, plus the original NOVA slim wallet. Every Metro style lists its colour, dimensions and country of origin, with the price in US dollars.',
+    seoTitle: "Men's Wallets & Bifolds",
     seoDescription:
-      'Shop NOVA slim wallets. Each bifold lists its exact dimensions, number of card slots, cash pocket and closure, so you know what it will hold.',
+      "Shop men's wallets from Metro. Each style lists its colour, dimensions, closure and country of origin, with US shipping and 30-day returns.",
   },
   {
     slug: 'jackets',
@@ -519,6 +519,7 @@ export const products: Product[] = [
     stock: {},
     relatedGuides: ['what-fits-in-a-crossbody-bag'],
   },
+  ...mensWallets,
   {
     id: 'slim-wallet',
     slug: 'slim-wallet',
@@ -728,5 +729,4 @@ export const products: Product[] = [
   },
   ...mensWatches,
   ...mensSneakers,
-  ...bagxHandbags,
 ]
