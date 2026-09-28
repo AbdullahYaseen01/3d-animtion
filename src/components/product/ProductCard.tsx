@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { getCategory, isColorAvailable, isProductAvailable, type Product } from '../../catalog'
-import { stockUrgencyLabel } from '../../catalog/urgency'
+import { cardScarcityLabel } from '../../catalog/urgency'
 import { PurchaseNote } from './PurchaseNote'
 import { useWishlist } from '../../state/WishlistProvider'
 import { Icon } from '../ui/Icon'
@@ -26,8 +26,7 @@ export function ProductCard({ product, onQuickShop, priority = false, headingLev
   const href = `/products/${product.slug}${color.slug !== product.colors[0].slug ? `?color=${color.slug}` : ''}`
   const [primary, secondary] = color.images
   const badge = !available ? 'Sold out' : product.compareAtPriceCents ? 'Sale' : product.isNew ? 'New' : null
-  const stockLabel = stockUrgencyLabel(product, color.slug, product.variant === 'simple' ? 0 : null, product.widths[0].code)
-  const stockUrgent = stockLabel?.startsWith('Only') ?? false
+  const stockLabel = available ? cardScarcityLabel(product.id) : null
 
   return (
     <article className="product-card">
@@ -76,9 +75,7 @@ export function ProductCard({ product, onQuickShop, priority = false, headingLev
         <p className="product-card__meta">
           {category?.name} · {product.tagline}
         </p>
-        {stockLabel && (
-          <p className={`product-card__stock${stockUrgent ? '' : ' product-card__stock--quiet'}`}>{stockLabel}</p>
-        )}
+        {stockLabel && <p className="product-card__stock">{stockLabel}</p>}
         <PurchaseNote productId={product.id} className="product-card__purchase" />
         {product.colors.length > 1 ? (
           <div className="product-card__swatches" role="group" aria-label={`${product.name} colors`}>

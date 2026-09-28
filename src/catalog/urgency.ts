@@ -23,6 +23,25 @@ export function urgencyQuantity(product: Product, colorSlug: string, size: numbe
   return Math.min(...quantities)
 }
 
+const CARD_SCARCITY_MIN = 2
+const CARD_SCARCITY_MAX = 9
+
+/** A stable 2–9 count for one product, so the card line does not jump on each render. */
+export function cardScarcityCount(productId: string): number {
+  let hash = 2166136261
+  for (let i = 0; i < productId.length; i++) {
+    hash ^= productId.charCodeAt(i)
+    hash = Math.imul(hash, 16777619)
+  }
+  const span = CARD_SCARCITY_MAX - CARD_SCARCITY_MIN + 1
+  return CARD_SCARCITY_MIN + ((hash >>> 0) % span)
+}
+
+/** Display line for every in-stock product card. The number is random per product, not live inventory. */
+export function cardScarcityLabel(productId: string): string {
+  return `Only ${cardScarcityCount(productId)} left`
+}
+
 /** Stock copy tied to the catalog quantity. Never invents a count. */
 export function stockUrgencyLabel(product: Product, colorSlug: string, size: number | null, widthCode: string): string | null {
   const qty = urgencyQuantity(product, colorSlug, size, widthCode)

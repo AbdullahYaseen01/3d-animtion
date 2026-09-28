@@ -44,6 +44,12 @@
   font-size: var(--text-xl);
 }
 
+.pdp__stock {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ember-strong);
+}
+
 .pdp__purchase {
   display: flex;
   align-items: flex-start;
