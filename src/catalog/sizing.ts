@@ -1,6 +1,6 @@
 /**
  * Approximate unisex conversions from US men's sizes.
- * LAUNCH BLOCKER: confirm against NOVA's actual lasts and foot-length measurements.
+ * LAUNCH BLOCKER: confirm against Westora Style's actual lasts and foot-length measurements.
  */
 export interface SizeRow {
   usM: number

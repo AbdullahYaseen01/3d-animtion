@@ -9,7 +9,7 @@ export default function Guides() {
       seo={{
         title: 'Shoe, Bag & Watch Buying Guides',
         description:
-          'Practical NOVA guides: measure your feet, choose a shoe width and running shoe, care for leather, and check bag, backpack and watch fit before you buy.',
+          'Practical Westora Style guides: measure your feet, choose a shoe width and running shoe, care for leather, and check bag, backpack and watch fit before you buy.',
         path: '/guides',
         image: '/og/collection-shoes.jpg',
         imageAlt: 'Cream sneakers worn on stone steps',

@@ -8,7 +8,7 @@ export default function Returns() {
     <InfoPage
       seo={{
         title: 'Returns Policy',
-        description: `Return eligible NOVA items within ${windowDays} days of delivery. Shoes must be unworn. How to start a return and when to expect your refund.`,
+        description: `Return eligible Westora Style items within ${windowDays} days of delivery. Shoes must be unworn. How to start a return and when to expect your refund.`,
         path: '/returns',
       }}
       eyebrow="Help"

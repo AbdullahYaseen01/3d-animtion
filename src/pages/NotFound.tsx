@@ -25,7 +25,7 @@ export default function NotFound() {
             }}
           >
             <label htmlFor="nf-search" className="visually-hidden">
-              Search NOVA
+              Search Westora Style
             </label>
             <input id="nf-search" type="search" className="input" placeholder="Search shoes, bags, jackets…" value={q} onChange={(e) => setQ(e.target.value)} style={{ flex: 1, minWidth: 0 }} />
             <button type="submit" className="btn">

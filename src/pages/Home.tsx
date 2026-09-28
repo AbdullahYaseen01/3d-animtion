@@ -1,23 +1,26 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router'
 import { CATEGORY_SIZES, campaignCategories, campaignHero, campaignSrcSet } from '../campaign/styleInMotion'
-import { getProduct } from '../catalog'
+import { activeCategories, getProduct } from '../catalog'
 import { store } from '../config/store'
 import { productItem, track } from '../lib/analytics'
 import { organizationLd, Seo, websiteLd } from '../lib/seo'
+import { EditorialOpening } from '../components/home/EditorialOpening'
+import { editorialOpening } from '../components/home/cityEdit'
 import { ProductCard } from '../components/product/ProductCard'
 import { QuickShop, type QuickShopTarget } from '../components/product/QuickShop'
 import { Icon } from '../components/ui/Icon'
 import './Home.css'
 import '../components/product/ProductCard.css'
 
-const FEATURED = ['stride-runner', 'mini-crossbody', 'day-jacket', 'line-watch']
+const FEATURED = ['ndure-kay-0003-black', 'bagx-monaco-choco', 'mz-solid-925-chandi-2-3-grams-18k-gold-plated', 'naviforce-nf5053g-ch-wht']
 
 export default function Home() {
   const [quick, setQuick] = useState<QuickShopTarget | null>(null)
   const featured = useMemo(() => FEATURED.map((id) => getProduct(id)).filter((p) => !!p), [])
-  const bags = ['mini-crossbody', 'slim-wallet', 'commute-pack'].map((id) => getProduct(id)).filter((p) => !!p)
-  const jewels = ['arc-earrings', 'line-watch'].map((id) => getProduct(id)).filter((p) => !!p)
+  const bags = ['bagx-monaco-choco', 'bagx-leo-maroon', 'metro-21-75-12-10'].map((id) => getProduct(id)).filter((p) => !!p)
+  const jewels = ['mz-solid-925-chandi-2-3-grams-18k-gold-plated', 'naviforce-nf5053g-ch-wht'].map((id) => getProduct(id)).filter((p) => !!p)
+  const categories = campaignCategories.filter((category) => activeCategories().some((item) => category.href === `/collections/${item.slug}`))
 
   useEffect(() => {
     track('view_item_list', { item_list_id: 'home_featured', item_list_name: 'Featured picks', items: featured.map((p) => productItem(p)) })
@@ -26,60 +29,21 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="NOVA | Shoes, Bags, Jackets, Jewelry & Watches"
+        title={`${store.name} | Shoes, Bags, Jewelry & Watches`}
         rawTitle
-        description="Shop the NOVA edit: shoes, handbags, wallets, jackets, women's jewelry, backpacks and watches. US shipping and 30-day returns."
+        description="Shop shoes, handbags, wallets, women's jewelry, and watches. US shipping and 30-day returns."
         path="/"
         image="/og/home.jpg"
         imageAlt={campaignHero.alt}
         jsonLd={[organizationLd(), websiteLd()]}
-        preloadImage={{ type: 'image/avif', srcSet: campaignSrcSet(campaignHero.src, campaignHero.widths, 'avif'), sizes: '100vw' }}
+        preloadImage={{
+          type: 'image/webp',
+          srcSet: editorialOpening.model.src,
+          sizes: '(min-width: 75rem) 42vw, (min-width: 48rem) 56vw, 100vw',
+        }}
       />
 
-      <section
-        className="motion"
-        aria-labelledby="hero-title"
-        style={
-          {
-            '--motion-pos': campaignHero.focal.desktop,
-            '--motion-pos-tablet': campaignHero.focal.tablet,
-            '--motion-pos-mobile': campaignHero.focal.mobile,
-          } as React.CSSProperties
-        }
-      >
-        <div className="motion__photo">
-          <picture>
-            <source type="image/avif" srcSet={campaignSrcSet(campaignHero.src, campaignHero.widths, 'avif')} sizes="100vw" />
-            <source type="image/webp" srcSet={campaignSrcSet(campaignHero.src, campaignHero.widths, 'webp')} sizes="100vw" />
-            <img
-              src={campaignHero.src}
-              alt={campaignHero.alt}
-              width={campaignHero.width}
-              height={campaignHero.height}
-              sizes="100vw"
-              fetchPriority="high"
-              decoding="sync"
-            />
-          </picture>
-        </div>
-        <div className="motion__copy">
-          <p className="motion__eyebrow">The NOVA edit</p>
-          <h1 id="hero-title" className="motion__title">
-            Style in
-            <br />
-            motion.
-          </h1>
-          <p className="motion__lede">Everyday pieces. Extraordinary presence.</p>
-          <div className="motion__actions">
-            <a href="#edit" className="motion__btn motion__btn--solid">
-              Shop the Edit
-            </a>
-            <Link to="/shop" className="motion__btn motion__btn--ghost">
-              Explore All
-            </Link>
-          </div>
-        </div>
-      </section>
+      <EditorialOpening />
 
       <section className="edit-cats" aria-labelledby="cats-title">
         <h2 id="cats-title" className="visually-hidden">
@@ -89,7 +53,7 @@ export default function Home() {
           <div className="edit-cats__track">
             {[0, 1].map((copy) => (
               <ul key={copy} role="list" className="edit-cats__list" aria-hidden={copy === 1 || undefined}>
-                {campaignCategories.map((category) => (
+                {categories.map((category) => (
                   <li key={`${copy}-${category.href}`}>
                     <Link to={category.href} className="edit-cats__link" tabIndex={copy === 1 ? -1 : undefined}>
                       <span className="edit-cats__media">
@@ -125,7 +89,7 @@ export default function Home() {
               <p className="eyebrow">From the edit</p>
               <h2 id="featured-title">Featured picks</h2>
             </div>
-            <p>A few styles across shoes, bags, jackets and watches. Prices and stock on each page come from the catalog.</p>
+            <p>A few styles across shoes, bags, jewelry, and watches.</p>
           </div>
           <div className="product-grid">
             {featured.map((p) => (
@@ -186,7 +150,7 @@ export default function Home() {
             <li>
               <Icon name="ruler" size={28} />
               <h3>Shoe sizing stays with shoes</h3>
-              <p>The size chart is for footwear. Jackets use their own sizes. Bags, jewelry and watches list the measurements that apply.</p>
+              <p>The size chart is for footwear. Bags, jewelry, and watches list the measurements that apply.</p>
               <Link to="/fit-guide">Shoe size & fit guide</Link>
             </li>
             <li>

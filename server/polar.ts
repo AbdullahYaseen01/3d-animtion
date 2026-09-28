@@ -1,6 +1,6 @@
 import { env, logEvent } from './http.js'
 
-const PRODUCT_NAME = 'NOVA order'
+const PRODUCT_NAME = 'Westora Style order'
 /** Polar's minimum fixed price for USD. */
 export const POLAR_MIN_CENTS = 50
 
@@ -104,7 +104,7 @@ async function findOrCreateProduct(): Promise<string> {
     method: 'POST',
     body: JSON.stringify({
       name: PRODUCT_NAME,
-      description: 'Merchandise purchased from the NOVA store. The receipt lists the items in this order.',
+      description: 'Merchandise purchased from the Westora Style store. The receipt lists the items in this order.',
       prices: [{ amount_type: 'fixed', price_amount: 100, price_currency: 'usd' }],
     }),
   })

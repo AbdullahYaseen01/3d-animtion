@@ -8,12 +8,13 @@ import { Dialog } from '../ui/Dialog'
 import { Icon } from '../ui/Icon'
 import { ProductImage } from '../ui/ProductImage'
 import { SearchDialog } from './SearchDialog'
+import '@fontsource/bodoni-moda/latin-400.css'
+import '@fontsource/bodoni-moda/latin-500.css'
 import './Header.css'
 
 const BAG_LINKS = [
   { slug: 'handbags', label: 'Handbags' },
   { slug: 'wallets', label: 'Wallets' },
-  { slug: 'backpacks', label: 'Backpacks' },
 ] as const
 
 const MOBILE_CATS = ['shoes', 'handbags', 'wallets', 'jackets', 'womens-jewelry', 'backpacks', 'watches'] as const
@@ -52,9 +53,10 @@ export function Header() {
   }, [bagsOpen])
 
   const count = hydrated ? cart.itemCount : 0
+  const editorial = location.pathname === '/'
 
   return (
-    <header className="site-header">
+    <header className={editorial ? 'site-header site-header--editorial' : 'site-header'}>
       <div className="container site-header__inner">
         <button
           type="button"
@@ -67,16 +69,24 @@ export function Header() {
         </button>
 
         <Link to="/" className="wordmark" aria-label={`${store.name} home`}>
-          NOVA<span className="wordmark__dot" aria-hidden="true" />
+          {store.name}
         </Link>
 
         <nav className="primary-nav" aria-label="Primary">
           <ul role="list">
-            <li>
-              <NavLink to="/shop" end className="nav-link nav-link--all">
-                Shop All
-              </NavLink>
-            </li>
+            {editorial ? (
+              <li>
+                <NavLink to="/shop?sort=newest" className="nav-link nav-link--all">
+                  New In
+                </NavLink>
+              </li>
+            ) : (
+              <li>
+                <NavLink to="/shop" end className="nav-link nav-link--all">
+                  Shop All
+                </NavLink>
+              </li>
+            )}
             <li>
               <NavLink to="/collections/shoes" className="nav-link nav-link--shoes">
                 Shoes
@@ -116,11 +126,13 @@ export function Header() {
                 ))}
               </ul>
             </li>
-            <li>
-              <NavLink to="/collections/jackets" className="nav-link nav-link--jackets">
-                Jackets
-              </NavLink>
-            </li>
+            {editorial && (
+              <li>
+                <NavLink to="/collections/jackets" className="nav-link nav-link--jackets">
+                  Jackets
+                </NavLink>
+              </li>
+            )}
             <li>
               <NavLink to="/collections/womens-jewelry" className="nav-link nav-link--jewelry">
                 Jewelry
@@ -165,6 +177,18 @@ export function Header() {
         <nav aria-label="Mobile">
           <p className="eyebrow">Shop</p>
           <ul role="list" className="mobile-menu__cats">
+            {editorial && (
+              <li>
+                <Link to="/shop?sort=newest" className="mobile-menu__cat">
+                  <span className="mobile-menu__thumb mobile-menu__thumb--all" aria-hidden="true">New</span>
+                  <span>
+                    <strong>New In</strong>
+                    <span className="muted">Just added</span>
+                  </span>
+                  <Icon name="chevron" size={18} />
+                </Link>
+              </li>
+            )}
             <li>
               <Link to="/shop" className="mobile-menu__cat">
                 <span className="mobile-menu__thumb mobile-menu__thumb--all" aria-hidden="true">All</span>

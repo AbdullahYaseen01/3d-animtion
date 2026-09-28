@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router'
 import { activeCategories, allProducts, formatSize, getCategory, productsInCategory, shoeCollections, type Category } from '../catalog'
+import { categories } from '../catalog/products'
 import {
   activeFilterCount,
   applyFilters,
@@ -31,7 +32,8 @@ import '../components/product/ProductCard.css'
 type Mode = { kind: 'shop' } | { kind: 'collection'; slug: string } | { kind: 'search' }
 
 export default function Catalog({ mode }: { mode: Mode }) {
-  const category: Category | undefined = mode.kind === 'collection' ? getCategory(mode.slug) : undefined
+  const category: Category | undefined =
+    mode.kind === 'collection' ? (getCategory(mode.slug) ?? categories.find((item) => item.slug === mode.slug)) : undefined
   if (mode.kind === 'collection' && !category) return <NotFound />
   return <CatalogView mode={mode} category={category} />
 }
@@ -86,11 +88,11 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
   const seo = category
     ? { title: category.seoTitle, description: category.seoDescription }
     : isSearch
-      ? { title: state.q ? `Search: ${state.q}` : 'Search', description: 'Search NOVA shoes, bags, jackets, jewelry and watches.' }
+      ? { title: state.q ? `Search: ${state.q}` : 'Search', description: 'Search shoes, bags, jewelry, and watches.' }
       : {
           title: 'Shop All Shoes, Bags, Jackets & Watches',
           description:
-            `Shop the full NOVA edit: running and lifestyle shoes, handbags, wallets, jackets, jewelry, backpacks and watches, with US shipping and ${store.returns.windowDays}-day returns.`,
+            `Shop shoes, handbags, wallets, jewelry, and watches, with US shipping and ${store.returns.windowDays}-day returns.`,
         }
   const guideLinks = category ? guidesForCategory(category.slug) : []
   const jsonLd = isSearch
@@ -154,7 +156,7 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
             </nav>
           )}
           {!category && !isSearch && (
-            <p className="lede">Shoes, bags, jackets, jewelry and watches. Filter by what each category actually offers.</p>
+            <p className="lede">Shoes, bags, jewelry, and watches. Filter by what each category actually offers.</p>
           )}
           {isSearch && <SearchBox initial={state.q} onSearch={(q) => update({ q, page: 1 })} />}
         </div>

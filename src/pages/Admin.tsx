@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import type { AdminOrder } from '../../server/adminOrder'
 import { formatMoney } from '../lib/money'
 import { Seo } from '../lib/seo'
+import { store } from '../config/store'
 import './Admin.css'
 
 type Filter = 'all' | 'paid' | 'processing' | 'other'
@@ -62,7 +63,7 @@ export default function Admin() {
       </a>
       <Seo title="Orders" description="Private order desk for paid customer checkouts." path="/admin" noindex rawTitle />
       <header className="admin-bar">
-        <p className="admin-bar__brand">NOVA</p>
+        <p className="admin-bar__brand">{store.name}</p>
         <p className="admin-bar__label">Order desk</p>
         <div className="admin-bar__actions">
           <Link to="/" className="admin-bar__link">

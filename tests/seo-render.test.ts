@@ -30,11 +30,11 @@ describe('prerendered HTML', () => {
   })
 
   it('emits Product JSON-LD with catalog prices and no review markup', () => {
-    const { head } = render('/products/stride-runner')
+    const { head } = render('/products/ndure-kay-0003-black')
     const blocks = [...head.matchAll(/<script type="application\/ld\+json" data-seo>(.*?)<\/script>/g)].map((m) => JSON.parse(m[1]))
     const group = blocks.find((b) => b['@type'] === 'ProductGroup')
     expect(group).toBeDefined()
-    const price = getProduct('stride-runner')!.priceCents / 100
+    const price = getProduct('ndure-kay-0003-black')!.priceCents / 100
     for (const v of group.hasVariant) expect(Number(v.offers.price)).toBe(price)
     expect(head).not.toMatch(/aggregateRating|"Review"/)
     expect(blocks.some((b) => b['@type'] === 'BreadcrumbList')).toBe(true)

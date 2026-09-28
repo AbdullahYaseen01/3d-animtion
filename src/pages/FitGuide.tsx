@@ -8,12 +8,12 @@ export default function FitGuide() {
     <InfoPage
       seo={{
         title: 'Size & Fit Guide',
-        description: 'US men’s and women’s shoe size chart with UK, EU and foot length in centimeters, plus width guidance and fit notes for every NOVA style.',
+        description: 'US men’s and women’s shoe size chart with UK, EU and foot length in centimeters, plus width guidance and fit notes for every Westora Style style.',
         path: '/fit-guide',
       }}
       eyebrow="Size & fit"
       title="Find your size"
-      intro={<p>All NOVA shoes are sized in US men’s sizes. Use the chart to convert, measure your feet if you are unsure, and check the fit note for the style you like.</p>}
+      intro={<p>All Westora Style shoes are sized in US men’s sizes. Use the chart to convert, measure your feet if you are unsure, and check the fit note for the style you like.</p>}
     >
       <h2 id="chart">Size chart</h2>
       <p>Choose the size whose foot length is equal to or just above your measurement. Women: pick the US women’s size you normally wear.</p>

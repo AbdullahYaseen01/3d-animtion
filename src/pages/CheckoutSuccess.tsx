@@ -75,7 +75,7 @@ export default function CheckoutSuccess() {
 
   return (
     <>
-      <Seo title="Order Status" description="Your NOVA order status." path="/checkout/success" noindex />
+      <Seo title="Order Status" description="Your Westora Style order status." path="/checkout/success" noindex />
       <div className="container container--narrow order-page">
         {state.kind === 'loading' && (
           <div className="order-status" aria-busy="true">

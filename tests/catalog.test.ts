@@ -54,17 +54,15 @@ describe('filters', () => {
   })
 
   it('round-trips through the URL', () => {
-    const qs = 'q=trail&category=trail&color=green&size=9%2C10.5&width=D&availability=in-stock&sort=price-asc'
+    const qs = 'q=runner&category=running&color=black&size=9%2C10.5&width=D&availability=in-stock&sort=price-asc'
     expect(serializeFilters(parseFilters(new URLSearchParams(qs))).toString()).toBe(qs)
   })
 
   it('size filter only returns products buyable in that size', () => {
-    const res = applyFilters(allProducts(), parseFilters(new URLSearchParams('size=7&width=2E')))
-    // Stride Runner 7 2E is sold out in both colors; Drift Knit sage 7 2E is sold out but stone is not.
+    const res = applyFilters(allProducts(), parseFilters(new URLSearchParams('size=10&width=D')))
     const ids = res.items.map((p) => p.id)
-    expect(ids).not.toContain('stride-runner')
-    expect(ids).toContain('drift-knit')
-    expect(ids).not.toContain('ridge-trail')
+    expect(ids).toContain('ndure-kay-0003-black')
+    expect(ids).not.toContain('ndure-kay-0004-white')
   })
 
   it('sorts by price', () => {
@@ -74,22 +72,20 @@ describe('filters', () => {
   })
 
   it('matches search synonyms', () => {
-    const res = applyFilters(allProducts(), parseFilters(new URLSearchParams('q=hiking')))
-    expect(res.items.map((p) => p.id)).toContain('ridge-trail')
+    const res = applyFilters(allProducts(), parseFilters(new URLSearchParams('q=runner')))
+    expect(res.items.map((p) => p.id)).toContain('ndure-kay-0003-black')
   })
 
   it('ranks a plain-language request against catalog text', () => {
-    const q = 'comfortable shoes for walking all day'
-    const res = applyFilters(allProducts(), parseFilters(new URLSearchParams(`q=${q}`)))
+    const q = 'lace-up sneaker'
+    const res = applyFilters(allProducts(), parseFilters(new URLSearchParams(`q=${encodeURIComponent(q)}`)))
     const ids = res.items.map((p) => p.id)
-    expect(ids).toContain('stride-runner')
-    expect(ids).toContain('glide-slip-on')
+    expect(ids).toContain('ndure-kay-0003-black')
     const ranked = allProducts()
       .filter((product) => matchesQuery(product, q))
       .sort((a, b) => searchScore(b, q) - searchScore(a, q))
       .map((product) => product.id)
-    expect(ranked.indexOf('glide-slip-on')).toBeGreaterThanOrEqual(0)
-    expect(ranked.indexOf('glide-slip-on')).toBeLessThan(ranked.indexOf('court-low'))
+    expect(ranked[0]).toBe('ndure-kay-0003-black')
     expect(applyFilters(allProducts(), parseFilters(new URLSearchParams('q=zzzz-not-a-shoe'))).total).toBe(0)
   })
 })

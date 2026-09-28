@@ -79,7 +79,7 @@ export default function Contact() {
 
   return (
     <InfoPage
-      seo={{ title: 'Contact Us', description: 'Questions about sizing, an order or returns? Contact the NOVA team by email or with our contact form.', path: '/contact' }}
+      seo={{ title: 'Contact Us', description: 'Questions about sizing, an order or returns? Contact the Westora Style team by email or with our contact form.', path: '/contact' }}
       eyebrow="Help"
       title="Contact us"
       intro={<p>Questions about sizing, an order or a return? Send us a message and we will reply by email.</p>}

@@ -5,14 +5,14 @@ import { DraftNotice, InfoPage } from '../components/layout/InfoPage'
 export default function Privacy() {
   return (
     <InfoPage
-      seo={{ title: 'Privacy Policy', description: 'How NOVA collects, uses and protects your personal information, which service providers we use, how long we keep data and the choices you have.', path: '/privacy' }}
+      seo={{ title: 'Privacy Policy', description: 'How Westora Style collects, uses and protects your personal information, which service providers we use, how long we keep data and the choices you have.', path: '/privacy' }}
       eyebrow="Legal"
       title="Privacy policy"
       intro={<p>Last updated {store.legal.updated}</p>}
     >
       <DraftNotice />
       <p>
-        This policy explains what personal information {store.legalName} (“NOVA”, “we”) collects when you use this website, how we use it, and the choices you have.
+        This policy explains what personal information {store.legalName} (“we”) collects when you use this website, how we use it, and the choices you have.
       </p>
 
       <h2>Information we collect</h2>

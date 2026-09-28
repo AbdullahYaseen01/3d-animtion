@@ -15,10 +15,9 @@ describe('getStripe', () => {
     if (!s.ok) expect(s.missing).toEqual(['STRIPE_SECRET_KEY'])
   })
 
-  it('refuses live keys while the catalog is a sample', () => {
+  it('allows live keys once the catalog is the real assortment', () => {
     process.env.STRIPE_SECRET_KEY = 'sk_live_123'
-    const s = getStripe()
-    expect(s.ok).toBe(false)
+    expect(getStripe().ok).toBe(true)
   })
 
   it('allows live keys for order reads while the catalog is a sample', () => {

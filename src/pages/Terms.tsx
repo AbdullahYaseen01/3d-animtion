@@ -5,7 +5,7 @@ import { DraftNotice, InfoPage } from '../components/layout/InfoPage'
 export default function Terms() {
   return (
     <InfoPage
-      seo={{ title: 'Terms of Service', description: 'The terms that apply when you use the NOVA website and buy from us, covering orders, prices and payment, shipping, returns and product information.', path: '/terms' }}
+      seo={{ title: 'Terms of Service', description: 'The terms that apply when you use the Westora Style website and buy from us, covering orders, prices and payment, shipping, returns and product information.', path: '/terms' }}
       eyebrow="Legal"
       title="Terms of service"
       intro={<p>Last updated {store.legal.updated}</p>}
@@ -39,7 +39,7 @@ export default function Terms() {
       <p>We try to describe and display products accurately. Colors can vary slightly between screens, and sizing conversions are approximate.</p>
 
       <h2>Website use</h2>
-      <p>Content on this site, including images and text, belongs to NOVA and may not be reused without permission. Do not misuse the site or attempt to interfere with its operation.</p>
+      <p>Content on this site, including images and text, belongs to Westora Style and may not be reused without permission. Do not misuse the site or attempt to interfere with its operation.</p>
 
       <h2>Limitation of liability</h2>
       <p>To the extent permitted by law, our liability for any order is limited to the amount you paid for it. Nothing in these terms limits rights you have under consumer protection law.</p>

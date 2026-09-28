@@ -1,6 +1,6 @@
-# NOVA storefront
+# Westora Style storefront
 
-US footwear store for NOVA. The stack is React 19, react-router 7 and Vite 6, with every public route prerendered to
+US store for Westora Style. The stack is React 19, react-router 7 and Vite 6, with every public route prerendered to
 static HTML. Server functions for Stripe Checkout, Resend email and order status run on Vercel.
 
 > **Status: not launch-ready.** The catalog is sample data, and several business policies need confirmation. See
@@ -58,7 +58,7 @@ tests/            Vitest
 1. Create an organization access token in Polar → Settings → Developers and set `POLAR_ACCESS_TOKEN`.
 2. In Polar → Settings → Webhooks, add `https://<domain>/api/polar-webhook` for the `order.paid` event and set
    `POLAR_WEBHOOK_SECRET` to the signing secret. Use `POLAR_SERVER=sandbox` with a sandbox token to test without live charges.
-3. The first checkout creates a reusable product named “NOVA order” unless `POLAR_PRODUCT_ID` is already set. Each cart is
+3. The first checkout creates a reusable product named “Westora Style order” unless `POLAR_PRODUCT_ID` is already set. Each cart is
    charged as one ad hoc price equal to the server-priced total. Polar collects the billing address and adds tax as merchant of record.
 
 How it works:

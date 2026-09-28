@@ -5,7 +5,7 @@ import { polarCheckoutStatus, polarCheckoutToOrderView } from '../server/polarOr
 import { verifyPolarWebhook } from '../server/polarWebhook'
 import { POST } from '../server/handlers/polarWebhook'
 
-const SKU = 'stride-runner:chalk-ember:10.5:D'
+const SKU = 'ndure-kay-0003-black:black:10:D'
 const SECRET = `whsec_${Buffer.from('nova-webhook-test-key').toString('base64')}`
 
 function sign(id: string, timestamp: string, body: string, secret = SECRET): string {
@@ -17,7 +17,7 @@ describe('cart metadata', () => {
   it('round-trips the lines Polar stores on the order', () => {
     const lines = [
       { sku: SKU, quantity: 2 },
-      { sku: 'stride-runner:carbon:7:D', quantity: 1 },
+      { sku: 'ndure-kay-0004-white:white:10:D', quantity: 1 },
     ]
     const meta = packCartMetadata(lines, 'abc')
     expect(meta.source).toBe('nova-web')
@@ -30,9 +30,9 @@ describe('Polar order view', () => {
     const view = polarCheckoutToOrderView({
       id: '11111111-1111-4111-8111-111111111111',
       status: 'succeeded',
-      amount: 14500,
+      amount: 8800,
       tax_amount: 0,
-      total_amount: 14500,
+      total_amount: 8800,
       customer_email: 'jordan@example.com',
       customer_name: 'Jordan Lee',
       customer_billing_address: { line1: '1 Main St', city: 'Portland', state: 'OR', postal_code: '97201', country: 'US' },
@@ -41,8 +41,8 @@ describe('Polar order view', () => {
     expect(view.status).toBe('paid')
     expect(view.firstName).toBe('Jordan')
     expect(view.shipTo).toBe('Portland, OR')
-    expect(view.lines[0]).toMatchObject({ quantity: 1, unitCents: 14500, totalCents: 14500 })
-    expect(view.totalCents).toBe(14500)
+    expect(view.lines[0]).toMatchObject({ quantity: 1, unitCents: 8800, totalCents: 8800 })
+    expect(view.totalCents).toBe(8800)
     expect(JSON.stringify(view)).not.toMatch(/jordan@example|1 Main St|97201/)
     expect(polarCheckoutStatus('confirmed')).toBe('processing')
     expect(polarCheckoutStatus('open')).toBe('unpaid')

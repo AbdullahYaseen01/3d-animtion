@@ -37,7 +37,7 @@ describe('titles and descriptions', () => {
   })
 
   it('drops the brand suffix rather than overflowing, and trims descriptions at a word', () => {
-    expect(pageTitle('Short')).toBe('Short | NOVA')
+    expect(pageTitle('Short')).toBe('Short | Westora Style')
     const long = 'A very long guide title that already uses most of the space'
     expect(pageTitle(long)).toBe(long)
     const trimmed = metaDescription('word '.repeat(60))
@@ -112,7 +112,7 @@ describe('structured data', () => {
       expect(article.datePublished).toBe(g.published)
       expect(article.dateModified).toBe(g.updated)
       expect(html, g.slug).toMatch(new RegExp(`<time datetime="${g.updated}">`, 'i'))
-      expect(html, g.slug).toContain('By the NOVA team')
+      expect(html, g.slug).toContain('By the Westora Style team')
     }
   })
 })

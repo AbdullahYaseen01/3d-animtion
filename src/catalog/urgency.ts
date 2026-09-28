@@ -28,8 +28,10 @@ export function stockUrgencyLabel(product: Product, colorSlug: string, size: num
   const qty = urgencyQuantity(product, colorSlug, size, widthCode)
   if (qty == null) return null
   const specific = product.variant === 'simple' || size != null
-  if (qty <= LOW_STOCK_THRESHOLD) {
+  // The shared default quantity is not a scarce size. Only a lower override is called out.
+  if (qty <= LOW_STOCK_THRESHOLD && qty !== product.defaultStock) {
     return specific ? `Only ${qty} left in stock` : `Only ${qty} left in a size`
   }
+  if (qty === product.defaultStock) return null
   return specific ? `${qty} in stock` : 'In stock'
 }

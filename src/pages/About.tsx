@@ -34,7 +34,7 @@ export default function About() {
     <>
       <Seo
         title="Our Craft"
-        description="How NOVA designs shoes, bags and the rest of the edit: considered materials, clear measurements and straight answers."
+        description="How Westora Style designs shoes, bags and the rest of the edit: considered materials, clear measurements and straight answers."
         path="/about"
         image="/images/editorial/editorial-materials-1024.webp"
         imageAlt="Shoe materials laid out on a workbench"
@@ -47,12 +47,12 @@ export default function About() {
             <p className="eyebrow eyebrow--ember">Our craft</p>
             <h1>Shoes for people who never stand still</h1>
             <p className="lede">
-              NOVA started with a simple idea: a small range of shoes, each designed for a clear job, that fits well and holds up to real days. Here is how we approach
+              Westora Style started with a simple idea: a small range of shoes, each designed for a clear job, that fits well and holds up to real days. Here is how we approach
               every pair.
             </p>
           </div>
           <div className="about-hero__media">
-            <ProductImage group="editorial" image="editorial-onfoot" alt="Someone walking on a sunlit city sidewalk wearing the NOVA Stride Runner" sizes="(min-width: 64rem) 40vw, 100vw" priority />
+            <ProductImage group="editorial" image="editorial-onfoot" alt="Someone walking on a sunlit city sidewalk in sneakers" sizes="(min-width: 64rem) 40vw, 100vw" priority />
           </div>
         </div>
       </div>

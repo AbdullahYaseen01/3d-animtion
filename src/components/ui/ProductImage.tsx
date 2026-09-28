@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import manifest from '../../data/imageManifest.json'
+import { store } from '../../config/store'
 
 type ManifestEntry = { w: number; h: number; widths: number[]; bg: string }
 const images = manifest as Record<string, ManifestEntry>
@@ -21,7 +22,7 @@ export function ProductImage({ image, alt, sizes, priority = false, className, g
   if (!entry || failed) {
     return (
       <div className={`img-fallback ${className ?? ''}`} role="img" aria-label={alt}>
-        <span aria-hidden="true">NOVA</span>
+        <span aria-hidden="true">{store.name}</span>
       </div>
     )
   }

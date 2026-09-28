@@ -124,7 +124,7 @@ function ProductView({ product }: { product: ProductT }) {
       <Seo
         title={`${product.name} – ${product.tagline}`}
         description={
-          `Shop the NOVA ${product.name}, ${product.tagline.toLowerCase()}. ` +
+          `Shop the Westora Style ${product.name}, ${product.tagline.toLowerCase()}. ` +
           `${formatMoney(product.priceCents)}${product.variant === 'footwear' ? `, US sizes ${product.sizes[0]}–${product.sizes[product.sizes.length - 1]}${product.widths.length > 1 ? ' in standard and wide' : ''}` : ''}. ` +
           `${s.priceCents === 0 ? 'Free US shipping and ' : ''}${store.returns.windowDays}-day returns.`
         }

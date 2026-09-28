@@ -61,7 +61,7 @@ export function CampaignFilm() {
         <img
           className="film__poster"
           src="/media/stride-film-poster.webp"
-          alt="Rendered Stride Runner concept in white, charcoal and ember on a dark stage"
+          alt="Sneakers in white, charcoal, and ember on a dark stage"
           width={1120}
           height={724}
           loading="lazy"

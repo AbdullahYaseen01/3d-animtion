@@ -14,7 +14,7 @@ export default function Wishlist() {
 
   return (
     <>
-      <Seo title="Saved Items" description="Shoes you have saved on NOVA." path="/wishlist" noindex />
+      <Seo title="Saved Items" description="Shoes you have saved on Westora Style." path="/wishlist" noindex />
       <div className="container" style={{ paddingBottom: 'var(--space-section)' }}>
         <div className="page-head">
           <h1>Saved items</h1>

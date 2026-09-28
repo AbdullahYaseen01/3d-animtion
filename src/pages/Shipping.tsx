@@ -11,7 +11,7 @@ export default function Shipping() {
     <InfoPage
       seo={{
         title: 'Shipping Information',
-        description: `Shipping rates and delivery times for NOVA orders within the United States. ${standard.priceCents === 0 ? 'Free standard shipping' : 'Standard shipping'} to US addresses.`,
+        description: `Shipping rates and delivery times for Westora Style orders within the United States. ${standard.priceCents === 0 ? 'Free standard shipping' : 'Standard shipping'} to US addresses.`,
         path: '/shipping',
       }}
       eyebrow="Help"

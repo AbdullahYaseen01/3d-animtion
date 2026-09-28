@@ -15,7 +15,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 11 × 2 × 9 cm",
-    description: "Metro Brown Wallet 21-75 is a men's wallet in brown from Metro. Listed dimensions are 11 × 2 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-75-12-10.",
+    description: "Metro Brown Wallet 21-75 is a men's wallet in brown. Listed dimensions are 11 × 2 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-75-12-10.",
     priceCents: 7800,
     colors: [
       {
@@ -68,7 +68,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 11 × 2 × 9 cm",
-    description: "Metro Black Wallet 21-75 is a men's wallet in black from Metro. Listed dimensions are 11 × 2 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-75-11-10.",
+    description: "Metro Black Wallet 21-75 is a men's wallet in black. Listed dimensions are 11 × 2 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-75-11-10.",
     priceCents: 7800,
     colors: [
       {
@@ -121,7 +121,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 11 × 2 × 9 cm",
-    description: "Metro Green Wallet 21-76 is a men's wallet in green from Metro. Listed dimensions are 11 × 2 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-76-21-10.",
+    description: "Metro Green Wallet 21-76 is a men's wallet in green. Listed dimensions are 11 × 2 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-76-21-10.",
     priceCents: 7800,
     colors: [
       {
@@ -174,7 +174,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 24 × 2.5 × 8 cm",
-    description: "Metro Brown Wallet 21-10 is a men's wallet in brown from Metro. Listed dimensions are 24 × 2.5 × 8 cm. The published material is Fabric. It is made to carry cards and folded cash. Country of origin: India. SKU 21-10-12-10.",
+    description: "Metro Brown Wallet 21-10 is a men's wallet in brown. Listed dimensions are 24 × 2.5 × 8 cm. The published material is Fabric. It is made to carry cards and folded cash. Country of origin: India. SKU 21-10-12-10.",
     priceCents: 7800,
     colors: [
       {
@@ -231,7 +231,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 24 × 2.5 × 8 cm",
-    description: "Metro Black Wallet 21-10 is a men's wallet in black from Metro. Listed dimensions are 24 × 2.5 × 8 cm. The published material is Fabric. It is made to carry cards and folded cash. Country of origin: India. SKU 21-10-11-10.",
+    description: "Metro Black Wallet 21-10 is a men's wallet in black. Listed dimensions are 24 × 2.5 × 8 cm. The published material is Fabric. It is made to carry cards and folded cash. Country of origin: India. SKU 21-10-11-10.",
     priceCents: 7800,
     colors: [
       {
@@ -288,7 +288,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Bifold · 24 × 1.5 × 9 cm",
-    description: "Metro Olive Bifold 21-7017 is a men's bifold in olive from Metro. Listed dimensions are 24 × 1.5 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-7017-49-10.",
+    description: "Metro Olive Bifold 21-7017 is a men's bifold in olive. Listed dimensions are 24 × 1.5 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-7017-49-10.",
     priceCents: 10400,
     colors: [
       {
@@ -342,7 +342,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 11 × 2 × 9 cm",
-    description: "Metro Black Wallet 21-74 is a men's wallet in black from Metro. Listed dimensions are 11 × 2 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-74-11-10.",
+    description: "Metro Black Wallet 21-74 is a men's wallet in black. Listed dimensions are 11 × 2 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-74-11-10.",
     priceCents: 5700,
     colors: [
       {
@@ -395,7 +395,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 11 × 2 × 9 cm",
-    description: "Metro Tan Wallet 21-74 is a men's wallet in tan from Metro. Listed dimensions are 11 × 2 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-74-23-10.",
+    description: "Metro Tan Wallet 21-74 is a men's wallet in tan. Listed dimensions are 11 × 2 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-74-23-10.",
     priceCents: 5700,
     colors: [
       {
@@ -448,7 +448,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 11 × 2 × 9.5 cm",
-    description: "Metro Brown Wallet 21-7458 is a men's wallet in brown from Metro. Listed dimensions are 11 × 2 × 9.5 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-7458-12-10.",
+    description: "Metro Brown Wallet 21-7458 is a men's wallet in brown. Listed dimensions are 11 × 2 × 9.5 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-7458-12-10.",
     priceCents: 7800,
     colors: [
       {
@@ -502,7 +502,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Black Wallet 21-97 is a men's wallet in black from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-97-11-10.",
+    description: "Metro Black Wallet 21-97 is a men's wallet in black. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-97-11-10.",
     priceCents: 8800,
     colors: [
       {
@@ -553,7 +553,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 8.5 × 0.5 × 11 cm",
-    description: "Metro Tan Wallet 21-62 is a men's wallet in tan from Metro. Listed dimensions are 8.5 × 0.5 × 11 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-62-23-10.",
+    description: "Metro Tan Wallet 21-62 is a men's wallet in tan. Listed dimensions are 8.5 × 0.5 × 11 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-62-23-10.",
     priceCents: 6700,
     colors: [
       {
@@ -606,7 +606,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Black Wallet 55-4 is a men's wallet in black from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 55-4-11-36.",
+    description: "Metro Black Wallet 55-4 is a men's wallet in black. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 55-4-11-36.",
     priceCents: 13000,
     colors: [
       {
@@ -657,7 +657,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Brown Wallet 55-4 is a men's wallet in brown from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 55-4-12-36.",
+    description: "Metro Brown Wallet 55-4 is a men's wallet in brown. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 55-4-12-36.",
     priceCents: 13000,
     colors: [
       {
@@ -708,7 +708,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Black Wallet 21-25 is a men's wallet in black from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-25-11-10.",
+    description: "Metro Black Wallet 21-25 is a men's wallet in black. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-25-11-10.",
     priceCents: 6700,
     colors: [
       {
@@ -759,7 +759,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Bifold · 24 × 1.5 × 9 cm",
-    description: "Metro Tan Bifold 21-7017 is a men's bifold in tan from Metro. Listed dimensions are 24 × 1.5 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-7017-23-10.",
+    description: "Metro Tan Bifold 21-7017 is a men's bifold in tan. Listed dimensions are 24 × 1.5 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-7017-23-10.",
     priceCents: 10400,
     colors: [
       {
@@ -814,7 +814,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Bifold · 24 × 1.5 × 9 cm",
-    description: "Metro Blue Bifold 21-7017 is a men's bifold in blue from Metro. Listed dimensions are 24 × 1.5 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-7017-45-10.",
+    description: "Metro Blue Bifold 21-7017 is a men's bifold in blue. Listed dimensions are 24 × 1.5 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-7017-45-10.",
     priceCents: 10400,
     colors: [
       {
@@ -869,7 +869,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Brown Wallet 21-97 is a men's wallet in brown from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-97-12-10.",
+    description: "Metro Brown Wallet 21-97 is a men's wallet in brown. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-97-12-10.",
     priceCents: 8800,
     colors: [
       {
@@ -920,7 +920,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Brown Wallet 21-101 is a men's wallet in brown from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-101-12-10.",
+    description: "Metro Brown Wallet 21-101 is a men's wallet in brown. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-101-12-10.",
     priceCents: 8800,
     colors: [
       {
@@ -971,7 +971,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 8.5 × 0.5 × 11 cm",
-    description: "Metro Black Wallet 21-62 is a men's wallet in black from Metro. Listed dimensions are 8.5 × 0.5 × 11 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-62-11-10.",
+    description: "Metro Black Wallet 21-62 is a men's wallet in black. Listed dimensions are 8.5 × 0.5 × 11 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-62-11-10.",
     priceCents: 6700,
     colors: [
       {
@@ -1024,7 +1024,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Tan Wallet 21-101 is a men's wallet in tan from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-101-23-10.",
+    description: "Metro Tan Wallet 21-101 is a men's wallet in tan. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-101-23-10.",
     priceCents: 8800,
     colors: [
       {
@@ -1075,7 +1075,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Grey Wallet 21-96 is a men's wallet in grey from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-96-14-10.",
+    description: "Metro Grey Wallet 21-96 is a men's wallet in grey. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-96-14-10.",
     priceCents: 7800,
     colors: [
       {
@@ -1126,7 +1126,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Rose Gold Wallet 21-96 is a men's wallet in rose gold from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-96-22-10.",
+    description: "Metro Rose Gold Wallet 21-96 is a men's wallet in rose gold. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-96-22-10.",
     priceCents: 7800,
     colors: [
       {
@@ -1177,7 +1177,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 10 × 2 × 10 cm",
-    description: "Metro Brown Wallet 21-40 is a men's wallet in brown from Metro. Listed dimensions are 10 × 2 × 10 cm. The published material is Synthetic. It is made to carry cards and folded cash. Country of origin: India. SKU 21-40-12-10.",
+    description: "Metro Brown Wallet 21-40 is a men's wallet in brown. Listed dimensions are 10 × 2 × 10 cm. The published material is Synthetic. It is made to carry cards and folded cash. Country of origin: India. SKU 21-40-12-10.",
     priceCents: 7800,
     colors: [
       {
@@ -1234,7 +1234,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Black Wallet 21-99 is a men's wallet in black from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-99-11-10.",
+    description: "Metro Black Wallet 21-99 is a men's wallet in black. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-99-11-10.",
     priceCents: 6700,
     colors: [
       {
@@ -1285,7 +1285,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 10 × 2 × 10 cm",
-    description: "Metro Black Wallet 21-40 is a men's wallet in black from Metro. Listed dimensions are 10 × 2 × 10 cm. The published material is Synthetic. It is made to carry cards and folded cash. Country of origin: India. SKU 21-40-11-10.",
+    description: "Metro Black Wallet 21-40 is a men's wallet in black. Listed dimensions are 10 × 2 × 10 cm. The published material is Synthetic. It is made to carry cards and folded cash. Country of origin: India. SKU 21-40-11-10.",
     priceCents: 7800,
     colors: [
       {
@@ -1342,7 +1342,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Brown Wallet 21-99 is a men's wallet in brown from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-99-12-10.",
+    description: "Metro Brown Wallet 21-99 is a men's wallet in brown. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-99-12-10.",
     priceCents: 6700,
     colors: [
       {
@@ -1393,7 +1393,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 11 × 2 × 9 cm",
-    description: "Metro Brown Wallet 21-76 is a men's wallet in brown from Metro. Listed dimensions are 11 × 2 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-76-12-10.",
+    description: "Metro Brown Wallet 21-76 is a men's wallet in brown. Listed dimensions are 11 × 2 × 9 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-76-12-10.",
     priceCents: 7800,
     colors: [
       {
@@ -1446,7 +1446,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Black Wallet 21-102 is a men's wallet in black from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-102-11-10.",
+    description: "Metro Black Wallet 21-102 is a men's wallet in black. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-102-11-10.",
     priceCents: 6700,
     colors: [
       {
@@ -1497,7 +1497,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 22.8 × 1.8 × 8 cm",
-    description: "Metro Black Wallet 21-26 is a men's wallet in black from Metro. Listed dimensions are 22.8 × 1.8 × 8 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-26-11-10.",
+    description: "Metro Black Wallet 21-26 is a men's wallet in black. Listed dimensions are 22.8 × 1.8 × 8 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-26-11-10.",
     priceCents: 8800,
     colors: [
       {
@@ -1551,7 +1551,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Rose Gold Wallet 21-102 is a men's wallet in rose gold from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-102-22-10.",
+    description: "Metro Rose Gold Wallet 21-102 is a men's wallet in rose gold. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-102-22-10.",
     priceCents: 6700,
     colors: [
       {
@@ -1602,7 +1602,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet · 22.8 × 1.8 × 8 cm",
-    description: "Metro Tan Wallet 21-26 is a men's wallet in tan from Metro. Listed dimensions are 22.8 × 1.8 × 8 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-26-23-10.",
+    description: "Metro Tan Wallet 21-26 is a men's wallet in tan. Listed dimensions are 22.8 × 1.8 × 8 cm. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-26-23-10.",
     priceCents: 8800,
     colors: [
       {
@@ -1656,7 +1656,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Bifold",
-    description: "Metro Tan Bifold 21-6904 is a men's bifold in tan from Metro. The published material is Leather. It is made to carry cards and folded cash. Country of origin: India. SKU 21-6904-23-10.",
+    description: "Metro Tan Bifold 21-6904 is a men's bifold in tan. The published material is Leather. It is made to carry cards and folded cash. Country of origin: India. SKU 21-6904-23-10.",
     priceCents: 7800,
     colors: [
       {
@@ -1712,7 +1712,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Wallet",
-    description: "Metro Olive Wallet 21-6904 is a men's wallet in olive from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-6904-49-10.",
+    description: "Metro Olive Wallet 21-6904 is a men's wallet in olive. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-6904-49-10.",
     priceCents: 7800,
     colors: [
       {
@@ -1763,7 +1763,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Bifold",
-    description: "Metro Brown Bifold 21-6904 is a men's bifold in brown from Metro. The published material is Leather. It is made to carry cards and folded cash. Country of origin: INDIA. SKU 21-6904-12-10.",
+    description: "Metro Brown Bifold 21-6904 is a men's bifold in brown. The published material is Leather. It is made to carry cards and folded cash. Country of origin: INDIA. SKU 21-6904-12-10.",
     priceCents: 7800,
     colors: [
       {
@@ -1819,7 +1819,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Bifold",
-    description: "Metro Black Bifold 21-6904 is a men's bifold in black from Metro. The published material is Leather. It is made to carry cards and folded cash. Country of origin: India. SKU 21-6904-11-10.",
+    description: "Metro Black Bifold 21-6904 is a men's bifold in black. The published material is Leather. It is made to carry cards and folded cash. Country of origin: India. SKU 21-6904-11-10.",
     priceCents: 7800,
     colors: [
       {
@@ -1875,7 +1875,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Money clip",
-    description: "Metro Maroon Money Clip 21-8250 is a men's money clip in maroon from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-8250-44-10.",
+    description: "Metro Maroon Money Clip 21-8250 is a men's money clip in maroon. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-8250-44-10.",
     priceCents: 6700,
     colors: [
       {
@@ -1928,7 +1928,7 @@ export const mensWallets: Product[] = [
     category: 'wallets',
     variant: 'simple',
     tagline: "Money clip",
-    description: "Metro Blue Money Clip 21-8250 is a men's money clip in blue from Metro. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-8250-45-10.",
+    description: "Metro Blue Money Clip 21-8250 is a men's money clip in blue. Metro does not publish a material for this style. It is made to carry cards and folded cash. Country of origin: India. SKU 21-8250-45-10.",
     priceCents: 6700,
     colors: [
       {

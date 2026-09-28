@@ -45,7 +45,7 @@ export function faqGroups(): { title: string; items: QA[] }[] {
       items: [
         {
           q: 'How do I pay?',
-          a: ['Checkout is hosted by Polar, a secure payment provider. The payment methods available are shown on the checkout page. NOVA never sees or stores your full card details.'],
+          a: ['Checkout is hosted by Polar, a secure payment provider. The payment methods available are shown on the checkout page. Westora Style never sees or stores your full card details.'],
         },
         { q: 'Is sales tax included?', a: ['Prices are shown before tax. Where sales tax applies, it is calculated at checkout from your shipping address before you pay.'] },
         {
@@ -98,7 +98,7 @@ export default function Faq() {
     <InfoPage
       seo={{
         title: 'Frequently Asked Questions',
-        description: `Answers about NOVA shoe sizing and wide widths, payment, US shipping times, ${store.returns.windowDays}-day returns, and cleaning leather and suede shoes.`,
+        description: `Answers about Westora Style shoe sizing and wide widths, payment, US shipping times, ${store.returns.windowDays}-day returns, and cleaning leather and suede shoes.`,
         path: '/faq',
         jsonLd: [faqLd(groups.flatMap((g) => g.items.map((it) => ({ question: it.q, answer: answerText(it.a) }))))],
       }}

@@ -33,7 +33,7 @@ export function activeCategories(): (Category & { count: number })[] {
 
 /** Existing footwear activity URLs: /collections/running and the rest. */
 export function shoeCollections(): (Category & { count: number })[] {
-  return withCount(categories.filter((c) => c.kind === 'shoe-use'))
+  return withCount(categories.filter((c) => c.kind === 'shoe-use')).filter((c) => c.count > 0)
 }
 
 export function getCategory(slug: string): (Category & { count: number }) | undefined {

@@ -7,39 +7,34 @@ import { deliveryWindow } from '../src/lib/delivery'
 
 describe('stock, delivery, size', () => {
   it('shows a low-stock count only from the real SKU quantity', () => {
-    const product = getProduct('stride-runner')!
-    const sku = buildSku(product.id, 'chalk-ember', 10, 'D')
+    const product = getProduct('ndure-kay-0003-black')!
+    const sku = buildSku(product.id, 'black', 10, 'D')
     const qty = stockFor(product, sku)
-    expect(qty).toBe(3)
+    expect(qty).toBe(8)
     expect(qty).toBeLessThanOrEqual(LOW_STOCK_THRESHOLD)
-    expect(product.compareAtPriceCents).toBeUndefined()
-    expect(stockUrgencyLabel(product, 'chalk-ember', 10, 'D')).toBe('Only 3 left in stock')
+    expect(product.compareAtPriceCents).toBe(12600)
+    expect(stockUrgencyLabel(product, 'black', 10, 'D')).toBeNull()
   })
 
-  it('shows real stock urgency on every product', () => {
-    for (const product of allProducts()) {
-      const label = stockUrgencyLabel(product, product.colors[0].slug, product.variant === 'simple' ? 0 : null, product.widths[0].code)
-      expect(label, product.slug).toBeTruthy()
-    }
-    const pack = getProduct('commute-pack')!
-    expect(stockFor(pack, buildSku(pack.id, 'charcoal', 0, 'OS'))).toBe(7)
-    expect(stockUrgencyLabel(pack, 'charcoal', 0, 'OS')).toBe('Only 7 left in stock')
-    const watch = getProduct('line-watch')!
-    expect(stockUrgencyLabel(watch, 'tan-leather', 0, 'OS')).toBe('Only 5 left in stock')
-    const earrings = getProduct('arc-earrings')!
-    expect(stockUrgencyLabel(earrings, 'gold-tone', 0, 'OS')).toBe('12 in stock')
+  it('does not stamp the shared stock level on every product', () => {
+    const product = getProduct('ndure-kay-0003-black')!
+    expect(stockUrgencyLabel(product, 'black', null, 'D')).toBeNull()
+    const bag = getProduct('bagx-monaco-choco')!
+    expect(stockFor(bag, buildSku(bag.id, 'choco', 0, 'OS'))).toBe(8)
+    expect(stockUrgencyLabel(bag, 'choco', 0, 'OS')).toBeNull()
+    const soldOut = getProduct('ndure-kay-0004-white')!
+    expect(stockUrgencyLabel(soldOut, 'white', 10, 'D')).toBeNull()
+    expect(allProducts().every((item) => stockUrgencyLabel(item, item.colors[0].slug, item.variant === 'simple' ? 0 : null, item.widths[0].code) == null)).toBe(true)
   })
 
   it('searches across categories and respects a written budget', () => {
     const ids = (q: string) => applyFilters(allProducts(), parseFilters(new URLSearchParams(`q=${encodeURIComponent(q)}`))).items.map((p) => p.id)
     const underHundred = ids('black handbag under $100')
-    expect(underHundred).toContain('mini-crossbody')
+    expect(underHundred.length).toBeGreaterThan(0)
     for (const id of underHundred) expect(getProduct(id)!.priceCents).toBeLessThanOrEqual(10000)
-    expect(ids('backpack for a 15-inch laptop')).toContain('commute-pack')
-    expect(ids('lightweight jacket for fall')).toContain('day-jacket')
-    expect(ids('gold-tone earrings')).toContain('arc-earrings')
-    expect(ids('minimalist watch with a leather strap')).toContain('line-watch')
-    expect(underHundred).not.toContain('stride-runner')
+    expect(ids('hobo bag')).toContain('bagx-monaco-choco')
+    expect(ids('gold plated ring')).toContain('mz-solid-925-chandi-2-3-grams-18k-gold-plated')
+    expect(ids('metal bracelet watch')).toContain('naviforce-nf5053g-ch-wht')
   })
 
   it('builds the delivery window from shipping settings', () => {

@@ -76,7 +76,7 @@ export async function notifyPolarPayment(input: { id: string; orderNumber: strin
       from,
       to: [to],
       subject: `New order ${input.orderNumber} – ${formatMoney(input.totalCents)}`,
-      html: `<h1>Order ${escapeHtml(input.orderNumber)}</h1><table cellpadding="6">${input.rowsHtml}</table><p>Total ${formatMoney(input.totalCents)}. Customer and billing details are in the Polar dashboard (order ${escapeHtml(input.id)}) and on the NOVA order desk.</p>`,
+      html: `<h1>Order ${escapeHtml(input.orderNumber)}</h1><table cellpadding="6">${input.rowsHtml}</table><p>Total ${formatMoney(input.totalCents)}. Customer and billing details are in the Polar dashboard (order ${escapeHtml(input.id)}) and on the Westora Style order desk.</p>`,
     },
     `order-notify-${input.id}`,
   )

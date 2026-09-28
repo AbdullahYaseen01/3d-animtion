@@ -15,7 +15,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
     priceCents: 8800,
     compareAtPriceCents: 12600,
     colors: [
@@ -45,7 +45,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -62,7 +62,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A grey men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A grey men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -92,7 +92,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -109,7 +109,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A navy men's lace-up sneaker. Upper: Mesh. Sole: EVA. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A navy men's lace-up sneaker. Upper: Mesh. Sole: EVA.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -139,7 +139,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -156,7 +156,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up shoe. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's lace-up shoe. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
     priceCents: 10100,
     compareAtPriceCents: 14400,
     colors: [
@@ -186,7 +186,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -203,7 +203,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A white men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A white men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 8800,
     compareAtPriceCents: 12600,
     colors: [
@@ -233,7 +233,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -250,7 +250,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A blk/wht men's lace-up sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A blk/wht men's lace-up sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
     priceCents: 10700,
     compareAtPriceCents: 15300,
     colors: [
@@ -280,7 +280,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -297,7 +297,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Polyurethane. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Polyurethane.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -327,7 +327,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -344,7 +344,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A navy men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A navy men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 5700,
     compareAtPriceCents: 8100,
     colors: [
@@ -374,7 +374,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -391,7 +391,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A navy men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Polyurethane. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A navy men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Polyurethane.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -421,7 +421,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -438,7 +438,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A beige men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A beige men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 5900,
     compareAtPriceCents: 8500,
     colors: [
@@ -468,7 +468,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -485,7 +485,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A blk/blk men's lace-up sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A blk/blk men's lace-up sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
     priceCents: 12600,
     compareAtPriceCents: 18000,
     colors: [
@@ -515,7 +515,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -532,7 +532,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Man-Made Sole/Thermoplastic. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Man-Made Sole/Thermoplastic.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -562,7 +562,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -579,7 +579,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A off white men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A off white men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
     priceCents: 10100,
     compareAtPriceCents: 14400,
     colors: [
@@ -609,7 +609,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -626,7 +626,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A navy men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Man-Made Sole/Thermoplastic. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A navy men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Man-Made Sole/Thermoplastic.",
     priceCents: 6300,
     compareAtPriceCents: 9000,
     colors: [
@@ -656,7 +656,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -673,7 +673,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 5700,
     compareAtPriceCents: 8100,
     colors: [
@@ -703,7 +703,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -720,7 +720,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A beige men's jogger. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A beige men's jogger.",
     priceCents: 6300,
     compareAtPriceCents: 9000,
     colors: [
@@ -747,7 +747,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -764,7 +764,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 5700,
     compareAtPriceCents: 8100,
     colors: [
@@ -794,7 +794,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -811,7 +811,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A grey men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Man-Made Sole/Thermoplastic. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A grey men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Man-Made Sole/Thermoplastic.",
     priceCents: 6300,
     compareAtPriceCents: 9000,
     colors: [
@@ -841,7 +841,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -858,7 +858,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A khaki men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Polyurethane. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A khaki men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Polyurethane.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -888,7 +888,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -905,7 +905,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A white men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A white men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
     priceCents: 8800,
     compareAtPriceCents: 12600,
     colors: [
@@ -935,7 +935,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -953,7 +953,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -983,7 +983,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -1001,7 +1001,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A grey men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A grey men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -1031,7 +1031,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -1049,7 +1049,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A grey men's lace-up sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A grey men's lace-up sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate.",
     priceCents: 8800,
     compareAtPriceCents: 12600,
     colors: [
@@ -1079,7 +1079,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -1096,7 +1096,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/ Thermoplastic. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/ Thermoplastic.",
     priceCents: 9500,
     compareAtPriceCents: 13500,
     colors: [
@@ -1126,7 +1126,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -1146,7 +1146,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's jogger. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's jogger.",
     priceCents: 9500,
     compareAtPriceCents: 13500,
     colors: [
@@ -1173,7 +1173,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday training","All-day wear"],
     defaultStock: 8,
@@ -1193,7 +1193,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A black men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 5100,
     compareAtPriceCents: 7200,
     colors: [
@@ -1223,7 +1223,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1240,7 +1240,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A black men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 6300,
     compareAtPriceCents: 9000,
     colors: [
@@ -1270,7 +1270,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1287,7 +1287,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A grey men's slip-on sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A grey men's slip-on sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate.",
     priceCents: 8200,
     compareAtPriceCents: 11700,
     colors: [
@@ -1317,7 +1317,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1334,7 +1334,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A black men's slip-on sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's slip-on sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate.",
     priceCents: 8200,
     compareAtPriceCents: 11700,
     colors: [
@@ -1364,7 +1364,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1381,7 +1381,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A nvy/ofwht men's lace-up sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A nvy/ofwht men's lace-up sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -1411,7 +1411,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1428,7 +1428,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A navy men's slip-on sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A navy men's slip-on sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -1458,7 +1458,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1475,7 +1475,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A beige men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A beige men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -1505,7 +1505,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1522,7 +1522,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A grey men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A grey men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 5100,
     compareAtPriceCents: 7200,
     colors: [
@@ -1552,7 +1552,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1569,7 +1569,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A tan men's smart casual shoe. Upper: Polyurethane. Sole: Thermoplastic Rubber. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A tan men's smart casual shoe. Upper: Polyurethane. Sole: Thermoplastic Rubber.",
     priceCents: 10100,
     compareAtPriceCents: 14400,
     colors: [
@@ -1599,7 +1599,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1616,7 +1616,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A black men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -1646,7 +1646,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1663,7 +1663,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A blk/olv men's court sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A blk/olv men's court sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber.",
     priceCents: 12600,
     colors: [
       {
@@ -1692,7 +1692,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1709,7 +1709,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A blk/ofwht men's court sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A blk/ofwht men's court sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber.",
     priceCents: 12600,
     colors: [
       {
@@ -1738,7 +1738,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1755,7 +1755,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A o.wht/beg men's mid-top sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A o.wht/beg men's mid-top sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber.",
     priceCents: 12600,
     colors: [
       {
@@ -1784,7 +1784,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1801,7 +1801,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A grey men's slip-on sneaker. Upper: Mesh. Sole: EVA. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A grey men's slip-on sneaker. Upper: Mesh. Sole: EVA.",
     priceCents: 5700,
     compareAtPriceCents: 8100,
     colors: [
@@ -1831,7 +1831,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1848,7 +1848,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A black men's sneaker. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's sneaker.",
     priceCents: 8800,
     compareAtPriceCents: 12600,
     colors: [
@@ -1875,7 +1875,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1892,7 +1892,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A wht/blk men's lace-up sneaker. Upper: Polyurethane. Sole: Man-Made Sole/Thermoplastic. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A wht/blk men's lace-up sneaker. Upper: Polyurethane. Sole: Man-Made Sole/Thermoplastic.",
     priceCents: 5100,
     compareAtPriceCents: 7200,
     colors: [
@@ -1922,7 +1922,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1939,7 +1939,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A sand men's lace-up sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A sand men's lace-up sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber.",
     priceCents: 10100,
     compareAtPriceCents: 14400,
     colors: [
@@ -1969,7 +1969,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -1986,7 +1986,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A d.brown men's lace-up sneaker. Upper: Polyurethane. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A d.brown men's lace-up sneaker. Upper: Polyurethane. Sole: Ethylene Vinyl Acetate.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -2016,7 +2016,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -2033,7 +2033,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A coffee men's low-top sneaker. Upper: Polyurethane. Sole: Man-Made Sole/Thermoplastic. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A coffee men's low-top sneaker. Upper: Polyurethane. Sole: Man-Made Sole/Thermoplastic.",
     priceCents: 5700,
     compareAtPriceCents: 8100,
     colors: [
@@ -2063,7 +2063,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -2080,7 +2080,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A grey men's sneaker. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A grey men's sneaker.",
     priceCents: 6300,
     compareAtPriceCents: 9000,
     colors: [
@@ -2107,7 +2107,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -2124,7 +2124,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A navy men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A navy men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
     priceCents: 5700,
     compareAtPriceCents: 8100,
     colors: [
@@ -2154,7 +2154,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -2171,7 +2171,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A khaki men's casual slip-ons. Upper: Polyurethane. Sole: Man-Made Sole/Thermoplastic. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A khaki men's casual slip-ons. Upper: Polyurethane. Sole: Man-Made Sole/Thermoplastic.",
     priceCents: 5100,
     compareAtPriceCents: 7200,
     colors: [
@@ -2201,7 +2201,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -2218,7 +2218,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A black men's slip-on sneaker. Upper: Engineered Knit. Sole: Polyurethane. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's slip-on sneaker. Upper: Engineered Knit. Sole: Polyurethane.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -2248,7 +2248,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -2265,7 +2265,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A blk/wht men's lace-up sneaker. Upper: Polyurethane. Sole: Ethylene Vinyl Acetate. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A blk/wht men's lace-up sneaker. Upper: Polyurethane. Sole: Ethylene Vinyl Acetate.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -2295,7 +2295,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Lace-up, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,
@@ -2312,7 +2312,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A black men's slip-on sneaker. Upper: Polyurethane. Sole: Man-Made Sole/Thermoplastic. Sizes are US men’s, converted from the Ndure EU/UK label.",
+    description: "A black men's slip-on sneaker. Upper: Polyurethane. Sole: Man-Made Sole/Thermoplastic.",
     priceCents: 4400,
     compareAtPriceCents: 6300,
     colors: [
@@ -2342,7 +2342,7 @@ export const mensSneakers: Product[] = [
     care: 'Wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
     fit: {
       summary: "Slip-on, standard width.",
-      advice: 'Order the US men’s size converted from the Ndure label: UK 6 is US 7, UK 7 is US 8, and so on. This pair is not offered in a wide width.',
+      advice: 'Order your usual US men’s size. This pair is not offered in a wide width.',
     },
     bestFor: ["Everyday wear"],
     defaultStock: 8,

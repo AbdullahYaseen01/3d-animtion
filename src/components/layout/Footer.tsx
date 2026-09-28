@@ -11,7 +11,7 @@ export function Footer() {
       <div className="container">
         <div className="site-footer__signup">
           <div>
-            <h2 className="site-footer__title">Notes from NOVA</h2>
+            <h2 className="site-footer__title">Notes from {store.name}</h2>
             <p className="muted">New arrivals and restocks. Unsubscribe anytime.</p>
           </div>
           <NewsletterForm source="footer" tone="dark" />
@@ -41,7 +41,7 @@ export function Footer() {
             </ul>
           </nav>
           <nav aria-labelledby="footer-about">
-            <h3 id="footer-about">NOVA</h3>
+            <h3 id="footer-about">{store.name}</h3>
             <ul role="list">
               <li><Link to="/about">Our craft</Link></li>
               <li><Link to="/guides">Guides</Link></li>

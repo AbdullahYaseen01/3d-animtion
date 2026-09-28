@@ -5,8 +5,8 @@
  */
 
 export const store = {
-  name: 'NOVA',
-  legalName: 'NOVA Footwear',
+  name: 'Westora Style',
+  legalName: 'Westora Style',
   tagline: 'Style for every side of you.',
   /** LAUNCH BLOCKER: confirm the mailbox exists and is monitored. Carried over from the previous site. */
   supportEmail: 'hello@novafootwear.com',

@@ -4,6 +4,7 @@ import { StaticRouter } from 'react-router'
 import { App } from './App'
 import { campaignHero, collectionOgImage } from './campaign/styleInMotion'
 import { activeCategories, allProducts, productImagePath, shoeCollections } from './catalog'
+import { categories } from './catalog/products'
 import { store } from './config/store'
 import { guides } from './data/guides'
 import { HeadContext, headToString, type HeadCollector } from './lib/seo'
@@ -67,5 +68,12 @@ export function prerenderRoutes(): PrerenderRoute[] {
     ...guides.map((g) => ({ path: `/guides/${g.slug}`, lastmod: g.updated })),
   ]
   const utility = ['/search', '/cart', '/wishlist', '/checkout/success', '/admin']
-  return [...indexable.map((r) => ({ ...r, sitemap: true })), ...utility.map((path) => ({ path, sitemap: false }))]
+  const active = new Set(activeCategories().map((category) => category.slug))
+  const emptyDepartments = categories
+    .filter((category) => category.kind === 'department' && !active.has(category.slug))
+    .map((category) => `/collections/${category.slug}`)
+  return [
+    ...indexable.map((r) => ({ ...r, sitemap: true })),
+    ...[...utility, ...emptyDepartments].map((path) => ({ path, sitemap: false })),
+  ]
 }

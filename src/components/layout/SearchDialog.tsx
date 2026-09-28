@@ -48,7 +48,7 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
         }}
       >
         <label htmlFor={inputId} className="visually-hidden">
-          Search NOVA
+          Search Westora Style
         </label>
         <Icon name="search" />
         <input

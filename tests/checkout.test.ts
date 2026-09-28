@@ -15,7 +15,7 @@ vi.mock('../server/polar.js', () => ({
 
 const { POST } = await import('../server/handlers/checkout')
 
-const SKU = 'stride-runner:chalk-ember:10.5:D'
+const SKU = 'ndure-kay-0003-black:black:10:D'
 const req = (body: unknown, headers: Record<string, string> = {}) =>
   new Request('https://nova.test/api/checkout', {
     method: 'POST',
@@ -35,8 +35,8 @@ describe('buildSessionParams', () => {
     const cart = priceCart([{ sku: SKU, quantity: 2 }])
     const p = buildSessionParams(cart, { origin: 'https://nova.test', automaticTax: true, hash: 'h', now: 1000 })
     expect(p.mode).toBe('payment')
-    expect(p.line_items?.[0]).toMatchObject({ quantity: 2, price_data: { currency: 'usd', unit_amount: 14500, tax_behavior: 'exclusive' } })
-    expect(p.line_items?.[0].price_data?.product_data?.metadata).toEqual({ sku: SKU, product_id: 'stride-runner' })
+    expect(p.line_items?.[0]).toMatchObject({ quantity: 2, price_data: { currency: 'usd', unit_amount: 8800, tax_behavior: 'exclusive' } })
+    expect(p.line_items?.[0].price_data?.product_data?.metadata).toEqual({ sku: SKU, product_id: 'ndure-kay-0003-black' })
     expect(p.shipping_address_collection?.allowed_countries).toEqual(['US'])
     expect(p.automatic_tax).toEqual({ enabled: true })
     expect(p.success_url).toBe('https://nova.test/checkout/success?session_id={CHECKOUT_SESSION_ID}')
@@ -67,16 +67,16 @@ describe('POST /api/checkout', () => {
     expect(created[0].idempotencyKey).toMatch(/^checkout_attempt_12345678_[0-9a-f]{24}$/)
     expect(created[0].successUrl).toBe('https://nova.test/checkout/success?session_id={CHECKOUT_ID}')
     expect(created[0].metadata.source).toBe('nova-web')
-    expect(created[0].amountCents).toBe(14500)
+    expect(created[0].amountCents).toBe(8800)
   })
 
   it('never trusts client prices', async () => {
     await POST(req({ lines: [{ sku: SKU, quantity: 1, priceCents: 1, unit_amount: 1 }], attemptId: 'attempt_12345678' }))
-    expect(created[0].amountCents).toBe(14500)
+    expect(created[0].amountCents).toBe(8800)
   })
 
   it('returns 409 with corrected lines when stock changed', async () => {
-    const res = await POST(req({ lines: [{ sku: 'stride-runner:carbon:7:D', quantity: 1 }, { sku: SKU, quantity: 1 }] }))
+    const res = await POST(req({ lines: [{ sku: 'ndure-kay-0004-white:white:10:D', quantity: 1 }, { sku: SKU, quantity: 1 }] }))
     expect(res.status).toBe(409)
     const body = await res.json()
     expect(body.lines).toEqual([{ sku: SKU, quantity: 1 }])

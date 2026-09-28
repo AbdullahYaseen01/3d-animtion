@@ -13,7 +13,7 @@ export default function Cart() {
 
   return (
     <>
-      <Seo title="Your Cart" description="Review the items in your NOVA cart." path="/cart" noindex />
+      <Seo title="Your Cart" description="Review the items in your Westora Style cart." path="/cart" noindex />
       <div className="container">
         <div className="page-head">
           <h1>Your cart</h1>

@@ -26,7 +26,7 @@ export function NewsletterForm({ source, tone = 'light' }: { source: string; ton
       return
     }
     if (!consent) {
-      setFieldError('Please confirm you want to receive NOVA emails.')
+      setFieldError('Please confirm you want to receive Westora Style emails.')
       return
     }
     setFieldError(null)

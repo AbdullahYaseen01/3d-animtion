@@ -3,9 +3,9 @@ import { cartReducer, priceCart, shippingFor, validateLines } from '../src/comme
 import { getProductById } from '../src/catalog'
 import { store } from '../src/config/store'
 
-const IN_STOCK = 'stride-runner:chalk-ember:10.5:D'
-const LOW_STOCK = 'stride-runner:chalk-ember:10:D' // 3 in stock
-const SOLD_OUT = 'stride-runner:carbon:7:D'
+const IN_STOCK = 'ndure-kay-0003-black:black:11:D'
+const LOW_STOCK = 'ndure-kay-0003-black:black:10:D' // 8 in stock
+const SOLD_OUT = 'ndure-kay-0004-white:white:10:D'
 
 describe('cartReducer', () => {
   it('adds, merges and clamps quantity to the per-line maximum', () => {
@@ -30,11 +30,11 @@ describe('validateLines', () => {
     const { lines, issues } = validateLines([
       { sku: 'fake:red:10:D', quantity: 1 },
       { sku: SOLD_OUT, quantity: 1 },
-      { sku: LOW_STOCK, quantity: 5 },
+      { sku: LOW_STOCK, quantity: 10 },
       { sku: IN_STOCK, quantity: 1 },
     ])
     expect(lines).toEqual([
-      { sku: LOW_STOCK, quantity: 3 },
+      { sku: LOW_STOCK, quantity: 8 },
       { sku: IN_STOCK, quantity: 1 },
     ])
     expect(issues.map((i) => i.type)).toEqual(['unknown', 'sold-out', 'reduced'])
@@ -45,13 +45,13 @@ describe('validateLines', () => {
   })
 
   it('rejects SKUs that do not round-trip exactly (e.g. "10.50")', () => {
-    expect(validateLines([{ sku: 'stride-runner:chalk-ember:10.50:D', quantity: 1 }]).issues[0]?.type).toBe('unknown')
+    expect(validateLines([{ sku: 'ndure-kay-0003-black:black:10.50:D', quantity: 1 }]).issues[0]?.type).toBe('unknown')
   })
 })
 
 describe('priceCart', () => {
   it('prices from the catalog in integer cents, ignoring any client-supplied price', () => {
-    const product = getProductById('stride-runner')!
+    const product = getProductById('ndure-kay-0003-black')!
     const cart = priceCart([{ sku: IN_STOCK, quantity: 2, priceCents: 1 } as never])
     expect(cart.subtotalCents).toBe(product.priceCents * 2)
     expect(Number.isInteger(cart.subtotalCents)).toBe(true)

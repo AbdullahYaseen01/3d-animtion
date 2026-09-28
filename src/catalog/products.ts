@@ -1,4 +1,4 @@
-import type { Category, Product, WidthOption } from './types.js'
+import type { Category, Product } from './types.js'
 import { bagxHandbags } from './bagxHandbags.js'
 import { meerzahJewelry } from './meerzahJewelry.js'
 import { mensSneakers } from './mensSneakers.js'
@@ -6,55 +6,37 @@ import { mensWallets } from './mensWallets.js'
 import { mensWatches } from './mensWatches.js'
 
 /**
- * SAMPLE CATALOG — LAUNCH BLOCKER.
- * The previous site had no product data. Names, prices, specs, materials,
- * stock levels and imagery below are placeholders created for the redesign
- * and must be replaced with the merchant's real catalog before selling.
- * While this flag is true the checkout API refuses live Stripe keys.
+ * Live assortment. Placeholder styles are not included.
  */
-export const CATALOG_IS_SAMPLE = true
-
-const STANDARD: WidthOption = { code: 'D', label: 'Standard' }
-const WIDE: WidthOption = { code: '2E', label: 'Wide' }
-const ONE: WidthOption = { code: 'OS', label: 'One size' }
-
-const FULL_RUN = [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13]
-const ALPHA = [1, 2, 3, 4, 5]
-const ALPHA_LABELS: Record<number, string> = { 1: 'XS', 2: 'S', 3: 'M', 4: 'L', 5: 'XL' }
+export const CATALOG_IS_SAMPLE = false
 
 export const categories: Category[] = [
   {
     slug: 'shoes',
     name: 'Shoes',
     kind: 'department',
-    summary: 'Ndure sneakers and joggers, plus the NOVA edit',
-    intro:
-      'Men’s sneakers and jogger-style shoes from Ndure, alongside the original NOVA footwear edit. Ndure sizes are shown in US men’s sizing, converted from the EU/UK label, and each price is in US dollars.',
-    seoTitle: 'Shoes: Running, Trail & Lifestyle Sneakers',
-    seoDescription:
-      'Shop NOVA shoes: cushioned running shoes, grippy trail shoes, leather lifestyle sneakers and knit everyday pairs in US sizing, with wide widths on select styles.',
+    summary: 'Sneakers and joggers for every day',
+    intro: 'Cushioned sneakers and jogger-style shoes with breathable uppers and clean lines. Made for long days, easy outfits, and the miles in between.',
+    seoTitle: 'Sneakers & Jogger Shoes',
+    seoDescription: 'Shop sneakers and jogger-style shoes with cushioned soles, breathable uppers, and a full range of sizes.',
   },
   {
     slug: 'handbags',
     name: 'Handbags',
     kind: 'department',
-    summary: 'Bag X new arrivals for the day',
-    intro:
-      'Handbags from Bag X new arrivals, each listed between 1,000 and 25,000 PKR at the source. Prices here are five times that listing, in US dollars. Every style includes its color, material, dimensions, and closure when Bag X published them.',
+    summary: 'Bags for the day and the evening',
+    intro: 'Totes, hobos, and crossbody bags in suede, leather, and polished hardware. Shapes that carry the day and still look considered.',
     seoTitle: 'Handbags & Crossbody Bags',
-    seoDescription:
-      'Shop Bag X handbags, shoulder bags, and crossbody bags. Each style lists its color, material, dimensions, and closure, with US shipping and returns.',
+    seoDescription: 'Shop handbags, shoulder bags, and crossbody bags in suede and leather, with polished hardware and everyday shapes.',
   },
   {
     slug: 'wallets',
     name: 'Wallets',
     kind: 'department',
-    summary: 'Men’s wallets for cards and cash',
-    intro:
-      'Men’s wallets from Metro, including bifolds, card holders and money clips, plus the original NOVA slim wallet. Every Metro style lists its colour, dimensions and country of origin, with the price in US dollars.',
+    summary: 'Slim wallets for cards and cash',
+    intro: 'Bifolds, card holders, and money clips in supple leather. Slim enough for a pocket, finished enough to keep.',
     seoTitle: "Men's Wallets & Bifolds",
-    seoDescription:
-      "Shop men's wallets from Metro. Each style lists its colour, dimensions, closure and country of origin, with US shipping and 30-day returns.",
+    seoDescription: "Shop men's bifold wallets, card holders, and money clips in leather, made for everyday carry.",
   },
   {
     slug: 'jackets',
@@ -64,18 +46,16 @@ export const categories: Category[] = [
     intro: 'Jackets with a stated fit, fabric and size range. The size chart on each product is the one to use — not the shoe chart.',
     seoTitle: 'Lightweight Jackets for Fall',
     seoDescription:
-      'Shop NOVA lightweight jackets for mild fall days. Each style lists its fit, fabric, lining and XS–XL size range, with its own size chart.',
+      'Shop Westora Style lightweight jackets for mild fall days. Each style lists its fit, fabric, lining and XS–XL size range, with its own size chart.',
   },
   {
     slug: 'womens-jewelry',
     name: "Women's Jewelry",
     kind: 'department',
-    summary: 'Rings, bracelets, bangles, and necklace sets',
-    intro:
-      "Women’s jewelry from Meerzah, each listed between 1,000 and 25,000 PKR, alongside the original NOVA hoop. Every Meerzah price is five times that listing, in US dollars. The product page keeps the original price, color and size variants, and the material, weight, and finish Meerzah published.",
+    summary: 'Rings, bangles, and necklace sets',
+    intro: 'Gold-plated rings, pearl strands, kundan sets, and bracelets with a polished finish. Pieces meant to catch the light and finish an outfit.',
     seoTitle: "Women's Jewelry: Rings, Bracelets & Necklace Sets",
-    seoDescription:
-      "Shop women's jewelry from Meerzah, including rings, bracelets, bangles, earrings, pendants, and necklace sets. Each piece lists its original price, variants, material, and finish.",
+    seoDescription: "Shop women's jewelry: rings, bangles, earrings, pendants, and necklace sets in gold plate, pearls, and stones.",
   },
   {
     slug: 'backpacks',
@@ -85,18 +65,16 @@ export const categories: Category[] = [
     intro: 'Backpacks with stated capacity, dimensions and laptop fit. Only the compatibility written on the product is claimed.',
     seoTitle: 'Laptop & Commuter Backpacks',
     seoDescription:
-      'Shop NOVA commuter backpacks. Each pack lists its capacity in liters, dimensions and measured laptop sleeve fit, plus pockets and straps.',
+      'Shop Westora Style commuter backpacks. Each pack lists its capacity in liters, dimensions and measured laptop sleeve fit, plus pockets and straps.',
   },
   {
     slug: 'watches',
     name: 'Watches',
     kind: 'department',
     summary: 'Men’s watches for every day',
-    intro:
-      'Men’s watches from Casio, Fossil, Naviforce, Daniel Klein and other houses. Every style lists its case, movement, strap and water resistance, with the current price in US dollars.',
+    intro: 'Crisp dials, leather and metal straps, and cases made to be worn every day. From slim dress watches to sport chronographs.',
     seoTitle: "Men's Watches",
-    seoDescription:
-      "Shop men's watches from Casio, Fossil, Naviforce and Daniel Klein. Each style lists case size, movement, strap and water resistance.",
+    seoDescription: "Shop men's watches with leather and metal straps, clean dials, and cases for work and the weekend.",
   },
   {
     slug: 'running',
@@ -107,7 +85,7 @@ export const categories: Category[] = [
       'Road shoes built around a high-rebound foam midsole and a breathable mesh upper. Start here if you log regular miles on pavement or treadmill and want a shoe that also works for the rest of your day.',
     seoTitle: 'Running Shoes: Cushioned Road Trainers',
     seoDescription:
-      'Shop NOVA running shoes: cushioned road trainers with breathable mesh uppers, US sizing and standard or wide widths.',
+      'Shop Westora Style running shoes: cushioned road trainers with breathable mesh uppers, US sizing and standard or wide widths.',
   },
   {
     slug: 'trail',
@@ -118,7 +96,7 @@ export const categories: Category[] = [
       'Trail shoes with a lugged rubber outsole, a protective toe cap and a firmer, more stable platform for dirt, gravel and rocky paths.',
     seoTitle: 'Trail Running Shoes with Lugged Grip',
     seoDescription:
-      'Shop NOVA trail shoes with lugged outsoles, protective toe caps and ripstop uppers for dirt, gravel and mixed terrain.',
+      'Shop Westora Style trail shoes with lugged outsoles, protective toe caps and ripstop uppers for dirt, gravel and mixed terrain.',
   },
   {
     slug: 'lifestyle',
@@ -129,7 +107,7 @@ export const categories: Category[] = [
       'Clean low- and high-top silhouettes in leather and suede, set on durable rubber cupsoles. Designed to pair with denim, chinos and everything in between.',
     seoTitle: 'Leather & Suede Lifestyle Sneakers',
     seoDescription:
-      'Shop NOVA lifestyle sneakers: a minimalist leather court shoe and a suede and leather high-top on durable rubber soles, in US men’s sizing.',
+      'Shop Westora Style lifestyle sneakers: a minimalist leather court shoe and a suede and leather high-top on durable rubber soles, in US men’s sizing.',
   },
   {
     slug: 'everyday',
@@ -140,597 +118,12 @@ export const categories: Category[] = [
       'Soft knit uppers and lightweight foam soles for commuting, travel and long days on your feet. Easy on, easy to live in.',
     seoTitle: 'Everyday Knit Sneakers & Slip-Ons',
     seoDescription:
-      'Shop NOVA everyday shoes: lightweight knit sneakers and slip-ons with soft foam midsoles for all-day wear, in standard and wide widths.',
+      'Shop Westora Style everyday shoes: lightweight knit sneakers and slip-ons with soft foam midsoles for all-day wear, in standard and wide widths.',
   },
 ]
 
 export const products: Product[] = [
-  {
-    id: 'stride-runner',
-    slug: 'stride-runner',
-    name: 'Stride Runner',
-    category: 'shoes',
-    shoeUse: 'running',
-    variant: 'footwear',
-    tagline: 'Cushioned daily trainer',
-    description:
-      'The Stride Runner is our everyday road shoe: a thick, rockered foam midsole for smooth heel-to-toe transitions, an engineered mesh upper that breathes on warm runs, and a durable rubber outsole that holds up to daily miles and daily wear.',
-    priceCents: 14500,
-    isNew: true,
-    colors: [
-      {
-        slug: 'chalk-ember',
-        name: 'Chalk / Ember',
-        swatch: ['#EDEAE3', '#C45A2C'],
-        images: ['stride-chalk-ember-side', 'stride-chalk-ember-angle'],
-        family: 'white',
-      },
-      {
-        slug: 'carbon',
-        name: 'Carbon',
-        swatch: ['#2B2B2B', '#C45A2C'],
-        images: ['stride-carbon-side', 'stride-carbon-angle'],
-        family: 'black',
-      },
-    ],
-    sizes: FULL_RUN,
-    widths: [STANDARD, WIDE],
-    highlights: [
-      'Rockered foam midsole for smooth transitions',
-      'Breathable engineered mesh upper',
-      'Heel pull tab and padded collar',
-      'Available in standard and wide',
-    ],
-    specs: [
-      { label: 'Heel-to-toe drop', value: '8 mm' },
-      { label: 'Weight', value: '9.6 oz (US M 9)' },
-      { label: 'Cushioning', value: 'High' },
-      { label: 'Surface', value: 'Road, treadmill' },
-    ],
-    materials: 'Engineered polyester mesh upper, synthetic suede overlays, EVA-blend foam midsole, carbon rubber outsole.',
-    care: 'Remove the insole and wipe the upper with a damp cloth and mild soap. Air dry away from direct heat. Do not machine wash.',
-    fit: {
-      summary: 'Standard fit with a roomy toe box.',
-      advice: 'Order your usual running shoe size. If you have a wide forefoot, choose the Wide (2E) option.',
-    },
-    bestFor: ['Daily training', 'Easy runs', 'All-day wear'],
-    defaultStock: 14,
-    stock: {
-      'stride-runner:chalk-ember:7:2E': 0,
-      'stride-runner:chalk-ember:13:2E': 0,
-      'stride-runner:chalk-ember:10:D': 3,
-      'stride-runner:carbon:7:D': 0,
-      'stride-runner:carbon:7:2E': 0,
-      'stride-runner:carbon:12:2E': 2,
-    },
-    relatedGuides: ['how-to-choose-running-shoes', 'how-to-measure-your-feet', 'standard-vs-wide-shoes'],
-  },
-  {
-    id: 'ridge-trail',
-    slug: 'ridge-trail',
-    name: 'Ridge Trail',
-    category: 'shoes',
-    shoeUse: 'trail',
-    variant: 'footwear',
-    tagline: 'Grippy, protective trail shoe',
-    description:
-      'The Ridge Trail pairs a lugged rubber outsole with a ripstop upper and welded overlays for support on uneven ground. A rubber toe cap shields against rocks and roots, and a slightly firmer midsole keeps the ride stable on descents.',
-    priceCents: 15500,
-    colors: [
-      {
-        slug: 'moss',
-        name: 'Moss',
-        swatch: ['#4F5A2E', '#C45A2C'],
-        images: ['ridge-moss-side', 'ridge-moss-angle'],
-        family: 'green',
-      },
-      {
-        slug: 'slate',
-        name: 'Slate',
-        swatch: ['#5E6670'],
-        images: ['ridge-slate-side', 'ridge-slate-angle'],
-        family: 'grey',
-      },
-    ],
-    sizes: FULL_RUN,
-    widths: [STANDARD],
-    highlights: [
-      '4.5 mm multi-directional lugs',
-      'Protective rubber toe cap',
-      'Ripstop upper with welded overlays',
-      'Gusseted tongue keeps debris out',
-    ],
-    specs: [
-      { label: 'Heel-to-toe drop', value: '6 mm' },
-      { label: 'Weight', value: '10.4 oz (US M 9)' },
-      { label: 'Lug depth', value: '4.5 mm' },
-      { label: 'Surface', value: 'Trail, gravel, mixed' },
-    ],
-    materials: 'Ripstop polyester upper, TPU overlays, rubber toe cap, EVA-blend midsole, sticky rubber lugged outsole.',
-    care: 'Knock off dirt once dry, then brush and rinse the outsole. Wipe the upper with a damp cloth. Air dry with the insole removed.',
-    fit: {
-      summary: 'Secure, slightly snug midfoot.',
-      advice: 'Order your usual size. If you wear thick hiking socks, consider a half size up.',
-    },
-    bestFor: ['Trail runs', 'Day hikes', 'Wet or loose ground'],
-    defaultStock: 10,
-    stock: {
-      'ridge-trail:moss:7:D': 0,
-      'ridge-trail:moss:13:D': 1,
-      'ridge-trail:slate:12:D': 0,
-      'ridge-trail:slate:13:D': 0,
-    },
-    relatedGuides: ['how-to-choose-running-shoes'],
-  },
-  {
-    id: 'court-low',
-    slug: 'court-low',
-    name: 'Court Low',
-    category: 'shoes',
-    shoeUse: 'lifestyle',
-    variant: 'footwear',
-    tagline: 'Minimal leather low-top',
-    description:
-      'A clean, low-profile court sneaker in smooth leather with a perforated toe for airflow. The stitched rubber cupsole is built for years of everyday wear and a padded collar keeps the heel comfortable from the first day.',
-    priceCents: 12500,
-    colors: [
-      {
-        slug: 'bone-gum',
-        name: 'Bone / Gum',
-        swatch: ['#EFE9DD', '#B98A55'],
-        images: ['court-bone-gum-side', 'court-bone-gum-angle'],
-        family: 'white',
-      },
-      {
-        slug: 'black',
-        name: 'Black',
-        swatch: ['#1C1C1C'],
-        images: ['court-black-side', 'court-black-angle'],
-        family: 'black',
-      },
-    ],
-    sizes: FULL_RUN,
-    widths: [STANDARD],
-    highlights: [
-      'Smooth leather upper with perforated toe',
-      'Stitched rubber cupsole',
-      'Padded collar and tongue',
-      'Removable cushioned insole',
-    ],
-    specs: [
-      { label: 'Upper', value: 'Leather' },
-      { label: 'Sole', value: 'Stitched rubber cupsole' },
-      { label: 'Weight', value: '13.1 oz (US M 9)' },
-      { label: 'Lining', value: 'Textile' },
-    ],
-    materials: 'Leather upper, textile lining, foam insole, rubber cupsole.',
-    care: 'Wipe with a soft damp cloth. Condition the leather occasionally with a neutral leather cream. Store away from direct sunlight.',
-    fit: {
-      summary: 'Runs slightly long.',
-      advice: 'If you are between sizes, choose the smaller size. The leather softens with wear.',
-    },
-    bestFor: ['Everyday wear', 'Office casual', 'Travel'],
-    defaultStock: 12,
-    stock: {
-      'court-low:bone-gum:9:D': 2,
-      'court-low:bone-gum:13:D': 0,
-      'court-low:black:7:D': 0,
-    },
-    relatedGuides: ['how-to-care-for-leather-sneakers', 'how-to-measure-your-feet'],
-  },
-  {
-    id: 'drift-knit',
-    slug: 'drift-knit',
-    name: 'Drift Knit',
-    category: 'shoes',
-    shoeUse: 'everyday',
-    variant: 'footwear',
-    tagline: 'Lightweight knit sneaker',
-    description:
-      'The Drift Knit is made for long days on your feet. A soft, stretchy knit upper moves with your foot, a lightweight foam sole absorbs impact on hard floors, and the low-profile shape pairs easily with most outfits.',
-    priceCents: 11500,
-    isNew: true,
-    colors: [
-      {
-        slug: 'stone',
-        name: 'Stone',
-        swatch: ['#B9B4AA'],
-        images: ['drift-stone-side', 'drift-stone-angle'],
-        family: 'grey',
-      },
-      {
-        slug: 'sage',
-        name: 'Sage',
-        swatch: ['#9CAA93'],
-        images: ['drift-sage-side', 'drift-sage-angle'],
-        family: 'green',
-      },
-    ],
-    sizes: FULL_RUN,
-    widths: [STANDARD, WIDE],
-    highlights: [
-      'Soft, stretchy knit upper',
-      'Lightweight foam midsole',
-      'Flexible rubber outsole',
-      'Available in standard and wide',
-    ],
-    specs: [
-      { label: 'Weight', value: '8.2 oz (US M 9)' },
-      { label: 'Heel-to-toe drop', value: '6 mm' },
-      { label: 'Cushioning', value: 'Medium' },
-      { label: 'Surface', value: 'City, indoor' },
-    ],
-    materials: 'Polyester knit upper, EVA foam midsole, rubber outsole pods.',
-    care: 'Brush off dust and spot clean with a damp cloth and mild soap. Air dry. Do not machine wash.',
-    fit: {
-      summary: 'True to size with a flexible upper.',
-      advice: 'Order your usual size. The knit stretches slightly with wear.',
-    },
-    bestFor: ['Commuting', 'Travel', 'Standing all day'],
-    defaultStock: 16,
-    stock: {
-      'drift-knit:stone:13:2E': 0,
-      'drift-knit:sage:7:2E': 0,
-      'drift-knit:sage:12:D': 2,
-    },
-    relatedGuides: ['how-to-measure-your-feet', 'standard-vs-wide-shoes'],
-  },
-  {
-    id: 'arc-high',
-    slug: 'arc-high',
-    name: 'Arc High',
-    category: 'shoes',
-    shoeUse: 'lifestyle',
-    variant: 'footwear',
-    tagline: 'Suede and leather high-top',
-    description:
-      'A high-top built from suede and smooth leather panels with contrast stitching. The padded ankle collar adds comfort and the vulcanized rubber sole gives a flexible, grounded feel.',
-    priceCents: 13500,
-    colors: [
-      {
-        slug: 'oxblood',
-        name: 'Oxblood',
-        swatch: ['#6B1F26'],
-        images: ['arc-oxblood-side', 'arc-oxblood-angle'],
-        family: 'red',
-      },
-    ],
-    sizes: FULL_RUN,
-    widths: [STANDARD],
-    highlights: [
-      'Suede and leather upper',
-      'Padded ankle collar',
-      'Contrast stitching',
-      'Vulcanized rubber sole',
-    ],
-    specs: [
-      { label: 'Upper', value: 'Suede and leather' },
-      { label: 'Sole', value: 'Vulcanized rubber' },
-      { label: 'Weight', value: '14.0 oz (US M 9)' },
-      { label: 'Lining', value: 'Textile' },
-    ],
-    materials: 'Suede and leather upper, textile lining, foam insole, vulcanized rubber sole.',
-    care: 'Use a suede brush to lift the nap and remove dry dirt. Treat with a suede protector before first wear. Avoid soaking.',
-    fit: {
-      summary: 'True to size.',
-      advice: 'Order your usual sneaker size. The collar feels snug at first and eases in after a few wears.',
-    },
-    bestFor: ['Everyday wear', 'Cooler weather'],
-    defaultStock: 8,
-    stock: {
-      'arc-high:oxblood:7:D': 0,
-      'arc-high:oxblood:7.5:D': 0,
-      'arc-high:oxblood:11:D': 1,
-    },
-    relatedGuides: ['how-to-care-for-leather-sneakers'],
-  },
-  {
-    id: 'glide-slip-on',
-    slug: 'glide-slip-on',
-    name: 'Glide Slip-On',
-    category: 'shoes',
-    shoeUse: 'everyday',
-    variant: 'footwear',
-    tagline: 'Laceless, cushioned slip-on',
-    description:
-      'Step in and go. The Glide Slip-On has stretch gore panels for easy entry, a heel pull loop, and a cushioned foam sole with a gentle rocker that keeps each step smooth on long walks.',
-    priceCents: 10500,
-    colors: [
-      {
-        slug: 'charcoal',
-        name: 'Charcoal',
-        swatch: ['#3D3D3D', '#C45A2C'],
-        images: ['glide-charcoal-side', 'glide-charcoal-angle'],
-        family: 'grey',
-      },
-      {
-        slug: 'sand',
-        name: 'Sand',
-        swatch: ['#CDB99A', '#C45A2C'],
-        images: ['glide-sand-side', 'glide-sand-angle'],
-        family: 'neutral',
-      },
-    ],
-    sizes: FULL_RUN,
-    widths: [STANDARD, WIDE],
-    highlights: [
-      'Stretch gore panels for easy on and off',
-      'Heel pull loop',
-      'Cushioned rocker foam sole',
-      'Available in standard and wide',
-    ],
-    specs: [
-      { label: 'Weight', value: '8.8 oz (US M 9)' },
-      { label: 'Closure', value: 'Laceless slip-on' },
-      { label: 'Cushioning', value: 'Medium-high' },
-      { label: 'Surface', value: 'City, travel' },
-    ],
-    materials: 'Polyester stretch knit upper, elastic gore panels, EVA foam midsole, rubber outsole.',
-    care: 'Spot clean with a damp cloth and mild soap. Air dry away from direct heat.',
-    fit: {
-      summary: 'Snug at first, relaxes with wear.',
-      advice: 'Order your usual size. If you are between sizes, go up a half size.',
-    },
-    bestFor: ['Travel', 'Errands', 'Long walks'],
-    defaultStock: 12,
-    stock: {
-      'glide-slip-on:charcoal:13:2E': 0,
-      'glide-slip-on:sand:7:D': 0,
-      'glide-slip-on:sand:7:2E': 0,
-      'glide-slip-on:sand:13:2E': 0,
-    },
-    relatedGuides: ['how-to-measure-your-feet', 'standard-vs-wide-shoes'],
-  },
-  {
-    id: 'mini-crossbody',
-    slug: 'mini-crossbody',
-    name: 'Mini Crossbody',
-    category: 'handbags',
-    variant: 'simple',
-    tagline: 'A small black leather bag',
-    description:
-      'Preview style. A compact black leather crossbody with a zip top and an adjustable strap, sized for a phone, keys and a card wallet.',
-    priceCents: 8800,
-    isNew: true,
-    colors: [
-      {
-        slug: 'black',
-        name: 'Black',
-        swatch: ['#1C1C1C'],
-        images: ['nova-handbag-side'],
-        family: 'black',
-      },
-    ],
-    sizes: [0],
-    widths: [ONE],
-    highlights: ['Zip closure', 'Adjustable strap', 'One main compartment'],
-    specs: [
-      { label: 'Style', value: 'Crossbody' },
-      { label: 'Dimensions', value: '8.5 × 5.5 × 2.5 in' },
-      { label: 'Strap drop', value: '22 in, adjustable' },
-      { label: 'Closure', value: 'Top zip' },
-      { label: 'Compartments', value: '1 main, 1 slip pocket' },
-    ],
-    traits: [
-      { group: 'Style', value: 'Crossbody' },
-      { group: 'Material', value: 'Leather' },
-    ],
-    materials: 'Leather-like preview material with a matte finish. Replace with the production hide spec before launch.',
-    care: 'Wipe with a dry cloth. Keep away from prolonged rain.',
-    fit: { summary: 'One size.', advice: 'Strap adjusts. No shoe size applies.' },
-    bestFor: ['Daytime', 'Light carry'],
-    defaultStock: 8,
-    stock: {},
-    relatedGuides: ['what-fits-in-a-crossbody-bag'],
-  },
   ...mensWallets,
-  {
-    id: 'slim-wallet',
-    slug: 'slim-wallet',
-    name: 'Slim Wallet',
-    category: 'wallets',
-    variant: 'simple',
-    tagline: 'Four cards and folded cash',
-    description: 'Preview style. A slim bifold wallet in cognac leather with four card slots and a central cash pocket.',
-    priceCents: 4800,
-    colors: [
-      {
-        slug: 'cognac',
-        name: 'Cognac',
-        swatch: ['#8A5A32'],
-        images: ['nova-wallet-side'],
-        family: 'neutral',
-      },
-    ],
-    sizes: [0],
-    widths: [ONE],
-    highlights: ['Four card slots', 'Bifold cash pocket', 'Snap closure'],
-    specs: [
-      { label: 'Style', value: 'Bifold' },
-      { label: 'Dimensions', value: '4.3 × 3.2 × 0.4 in' },
-      { label: 'Card slots', value: '4' },
-      { label: 'Closure', value: 'Snap' },
-    ],
-    traits: [
-      { group: 'Style', value: 'Bifold' },
-      { group: 'Material', value: 'Leather' },
-      { group: 'Feature', value: 'Snap closure' },
-    ],
-    materials: 'Leather-like preview material. Confirm the production leather before launch.',
-    care: 'Wipe with a dry cloth.',
-    fit: { summary: 'One size.', advice: 'Built for cards and folded bills, not a shoe size.' },
-    bestFor: ['Everyday carry'],
-    defaultStock: 10,
-    stock: {},
-    relatedGuides: ['what-fits-in-a-crossbody-bag'],
-  },
-  {
-    id: 'day-jacket',
-    slug: 'day-jacket',
-    name: 'Day Jacket',
-    category: 'jackets',
-    variant: 'apparel',
-    tagline: 'Lightweight layer for fall',
-    description:
-      'Preview style. A lightweight charcoal jacket for mild fall days, with a straight fit, unlined body and a short zip placket.',
-    priceCents: 19800,
-    isNew: true,
-    colors: [
-      {
-        slug: 'charcoal',
-        name: 'Charcoal',
-        swatch: ['#3A3A3A'],
-        images: ['nova-jacket-side'],
-        family: 'grey',
-      },
-    ],
-    sizes: ALPHA,
-    sizeLabels: ALPHA_LABELS,
-    widths: [ONE],
-    highlights: ['Lightweight', 'Unlined', 'Straight fit'],
-    specs: [
-      { label: 'Fit', value: 'Straight' },
-      { label: 'Season', value: 'Fall' },
-      { label: 'Fabric', value: 'Lightweight woven' },
-      { label: 'Lining', value: 'Unlined' },
-      { label: 'Sizes', value: 'XS–XL' },
-    ],
-    traits: [
-      { group: 'Material', value: 'Woven' },
-      { group: 'Fit', value: 'Straight' },
-      { group: 'Season', value: 'Fall' },
-    ],
-    materials: 'Lightweight woven preview cloth. Fiber content must be confirmed before launch.',
-    care: 'Spot clean. Do not machine dry until a care label is on file.',
-    fit: {
-      summary: 'Straight fit, true to the listed alpha size.',
-      advice: 'Choose your usual jacket size. This is not a shoe size.',
-    },
-    bestFor: ['Fall', 'Layering'],
-    defaultStock: 6,
-    stock: { 'day-jacket:charcoal:2:OS': 2 },
-  },
-  {
-    id: 'arc-earrings',
-    slug: 'arc-earrings',
-    name: 'Arc Earrings',
-    category: 'womens-jewelry',
-    variant: 'simple',
-    tagline: 'Small gold-tone hoops',
-    description: 'Preview style. A pair of small gold-tone hoop earrings with a hinged closure. Finish and metal content are placeholders.',
-    priceCents: 6400,
-    colors: [
-      {
-        slug: 'gold-tone',
-        name: 'Gold-tone',
-        swatch: ['#C6A15B'],
-        images: ['nova-earrings-side'],
-        family: 'neutral',
-      },
-    ],
-    sizes: [0],
-    widths: [ONE],
-    highlights: ['Hinged closure', 'Sold as a pair'],
-    specs: [
-      { label: 'Jewelry type', value: 'Earrings' },
-      { label: 'Finish', value: 'Gold-tone' },
-      { label: 'Dimensions', value: '18 mm hoop' },
-      { label: 'Closure', value: 'Hinged' },
-    ],
-    traits: [
-      { group: 'Jewelry type', value: 'Earrings' },
-      { group: 'Material', value: 'Gold-tone' },
-      { group: 'Finish', value: 'Gold-tone' },
-    ],
-    materials: 'Gold-tone plated preview metal. Base metal and plating thickness are not yet verified.',
-    care: 'Wipe with a soft dry cloth. Remove before swimming.',
-    fit: { summary: 'One size.', advice: 'Hoop diameter is listed in the specifications. No shoe size applies.' },
-    bestFor: ['Everyday'],
-    defaultStock: 12,
-    stock: {},
-  },
-  {
-    id: 'commute-pack',
-    slug: 'commute-pack',
-    name: 'Commute Pack',
-    category: 'backpacks',
-    variant: 'simple',
-    tagline: 'Fits a 15-inch laptop',
-    description:
-      'Preview style. A charcoal commuter backpack with a padded sleeve measured for a 15-inch laptop, plus a main compartment and a front pocket.',
-    priceCents: 14800,
-    colors: [
-      {
-        slug: 'charcoal',
-        name: 'Charcoal',
-        swatch: ['#3A3A3A'],
-        images: ['nova-backpack-side'],
-        family: 'grey',
-      },
-    ],
-    sizes: [0],
-    widths: [ONE],
-    highlights: ['Padded 15-inch laptop sleeve', 'Front pocket', 'Padded straps'],
-    specs: [
-      { label: 'Capacity', value: '18 L' },
-      { label: 'Dimensions', value: '17 × 11 × 6 in' },
-      { label: 'Laptop', value: 'Fits a 15-inch laptop' },
-      { label: 'Compartments', value: 'Main, laptop sleeve, front pocket' },
-    ],
-    traits: [
-      { group: 'Capacity', value: '18 L' },
-      { group: 'Material', value: 'Canvas' },
-      { group: 'Laptop', value: '15-inch' },
-    ],
-    materials: 'Canvas body with leather-like straps. Confirm materials before launch.',
-    care: 'Wipe clean. Do not machine wash.',
-    fit: { summary: 'One size.', advice: 'Laptop fit is only the 15-inch sleeve listed above.' },
-    bestFor: ['Commute'],
-    defaultStock: 7,
-    stock: {},
-    relatedGuides: ['how-to-choose-a-laptop-backpack'],
-  },
-  {
-    id: 'line-watch',
-    slug: 'line-watch',
-    name: 'Line Watch',
-    category: 'watches',
-    variant: 'simple',
-    tagline: 'Minimalist dial, leather strap',
-    description:
-      'Preview style. A minimalist watch with a 38 mm case, quartz movement and a tan leather strap. No water-resistance rating is published for this preview.',
-    priceCents: 12800,
-    colors: [
-      {
-        slug: 'tan-leather',
-        name: 'Tan leather',
-        swatch: ['#C4A574'],
-        images: ['nova-watch-side'],
-        family: 'neutral',
-      },
-    ],
-    sizes: [0],
-    widths: [ONE],
-    highlights: ['38 mm case', 'Leather strap', 'Quartz movement'],
-    specs: [
-      { label: 'Case', value: '38 mm round' },
-      { label: 'Movement', value: 'Quartz' },
-      { label: 'Strap', value: 'Leather, tan' },
-      { label: 'Strap fit', value: 'Fits wrists about 6.3–7.8 in' },
-    ],
-    traits: [
-      { group: 'Movement', value: 'Quartz' },
-      { group: 'Strap', value: 'Leather' },
-      { group: 'Case', value: '38 mm' },
-    ],
-    materials: 'Preview case and leather strap. Metal grade is not yet verified.',
-    care: 'Wipe the case with a soft cloth. Keep the strap dry.',
-    fit: { summary: 'Strap adjusts within the listed wrist range.', advice: 'This is not a shoe size. No water-resistance rating is on file.' },
-    bestFor: ['Everyday'],
-    defaultStock: 5,
-    stock: {},
-    relatedGuides: ['watch-case-size-and-strap-fit'],
-  },
   ...mensWatches,
   ...mensSneakers,
   ...bagxHandbags,
