@@ -189,22 +189,31 @@
   }
 }
 
-/* Category strip */
+/* Category strip. Two identical rows; the track slides by half its width so the loop has no jump. */
 .edit-cats {
   background: var(--color-paper);
   padding: 0.85rem 0 1.15rem;
 }
 
-.edit-cats__scroller {
-  padding-inline: var(--frame-inset);
+.edit-cats__viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 2.5rem, #000 calc(100% - 2.5rem), transparent);
+}
+
+.edit-cats__track {
+  display: flex;
+  width: max-content;
 }
 
 .edit-cats__list {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  display: flex;
   gap: 0.7rem;
   margin: 0;
-  padding: 0;
+  padding: 0 0.7rem 0 0;
+}
+
+.edit-cats__list > li {
+  flex: 0 0 clamp(8.75rem, 15vw, 13.5rem);
 }
 
 .edit-cats__link {
@@ -244,6 +253,15 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .edit-cats__track {
+    animation: edit-cats-run 32s linear infinite;
+  }
+
+  .edit-cats__viewport:hover .edit-cats__track,
+  .edit-cats__viewport:focus-within .edit-cats__track {
+    animation-play-state: paused;
+  }
+
   .edit-cats__media img {
     transition: transform var(--dur-med) var(--ease-out);
   }
@@ -253,26 +271,29 @@
   }
 }
 
-@media (max-width: 40rem) {
-  .edit-cats__scroller {
+@keyframes edit-cats-run {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edit-cats__viewport {
     overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
+    mask-image: none;
     scroll-padding-inline: var(--frame-inset);
     scrollbar-width: thin;
-    mask-image: linear-gradient(to right, #000 calc(100% - 2.75rem), transparent);
+  }
+
+  .edit-cats__list[aria-hidden='true'] {
+    display: none;
   }
 
   .edit-cats__list {
-    display: flex;
-    width: max-content;
-    gap: 0.75rem;
-    padding-bottom: 0.35rem;
-  }
-
-  .edit-cats__list > li {
-    flex: 0 0 8.75rem;
-    scroll-snap-align: start;
+    padding-inline: var(--frame-inset);
   }
 }
 

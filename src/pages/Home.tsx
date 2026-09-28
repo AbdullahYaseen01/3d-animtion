@@ -85,32 +85,36 @@ export default function Home() {
         <h2 id="cats-title" className="visually-hidden">
           Shop by category
         </h2>
-        <div className="edit-cats__scroller">
-          <ul role="list" className="edit-cats__list">
-            {campaignCategories.map((category) => (
-              <li key={category.href}>
-                <Link to={category.href} className="edit-cats__link">
-                  <span className="edit-cats__media">
-                    <picture>
-                      <source type="image/avif" srcSet={campaignSrcSet(category.src, category.widths, 'avif')} sizes={CATEGORY_SIZES} />
-                      <source type="image/webp" srcSet={campaignSrcSet(category.src, category.widths, 'webp')} sizes={CATEGORY_SIZES} />
-                      <img
-                        src={category.src}
-                        alt={category.alt}
-                        width={category.width}
-                        height={category.height}
-                        sizes={CATEGORY_SIZES}
-                        loading="lazy"
-                        decoding="async"
-                        style={{ objectPosition: category.position }}
-                      />
-                    </picture>
-                  </span>
-                  <span className="edit-cats__label">{category.label}</span>
-                </Link>
-              </li>
+        <div className="edit-cats__viewport">
+          <div className="edit-cats__track">
+            {[0, 1].map((copy) => (
+              <ul key={copy} role="list" className="edit-cats__list" aria-hidden={copy === 1 || undefined}>
+                {campaignCategories.map((category) => (
+                  <li key={`${copy}-${category.href}`}>
+                    <Link to={category.href} className="edit-cats__link" tabIndex={copy === 1 ? -1 : undefined}>
+                      <span className="edit-cats__media">
+                        <picture>
+                          <source type="image/avif" srcSet={campaignSrcSet(category.src, category.widths, 'avif')} sizes={CATEGORY_SIZES} />
+                          <source type="image/webp" srcSet={campaignSrcSet(category.src, category.widths, 'webp')} sizes={CATEGORY_SIZES} />
+                          <img
+                            src={category.src}
+                            alt={category.alt}
+                            width={category.width}
+                            height={category.height}
+                            sizes={CATEGORY_SIZES}
+                            loading="lazy"
+                            decoding="async"
+                            style={{ objectPosition: category.position }}
+                          />
+                        </picture>
+                      </span>
+                      <span className="edit-cats__label">{category.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
