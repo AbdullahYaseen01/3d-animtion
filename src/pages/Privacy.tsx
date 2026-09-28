@@ -18,8 +18,7 @@ export default function Privacy() {
       <h2>Information we collect</h2>
       <ul>
         <li>
-          <strong>Orders.</strong> When you check out, our payment provider Polar collects your name, email, billing address, and payment details. We receive your
-          order details and contact information to fulfill the order. We never receive or store your full card number.
+          <strong>Orders.</strong> When you check out, we collect your name, phone number, and US delivery address (house or apartment number, street, city, state, and ZIP code), plus any delivery note you add. Our payment provider Polar also collects your email, billing address, and payment details. We use this information to ship the order. We never receive or store your full card number.
         </li>
         <li>
           <strong>Email sign-up.</strong> If you join our list, we store your email address with our email provider, Resend, together with your consent.

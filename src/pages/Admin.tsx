@@ -1,6 +1,7 @@
 import { useEffect, useId, useMemo, useState, type FormEvent } from 'react'
 import { Link } from 'react-router'
-import type { AdminOrder } from '../../server/adminOrder'
+import type { AdminOrder, OrderDelivery } from '../../server/adminOrder'
+import { stateName } from '../commerce/delivery'
 import { formatMoney } from '../lib/money'
 import { Seo } from '../lib/seo'
 import { store } from '../config/store'
@@ -300,28 +301,17 @@ function OrderDesk({
   )
 }
 
+function shipValue(value: string | null | undefined): string {
+  return value?.trim() ? value : 'Not collected'
+}
+
 function OrderDetail({ order }: { order: AdminOrder }) {
+  const ship = order.delivery
   return (
     <div className="admin-detail">
       <section>
-        <h2>Customer</h2>
-        <p>{order.name ?? 'Name not collected'}</p>
-        {order.email && (
-          <p>
-            <a href={`mailto:${order.email}`}>{order.email}</a>
-          </p>
-        )}
-        {order.phone && <p>{order.phone}</p>}
-        {order.addressLines.length > 0 && (
-          <address>
-            {order.addressLines.map((line) => (
-              <span key={line}>
-                {line}
-                <br />
-              </span>
-            ))}
-          </address>
-        )}
+        <h2>Deliver to</h2>
+        {ship ? <DeliveryFields ship={ship} email={order.email} /> : <LegacyAddress order={order} />}
       </section>
       <section>
         <h2>Items</h2>
@@ -367,5 +357,66 @@ function OrderDetail({ order }: { order: AdminOrder }) {
         </dl>
       </section>
     </div>
+  )
+}
+
+function DeliveryFields({ ship, email }: { ship: OrderDelivery; email: string | null }) {
+  const state = ship.state ? `${stateName(ship.state)} (${ship.state})` : null
+  const rows: { label: string; value: string }[] = [
+    { label: 'Full name', value: shipValue(ship.fullName) },
+    { label: 'Phone', value: shipValue(ship.phone) },
+    { label: 'Email', value: shipValue(email) },
+    { label: 'House / apartment', value: shipValue(ship.house) },
+    { label: 'Street', value: shipValue(ship.street) },
+    { label: 'City', value: shipValue(ship.city) },
+    { label: 'State', value: shipValue(state) },
+    { label: 'ZIP code', value: shipValue(ship.zip) },
+    { label: 'Country', value: ship.country === 'US' || ship.country === 'United States' ? 'United States' : shipValue(ship.country) },
+    { label: 'Delivery note', value: ship.notes?.trim() ? ship.notes : 'None' },
+  ]
+  return (
+    <>
+      <dl className="admin-ship">
+        {rows.map((row) => (
+          <div key={row.label}>
+            <dt>{row.label}</dt>
+            <dd>{row.label === 'Email' && email ? <a href={`mailto:${email}`}>{email}</a> : row.value}</dd>
+          </div>
+        ))}
+      </dl>
+      <address>
+        {shipValue(ship.fullName)}
+        <br />
+        {[ship.house, ship.street].filter(Boolean).join(', ') || 'Street not collected'}
+        <br />
+        {[ship.city, ship.state, ship.zip].filter(Boolean).join(' ')}
+        <br />
+        {ship.country === 'US' || ship.country === 'United States' ? 'United States' : shipValue(ship.country)}
+      </address>
+    </>
+  )
+}
+
+function LegacyAddress({ order }: { order: AdminOrder }) {
+  return (
+    <>
+      <p>{order.name ?? 'Name not collected'}</p>
+      {order.email && (
+        <p>
+          <a href={`mailto:${order.email}`}>{order.email}</a>
+        </p>
+      )}
+      {order.phone && <p>{order.phone}</p>}
+      {order.addressLines.length > 0 && (
+        <address>
+          {order.addressLines.map((line) => (
+            <span key={line}>
+              {line}
+              <br />
+            </span>
+          ))}
+        </address>
+      )}
+    </>
   )
 }

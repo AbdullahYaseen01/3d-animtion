@@ -1,6 +1,7 @@
 import { Link, useSearchParams } from 'react-router'
 import { CartLineItem } from '../components/cart/CartLineItem'
-import { CartAssurances, CartTotals, CheckoutButton, FreeShippingProgress } from '../components/cart/CartSummary'
+import { CartAssurances, CartTotals, FreeShippingProgress } from '../components/cart/CartSummary'
+import { DeliveryForm } from '../components/cart/DeliveryForm'
 import { Icon } from '../components/ui/Icon'
 import { Seo } from '../lib/seo'
 import { useCart } from '../state/CartProvider'
@@ -81,7 +82,7 @@ export default function Cart() {
             <aside className="cart-page__summary" aria-labelledby="summary-title">
               <h2 id="summary-title">Order summary</h2>
               <CartTotals />
-              <CheckoutButton label="Secure checkout" />
+              <DeliveryForm />
               <CartAssurances />
             </aside>
           </div>

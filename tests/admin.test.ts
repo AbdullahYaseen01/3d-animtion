@@ -100,6 +100,7 @@ describe('GET /api/admin/orders', () => {
   it('returns Stripe orders for a valid cookie', async () => {
     process.env.ADMIN_PASSWORD = PASSWORD
     process.env.STRIPE_SECRET_KEY = 'sk_test_dummy'
+    delete process.env.POLAR_ACCESS_TOKEN
     vi.resetModules()
     vi.doMock('../server/stripe.js', () => ({
       getStripe: () => ({

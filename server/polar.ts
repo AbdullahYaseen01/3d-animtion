@@ -1,3 +1,4 @@
+import type { DeliveryDetails } from '../src/commerce/delivery.js'
 import { env, logEvent } from './http.js'
 
 const PRODUCT_NAME = 'Westora Style order'
@@ -50,6 +51,7 @@ export interface PolarCheckoutInput {
   returnUrl: string
   metadata: Record<string, string>
   idempotencyKey: string
+  delivery: DeliveryDetails
 }
 
 type Fail = { ok: false; reason: string; missing?: string[]; httpStatus: number }
@@ -156,7 +158,25 @@ export async function createCheckout(input: PolarCheckoutInput): Promise<{ ok: t
         success_url: input.successUrl,
         return_url: input.returnUrl,
         metadata: input.metadata,
+        customer_name: input.delivery.fullName,
+        customer_billing_name: input.delivery.fullName,
+        customer_billing_address: {
+          country: 'US',
+          line1: input.delivery.street,
+          line2: input.delivery.house,
+          city: input.delivery.city,
+          state: input.delivery.state,
+          postal_code: input.delivery.zip,
+        },
         require_billing_address: true,
+        billing_address_fields: {
+          country: 'required',
+          state: 'required',
+          city: 'required',
+          postal_code: 'required',
+          line1: 'required',
+          line2: 'required',
+        },
         allow_discount_codes: false,
       }),
     })

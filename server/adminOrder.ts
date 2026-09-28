@@ -8,6 +8,19 @@ export interface AdminOrderLine {
   totalCents: number
 }
 
+/** Ship-to fields the owner needs to hand the parcel to the right door. */
+export interface OrderDelivery {
+  fullName: string | null
+  phone: string | null
+  house: string | null
+  street: string | null
+  city: string | null
+  state: string | null
+  zip: string | null
+  country: string | null
+  notes: string | null
+}
+
 /** Full customer details for the signed-in store owner. Never returned by the public order API. */
 export interface AdminOrder {
   orderNumber: string
@@ -17,6 +30,7 @@ export interface AdminOrder {
   name: string | null
   phone: string | null
   addressLines: string[]
+  delivery: OrderDelivery | null
   lines: AdminOrderLine[]
   subtotalCents: number
   shippingCents: number
@@ -48,14 +62,29 @@ export function toAdminOrder(session: Stripe.Checkout.Session, paymentIntentStat
   const shipping = session.collected_information?.shipping_details ?? null
   const customer = session.customer_details
   const items = session.line_items?.data ?? []
+  const address = shipping?.address ?? customer?.address ?? null
+  const name = shipping?.name ?? customer?.name ?? null
   return {
     orderNumber: orderNumber(session.id),
     createdAt: new Date(session.created * 1000).toISOString(),
     status: orderStatus(session, paymentIntentStatus),
     email: customer?.email ?? null,
-    name: shipping?.name ?? customer?.name ?? null,
+    name,
     phone: customer?.phone ?? null,
-    addressLines: addressLines(shipping?.address ?? customer?.address),
+    addressLines: addressLines(address),
+    delivery: address
+      ? {
+          fullName: name,
+          phone: customer?.phone ?? null,
+          house: address.line2 ?? null,
+          street: address.line1 ?? null,
+          city: address.city ?? null,
+          state: address.state ?? null,
+          zip: address.postal_code ?? null,
+          country: address.country ?? null,
+          notes: null,
+        }
+      : null,
     lines: items.map((li) => {
       const product = li.price && typeof li.price.product === 'object' && !('deleted' in li.price.product && li.price.product.deleted) ? (li.price.product as Stripe.Product) : null
       return {

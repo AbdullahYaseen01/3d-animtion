@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState } from 'react'
 import type { CartLine } from './cart'
+import type { DeliveryDetails, DeliveryErrors } from './delivery'
 import { useCart } from '../state/CartProvider'
 import { lineItem, money, track } from '../lib/analytics'
 
@@ -7,6 +8,7 @@ export interface CheckoutProblem {
   message: string
   /** Server-corrected lines when stock or prices changed. */
   adjusted?: boolean
+  fields?: DeliveryErrors
 }
 
 function cartKey(lines: CartLine[]): string {
@@ -36,7 +38,7 @@ export function useCheckout() {
   const [problem, setProblem] = useState<CheckoutProblem | null>(null)
   const busy = useRef(false)
 
-  const start = useCallback(async () => {
+  const start = useCallback(async (delivery: DeliveryDetails) => {
     if (busy.current || !lines.length) return
     busy.current = true
     setStatus('submitting')
@@ -45,12 +47,13 @@ export function useCheckout() {
       const res = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ lines, attemptId: attemptIdFor(lines) }),
+        body: JSON.stringify({ lines, attemptId: attemptIdFor(lines), delivery }),
       })
       const data = (await res.json().catch(() => ({}))) as {
         url?: string
         error?: string
         lines?: CartLine[]
+        fields?: DeliveryErrors
       }
       if (res.ok && data.url) {
         track('begin_checkout', { ...money(cart.subtotalCents), items: cart.lines.map(lineItem) })
@@ -67,7 +70,7 @@ export function useCheckout() {
         })
         setProblem({ message: data.error ?? 'Some items changed. Please review your cart.', adjusted: true })
       } else {
-        setProblem({ message: data.error ?? 'We could not start checkout. Please try again.' })
+        setProblem({ message: data.error ?? 'We could not start checkout. Please try again.', fields: data.fields })
       }
     } catch {
       setProblem({ message: 'We could not reach checkout. Check your connection and try again.' })

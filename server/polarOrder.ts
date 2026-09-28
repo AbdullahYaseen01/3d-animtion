@@ -1,6 +1,7 @@
 import { resolveSku, variantLabel } from '../src/catalog/index.js'
 import { shippingFor } from '../src/commerce/cart.js'
-import type { AdminOrder, AdminOrderLine } from './adminOrder.js'
+import { unpackDelivery, type DeliveryDetails } from '../src/commerce/delivery.js'
+import type { AdminOrder, AdminOrderLine, OrderDelivery } from './adminOrder.js'
 import { unpackCartLines } from './checkoutSession.js'
 import { maskEmail, orderNumber, type OrderStatus, type OrderView, type OrderViewLine } from './orderView.js'
 import type { PolarAddress, PolarCheckout, PolarOrder } from './polar.js'
@@ -86,6 +87,25 @@ function addressLines(address: PolarAddress | null | undefined): string[] {
   return [address.line1, address.line2, locality || null, address.country].filter((line): line is string => Boolean(line))
 }
 
+function deliveryFromBilling(name: string | null, address: PolarAddress | null | undefined): OrderDelivery | null {
+  if (!address?.line1 && !address?.city) return null
+  return {
+    fullName: name,
+    phone: null,
+    house: address?.line2 ?? null,
+    street: address?.line1 ?? null,
+    city: address?.city ?? null,
+    state: address?.state ?? null,
+    zip: address?.postal_code ?? null,
+    country: address?.country ?? 'US',
+    notes: null,
+  }
+}
+
+function orderDelivery(details: DeliveryDetails): OrderDelivery {
+  return { ...details, country: 'US', notes: details.notes || null }
+}
+
 export function polarOrderToAdmin(order: PolarOrder): AdminOrder {
   const lines = catalogLines(order.metadata)
   const viewLines: AdminOrderLine[] = lines.map((line) => ({
@@ -97,14 +117,20 @@ export function polarOrderToAdmin(order: PolarOrder): AdminOrder {
   const subtotalCents = lines.reduce((sum, line) => sum + line.totalCents, 0)
   const shippingCents = lines.length > 0 ? shippingFor(subtotalCents).cents : 0
   const reference = order.checkout_id || order.id
+  const packed = unpackDelivery(order.metadata)
+  const name = packed?.fullName ?? order.billing_name ?? order.customer?.name ?? null
+  const delivery = packed ? orderDelivery(packed) : deliveryFromBilling(name, order.billing_address)
   return {
     orderNumber: orderNumber(reference),
     createdAt: order.created_at ?? new Date(0).toISOString(),
     status: polarOrderStatus(order),
     email: order.customer?.email ?? null,
-    name: order.billing_name ?? order.customer?.name ?? null,
-    phone: null,
-    addressLines: addressLines(order.billing_address),
+    name,
+    phone: packed?.phone ?? null,
+    addressLines: packed
+      ? [packed.house, packed.street, `${packed.city}, ${packed.state} ${packed.zip}`, 'United States']
+      : addressLines(order.billing_address),
+    delivery,
     lines: viewLines,
     subtotalCents: order.subtotal_amount ?? subtotalCents,
     shippingCents,

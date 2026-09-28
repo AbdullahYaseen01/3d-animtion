@@ -1,6 +1,5 @@
 import { Link } from 'react-router'
 import { store } from '../../config/store'
-import { useCheckout } from '../../commerce/useCheckout'
 import { formatMoney } from '../../lib/money'
 import { useCart } from '../../state/CartProvider'
 import { Icon } from '../ui/Icon'
@@ -53,35 +52,6 @@ export function CartTotals({ compact = false }: { compact?: boolean }) {
         <dd>{formatMoney(cart.totalBeforeTaxCents)}</dd>
       </div>
     </dl>
-  )
-}
-
-export function CheckoutButton({ label = 'Checkout' }: { label?: string }) {
-  const { start, status, problem } = useCheckout()
-  const busy = status !== 'idle'
-  return (
-    <div className="checkout-cta">
-      {problem && (
-        <div className={`notice ${problem.adjusted ? 'notice--warning' : 'notice--error'}`} role="alert">
-          <Icon name="alert" size={18} />
-          <span>{problem.message}</span>
-        </div>
-      )}
-      <button type="button" className="btn btn--lg btn--block" onClick={start} disabled={busy} aria-busy={busy}>
-        {busy ? (
-          <>
-            <span className="spinner" aria-hidden="true" /> {status === 'redirecting' ? 'Opening secure checkout…' : 'Checking availability…'}
-          </>
-        ) : (
-          <>
-            <Icon name="lock" size={18} /> {label}
-          </>
-        )}
-      </button>
-      <p className="checkout-cta__note">
-        Guest checkout. Payment is handled securely by Polar; Westora Style never sees your card number.
-      </p>
-    </div>
   )
 }
 

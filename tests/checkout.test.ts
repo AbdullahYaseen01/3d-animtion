@@ -16,6 +16,16 @@ vi.mock('../server/polar.js', () => ({
 const { POST } = await import('../server/handlers/checkout')
 
 const SKU = 'ndure-kay-0003-black:black:10:D'
+const delivery = {
+  fullName: 'Jordan Lee',
+  phone: '5035551212',
+  house: '12',
+  street: 'Main Street',
+  city: 'Portland',
+  state: 'OR',
+  zip: '97201',
+  notes: 'Ring the bell',
+}
 const req = (body: unknown, headers: Record<string, string> = {}) =>
   new Request('https://nova.test/api/checkout', {
     method: 'POST',
@@ -60,18 +70,28 @@ describe('buildSessionParams', () => {
 
 describe('POST /api/checkout', () => {
   it('creates a session with an idempotency key tied to the attempt and cart', async () => {
-    const res = await POST(req({ lines: [{ sku: SKU, quantity: 1 }], attemptId: 'attempt_12345678' }))
+    const res = await POST(req({ lines: [{ sku: SKU, quantity: 1 }], attemptId: 'attempt_12345678', delivery }))
     expect(res.status).toBe(200)
     expect(await res.json()).toEqual({ url: 'https://buy.polar.sh/checkout/test' })
     expect(created).toHaveLength(1)
-    expect(created[0].idempotencyKey).toMatch(/^checkout_attempt_12345678_[0-9a-f]{24}$/)
+    expect(created[0].idempotencyKey).toMatch(/^checkout_attempt_12345678_[0-9a-f]{24}_[0-9a-f]{24}$/)
     expect(created[0].successUrl).toBe('https://nova.test/checkout/success?session_id={CHECKOUT_ID}')
     expect(created[0].metadata.source).toBe('nova-web')
+    expect(JSON.parse(created[0].metadata.ship)).toMatchObject({ h: '12', s: 'Main Street', t: 'OR', z: '97201', p: '+1 (503) 555-1212' })
     expect(created[0].amountCents).toBe(8800)
   })
 
+  it('refuses checkout until the house, street, city, state, ZIP and phone are present', async () => {
+    const res = await POST(req({ lines: [{ sku: SKU, quantity: 1 }], delivery: { ...delivery, house: '', phone: '555' } }))
+    expect(res.status).toBe(422)
+    const body = (await res.json()) as { fields: { house: string; phone: string } }
+    expect(body.fields.house).toMatch(/house or apartment/i)
+    expect(body.fields.phone).toMatch(/phone/i)
+    expect(created).toHaveLength(0)
+  })
+
   it('never trusts client prices', async () => {
-    await POST(req({ lines: [{ sku: SKU, quantity: 1, priceCents: 1, unit_amount: 1 }], attemptId: 'attempt_12345678' }))
+    await POST(req({ lines: [{ sku: SKU, quantity: 1, priceCents: 1, unit_amount: 1 }], attemptId: 'attempt_12345678', delivery }))
     expect(created[0].amountCents).toBe(8800)
   })
 
@@ -91,7 +111,7 @@ describe('POST /api/checkout', () => {
 
   it('returns 503 (not a fake success) when Polar is not configured', async () => {
     setupState.ok = false
-    const res = await POST(req({ lines: [{ sku: SKU, quantity: 1 }] }))
+    const res = await POST(req({ lines: [{ sku: SKU, quantity: 1 }], delivery }))
     expect(res.status).toBe(503)
     expect((await res.json()).code).toBe('checkout_unavailable')
   })

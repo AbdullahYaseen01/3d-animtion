@@ -1,7 +1,8 @@
 import { createHmac } from 'node:crypto'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { packCartMetadata, unpackCartLines } from '../server/checkoutSession'
-import { polarCheckoutStatus, polarCheckoutToOrderView } from '../server/polarOrder'
+import { packDeliveryMetadata } from '../src/commerce/delivery'
+import { polarCheckoutStatus, polarCheckoutToOrderView, polarOrderToAdmin } from '../server/polarOrder'
 import { verifyPolarWebhook } from '../server/polarWebhook'
 import { POST } from '../server/handlers/polarWebhook'
 
@@ -136,6 +137,46 @@ describe('POST /api/polar-webhook', () => {
   })
 })
 
+const delivery = {
+  fullName: 'Jordan Lee',
+  phone: '+1 (503) 555-1212',
+  house: 'Apt 4B',
+  street: 'Main Street',
+  city: 'Portland',
+  state: 'OR',
+  zip: '97201',
+  notes: 'Ring the bell',
+}
+
+describe('polar admin order', () => {
+  it('keeps the house, street, city, state, ZIP, phone and note for the owner', () => {
+    const view = polarOrderToAdmin({
+      id: '8f1c1c1c-1111-4111-8111-111111111111',
+      checkout_id: '11111111-1111-4111-8111-111111111111',
+      created_at: '2026-09-28T12:00:00.000Z',
+      status: 'paid',
+      paid: true,
+      billing_name: 'Jordan Lee',
+      billing_address: { line1: 'Other St', city: 'Austin', state: 'TX', postal_code: '78701', country: 'US' },
+      customer: { email: 'jordan@example.com', name: 'Jordan Lee' },
+      metadata: { ...packCartMetadata([{ sku: SKU, quantity: 1 }], 'h'), ...packDeliveryMetadata(delivery) },
+    })
+    expect(view.email).toBe('jordan@example.com')
+    expect(view.phone).toBe('+1 (503) 555-1212')
+    expect(view.delivery).toMatchObject({
+      fullName: 'Jordan Lee',
+      house: 'Apt 4B',
+      street: 'Main Street',
+      city: 'Portland',
+      state: 'OR',
+      zip: '97201',
+      notes: 'Ring the bell',
+      country: 'US',
+    })
+    expect(view.addressLines).toEqual(['Apt 4B', 'Main Street', 'Portland, OR 97201', 'United States'])
+  })
+})
+
 describe('createCheckout', () => {
   afterEach(() => {
     delete process.env.POLAR_ACCESS_TOKEN
@@ -162,10 +203,19 @@ describe('createCheckout', () => {
       returnUrl: 'https://nova.test/cart?checkout=canceled',
       metadata: { source: 'nova-web' },
       idempotencyKey: 'checkout_attempt_12345678_abc',
+      delivery,
     })
     expect(result).toMatchObject({ ok: true, url: 'https://buy.polar.sh/checkout/abc' })
-    const sent = JSON.parse(String(calls[0].init.body)) as { prices: Record<string, { price_amount: number }[]> }
+    const sent = JSON.parse(String(calls[0].init.body)) as {
+      prices: Record<string, { price_amount: number }[]>
+      customer_billing_address: { line1: string; line2: string; city: string; state: string; postal_code: string; country: string }
+      billing_address_fields: { line1: string; line2: string; city: string; state: string; postal_code: string }
+      customer_name: string
+    }
     expect(sent.prices['22222222-2222-4222-8222-222222222222'][0].price_amount).toBe(14500)
+    expect(sent.customer_name).toBe('Jordan Lee')
+    expect(sent.customer_billing_address).toEqual({ country: 'US', line1: 'Main Street', line2: 'Apt 4B', city: 'Portland', state: 'OR', postal_code: '97201' })
+    expect(sent.billing_address_fields).toMatchObject({ line1: 'required', line2: 'required', city: 'required', state: 'required', postal_code: 'required' })
     const headers = new Headers(calls[0].init.headers)
     expect(headers.get('Idempotency-Key')).toBe('checkout_attempt_12345678_abc')
     expect(headers.get('Authorization')).toBe('Bearer polar_oat_test')
@@ -183,6 +233,7 @@ describe('createCheckout', () => {
       returnUrl: 'https://nova.test/cart',
       metadata: { source: 'nova-web' },
       idempotencyKey: 'checkout_attempt_12345678_abc',
+      delivery,
     })
     expect(result.ok).toBe(false)
   })
@@ -195,6 +246,7 @@ describe('createCheckout', () => {
       returnUrl: 'https://nova.test/cart',
       metadata: { source: 'nova-web' },
       idempotencyKey: 'checkout_attempt_12345678_abc',
+      delivery,
     })
     expect(result).toMatchObject({ ok: false, httpStatus: 503 })
   })

@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 import { useCart } from '../../state/CartProvider'
 import { Dialog } from '../ui/Dialog'
 import { CartLineItem } from './CartLineItem'
-import { CartAssurances, CartTotals, CheckoutButton, FreeShippingProgress } from './CartSummary'
+import { CartAssurances, CartTotals, FreeShippingProgress } from './CartSummary'
 import './Cart.css'
 
 export function MiniCart() {
@@ -19,10 +19,10 @@ export function MiniCart() {
         empty ? undefined : (
           <div className="mini-cart__footer">
             <CartTotals compact />
-            <CheckoutButton />
-            <Link to="/cart" className="link-arrow mini-cart__view" onClick={closeCart}>
-              View full cart
+            <Link to="/cart#delivery" className="btn btn--lg btn--block" onClick={closeCart}>
+              Continue to checkout
             </Link>
+            <p className="checkout-cta__note">You’ll enter the delivery address before payment.</p>
           </div>
         )
       }
