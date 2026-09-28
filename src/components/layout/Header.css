@@ -2,7 +2,15 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  background: var(--color-paper);
+  background: linear-gradient(180deg, #fbfaf7 0%, #f4f0e8 100%);
+  box-shadow: 0 10px 30px -24px rgb(22 22 22 / 0.55);
+}
+
+.site-header::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, #8b3722 0%, #c45a2c 18%, #b8860b 42%, #7a2430 64%, #1f3a4d 82%, #161616 100%);
 }
 
 .site-header__inner {
@@ -32,7 +40,8 @@
   height: 0.28em;
   margin-top: -0.55em;
   border-radius: 50%;
-  background: var(--color-ember);
+  background: radial-gradient(circle at 35% 35%, #e8a090, var(--color-ember) 55%, #6e2418);
+  box-shadow: 0 0 0 2px #f6e4dc;
 }
 
 .site-header__menu-btn {
@@ -60,19 +69,53 @@
   letter-spacing: -0.011em;
   white-space: nowrap;
   text-decoration: none;
+  border-radius: var(--radius-pill);
+  transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+}
+
+.nav-link--all {
+  --nav-accent: #161616;
+  --nav-tint: #ece8e0;
+}
+.nav-link--shoes {
+  --nav-accent: #9a3e22;
+  --nav-tint: #f8ebe4;
+}
+.nav-link--bags {
+  --nav-accent: #7a2430;
+  --nav-tint: #f8e7ea;
+}
+.nav-link--jackets {
+  --nav-accent: #7a5528;
+  --nav-tint: #f6efe3;
+}
+.nav-link--jewelry {
+  --nav-accent: #8a6414;
+  --nav-tint: #f8f1dc;
+}
+.nav-link--watches {
+  --nav-accent: #1f3a4d;
+  --nav-tint: #e7eef3;
 }
 
 .primary-nav a::after {
   content: '';
   position: absolute;
-  left: var(--space-3);
-  right: var(--space-3);
-  bottom: 8px;
+  left: 0.85rem;
+  right: 0.85rem;
+  bottom: 7px;
   height: 2px;
-  background: currentColor;
+  border-radius: 2px;
+  background: var(--nav-accent, var(--color-ember));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--dur-med) var(--ease-out);
+}
+
+.primary-nav a:hover,
+.primary-nav a.active {
+  color: var(--nav-accent, var(--color-ink));
+  background: var(--nav-tint, transparent);
 }
 
 .primary-nav a:hover::after,
@@ -90,15 +133,16 @@
 
 .primary-nav .nav-drop__panel {
   position: absolute;
-  top: calc(100% - 6px);
+  top: calc(100% - 4px);
   left: 0;
   z-index: 5;
   display: grid;
-  min-width: 12rem;
-  padding: var(--space-2);
-  background: var(--color-paper);
-  border: var(--border);
-  border-radius: var(--radius-sm);
+  min-width: 13.5rem;
+  padding: 0.4rem;
+  background: #fbfaf7;
+  border: 1px solid #e4d8cc;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-raised);
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -113,10 +157,33 @@
 
 .nav-drop__panel a {
   min-height: 2.5rem;
+  gap: 0.55rem;
+  padding-inline: 0.7rem;
 }
 
 .nav-drop__panel a::after {
   display: none;
+}
+
+.nav-drop__panel a::before {
+  content: '';
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--nav-accent, var(--color-ember));
+}
+
+.nav-drop__link--handbags {
+  --nav-accent: #7a2430;
+  --nav-tint: #f8e7ea;
+}
+.nav-drop__link--wallets {
+  --nav-accent: #8b3722;
+  --nav-tint: #f8ebe4;
+}
+.nav-drop__link--backpacks {
+  --nav-accent: #1f3a4d;
+  --nav-tint: #e7eef3;
 }
 
 .primary-nav__secondary:first-of-type {
@@ -136,6 +203,11 @@
 
 .site-header__actions .icon-btn {
   position: relative;
+}
+
+.site-header__actions .icon-btn:hover {
+  background: #f3e3dc;
+  color: var(--color-ember-strong);
 }
 
 .count-dot {
@@ -220,6 +292,24 @@
 
 .mobile-menu__cat:hover {
   background: var(--color-stone);
+}
+
+.mobile-menu__cat--shoes { --nav-accent: #9a3e22; }
+.mobile-menu__cat--handbags,
+.mobile-menu__cat--wallets { --nav-accent: #7a2430; }
+.mobile-menu__cat--jackets { --nav-accent: #7a5528; }
+.mobile-menu__cat--womens-jewelry { --nav-accent: #8a6414; }
+.mobile-menu__cat--backpacks,
+.mobile-menu__cat--watches { --nav-accent: #1f3a4d; }
+
+.mobile-menu__cat--shoes,
+.mobile-menu__cat--handbags,
+.mobile-menu__cat--wallets,
+.mobile-menu__cat--jackets,
+.mobile-menu__cat--womens-jewelry,
+.mobile-menu__cat--backpacks,
+.mobile-menu__cat--watches {
+  box-shadow: inset 3px 0 0 var(--nav-accent);
 }
 
 .mobile-menu__cat strong {

@@ -73,12 +73,14 @@ export function Header() {
         <nav className="primary-nav" aria-label="Primary">
           <ul role="list">
             <li>
-              <NavLink to="/shop" end>
+              <NavLink to="/shop" end className="nav-link nav-link--all">
                 Shop All
               </NavLink>
             </li>
             <li>
-              <NavLink to="/collections/shoes">Shoes</NavLink>
+              <NavLink to="/collections/shoes" className="nav-link nav-link--shoes">
+                Shoes
+              </NavLink>
             </li>
             <li
               className={`nav-drop${bagsOpen ? ' is-open' : ''}`}
@@ -91,6 +93,7 @@ export function Header() {
             >
               <NavLink
                 to="/collections/handbags"
+                className="nav-link nav-link--bags"
                 aria-expanded={bagsOpen}
                 aria-haspopup="true"
                 onFocus={() => setBagsOpen(true)}
@@ -106,19 +109,27 @@ export function Header() {
               <ul className="nav-drop__panel" role="list">
                 {BAG_LINKS.map((item) => (
                   <li key={item.slug}>
-                    <Link to={`/collections/${item.slug}`}>{item.label}</Link>
+                    <Link to={`/collections/${item.slug}`} className={`nav-drop__link nav-drop__link--${item.slug}`}>
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </li>
             <li>
-              <NavLink to="/collections/jackets">Jackets</NavLink>
+              <NavLink to="/collections/jackets" className="nav-link nav-link--jackets">
+                Jackets
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/collections/womens-jewelry">Jewelry</NavLink>
+              <NavLink to="/collections/womens-jewelry" className="nav-link nav-link--jewelry">
+                Jewelry
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/collections/watches">Watches</NavLink>
+              <NavLink to="/collections/watches" className="nav-link nav-link--watches">
+                Watches
+              </NavLink>
             </li>
           </ul>
         </nav>
@@ -170,7 +181,7 @@ export function Header() {
               if (!c) return null
               return (
                 <li key={slug}>
-                  <Link to={`/collections/${slug}`} className="mobile-menu__cat">
+                  <Link to={`/collections/${slug}`} className={`mobile-menu__cat mobile-menu__cat--${slug}`}>
                     <span className="mobile-menu__thumb" aria-hidden="true">
                       {first && <ProductImage image={first.colors[0].images[0]} alt="" sizes="56px" />}
                     </span>
