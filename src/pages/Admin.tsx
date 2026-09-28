@@ -10,7 +10,7 @@ type LoadState =
   | { kind: 'checking' }
   | { kind: 'login'; error?: string; unconfigured?: boolean }
   | { kind: 'error'; message: string }
-  | { kind: 'ready'; orders: AdminOrder[]; hasMore: boolean }
+  | { kind: 'ready'; orders: AdminOrder[]; hasMore: boolean; provider: 'polar' | 'stripe' }
 
 const FILTERS: { id: Filter; label: string }[] = [
   { id: 'all', label: 'All' },
@@ -30,10 +30,10 @@ function matches(order: AdminOrder, filter: Filter): boolean {
 
 async function loadOrders(): Promise<LoadState> {
   const res = await fetch('/api/admin/orders', { cache: 'no-store' })
-  const data = (await res.json().catch(() => ({}))) as { error?: string; orders?: AdminOrder[]; hasMore?: boolean }
+  const data = (await res.json().catch(() => ({}))) as { error?: string; orders?: AdminOrder[]; hasMore?: boolean; provider?: string }
   if (res.status === 401) return { kind: 'login' }
   if (!res.ok) return { kind: 'error', message: data.error ?? 'Orders could not be loaded.' }
-  return { kind: 'ready', orders: data.orders ?? [], hasMore: Boolean(data.hasMore) }
+  return { kind: 'ready', orders: data.orders ?? [], hasMore: Boolean(data.hasMore), provider: data.provider === 'polar' ? 'polar' : 'stripe' }
 }
 
 export default function Admin() {
@@ -118,6 +118,7 @@ export default function Admin() {
           <OrderDesk
             orders={state.orders}
             hasMore={state.hasMore}
+            provider={state.provider}
             filter={filter}
             onFilter={setFilter}
             openId={openId}
@@ -209,6 +210,7 @@ function Login({
 function OrderDesk({
   orders,
   hasMore,
+  provider,
   filter,
   onFilter,
   openId,
@@ -217,6 +219,7 @@ function OrderDesk({
 }: {
   orders: AdminOrder[]
   hasMore: boolean
+  provider: 'polar' | 'stripe'
   filter: Filter
   onFilter: (filter: Filter) => void
   openId: string | null
@@ -232,7 +235,7 @@ function OrderDesk({
     <div className="admin-desk">
       <div className="admin-desk__head">
         <div>
-          <p className="eyebrow">Stripe</p>
+          <p className="eyebrow">{provider === 'polar' ? 'Polar' : 'Stripe'}</p>
           <h1>Customer orders</h1>
           <p className="muted">Paid and completed checkouts, newest first.</p>
         </div>
@@ -291,7 +294,7 @@ function OrderDesk({
           )
         })}
       </ul>
-      {hasMore && <p className="field-hint">Showing the latest 50 checkouts. Older ones stay in the Stripe dashboard.</p>}
+      {hasMore && <p className="field-hint">Showing the latest 50 checkouts. Older ones stay in the {provider === 'polar' ? 'Polar' : 'Stripe'} dashboard.</p>}
     </div>
   )
 }
@@ -322,7 +325,7 @@ function OrderDetail({ order }: { order: AdminOrder }) {
       <section>
         <h2>Items</h2>
         {order.lines.length === 0 ? (
-          <p className="muted">Line items were not included on this checkout. The total below is still the amount Stripe charged.</p>
+          <p className="muted">Line items were not included on this checkout. The total below is still the amount charged.</p>
         ) : (
           <ul role="list" className="admin-lines">
             {order.lines.map((line, index) => (

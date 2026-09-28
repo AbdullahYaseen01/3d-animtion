@@ -2,26 +2,15 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { priceCart } from '../src/commerce/cart'
 import { buildSessionParams, cartHash } from '../server/checkoutSession'
 
-const created: { params: Record<string, unknown>; opts: Record<string, unknown> }[] = []
+const created: { amountCents: number; idempotencyKey: string; metadata: Record<string, string>; successUrl: string }[] = []
 const setupState: { ok: boolean } = { ok: true }
 
-vi.mock('../server/stripe.js', () => ({
-  getStripe: () =>
-    setupState.ok
-      ? {
-          ok: true,
-          stripe: {
-            checkout: {
-              sessions: {
-                create: async (params: Record<string, unknown>, opts: Record<string, unknown>) => {
-                  created.push({ params, opts })
-                  return { id: 'cs_test_abc', url: 'https://checkout.stripe.com/c/pay/cs_test_abc' }
-                },
-              },
-            },
-          },
-        }
-      : { ok: false, missing: ['STRIPE_SECRET_KEY'], reason: 'Checkout is not configured yet.' },
+vi.mock('../server/polar.js', () => ({
+  createCheckout: async (input: { amountCents: number; idempotencyKey: string; metadata: Record<string, string>; successUrl: string }) => {
+    if (!setupState.ok) return { ok: false, httpStatus: 503, reason: 'Checkout is not configured yet.', missing: ['POLAR_ACCESS_TOKEN'] }
+    created.push(input)
+    return { ok: true, url: 'https://buy.polar.sh/checkout/test', id: '11111111-1111-4111-8111-111111111111' }
+  },
 }))
 
 const { POST } = await import('../server/handlers/checkout')
@@ -73,15 +62,17 @@ describe('POST /api/checkout', () => {
   it('creates a session with an idempotency key tied to the attempt and cart', async () => {
     const res = await POST(req({ lines: [{ sku: SKU, quantity: 1 }], attemptId: 'attempt_12345678' }))
     expect(res.status).toBe(200)
-    expect(await res.json()).toEqual({ url: 'https://checkout.stripe.com/c/pay/cs_test_abc' })
+    expect(await res.json()).toEqual({ url: 'https://buy.polar.sh/checkout/test' })
     expect(created).toHaveLength(1)
-    expect(created[0].opts.idempotencyKey).toMatch(/^checkout_attempt_12345678_[0-9a-f]{24}$/)
+    expect(created[0].idempotencyKey).toMatch(/^checkout_attempt_12345678_[0-9a-f]{24}$/)
+    expect(created[0].successUrl).toBe('https://nova.test/checkout/success?session_id={CHECKOUT_ID}')
+    expect(created[0].metadata.source).toBe('nova-web')
+    expect(created[0].amountCents).toBe(14500)
   })
 
   it('never trusts client prices', async () => {
     await POST(req({ lines: [{ sku: SKU, quantity: 1, priceCents: 1, unit_amount: 1 }], attemptId: 'attempt_12345678' }))
-    const items = created[0].params.line_items as { price_data: { unit_amount: number } }[]
-    expect(items[0].price_data.unit_amount).toBe(14500)
+    expect(created[0].amountCents).toBe(14500)
   })
 
   it('returns 409 with corrected lines when stock changed', async () => {
@@ -98,7 +89,7 @@ describe('POST /api/checkout', () => {
     expect((await POST(req({ lines: [{ sku: SKU, quantity: 1 }] }, { origin: 'https://evil.test' }))).status).toBe(403)
   })
 
-  it('returns 503 (not a fake success) when Stripe is not configured', async () => {
+  it('returns 503 (not a fake success) when Polar is not configured', async () => {
     setupState.ok = false
     const res = await POST(req({ lines: [{ sku: SKU, quantity: 1 }] }))
     expect(res.status).toBe(503)

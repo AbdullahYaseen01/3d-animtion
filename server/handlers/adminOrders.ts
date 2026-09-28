@@ -2,12 +2,21 @@ import type Stripe from 'stripe'
 import { isCustomerOrder, toAdminOrder } from '../adminOrder.js'
 import { requestIsAdmin } from '../adminAuth.js'
 import { json, logEvent, methodNotAllowed } from '../http.js'
+import { listPolarOrders, polarConfigured } from '../polar.js'
+import { polarOrderToAdmin } from '../polarOrder.js'
 import { getStripe } from '../stripe.js'
 
 const LIST_LIMIT = 50
 
 export async function GET(request: Request): Promise<Response> {
   if (!requestIsAdmin(request)) return json({ error: 'Sign in required.' }, { status: 401 })
+
+  if (polarConfigured()) {
+    const page = await listPolarOrders()
+    if ('ok' in page) return json({ error: page.reason, code: 'polar' }, { status: page.httpStatus })
+    const orders = page.items.filter((order) => order.metadata?.source === 'nova-web').map(polarOrderToAdmin)
+    return json({ orders, hasMore: page.hasMore, provider: 'polar' })
+  }
 
   const setup = getStripe({ purpose: 'read' })
   if (setup.ok === false) {
@@ -21,7 +30,7 @@ export async function GET(request: Request): Promise<Response> {
       const status = pi && typeof pi === 'object' ? (pi as Stripe.PaymentIntent).status : null
       return toAdminOrder(session, status)
     })
-    return json({ orders, hasMore: page.has_more })
+    return json({ orders, hasMore: page.has_more, provider: 'stripe' })
   } catch (err) {
     logEvent('admin_orders_failed', { code: (err as { code?: string }).code ?? 'unknown' })
     return json({ error: 'We could not load orders from Stripe.' }, { status: 502 })

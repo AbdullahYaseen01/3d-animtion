@@ -1,7 +1,7 @@
 import { priceCart, validateLines } from '../../src/commerce/cart.js'
-import { buildSessionParams, cartHash } from '../checkoutSession.js'
-import { env, isSameOrigin, json, logEvent, methodNotAllowed, readJson, requestOrigin } from '../http.js'
-import { getStripe } from '../stripe.js'
+import { cartHash, packCartMetadata } from '../checkoutSession.js'
+import { isSameOrigin, json, logEvent, methodNotAllowed, readJson, requestOrigin } from '../http.js'
+import { createCheckout } from '../polar.js'
 
 const ATTEMPT_RE = /^[A-Za-z0-9_-]{8,64}$/
 
@@ -16,31 +16,29 @@ export async function POST(request: Request): Promise<Response> {
   }
   if (lines.length === 0) return json({ error: 'Your cart is empty.' }, { status: 400 })
 
-  const setup = getStripe()
-  if (!setup.ok) {
-    logEvent('checkout_unavailable', { missing: setup.missing.join(',') })
-    return json({ error: `${setup.reason} Your cart is saved; please try again later or contact us to order.`, code: 'checkout_unavailable' }, { status: 503 })
-  }
-
   const attemptId = typeof body.attemptId === 'string' && ATTEMPT_RE.test(body.attemptId) ? body.attemptId : crypto.randomUUID()
   const cart = priceCart(lines)
   const hash = await cartHash(lines)
-  const params = buildSessionParams(cart, {
-    origin: requestOrigin(request),
-    automaticTax: env('STRIPE_AUTOMATIC_TAX') === 'true',
-    hash,
+  const origin = requestOrigin(request)
+  const result = await createCheckout({
+    amountCents: cart.totalBeforeTaxCents,
+    successUrl: `${origin}/checkout/success?session_id={CHECKOUT_ID}`,
+    returnUrl: `${origin}/cart?checkout=canceled`,
+    metadata: packCartMetadata(lines, hash),
+    idempotencyKey: `checkout_${attemptId}_${hash}`,
   })
 
-  try {
-    const session = await setup.stripe.checkout.sessions.create(params, { idempotencyKey: `checkout_${attemptId}_${hash}` })
-    if (!session.url) throw new Error('Session has no URL')
-    logEvent('checkout_session_created', { session: session.id, lines: lines.length })
-    return json({ url: session.url })
-  } catch (err) {
-    const code = (err as { code?: string; type?: string }).code ?? (err as { type?: string }).type ?? 'unknown'
-    logEvent('checkout_session_failed', { code })
-    return json({ error: 'We could not start checkout. Please try again in a moment.' }, { status: 502 })
+  if (!result.ok) {
+    if (result.httpStatus === 503) {
+      logEvent('checkout_unavailable', { missing: (result.missing ?? []).join(',') })
+      return json({ error: `${result.reason} Your cart is saved; please try again later or contact us to order.`, code: 'checkout_unavailable' }, { status: 503 })
+    }
+    if (result.httpStatus === 400) return json({ error: result.reason }, { status: 400 })
+    return json({ error: result.reason }, { status: 502 })
   }
+
+  logEvent('checkout_session_created', { session: result.id, lines: lines.length })
+  return json({ url: result.url })
 }
 
 export const GET = () => methodNotAllowed(['POST'])

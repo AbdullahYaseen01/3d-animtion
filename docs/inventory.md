@@ -27,7 +27,7 @@ The baseline is commit `9db37cf` on the live site https://core-seven-henna.verce
 | `/search?q=` | Search results | no | |
 | `/products/:slug` | Product page | yes | `?color=` selects a colorway; canonical has no params |
 | `/wishlist`, `/cart` | Saved items, cart | no | localStorage |
-| `/checkout/success?session_id=` | Order status from Stripe (server-verified) | no | paid / processing / failed / unpaid / expired states |
+| `/checkout/success?session_id=` | Order status from Polar, or Stripe for an older checkout (server-verified) | no | paid / processing / failed / unpaid / expired states |
 | `/about`, `/fit-guide`, `/shipping`, `/returns`, `/faq`, `/contact`, `/privacy`, `/terms` | Support & policy | yes | Policy values come from `src/config/store.ts` |
 | `/guides`, `/guides/:slug` | Editorial buying guides | yes | Article JSON-LD |
 | anything else | 404 page with HTTP 404 | no | |
@@ -37,7 +37,7 @@ The baseline is commit `9db37cf` on the live site https://core-seven-henna.verce
 
 | Problem | Change | How it was verified |
 |---------|--------|---------------------|
-| No way to buy | Catalog, product pages, cart, Stripe Checkout, webhook | Vitest (`checkout`, `webhook`, `order`, `cart`), `scripts/qa/flows.mjs` |
+| No way to buy | Catalog, product pages, cart, Polar Checkout, webhook | Vitest (`checkout`, `polar`, `webhook`, `order`, `cart`), `scripts/qa/flows.mjs` |
 | Anchor-only nav, placeholder links | Real routes; social links hidden until real profiles exist | flows, screenshots |
 | Two H1s in hero | One H1 per page | `tests/seo-render.test.ts` |
 | Content only after JS plus a loading screen | Prerendered HTML for 28 routes | seo-render test, built HTML inspection |

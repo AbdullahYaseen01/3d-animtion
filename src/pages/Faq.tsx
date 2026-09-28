@@ -45,7 +45,7 @@ export function faqGroups(): { title: string; items: QA[] }[] {
       items: [
         {
           q: 'How do I pay?',
-          a: ['Checkout is hosted by Stripe, a secure payment provider. The payment methods available are shown on the checkout page. NOVA never sees or stores your full card details.'],
+          a: ['Checkout is hosted by Polar, a secure payment provider. The payment methods available are shown on the checkout page. NOVA never sees or stores your full card details.'],
         },
         { q: 'Is sales tax included?', a: ['Prices are shown before tax. Where sales tax applies, it is calculated at checkout from your shipping address before you pay.'] },
         {

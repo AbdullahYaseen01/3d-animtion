@@ -16,7 +16,7 @@ function cartKey(lines: CartLine[]): string {
     .join('|')
 }
 
-/** Stable per cart contents so double submits reuse the same Stripe session. */
+/** Stable per cart contents so double submits reuse the same Polar checkout. */
 function attemptIdFor(lines: CartLine[]): string {
   const key = `nova:checkout-attempt:${cartKey(lines)}`
   try {

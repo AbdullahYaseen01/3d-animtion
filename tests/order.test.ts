@@ -45,4 +45,10 @@ describe('GET /api/order', () => {
     expect(res.status).toBe(404)
     expect(res.headers.get('cache-control')).toBe('no-store')
   })
+
+  it('does not call Polar for a checkout id when Polar is not configured', async () => {
+    delete process.env.POLAR_ACCESS_TOKEN
+    const res = await GET(new Request('https://nova.test/api/order?session_id=11111111-1111-4111-8111-111111111111'))
+    expect(res.status).toBe(503)
+  })
 })

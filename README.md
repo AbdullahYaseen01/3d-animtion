@@ -53,27 +53,27 @@ tests/            Vitest
 - **Indexing.** Builds are `noindex` unless `VERCEL_ENV=production` or `ALLOW_INDEXING=true`. Utility routes and any
   filtered or sorted catalog URL are always noindex, via both the meta tag and an `X-Robots-Tag` header in `vercel.json`.
 
-## Payments (Stripe Checkout, test mode)
+## Payments (Polar)
 
-1. Put a **test** secret key (`sk_test_…`) in `STRIPE_SECRET_KEY`.
-2. For local webhooks, run `stripe listen --forward-to localhost:5173/api/stripe-webhook` and copy the printed `whsec_…`
-   into `STRIPE_WEBHOOK_SECRET`. On Vercel, add an endpoint for `https://<domain>/api/stripe-webhook` subscribed to
-   `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed`
-   and `checkout.session.expired`.
-3. Pay with test card `4242 4242 4242 4242`. Use `4000 0000 0000 0002` for a decline.
+1. Create an organization access token in Polar → Settings → Developers and set `POLAR_ACCESS_TOKEN`.
+2. In Polar → Settings → Webhooks, add `https://<domain>/api/polar-webhook` for the `order.paid` event and set
+   `POLAR_WEBHOOK_SECRET` to the signing secret. Use `POLAR_SERVER=sandbox` with a sandbox token to test without live charges.
+3. The first checkout creates a reusable product named “NOVA order” unless `POLAR_PRODUCT_ID` is already set. Each cart is
+   charged as one ad hoc price equal to the server-priced total. Polar collects the billing address and adds tax as merchant of record.
 
 How it works:
 - `POST /api/checkout` accepts only product ID, color, width, size and quantity. The server re-prices every line from the
-  catalog in integer cents, rejects unknown, sold-out or over-limit lines, and builds Stripe `price_data` from those values.
-  Client prices are never trusted. Card data is entered on Stripe's hosted page and never touches this app.
-- **Idempotency:** each checkout attempt sends a client-generated attempt ID. The Stripe idempotency key is
-  `checkout_<attemptId>_<cartHash>`, so double-clicks reuse one session. Sessions expire after 1 hour.
-- **An order is only "paid" when Stripe says so.** `/checkout/success` calls `GET /api/order?session_id=…`, which reads the
-  session from Stripe. The success URL alone never marks anything paid. Delayed payment methods show a "processing"
-  state and poll. Failed, unpaid and expired sessions show recovery options. Canceling returns to `/cart?checkout=canceled`.
-- **Webhook** signatures are verified. Fulfillment (the merchant email) runs once per payment. The claim is atomic via Upstash
-  Redis `SET NX` when configured. Otherwise a PaymentIntent metadata flag is used, which is not atomic under concurrent retries.
-- Live keys are **refused** while `CATALOG_IS_SAMPLE` is `true`.
+  catalog in integer cents, rejects unknown, sold-out or over-limit lines, and sends that total to Polar. Client prices are
+  never trusted. Card data is entered on Polar’s hosted page and never touches this app.
+- **Idempotency:** each checkout attempt sends a client-generated attempt ID. The Polar idempotency key is
+  `checkout_<attemptId>_<cartHash>`, so double-clicks reuse one checkout.
+- **An order is only "paid" when Polar says so.** `/checkout/success` calls `GET /api/order?session_id=…`, which reads the
+  checkout from Polar. Status `succeeded` is paid. `confirmed` means the customer clicked pay and is still processing.
+  The success URL alone never marks anything paid. Canceling returns to `/cart?checkout=canceled`.
+- **Webhook** signatures are verified (`webhook-id`, `webhook-timestamp`, `webhook-signature`). Fulfillment runs on
+  `order.paid` only. The claim is atomic via Upstash Redis `SET NX` when configured.
+- Checkouts created before this change still resolve when `session_id` is a Stripe `cs_` id and `STRIPE_SECRET_KEY` is set.
+  Live Stripe keys are **refused** while `CATALOG_IS_SAMPLE` is `true`.
 
 ## Email (Resend)
 
@@ -97,10 +97,10 @@ serving visitors in regions that require opt-in consent.
 
 ## Admin orders
 
-`/admin` is the owner’s order desk. It lists paid and completed Stripe checkouts (name, email, phone, shipping address,
-items and totals). Set `ADMIN_PASSWORD` (at least 10 characters) in Vercel. The password is checked on the server and
-kept in an HttpOnly cookie for 12 hours. It is not in the repo. Without the password, or without Stripe, the page says
-which part is missing instead of showing an empty order list.
+`/admin` is the owner’s order desk. When `POLAR_ACCESS_TOKEN` is set it lists Polar orders for this store (name, email,
+billing address, items and totals). Otherwise it lists paid and completed Stripe checkouts. Set `ADMIN_PASSWORD` (at least
+10 characters) in Vercel. The password is checked on the server and kept in an HttpOnly cookie for 12 hours. It is not in
+the repo. Without the password, or without a payment account, the page says which part is missing instead of showing an empty order list.
 
 ## Environment variables
 

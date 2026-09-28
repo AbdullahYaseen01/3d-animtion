@@ -7,6 +7,7 @@ export const API_ROUTES: Record<string, string> = {
   '/api/checkout': 'checkout',
   '/api/order': 'order',
   '/api/stripe-webhook': 'stripeWebhook',
+  '/api/polar-webhook': 'polarWebhook',
   '/api/newsletter': 'newsletter',
   '/api/contact': 'contact',
   '/api/admin/orders': 'adminOrders',

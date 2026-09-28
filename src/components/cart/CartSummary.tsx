@@ -79,7 +79,7 @@ export function CheckoutButton({ label = 'Checkout' }: { label?: string }) {
         )}
       </button>
       <p className="checkout-cta__note">
-        Guest checkout. Payment is handled securely by Stripe; NOVA never sees your card number.
+        Guest checkout. Payment is handled securely by Polar; NOVA never sees your card number.
       </p>
     </div>
   )

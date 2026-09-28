@@ -81,7 +81,7 @@ export default function CheckoutSuccess() {
           <div className="order-status" aria-busy="true">
             <span className="spinner" aria-hidden="true" />
             <h1>Confirming your order…</h1>
-            <p className="muted">We are checking your payment with Stripe. This usually takes a few seconds.</p>
+            <p className="muted">We are checking your payment with Polar. This usually takes a few seconds.</p>
           </div>
         )}
 

@@ -21,7 +21,7 @@ export default function Terms() {
 
       <h2>Prices and payment</h2>
       <p>
-        Prices are in US dollars and exclude sales tax, which is calculated at checkout where applicable. Payment is processed securely by Stripe. The total you pay is shown
+        Prices are in US dollars and exclude sales tax, which is calculated at checkout where applicable. Payment is processed securely by Polar, the merchant of record. The total you pay is shown
         before you confirm your order.
       </p>
 

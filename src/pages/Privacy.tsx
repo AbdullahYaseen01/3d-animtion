@@ -18,7 +18,7 @@ export default function Privacy() {
       <h2>Information we collect</h2>
       <ul>
         <li>
-          <strong>Orders.</strong> When you check out, our payment provider Stripe collects your name, email, shipping and billing address, and payment details. We receive your
+          <strong>Orders.</strong> When you check out, our payment provider Polar collects your name, email, billing address, and payment details. We receive your
           order details and contact information to fulfill the order. We never receive or store your full card number.
         </li>
         <li>
@@ -48,7 +48,7 @@ export default function Privacy() {
 
       <h2>Service providers</h2>
       <p>
-        We share information only with providers that help us run the store: Stripe (payments), Resend (email), and Vercel (website hosting and page-view analytics), and, if enabled, Google Analytics
+        We share information only with providers that help us run the store: Polar (payments), Resend (email), and Vercel (website hosting and page-view analytics), and, if enabled, Google Analytics
         (shopping events). We do not sell your personal information.
       </p>
 
