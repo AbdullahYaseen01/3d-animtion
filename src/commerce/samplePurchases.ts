@@ -7,6 +7,43 @@ interface SampleBuyer {
   minutesAgo: number
 }
 
+const FIRST_NAMES = ['Sarah', 'James', 'Aisha', 'Noah', 'Maya', 'Elena', 'Omar', 'Priya', 'Lucas', 'Hannah', 'Sofia', 'Daniel']
+const PLACES = ['Texas', 'California', 'New York', 'London', 'Dubai', 'Toronto', 'Paris', 'Chicago', 'Sydney', 'Florida', 'Lahore', 'Berlin']
+
+const THING: Record<string, string> = {
+  watches: 'watch',
+  handbags: 'bag',
+  wallets: 'wallet',
+  'womens-jewelry': 'piece',
+  jackets: 'jacket',
+  backpacks: 'backpack',
+  shoes: 'pair',
+  running: 'pair',
+  trail: 'pair',
+  lifestyle: 'pair',
+  everyday: 'pair',
+}
+
+function mix(productId: string): number {
+  let hash = 2166136261
+  for (let i = 0; i < productId.length; i++) {
+    hash ^= productId.charCodeAt(i)
+    hash = Math.imul(hash, 16777619)
+  }
+  return hash >>> 0
+}
+
+/** A stable line for every product, such as "Sarah from Texas purchased this watch". */
+export function productPurchaseLine(productId: string): string | null {
+  const product = getProductById(productId)
+  if (!product) return null
+  const n = mix(productId)
+  const name = FIRST_NAMES[n % FIRST_NAMES.length]
+  const place = PLACES[(n >>> 8) % PLACES.length]
+  const thing = THING[product.category] ?? 'item'
+  return `${name} from ${place} purchased this ${thing}`
+}
+
 /** No invented buyers. A note appears only after a real paid order. */
 const BUYERS: Record<string, SampleBuyer> = {}
 

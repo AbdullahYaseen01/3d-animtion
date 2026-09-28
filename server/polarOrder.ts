@@ -1,5 +1,6 @@
 import { resolveSku, variantLabel } from '../src/catalog/index.js'
 import { shippingFor } from '../src/commerce/cart.js'
+import { countryName } from '../src/commerce/countries.js'
 import { unpackDelivery, type DeliveryDetails } from '../src/commerce/delivery.js'
 import type { AdminOrder, AdminOrderLine, OrderDelivery } from './adminOrder.js'
 import { unpackCartLines } from './checkoutSession.js'
@@ -97,13 +98,13 @@ function deliveryFromBilling(name: string | null, address: PolarAddress | null |
     city: address?.city ?? null,
     state: address?.state ?? null,
     zip: address?.postal_code ?? null,
-    country: address?.country ?? 'US',
+    country: address?.country ?? null,
     notes: null,
   }
 }
 
 function orderDelivery(details: DeliveryDetails): OrderDelivery {
-  return { ...details, country: 'US', notes: details.notes || null }
+  return { ...details, country: details.country, notes: details.notes || null }
 }
 
 export function polarOrderToAdmin(order: PolarOrder): AdminOrder {
@@ -128,7 +129,7 @@ export function polarOrderToAdmin(order: PolarOrder): AdminOrder {
     name,
     phone: packed?.phone ?? null,
     addressLines: packed
-      ? [packed.house, packed.street, `${packed.city}, ${packed.state} ${packed.zip}`, 'United States']
+      ? [packed.house, packed.street, `${packed.city}, ${packed.state} ${packed.zip}`, countryName(packed.country)]
       : addressLines(order.billing_address),
     delivery,
     lines: viewLines,

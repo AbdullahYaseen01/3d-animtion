@@ -27,7 +27,7 @@ export default function Terms() {
 
       <h2>Shipping</h2>
       <p>
-        We ship to US addresses only. Delivery estimates are provided in good faith but are not guaranteed. See <Link to="/shipping">shipping information</Link>.
+        Choose the delivery country at checkout and enter a complete street address. Delivery estimates are provided in good faith but are not guaranteed. See <Link to="/shipping">shipping information</Link>.
       </p>
 
       <h2>Returns</h2>

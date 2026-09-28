@@ -1,4 +1,5 @@
 import { useEffect, useId, useState, type ReactNode } from 'react'
+import { COUNTRIES } from '../../commerce/countries'
 import { US_STATES, validateDelivery, type DeliveryErrors } from '../../commerce/delivery'
 import { useCheckout } from '../../commerce/useCheckout'
 import { Icon } from '../ui/Icon'
@@ -13,10 +14,11 @@ type Draft = {
   city: string
   state: string
   zip: string
+  country: string
   notes: string
 }
 
-const EMPTY: Draft = { fullName: '', phone: '', house: '', street: '', city: '', state: '', zip: '', notes: '' }
+const EMPTY: Draft = { fullName: '', phone: '', house: '', street: '', city: '', state: '', zip: '', country: 'US', notes: '' }
 
 function loadDraft(): Draft {
   try {
@@ -43,6 +45,19 @@ export function DeliveryForm() {
   useEffect(() => {
     if (problem?.fields) setErrors(problem.fields)
   }, [problem])
+
+  const setCountry = (country: string) => {
+    setDraft((current) => {
+      const next = { ...current, country, state: '' }
+      try {
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(next))
+      } catch {
+        /* Private browsing can block storage. The form still submits. */
+      }
+      return next
+    })
+    setErrors((current) => ({ ...current, country: undefined, state: undefined }))
+  }
 
   const set = (key: keyof Draft, value: string) => {
     setDraft((current) => {
@@ -80,14 +95,14 @@ export function DeliveryForm() {
     >
       <div>
         <h2>Delivery address</h2>
-        <p className="muted">We ship to the house or apartment below. Payment happens on the next page.</p>
+        <p className="muted">Choose the country, then the house or apartment. Payment happens on the next page.</p>
       </div>
       <div className="delivery-form__grid">
         <Field id={`${id}-fullName`} label="Full name" error={errors.fullName} className="delivery-form__wide">
           <input id={`${id}-fullName`} className="input" name="name" autoComplete="shipping name" value={draft.fullName} required aria-invalid={errors.fullName ? true : undefined} aria-describedby={errors.fullName ? `${id}-fullName-error` : undefined} onChange={(event) => set('fullName', event.target.value)} />
         </Field>
         <Field id={`${id}-phone`} label="Phone number" error={errors.phone}>
-          <input id={`${id}-phone`} className="input" name="phone" type="tel" inputMode="tel" autoComplete="shipping tel" placeholder="(555) 123-4567" value={draft.phone} required aria-invalid={errors.phone ? true : undefined} aria-describedby={errors.phone ? `${id}-phone-error` : undefined} onChange={(event) => set('phone', event.target.value)} />
+          <input id={`${id}-phone`} className="input" name="phone" type="tel" inputMode="tel" autoComplete="shipping tel" placeholder={draft.country === 'US' ? '(555) 123-4567' : '+92 300 1234567'} value={draft.phone} required aria-invalid={errors.phone ? true : undefined} aria-describedby={errors.phone ? `${id}-phone-error` : undefined} onChange={(event) => set('phone', event.target.value)} />
         </Field>
         <Field id={`${id}-house`} label="House or apartment number" error={errors.house}>
           <input id={`${id}-house`} className="input" name="address-line2" autoComplete="shipping address-line2" placeholder="12 or Apt 4B" value={draft.house} required aria-invalid={errors.house ? true : undefined} aria-describedby={errors.house ? `${id}-house-error` : undefined} onChange={(event) => set('house', event.target.value)} />
@@ -98,21 +113,31 @@ export function DeliveryForm() {
         <Field id={`${id}-city`} label="City" error={errors.city}>
           <input id={`${id}-city`} className="input" name="city" autoComplete="shipping address-level2" value={draft.city} required aria-invalid={errors.city ? true : undefined} aria-describedby={errors.city ? `${id}-city-error` : undefined} onChange={(event) => set('city', event.target.value)} />
         </Field>
-        <Field id={`${id}-state`} label="State" error={errors.state}>
-          <select id={`${id}-state`} className="select" name="state" autoComplete="shipping address-level1" value={draft.state} required aria-invalid={errors.state ? true : undefined} aria-describedby={errors.state ? `${id}-state-error` : undefined} onChange={(event) => set('state', event.target.value)}>
-            <option value="">Select a state</option>
-            {US_STATES.map((state) => (
-              <option key={state.code} value={state.code}>
-                {state.name}
+        <Field id={`${id}-country`} label="Country" error={errors.country}>
+          <select id={`${id}-country`} className="select" name="country" autoComplete="shipping country" value={draft.country} required aria-invalid={errors.country ? true : undefined} aria-describedby={errors.country ? `${id}-country-error` : undefined} onChange={(event) => setCountry(event.target.value)}>
+            {COUNTRIES.map((country) => (
+              <option key={country.code} value={country.code}>
+                {country.name}
               </option>
             ))}
           </select>
         </Field>
-        <Field id={`${id}-zip`} label="ZIP code" error={errors.zip}>
-          <input id={`${id}-zip`} className="input" name="zip" inputMode="numeric" autoComplete="shipping postal-code" placeholder="97201" value={draft.zip} required aria-invalid={errors.zip ? true : undefined} aria-describedby={errors.zip ? `${id}-zip-error` : undefined} onChange={(event) => set('zip', event.target.value)} />
+        <Field id={`${id}-state`} label={draft.country === 'US' ? 'State' : 'State or province'} error={errors.state}>
+          {draft.country === 'US' ? (
+            <select id={`${id}-state`} className="select" name="state" autoComplete="shipping address-level1" value={draft.state} required aria-invalid={errors.state ? true : undefined} aria-describedby={errors.state ? `${id}-state-error` : undefined} onChange={(event) => set('state', event.target.value)}>
+              <option value="">Select a state</option>
+              {US_STATES.map((state) => (
+                <option key={state.code} value={state.code}>
+                  {state.name}
+                </option>
+              ))}
+            </select>
+          ) : (
+            <input id={`${id}-state`} className="input" name="state" autoComplete="shipping address-level1" placeholder="Province or region" value={draft.state} required aria-invalid={errors.state ? true : undefined} aria-describedby={errors.state ? `${id}-state-error` : undefined} onChange={(event) => set('state', event.target.value)} />
+          )}
         </Field>
-        <Field id={`${id}-country`} label="Country">
-          <input id={`${id}-country`} className="input" name="country" value="United States" autoComplete="shipping country-name" readOnly />
+        <Field id={`${id}-zip`} label={draft.country === 'US' ? 'ZIP code' : 'Postal code'} error={errors.zip}>
+          <input id={`${id}-zip`} className="input" name="zip" inputMode={draft.country === 'US' ? 'numeric' : 'text'} autoComplete="shipping postal-code" placeholder={draft.country === 'US' ? '97201' : 'Postal code'} value={draft.zip} required aria-invalid={errors.zip ? true : undefined} aria-describedby={errors.zip ? `${id}-zip-error` : undefined} onChange={(event) => set('zip', event.target.value)} />
         </Field>
         <Field id={`${id}-notes`} label="Delivery note" error={errors.notes} hint="Optional. Gate code, buzzer, or where to leave the package." className="delivery-form__wide">
           <textarea id={`${id}-notes`} className="textarea" name="notes" rows={2} maxLength={120} value={draft.notes} aria-invalid={errors.notes ? true : undefined} aria-describedby={[errors.notes ? `${id}-notes-error` : '', `${id}-notes-hint`].filter(Boolean).join(' ') || undefined} onChange={(event) => set('notes', event.target.value)} />

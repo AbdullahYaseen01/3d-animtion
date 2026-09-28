@@ -161,7 +161,7 @@ export async function createCheckout(input: PolarCheckoutInput): Promise<{ ok: t
         customer_name: input.delivery.fullName,
         customer_billing_name: input.delivery.fullName,
         customer_billing_address: {
-          country: 'US',
+          country: input.delivery.country,
           line1: input.delivery.street,
           line2: input.delivery.house,
           city: input.delivery.city,

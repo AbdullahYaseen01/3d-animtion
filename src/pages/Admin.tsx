@@ -1,6 +1,7 @@
 import { useEffect, useId, useMemo, useState, type FormEvent } from 'react'
 import { Link } from 'react-router'
 import type { AdminOrder, OrderDelivery } from '../../server/adminOrder'
+import { countryName } from '../commerce/countries'
 import { stateName } from '../commerce/delivery'
 import { formatMoney } from '../lib/money'
 import { Seo } from '../lib/seo'
@@ -361,7 +362,7 @@ function OrderDetail({ order }: { order: AdminOrder }) {
 }
 
 function DeliveryFields({ ship, email }: { ship: OrderDelivery; email: string | null }) {
-  const state = ship.state ? `${stateName(ship.state)} (${ship.state})` : null
+  const state = ship.state ? (ship.country === 'US' ? `${stateName(ship.state)} (${ship.state})` : ship.state) : null
   const rows: { label: string; value: string }[] = [
     { label: 'Full name', value: shipValue(ship.fullName) },
     { label: 'Phone', value: shipValue(ship.phone) },
@@ -371,7 +372,7 @@ function DeliveryFields({ ship, email }: { ship: OrderDelivery; email: string | 
     { label: 'City', value: shipValue(ship.city) },
     { label: 'State', value: shipValue(state) },
     { label: 'ZIP code', value: shipValue(ship.zip) },
-    { label: 'Country', value: ship.country === 'US' || ship.country === 'United States' ? 'United States' : shipValue(ship.country) },
+    { label: 'Country', value: ship.country ? countryName(ship.country) : 'Not collected' },
     { label: 'Delivery note', value: ship.notes?.trim() ? ship.notes : 'None' },
   ]
   return (
@@ -391,7 +392,7 @@ function DeliveryFields({ ship, email }: { ship: OrderDelivery; email: string | 
         <br />
         {[ship.city, ship.state, ship.zip].filter(Boolean).join(' ')}
         <br />
-        {ship.country === 'US' || ship.country === 'United States' ? 'United States' : shipValue(ship.country)}
+        {ship.country ? countryName(ship.country) : 'Country not collected'}
       </address>
     </>
   )

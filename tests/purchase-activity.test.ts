@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { allProducts, buildSku, getProduct } from '../src/catalog'
 import { purchaseSentence, purchasesFromOrder, regionFromShipTo, relativeAgo } from '../src/commerce/purchaseActivity'
-import { samplePurchaseFor, samplePurchases } from '../src/commerce/samplePurchases'
+import { productPurchaseLine, samplePurchaseFor, samplePurchases } from '../src/commerce/samplePurchases'
 
 describe('confirmed purchase activity', () => {
   const at = new Date('2026-09-24T17:00:00.000Z')
@@ -31,11 +31,16 @@ describe('confirmed purchase activity', () => {
     expect(purchasesFromOrder({ orderNumber: 'NV-3', status: 'paid', firstName: null, shipTo: 'Austin, TX', lines: [{ sku }] }, at)).toEqual([])
   })
 
-  it('does not invent a buyer for any product', () => {
+  it('writes a purchase line on every product', () => {
     const now = new Date('2026-09-24T17:00:00.000Z')
     expect(samplePurchases(now)).toEqual([])
-    expect(samplePurchaseFor(allProducts()[0].id, now)).toBeNull()
     expect(samplePurchaseFor('missing')).toBeNull()
+    expect(productPurchaseLine('missing')).toBeNull()
+    const lines = allProducts().map((product) => productPurchaseLine(product.id))
+    expect(lines.every((line) => / from .+ purchased this /.test(line ?? ''))).toBe(true)
+    const watch = allProducts().find((product) => product.category === 'watches')
+    expect(productPurchaseLine(watch!.id)).toMatch(/purchased this watch$/)
+    expect(productPurchaseLine(allProducts()[0].id)).toBe(productPurchaseLine(allProducts()[0].id))
   })
 
   it('formats short elapsed times', () => {

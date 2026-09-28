@@ -69,7 +69,7 @@ export function faqGroups(): { title: string; items: QA[] }[] {
             '.',
           ],
         },
-        { q: 'Do you ship internationally?', a: ['Not yet. We currently ship to US addresses only.'] },
+        { q: 'Do you ship internationally?', a: ['Yes. Choose your country at checkout and enter the full street address, phone number, and postal code.'] },
         {
           q: 'What is your return policy?',
           a: [`Eligible items can be returned within ${store.returns.windowDays} days of delivery. Shoes must be unworn. `, { to: '/returns', label: 'Read the full policy' }, '.'],

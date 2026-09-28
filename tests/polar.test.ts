@@ -145,6 +145,7 @@ const delivery = {
   city: 'Portland',
   state: 'OR',
   zip: '97201',
+  country: 'US',
   notes: 'Ring the bell',
 }
 

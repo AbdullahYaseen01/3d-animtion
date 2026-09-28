@@ -1,4 +1,6 @@
-/** US delivery details collected before Polar checkout and shown on the order desk. */
+import { isCountryCode } from './countries.js'
+
+/** Delivery details collected before Polar checkout and shown on the order desk. */
 export interface DeliveryDetails {
   fullName: string
   phone: string
@@ -7,6 +9,7 @@ export interface DeliveryDetails {
   city: string
   state: string
   zip: string
+  country: string
   notes: string
 }
 
@@ -97,8 +100,11 @@ export function validateDelivery(input: unknown): { ok: true; delivery: Delivery
     errors.fullName = 'Enter a first and last name.'
   }
 
-  const phone = formatUsPhone(clean(source.phone))
-  if (!phone) errors.phone = 'Enter a 10-digit US phone number.'
+  const country = (clean(source.country).toUpperCase() || 'US')
+  if (!isCountryCode(country)) errors.country = 'Choose a country.'
+
+  const phone = formatPhone(clean(source.phone), country)
+  if (!phone) errors.phone = country === 'US' ? 'Enter a 10-digit US phone number.' : 'Enter a phone number with the country code.'
 
   const house = clean(source.house)
   if (!HOUSE.test(house) || !/\d/.test(house)) errors.house = 'Enter the house or apartment number, such as 12 or Apt 4B.'
@@ -109,17 +115,33 @@ export function validateDelivery(input: unknown): { ok: true; delivery: Delivery
   const city = clean(source.city)
   if (city.length < 2 || city.length > 40 || !CITY.test(city)) errors.city = 'Enter the city.'
 
-  const state = clean(source.state).toUpperCase()
-  if (!STATE_NAMES.has(state)) errors.state = 'Choose a state.'
+  const stateInput = clean(source.state)
+  const state = country === 'US' ? stateInput.toUpperCase() : stateInput
+  if (country === 'US') {
+    if (!STATE_NAMES.has(state)) errors.state = 'Choose a state.'
+  } else if (state.length < 2 || state.length > 40) {
+    errors.state = 'Enter a state or province.'
+  }
 
-  const zip = clean(source.zip)
-  if (!/^\d{5}(?:-\d{4})?$/.test(zip)) errors.zip = 'Enter a 5-digit ZIP code.'
+  const zip = country === 'US' ? clean(source.zip) : clean(source.zip).toUpperCase()
+  if (country === 'US') {
+    if (!/^\d{5}(?:-\d{4})?$/.test(zip)) errors.zip = 'Enter a 5-digit ZIP code.'
+  } else if (!/^[A-Z0-9][A-Z0-9 -]{1,11}$/.test(zip)) {
+    errors.zip = 'Enter a postal code.'
+  }
 
   const notes = clean(source.notes)
   if (notes.length > 120) errors.notes = 'Keep the delivery note under 120 characters.'
 
   if (Object.keys(errors).length > 0 || !phone) return { ok: false, errors }
-  return { ok: true, delivery: { fullName, phone, house, street, city, state, zip, notes } }
+  return { ok: true, delivery: { fullName, phone, house, street, city, state, zip, country, notes } }
+}
+
+function formatPhone(value: string, country: string): string | null {
+  if (country === 'US') return formatUsPhone(value)
+  const digits = value.replace(/\D/g, '')
+  if (digits.length < 7 || digits.length > 15) return null
+  return `+${digits}`
 }
 
 const SHIP_KEY = 'ship'
@@ -135,6 +157,7 @@ export function packDeliveryMetadata(delivery: DeliveryDetails): Record<string, 
       c: delivery.city,
       t: delivery.state,
       z: delivery.zip,
+      k: delivery.country,
       o: delivery.notes,
     }),
   }
@@ -163,6 +186,7 @@ function expandPacked(value: unknown): unknown {
     city: row.c,
     state: row.t,
     zip: row.z,
+    country: row.k ?? 'US',
     notes: row.o ?? '',
   }
 }

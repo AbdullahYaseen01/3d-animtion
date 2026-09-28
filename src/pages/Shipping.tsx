@@ -11,12 +11,12 @@ export default function Shipping() {
     <InfoPage
       seo={{
         title: 'Shipping Information',
-        description: `Shipping rates and delivery times for Westora Style orders within the United States. ${standard.priceCents === 0 ? 'Free standard shipping' : 'Standard shipping'} to US addresses.`,
+        description: `Shipping rates and delivery times for Westora Style orders. ${standard.priceCents === 0 ? 'Free standard shipping' : 'Standard shipping'}. Choose your country at checkout.`,
         path: '/shipping',
       }}
       eyebrow="Help"
       title="Shipping"
-      intro={<p>We currently ship to addresses in the United States. Rates and delivery estimates are shown below and again at checkout before you pay.</p>}
+      intro={<p>Choose your country at checkout. Rates and delivery estimates are shown below and again before you pay.</p>}
     >
       <h2 id="rates">Rates and delivery times</h2>
       <div className="table-wrap" tabIndex={0} role="region" aria-labelledby="rates">
@@ -51,7 +51,7 @@ export default function Shipping() {
       </p>
 
       <h2>Where we ship</h2>
-      <p>We ship to all 50 US states. We do not currently ship internationally. Checkout only accepts US shipping addresses.</p>
+      <p>Choose any country at checkout. Include the house or apartment number, street, city, state or province, and postal code so the parcel can be delivered to the right door.</p>
 
       <h2>Sales tax</h2>
       <p>Where sales tax applies, it is calculated at checkout based on your shipping address and shown before you pay.</p>

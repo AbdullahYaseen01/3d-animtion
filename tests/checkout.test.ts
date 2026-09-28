@@ -90,6 +90,15 @@ describe('POST /api/checkout', () => {
     expect(created).toHaveLength(0)
   })
 
+  it('accepts a delivery address outside the United States', async () => {
+    const res = await POST(req({
+      lines: [{ sku: SKU, quantity: 1 }],
+      delivery: { ...delivery, country: 'PK', state: 'Punjab', zip: '54000', phone: '+92 300 1234567' },
+    }))
+    expect(res.status).toBe(200)
+    expect(JSON.parse(created.at(-1)!.metadata.ship)).toMatchObject({ k: 'PK', t: 'Punjab', z: '54000', p: '+923001234567' })
+  })
+
   it('never trusts client prices', async () => {
     await POST(req({ lines: [{ sku: SKU, quantity: 1, priceCents: 1, unit_amount: 1 }], attemptId: 'attempt_12345678', delivery }))
     expect(created[0].amountCents).toBe(8800)
