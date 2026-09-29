@@ -45,7 +45,7 @@ describe('buildSessionParams', () => {
     const cart = priceCart([{ sku: SKU, quantity: 2 }])
     const p = buildSessionParams(cart, { origin: 'https://nova.test', automaticTax: true, hash: 'h', now: 1000 })
     expect(p.mode).toBe('payment')
-    expect(p.line_items?.[0]).toMatchObject({ quantity: 2, price_data: { currency: 'usd', unit_amount: 8800, tax_behavior: 'exclusive' } })
+    expect(p.line_items?.[0]).toMatchObject({ quantity: 2, price_data: { currency: 'usd', unit_amount: 100, tax_behavior: 'exclusive' } })
     expect(p.line_items?.[0].price_data?.product_data?.metadata).toEqual({ sku: SKU, product_id: 'ndure-kay-0003-black' })
     expect(p.shipping_address_collection?.allowed_countries).toEqual(['US'])
     expect(p.automatic_tax).toEqual({ enabled: true })
@@ -78,7 +78,7 @@ describe('POST /api/checkout', () => {
     expect(created[0].successUrl).toBe('https://nova.test/checkout/success?session_id={CHECKOUT_ID}')
     expect(created[0].metadata.source).toBe('nova-web')
     expect(JSON.parse(created[0].metadata.ship)).toMatchObject({ h: '12', s: 'Main Street', t: 'OR', z: '97201', p: '+1 (503) 555-1212' })
-    expect(created[0].amountCents).toBe(8800)
+    expect(created[0].amountCents).toBe(100)
   })
 
   it('refuses checkout until the house, street, city, state, ZIP and phone are present', async () => {
@@ -101,7 +101,7 @@ describe('POST /api/checkout', () => {
 
   it('never trusts client prices', async () => {
     await POST(req({ lines: [{ sku: SKU, quantity: 1, priceCents: 1, unit_amount: 1 }], attemptId: 'attempt_12345678', delivery }))
-    expect(created[0].amountCents).toBe(8800)
+    expect(created[0].amountCents).toBe(100)
   })
 
   it('returns 409 with corrected lines when stock changed', async () => {

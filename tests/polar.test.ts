@@ -42,7 +42,7 @@ describe('Polar order view', () => {
     expect(view.status).toBe('paid')
     expect(view.firstName).toBe('Jordan')
     expect(view.shipTo).toBe('Portland, OR')
-    expect(view.lines[0]).toMatchObject({ quantity: 1, unitCents: 8800, totalCents: 8800 })
+    expect(view.lines[0]).toMatchObject({ quantity: 1, unitCents: 100, totalCents: 100 })
     expect(view.totalCents).toBe(8800)
     expect(JSON.stringify(view)).not.toMatch(/jordan@example|1 Main St|97201/)
     expect(polarCheckoutStatus('confirmed')).toBe('processing')

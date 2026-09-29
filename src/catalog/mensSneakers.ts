@@ -16,7 +16,7 @@ export const mensSneakers: Product[] = [
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
     description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
-    priceCents: 8800,
+    priceCents: 100,
     compareAtPriceCents: 12600,
     colors: [
       {
