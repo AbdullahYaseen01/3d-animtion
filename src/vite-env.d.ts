@@ -3,6 +3,9 @@
 /** Build-time flag: true only for the production deployment (or ALLOW_INDEXING=true). */
 declare const __ALLOW_INDEXING__: boolean
 
+/** Build-time flag: true when building on Vercel, where /_vercel/insights is served. */
+declare const __ON_VERCEL__: boolean
+
 /** Fontsource subpaths resolve to CSS through the package export map. */
 declare module '@fontsource-variable/*'
 

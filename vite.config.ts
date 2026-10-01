@@ -76,6 +76,8 @@ export default defineConfig(({ mode, isSsrBuild }) => {
     plugins: [react(), apiDevPlugin()],
     define: {
       __ALLOW_INDEXING__: JSON.stringify(allowIndexing),
+      // /_vercel/insights only exists on Vercel deployments; elsewhere the script request 404s.
+      __ON_VERCEL__: JSON.stringify(!!process.env.VERCEL),
     },
     build: {
       // The prerender reads the client manifest to add modulepreload hints per page.

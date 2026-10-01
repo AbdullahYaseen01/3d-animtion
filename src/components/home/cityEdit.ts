@@ -2,9 +2,20 @@
  * Homepage editorial opening. Copy, image paths, and destinations live here so they can be swapped
  * without touching the layout. Dimensions and crops follow Westora_Hero_Assets/asset-map.json.
  */
+export const HERO_SIZES = '(min-width: 75rem) 42vw, (min-width: 48rem) 56vw, 100vw'
+
+/** Widths written by scripts/build-editorial-images.mjs; only those narrower than the original exist. */
+const EDITORIAL_WIDTHS = [480, 768, 1080, 1440]
+
+export function editorialSrcSet(src: string, width: number, format: 'avif' | 'webp'): string {
+  const stem = src.replace(/\.webp$/, '')
+  const sizes = EDITORIAL_WIDTHS.filter((w) => w < width).map((w) => `${stem}-${w}.${format} ${w}w`)
+  return (format === 'webp' ? [...sizes, `${src} ${width}w`] : sizes).join(', ')
+}
+
 export const editorialOpening = {
   hero: {
-    eyebrow: 'The city edit',
+    eyebrow: 'Sneakers, coats, handbags & watches',
     title: ['Make it', 'your own.'],
     lede: 'Everyday pieces. A point of view.',
     cta: { label: 'Discover the edit', href: '/shop' },

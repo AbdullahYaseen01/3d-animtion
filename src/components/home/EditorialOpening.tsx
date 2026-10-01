@@ -1,7 +1,45 @@
 import { Link } from 'react-router'
 import { Icon } from '../ui/Icon'
-import { editorialOpening as edit } from './cityEdit'
+import { editorialOpening as edit, editorialSrcSet, HERO_SIZES } from './cityEdit'
 import './EditorialOpening.css'
+
+function EditorialImage({
+  src,
+  alt,
+  width,
+  height,
+  sizes,
+  priority = false,
+  lazy = false,
+  style,
+}: {
+  src: string
+  alt: string
+  width: number
+  height: number
+  sizes: string
+  priority?: boolean
+  lazy?: boolean
+  style?: React.CSSProperties
+}) {
+  return (
+    <picture>
+      <source type="image/avif" srcSet={editorialSrcSet(src, width, 'avif')} sizes={sizes} />
+      <source type="image/webp" srcSet={editorialSrcSet(src, width, 'webp')} sizes={sizes} />
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        sizes={sizes}
+        fetchPriority={priority ? 'high' : undefined}
+        loading={lazy ? 'lazy' : undefined}
+        decoding={priority ? 'sync' : 'async'}
+        style={style}
+      />
+    </picture>
+  )
+}
 
 /** Editorial homepage opening: burgundy hero, statement, and two collection panels. */
 export function EditorialOpening() {
@@ -9,8 +47,8 @@ export function EditorialOpening() {
     <>
       <section className="city-hero" aria-labelledby="hero-title">
         <div className="city-hero__copy">
-          <p className="city-hero__eyebrow">{edit.hero.eyebrow}</p>
           <h1 id="hero-title" className="city-hero__title">
+            <span className="city-hero__eyebrow">{edit.hero.eyebrow}</span>
             {edit.hero.title[0]}
             <br />
             {edit.hero.title[1]}
@@ -23,27 +61,26 @@ export function EditorialOpening() {
         </div>
 
         <div className="city-hero__model">
-          <img
+          <EditorialImage
             src={edit.model.src}
             alt={edit.model.alt}
             width={edit.model.width}
             height={edit.model.height}
-            sizes="(min-width: 75rem) 42vw, (min-width: 48rem) 56vw, 100vw"
-            fetchPriority="high"
-            decoding="async"
+            sizes={HERO_SIZES}
+            priority
             style={{ '--model-pos': edit.model.position, '--model-pos-mobile': edit.model.positionMobile } as React.CSSProperties}
           />
         </div>
 
         <article className="city-hero__aside">
           <div className="city-hero__aside-photo">
-            <img
+            <EditorialImage
               src={edit.accessories.src}
               alt={edit.accessories.alt}
               width={edit.accessories.width}
               height={edit.accessories.height}
               sizes="(min-width: 75rem) 24vw, (min-width: 48rem) 46vw, 100vw"
-              decoding="async"
+              lazy
               style={{ objectPosition: edit.accessories.position }}
             />
           </div>
@@ -68,14 +105,13 @@ export function EditorialOpening() {
         {edit.panels.map((panel, index) => (
           <article key={panel.title} className="city-panels__item">
             <div className="city-panels__media">
-              <img
+              <EditorialImage
                 src={panel.src}
                 alt={panel.alt}
                 width={panel.width}
                 height={panel.height}
                 sizes={index === 0 ? '(min-width: 48rem) 65vw, 100vw' : '(min-width: 48rem) 35vw, 100vw'}
-                loading="lazy"
-                decoding="async"
+                lazy
                 style={{ objectPosition: panel.position }}
               />
             </div>

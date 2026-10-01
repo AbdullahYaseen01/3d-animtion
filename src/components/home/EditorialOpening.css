@@ -26,8 +26,11 @@
 }
 
 .city-hero__eyebrow {
+  display: block;
   margin: 0 0 1.15rem;
+  font-family: var(--font-body);
   font-size: 0.75rem;
+  line-height: 1.4;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -82,6 +85,9 @@
   background: #e7e1d8;
 }
 
+.city-hero__model picture,
+.city-hero__aside-photo picture,
+.city-panels__media picture,
 .city-hero__model img,
 .city-hero__aside-photo img,
 .city-panels__media img {

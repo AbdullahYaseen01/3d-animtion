@@ -53,7 +53,7 @@ let vercelLoaded = false
 
 /** Page views for Vercel Web Analytics. Skipped for Global Privacy Control, Do Not Track, and the owner desk. */
 export function initVercelAnalytics(): void {
-  if (vercelLoaded || !allowed()) return
+  if (vercelLoaded || !__ON_VERCEL__ || !allowed()) return
   vercelLoaded = true
   void import('@vercel/analytics').then(({ inject }) => {
     inject({

@@ -22,6 +22,7 @@ const Guide = pages.guide.page.Component
 const Guides = pages.guides.page.Component
 const Home = pages.home.page.Component
 const NotFound = pages.notFound.page.Component
+const Press = pages.press.page.Component
 const Privacy = pages.privacy.page.Component
 const Product = pages.product.page.Component
 const Returns = pages.returns.page.Component
@@ -77,9 +78,14 @@ function Layout() {
           </Suspense>
         </ErrorBoundary>
       </main>
-      <Footer />
-      <MiniCart />
-      <PurchaseToast />
+      {/* Separate boundaries hydrate after the page, in interruptible slices, instead of in the first blocking task. */}
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
+      <Suspense fallback={null}>
+        <MiniCart />
+        <PurchaseToast />
+      </Suspense>
     </>
   )
 }
@@ -101,6 +107,7 @@ export function App() {
               <Route path="cart" element={<Cart />} />
               <Route path="checkout/success" element={<CheckoutSuccess />} />
               <Route path="about" element={<About />} />
+              <Route path="press" element={<Press />} />
               <Route path="fit-guide" element={<FitGuide />} />
               <Route path="shipping" element={<Shipping />} />
               <Route path="returns" element={<Returns />} />

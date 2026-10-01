@@ -5,8 +5,9 @@ import { activeCategories, getProduct } from '../catalog'
 import { store } from '../config/store'
 import { productItem, track } from '../lib/analytics'
 import { organizationLd, Seo, websiteLd } from '../lib/seo'
+import { pageKeywords } from '../lib/seoKeywords'
 import { EditorialOpening } from '../components/home/EditorialOpening'
-import { editorialOpening } from '../components/home/cityEdit'
+import { editorialOpening, editorialSrcSet, HERO_SIZES } from '../components/home/cityEdit'
 import { ProductCard } from '../components/product/ProductCard'
 import { QuickShop, type QuickShopTarget } from '../components/product/QuickShop'
 import { Icon } from '../components/ui/Icon'
@@ -29,17 +30,16 @@ export default function Home() {
   return (
     <>
       <Seo
-        title={`${store.name} | Shoes, Bags, Jewelry & Watches`}
-        rawTitle
-        description="Shop shoes, handbags, wallets, women's jewelry, and watches. US shipping and 30-day returns."
+        title={pageKeywords.home.title}
+        description={pageKeywords.home.description}
         path="/"
         image="/og/home.jpg"
         imageAlt={campaignHero.alt}
         jsonLd={[organizationLd(), websiteLd()]}
         preloadImage={{
-          type: 'image/webp',
-          srcSet: editorialOpening.model.src,
-          sizes: '(min-width: 75rem) 42vw, (min-width: 48rem) 56vw, 100vw',
+          type: 'image/avif',
+          srcSet: editorialSrcSet(editorialOpening.model.src, editorialOpening.model.width, 'avif'),
+          sizes: HERO_SIZES,
         }}
       />
 
