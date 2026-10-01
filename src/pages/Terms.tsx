@@ -1,13 +1,14 @@
 import { Link } from 'react-router'
 import { store } from '../config/store'
 import { DraftNotice, InfoPage } from '../components/layout/InfoPage'
+import { pageKeywords } from '../lib/seoKeywords'
 
 export default function Terms() {
   return (
     <InfoPage
-      seo={{ title: 'Terms of Service', description: 'The terms that apply when you use the Westora Style website and buy from us, covering orders, prices and payment, shipping, returns and product information.', path: '/terms' }}
+      seo={{ title: pageKeywords.terms.title, description: pageKeywords.terms.description, path: '/terms' }}
       eyebrow="Legal"
-      title="Terms of service"
+      title={pageKeywords.terms.h1}
       intro={<p>Last updated {store.legal.updated}</p>}
     >
       <DraftNotice />

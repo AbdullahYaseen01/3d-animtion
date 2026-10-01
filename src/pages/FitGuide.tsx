@@ -1,21 +1,21 @@
 import { Link } from 'react-router'
-import { allProducts } from '../catalog'
+import { productsInCategory } from '../catalog'
 import { fmt, SIZE_CHART } from '../catalog/sizing'
 import { InfoPage } from '../components/layout/InfoPage'
+import { pageKeywords } from '../lib/seoKeywords'
+
+const kw = pageKeywords.fitGuide
 
 export default function FitGuide() {
+  const shoes = productsInCategory('shoes')
   return (
     <InfoPage
-      seo={{
-        title: 'Size & Fit Guide',
-        description: 'US men’s and women’s shoe size chart with UK, EU and foot length in centimeters, plus width guidance and fit notes for every Westora Style style.',
-        path: '/fit-guide',
-      }}
+      seo={{ title: kw.title, description: kw.description, path: '/fit-guide' }}
       eyebrow="Size & fit"
-      title="Find your size"
-      intro={<p>All Westora Style shoes are sized in US men’s sizes. Use the chart to convert, measure your feet if you are unsure, and check the fit note for the style you like.</p>}
+      title={kw.h1}
+      intro={<p>Our sneakers are sized in US men’s sizes. Use the chart to convert from US women’s, UK, or EU sizes, measure your feet if you are unsure, and check the fit note for the style you like.</p>}
     >
-      <h2 id="chart">Size chart</h2>
+      <h2 id="chart">US, UK, and EU shoe size chart</h2>
       <p>Choose the size whose foot length is equal to or just above your measurement. Women: pick the US women’s size you normally wear.</p>
       <div className="table-wrap" tabIndex={0} role="region" aria-labelledby="chart">
         <table className="data-table">
@@ -43,7 +43,7 @@ export default function FitGuide() {
         </table>
       </div>
 
-      <h2>How to measure</h2>
+      <h2>How to measure your feet</h2>
       <ol>
         <li>Measure in the evening, wearing the socks you plan to wear with the shoes.</li>
         <li>Stand on a sheet of paper with your heel against a wall and mark the tip of your longest toe.</li>
@@ -53,40 +53,44 @@ export default function FitGuide() {
         <Link to="/guides/how-to-measure-your-feet">Read the full measuring guide</Link>.
       </p>
 
-      <h2>Width</h2>
+      <h2>Shoe width</h2>
       <p>
-        Standard width is D. Some styles also come in Wide (2E), which adds room across the ball of the foot and toe box. If standard shoes usually press on the sides of your
-        forefoot, choose Wide where it is offered.
+        Every sneaker we currently sell comes in standard width (D). We do not stock wide (2E) sizes yet. If standard shoes usually press on the sides of your forefoot, knit and
+        slip-on styles give a little more room. Our <Link to="/guides/standard-vs-wide-shoes">width guide</Link> shows how to check your width at home.
       </p>
 
-      <h2>Fit notes by style</h2>
-      <div className="table-wrap" tabIndex={0} role="region" aria-label="Fit notes by style">
+      <h2 id="fit-notes">Fit notes by sneaker</h2>
+      <div className="table-wrap" tabIndex={0} role="region" aria-labelledby="fit-notes">
         <table className="data-table">
           <thead>
             <tr>
               <th scope="col">Style</th>
               <th scope="col">Fit</th>
-              <th scope="col">Widths</th>
             </tr>
           </thead>
           <tbody>
-            {allProducts().map((p) => (
+            {shoes.map((p) => (
               <tr key={p.id}>
                 <th scope="row">
                   <Link to={`/products/${p.slug}`}>{p.name}</Link>
                 </th>
                 <td style={{ whiteSpace: 'normal', minWidth: '14rem' }}>{p.fit.summary}</td>
-                <td>{p.widths.map((w) => w.code).join(', ')}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      <h2>Between sizes?</h2>
-      <p>For running and trail shoes, go up half a size to leave room for your feet to swell on longer runs. For leather styles, the smaller size is often better because leather softens with wear.</p>
+      <h2>Between shoe sizes?</h2>
+      <p>Choose the larger size. Feet swell during the day and on long walks, and a little room at the toe is more comfortable than a snug fit.</p>
+
+      <h2>Jacket, hoodie, and coat sizes</h2>
       <p>
-        Still unsure? Unworn pairs can be returned within our return window. See the <Link to="/returns">return policy</Link>.
+        Outerwear uses letter sizes, usually S to XL. Each product page lists the fit, such as regular or tailored, and on most styles the height and size the model wears. The
+        easiest check is to measure a jacket you already own and compare. See our <Link to="/guides/mens-jacket-and-coat-size-guide">men’s jacket and coat size guide</Link>.
+      </p>
+      <p>
+        Still unsure? Unworn items can be returned within our return window. See the <Link to="/returns">return policy</Link>.
       </p>
     </InfoPage>
   )

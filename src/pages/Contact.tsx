@@ -5,6 +5,7 @@ import { store } from '../config/store'
 import { InfoPage } from '../components/layout/InfoPage'
 import { Icon } from '../components/ui/Icon'
 import { track } from '../lib/analytics'
+import { pageKeywords } from '../lib/seoKeywords'
 import '../components/forms/Forms.css'
 
 type Fields = { name: string; email: string; topic: string; order: string; message: string }
@@ -79,7 +80,7 @@ export default function Contact() {
 
   return (
     <InfoPage
-      seo={{ title: 'Contact Us', description: 'Questions about sizing, an order or returns? Contact the Westora Style team by email or with our contact form.', path: '/contact' }}
+      seo={{ title: pageKeywords.contact.title, description: pageKeywords.contact.description, path: '/contact' }}
       eyebrow="Help"
       title="Contact us"
       intro={<p>Questions about sizing, an order or a return? Send us a message and we will reply by email.</p>}

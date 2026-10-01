@@ -1,18 +1,19 @@
 import { Link } from 'react-router'
 import { store } from '../config/store'
 import { InfoPage } from '../components/layout/InfoPage'
+import { pageKeywords } from '../lib/seoKeywords'
 
 export default function Returns() {
   const { windowDays, condition } = store.returns
   return (
     <InfoPage
       seo={{
-        title: 'Returns Policy',
-        description: `Return eligible Westora Style items within ${windowDays} days of delivery. Shoes must be unworn. How to start a return and when to expect your refund.`,
+        title: pageKeywords.returns.title,
+        description: pageKeywords.returns.description,
         path: '/returns',
       }}
       eyebrow="Help"
-      title="Returns"
+      title={pageKeywords.returns.h1}
       intro={<p>If an item is not right, you can return it within {windowDays} days of delivery for a refund to your original payment method.</p>}
     >
       <h2>What can be returned</h2>

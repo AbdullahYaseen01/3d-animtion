@@ -1,17 +1,19 @@
 import { useRef, useState } from 'react'
 import type { ColorOption, Product } from '../../catalog'
+import { GALLERY_SIZES } from '../../lib/images'
+import { productAlt } from '../../lib/productText'
 import { Dialog } from '../ui/Dialog'
 import { Icon } from '../ui/Icon'
 import { ProductImage, imageBg } from '../ui/ProductImage'
 import './Gallery.css'
 
-const VIEW_NAMES = ['side view', 'three-quarter front view']
+const viewName = (i: number) => (i === 0 ? 'main view' : `view ${i + 1}`)
 
 export function Gallery({ product, color }: { product: Product; color: ColorOption }) {
   const [zoomIndex, setZoomIndex] = useState<number | null>(null)
   const [active, setActive] = useState(0)
   const track = useRef<HTMLUListElement>(null)
-  const alt = (i: number) => `${product.name} in ${color.name}, ${VIEW_NAMES[i] ?? `view ${i + 1}`}`
+  const alt = (i: number) => productAlt(product, color, viewName(i))
 
   const goTo = (i: number) => {
     const el = track.current?.children[i] as HTMLElement | undefined
@@ -33,7 +35,7 @@ export function Gallery({ product, color }: { product: Product; color: ColorOpti
         {color.images.map((img, i) => (
           <li key={img} className="gallery__slide" style={{ background: imageBg(img) }}>
             <button type="button" className="gallery__zoom-btn" onClick={() => setZoomIndex(i)} aria-label={`Zoom: ${alt(i)}`}>
-              <ProductImage image={img} alt={alt(i)} sizes="(min-width: 64rem) 58vw, 100vw" priority={i === 0} />
+              <ProductImage image={img} alt={alt(i)} sizes={GALLERY_SIZES} priority={i === 0} />
               <span className="gallery__zoom-hint" aria-hidden="true">
                 <Icon name="zoom" size={18} />
               </span>
@@ -63,7 +65,7 @@ export function Gallery({ product, color }: { product: Product; color: ColorOpti
               <div className="zoom-dialog__nav">
                 {color.images.map((img, i) => (
                   <button key={img} type="button" className={`chip${i === zoomIndex ? ' chip--active' : ''}`} onClick={() => setZoomIndex(i)} aria-pressed={i === zoomIndex}>
-                    {VIEW_NAMES[i] ?? `View ${i + 1}`}
+                    {i === 0 ? 'Main view' : `View ${i + 1}`}
                   </button>
                 ))}
               </div>

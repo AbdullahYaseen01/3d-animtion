@@ -47,7 +47,7 @@ export const store = {
   },
 
   /** Sitemap lastmod for shop, collection, product and help pages. Bump when their content changes. */
-  contentUpdated: '2026-09-26',
+  contentUpdated: '2026-10-01',
 } as const
 
 export type StoreConfig = typeof store

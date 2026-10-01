@@ -67,6 +67,11 @@ function get(url, { maxBytes = 4_000_000, timeoutMs = 30000 } = {}) {
 }
 
 async function pkrPerUsd() {
+  const existing = path.join(root, 'src', 'catalog', 'zedOuterwear.ts')
+  if (!process.argv.includes('--fresh-rate') && fs.existsSync(existing)) {
+    const pinned = Number(fs.readFileSync(existing, 'utf8').match(/converted at ([\d.]+) PKR per USD/)?.[1])
+    if (pinned > 50 && pinned < 1000) return pinned
+  }
   try {
     const data = JSON.parse((await get('https://open.er-api.com/v6/latest/USD', { maxBytes: 20_000 })).toString())
     const rate = Number(data?.rates?.PKR)
@@ -200,6 +205,102 @@ function noun(category) {
   return 'jacket'
 }
 
+const FIBERS = /^(cotton|polyester|wool|viscose|nylon|polyamide|elastane|spandex|acrylic|linen|rayon|lycra|modal|cashmere)$/i
+const TYPES = [
+  [/double breasted wool over ?coat/i, 'double-breasted wool overcoat'],
+  [/over ?coat/i, 'overcoat'],
+  [/pea ?coat/i, 'pea coat'],
+  [/cropped trench/i, 'cropped trench coat'],
+  [/trench/i, 'trench coat'],
+  [/parka/i, 'hooded parka'],
+  [/funnel neck coat/i, 'funnel-neck coat'],
+  [/bomber/i, 'bomber jacket'],
+  [/denim jacket/i, 'denim jacket'],
+  [/trucker/i, 'trucker jacket'],
+  [/racer/i, 'racer jacket'],
+  [/biker/i, 'biker jacket'],
+  [/field jacket/i, 'field jacket'],
+  [/safari/i, 'belted safari jacket'],
+  [/harrington/i, 'Harrington jacket'],
+  [/puffer/i, 'puffer jacket'],
+  [/workwear/i, 'workwear jacket'],
+  [/shacket/i, 'shirt-jacket (shacket)'],
+  [/blazer/i, 'blazer'],
+  [/caban/i, 'caban jacket'],
+  [/raglan/i, 'raglan-sleeve jacket'],
+  [/henley hoodie/i, 'pullover henley hoodie'],
+  [/long line hoodie/i, 'long-line hoodie'],
+  [/cropped .*hoodie/i, 'cropped hoodie'],
+  [/essential hoodie/i, 'pullover hoodie'],
+]
+const DETAILS = [
+  'lightly padded shoulders',
+  'storm tab',
+  'single vent',
+  'ribbed cuffs',
+  'spread collar',
+  'funnel neck',
+  'drawstring hood',
+  'kangaroo pocket',
+  'welted pockets',
+  'inside pockets',
+  'belted waist',
+  'detachable hood',
+  'contrast collar',
+  'shoulder epaulettes',
+  'buttoned cuffs',
+]
+
+/** Facts only, taken from ZED's product copy. Their marketing prose is not reused. */
+function factsFrom(html, name, category) {
+  const text = strip(html)
+  const lower = text.toLowerCase()
+  const facts = {}
+  const parts = [...text.matchAll(/(\d{1,3})\s?%\s?([A-Za-z]+)/g)].filter((m) => FIBERS.test(m[2]))
+  const total = parts.reduce((sum, m) => sum + Number(m[1]), 0)
+  if (parts.length && total > 0 && total <= 100) facts.composition = parts.map((m) => `${m[1]}% ${m[2].toLowerCase()}`).join(', ')
+  const fabric = text.match(/\b(faux leather|suede|canvas|twill|denim|fleece|corduroy|polyamide|nylon|wool|cotton|woven)\b/i)
+  if (fabric) facts.fabric = fabric[1].toLowerCase()
+  if (/tailored closer to the chest and waist/i.test(text)) facts.fit = 'Tailored fit, closer to the chest and waist with slimmer arms'
+  else {
+    const fit = text.match(/\b(regular|slim|relaxed|oversized|boxy|cropped)\s+fit\b/i)
+    if (fit) facts.fit = `${fit[1][0].toUpperCase()}${fit[1].slice(1).toLowerCase()} fit`
+  }
+  if (/double[- ]breasted/i.test(text) || /double breasted/i.test(name)) facts.closure = 'double-breasted button front'
+  else if (/popper/i.test(text) || /popper/i.test(name)) facts.closure = 'snap (popper) front'
+  else if (/zip(?:per)?[- ]?(?:front|fastening|through|up)|zip front/i.test(text) || /zip/i.test(name)) facts.closure = 'zip front'
+  else if (/button(?:ed)?[- ](?:down )?front|front buttons/i.test(text)) facts.closure = 'button front'
+  else if (category === 'hoodies' && /pullover|henley|essential/i.test(name)) facts.closure = 'pullover'
+  const pockets = text.match(/\b(two|three|four|2|3|4)\s+(side|front|chest|flap|patch|zip)?\s?pockets\b/i)
+  if (pockets) facts.pockets = pockets[0].replace(/\s+/g, ' ').toLowerCase()
+  facts.details = DETAILS.filter((d) => lower.includes(d) && !(facts.pockets && d.includes('pocket') && facts.pockets.includes(d.split(' ')[0])))
+  const care = text.match(/\b(dry clean(?: only)?|machine wash(?: cold| warm| at \d+\s?°?c)?|hand wash(?: cold)?)\b/i)
+  if (care) facts.care = care[1].toLowerCase()
+  const model = text.match(/model is (\d['’]\s?\d{1,2}["”]?)\s*(?:tall\s*)?and is (?:a )?wearing (?:a |size )?(small|medium|large|extra large|x-?large|xl|s|m|l)\b/i)
+  if (model) facts.model = { height: model[1].replace('’', "'").replace(/\s/g, ''), size: model[2].toLowerCase() }
+  facts.type = TYPES.find(([re]) => re.test(name))?.[1] ?? noun(category)
+  return facts
+}
+
+function sizeRange(sizes, labels) {
+  const names = sizes.map((size) => labels[size])
+  return names.length > 1 ? `${names[0]} to ${names[names.length - 1]}` : names[0]
+}
+
+function describe(name, color, category, facts, sizes, labels) {
+  const lines = [`The ${name} is a men's ${facts.type} from ZED in ${color.toLowerCase()}.`]
+  if (facts.composition) lines.push(`ZED lists the fabric as ${facts.composition}.`)
+  else if (facts.fabric && !name.toLowerCase().includes(facts.fabric)) lines.push(`It is cut from ${facts.fabric}.`)
+  if (facts.fit) lines.push(`${facts.fit}.`)
+  const build = [facts.closure, facts.pockets, ...facts.details].filter(Boolean)
+  if (build.length) lines.push(`Details: ${build.slice(0, 4).join(', ')}.`)
+  lines.push(`Offered in sizes ${sizeRange(sizes, labels)}.`)
+  if (facts.model) lines.push(`The model is ${facts.model.height} and wears a ${facts.model.size}.`)
+  if (facts.care) lines.push(`Care: ${facts.care}.`)
+  if (category === 'hoodies') lines.push('Wear it on its own or under a jacket.')
+  return lines.join(' ')
+}
+
 async function loadProducts() {
   const all = []
   for (let page = 1; page <= 12; page++) {
@@ -279,11 +380,19 @@ function build(item, rate) {
     if (!size) continue
     if (!variant.available) stock[`${id}:${slug}:${size.num}:R`] = 0
   }
-  const fabric = specs.find((spec) => /fabric|material|composition/i.test(spec.label))?.value
-  const kind = noun(category)
-  const description = [`A ${color.toLowerCase()} ${kind}.`, fabric ? `Fabric: ${fabric.replace(/\.$/, '')}.` : '', 'Sizes are the ones printed on this style.']
-    .filter(Boolean)
-    .join(' ')
+  const name = tidyName(product.title)
+  const facts = factsFrom(product.body_html, name, category)
+  const listedFabric = specs.find((spec) => /fabric|material|composition/i.test(spec.label))?.value
+  const fabric = facts.composition ?? listedFabric ?? (facts.fabric ? facts.fabric[0].toUpperCase() + facts.fabric.slice(1) : undefined)
+  const description = describe(name, color, category, facts, sizes, sizeLabels)
+  const factSpecs = [
+    { label: 'Type', value: facts.type[0].toUpperCase() + facts.type.slice(1) },
+    fabric ? { label: 'Fabric', value: fabric } : null,
+    facts.fit ? { label: 'Fit', value: facts.fit } : null,
+    facts.closure ? { label: 'Closure', value: facts.closure[0].toUpperCase() + facts.closure.slice(1) } : null,
+    facts.care ? { label: 'Care', value: facts.care[0].toUpperCase() + facts.care.slice(1) } : null,
+    facts.model ? { label: 'Model', value: `${facts.model.height}, wearing ${facts.model.size}` } : null,
+  ].filter(Boolean)
   const imageUrls = (product.images || [])
     .map((image) => image.src)
     .filter((src) => String(src).startsWith('https://'))
@@ -293,8 +402,9 @@ function build(item, rate) {
   return {
     id,
     slug: id,
-    name: tidyName(product.title),
+    name,
     category,
+    facts,
     tagline: category === 'hoodies' ? 'Hooded sweatshirt' : category === 'coats' ? 'Outer coat' : 'Outer jacket',
     description,
     priceCents,
@@ -306,7 +416,7 @@ function build(item, rate) {
     sizes,
     sizeLabels,
     stock,
-    specs: [{ label: 'Brand', value: 'ZED' }, { label: 'Color', value: color }, ...specs],
+    specs: [{ label: 'Brand', value: 'ZED' }, { label: 'Color', value: color }, ...factSpecs, ...specs.filter((s) => !factSpecs.some((f) => f.label === s.label))],
     fabric,
     imageUrls,
     sourcePkr: price,
@@ -320,7 +430,14 @@ function tsString(value) {
 function render(products, rate, counts) {
   const body = products
     .map((product) => {
-      const highlights = [product.tagline, product.color, product.fabric].filter(Boolean).slice(0, 3)
+      const facts = product.facts
+      const cap = (s) => s[0].toUpperCase() + s.slice(1)
+      const highlights = [cap(facts.type), product.fabric, facts.fit ?? product.color].filter(Boolean).slice(0, 3)
+      const care = facts.care
+        ? `${cap(facts.care)}, as listed by ZED. Check the garment label before cleaning.`
+        : 'Brush off dry dirt and spot-clean with a damp cloth. Hang dry away from direct heat. Do not machine wash unless the care label says you can.'
+      const fitSummary = `${facts.fit ? `${facts.fit}. ` : ''}Offered in ${product.sizes.map((size) => product.sizeLabels[size]).join(', ')}.`
+      const fitAdvice = `Order the size you usually wear in this kind of layer.${facts.model ? ` The model is ${facts.model.height} and wears a ${facts.model.size}.` : ''} These are not shoe sizes.`
       const stockLines = Object.entries(product.stock)
         .map(([sku, qty]) => `      ${tsString(sku)}: ${qty},`)
         .join('\n')
@@ -360,10 +477,10 @@ ${product.specs.map((spec) => `      { label: ${tsString(spec.label)}, value: ${
       { group: 'Type', value: ${tsString(product.tagline)} },
     ],
     materials: ${tsString(product.fabric || 'Fabric is listed on the garment label.')},
-    care: 'Brush off dry dirt and spot-clean with a damp cloth. Hang dry away from direct heat. Do not machine wash unless the care label says you can.',
+    care: ${tsString(care)},
     fit: {
-      summary: ${tsString('Offered in ' + product.sizes.map((size) => product.sizeLabels[size]).join(', ') + '.')},
-      advice: 'Order the size you usually wear in this kind of layer. These are not shoe sizes.',
+      summary: ${tsString(fitSummary)},
+      advice: ${tsString(fitAdvice)},
     },
     bestFor: ${tsString(product.category === 'hoodies' ? ['Everyday wear', 'Cool weather'] : ['Cool weather', 'Layering'])},
     defaultStock: 8,

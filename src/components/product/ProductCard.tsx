@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router'
 import { getCategory, isColorAvailable, isProductAvailable, type Product } from '../../catalog'
 import { cardScarcityLabel } from '../../catalog/urgency'
+import { CARD_SIZES } from '../../lib/images'
+import { productAlt } from '../../lib/productText'
 import { PurchaseNote } from './PurchaseNote'
 import { useWishlist } from '../../state/WishlistProvider'
 import { Icon } from '../ui/Icon'
@@ -32,16 +34,10 @@ export function ProductCard({ product, onQuickShop, priority = false, headingLev
     <article className="product-card">
       <div className="product-card__media" style={{ background: imageBg(primary) }}>
         <Link to={href} className="product-card__img-link" tabIndex={-1} aria-hidden="true">
-          <ProductImage
-            image={primary}
-            alt=""
-            sizes="(min-width: 90rem) 22rem, (min-width: 64rem) 30vw, (min-width: 40rem) 45vw, 92vw"
-            priority={priority}
-            className="product-card__img"
-          />
+          <ProductImage image={primary} alt={productAlt(product, color)} sizes={CARD_SIZES} priority={priority} className="product-card__img" />
           {secondary && (
             <span className="product-card__alt" style={{ background: imageBg(secondary) }}>
-              <ProductImage image={secondary} alt="" sizes="(min-width: 64rem) 30vw, 45vw" className="product-card__img" />
+              <ProductImage image={secondary} alt={productAlt(product, color, 'alternate view')} sizes="(min-width: 64rem) 30vw, 45vw" className="product-card__img" />
             </span>
           )}
         </Link>

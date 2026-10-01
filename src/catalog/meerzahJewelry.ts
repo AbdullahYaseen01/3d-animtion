@@ -164,7 +164,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-925-chandi-2-5-grams-18k-gold-plated-neckla",
     slug: "mz-925-chandi-2-5-grams-18k-gold-plated-neckla",
-    name: "925 Chandi 2.5 Grams 18K Gold Plated",
+    name: "925 Chandi 2.5 Grams 18K Gold Plated Necklace Set",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Necklace set",
@@ -338,7 +338,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-gorgeous-unique-design-gold-plated-pearl-st",
     slug: "mz-gorgeous-unique-design-gold-plated-pearl-st",
-    name: "Gorgeous Unique Design Gold Plated Pearl",
+    name: "Gorgeous Unique Design Gold Plated Pearl Necklace Set",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Necklace set",
@@ -506,7 +506,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-dazzling-unique-design-24k-rp-gold-plated-4",
     slug: "mz-dazzling-unique-design-24k-rp-gold-plated-4",
-    name: "Dazzling Unique Design 24K RP Gold Plated 4.5 Gram",
+    name: "Dazzling Unique Design 24K RP Gold Plated 4.5 Gram Ring",
     category: 'womens-jewelry',
     variant: "apparel",
     tagline: "Ring",
@@ -608,7 +608,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-luminous-design-24k-rp-gold-plated-35-gram",
     slug: "mz-luminous-design-24k-rp-gold-plated-35-gram",
-    name: "Luminous Design 24K RP Gold Plated 35 Gram 2pc",
+    name: "Luminous Design 24K RP Gold Plated 35 Gram 2pc Bangle",
     category: 'womens-jewelry',
     variant: "apparel",
     tagline: "Bangle",
@@ -659,7 +659,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-fancy-design-gold-plated-real-stones-kundan",
     slug: "mz-fancy-design-gold-plated-real-stones-kundan",
-    name: "Fancy Design Gold Plated Real Stones Kundan",
+    name: "Fancy Design Gold Plated Real Stones Kundan Necklace Set",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Necklace set",
@@ -722,7 +722,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-flower-design-crystal-stones-gold-plated-ne",
     slug: "mz-flower-design-crystal-stones-gold-plated-ne",
-    name: "Flower Design Crystal Stones Gold Plated",
+    name: "Flower Design Crystal Stones Gold Plated Necklace Set",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Necklace set",
@@ -792,7 +792,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-unique-flower-design-gold-plated-real-stone",
     slug: "mz-unique-flower-design-gold-plated-real-stone",
-    name: "Unique Flower Design Gold Plated Real Stones",
+    name: "Unique Flower Design Gold Plated Real Stones Necklace Set",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Necklace set",
@@ -880,7 +880,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-24k-gold-plated-real-zircon-stones-jarao-ch",
     slug: "mz-24k-gold-plated-real-zircon-stones-jarao-ch",
-    name: "24K Gold Plated Real Zircon Stones Jarao",
+    name: "24K Gold Plated Real Zircon Stones Jarao Necklace Set",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Necklace set",
@@ -1401,7 +1401,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-stylish-unique-design-22k-rp-3-450-gram-gol",
     slug: "mz-stylish-unique-design-22k-rp-3-450-gram-gol",
-    name: "Stylish Unique Design 22K RP 3.450 Gram Gold Plated",
+    name: "Stylish Unique Design 22K RP 3.450 Gram Gold Plated Ring",
     category: 'womens-jewelry',
     variant: "apparel",
     tagline: "Ring",
@@ -1454,7 +1454,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-sparkling-design-gold-plated-crystal-stones",
     slug: "mz-sparkling-design-gold-plated-crystal-stones",
-    name: "Sparkling Design Gold Plated Crystal Stones",
+    name: "Sparkling Design Gold Plated Crystal Stones Necklace Set",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Necklace set",
@@ -1537,7 +1537,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-beautiful-unique-design-gold-plated-kundan",
     slug: "mz-beautiful-unique-design-gold-plated-kundan",
-    name: "Beautiful Unique Design Gold Plated Kundan",
+    name: "Beautiful Unique Design Gold Plated Kundan Earrings",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Earrings",
@@ -1883,7 +1883,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-glamorous-design-gold-plated-jarao-stones-n",
     slug: "mz-glamorous-design-gold-plated-jarao-stones-n",
-    name: "Glamorous Design Gold Plated Jarao Stones",
+    name: "Glamorous Design Gold Plated Jarao Stones Necklace Set",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Necklace set",
@@ -2007,7 +2007,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-luminous-design-22k-rp-3-4-gram-gold-plated",
     slug: "mz-luminous-design-22k-rp-3-4-gram-gold-plated",
-    name: "Luminous Design 22K RP 3.4 Gram Gold Plated",
+    name: "Luminous Design 22K RP 3.4 Gram Gold Plated Earrings",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Earrings",
@@ -2278,7 +2278,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-luminous-design-gold-plated-crystal-stones",
     slug: "mz-luminous-design-gold-plated-crystal-stones",
-    name: "Luminous Design Gold Plated Crystal Stones Tulip",
+    name: "Luminous Design Gold Plated Crystal Stones Tulip Bracelet",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Bracelet",
@@ -2619,7 +2619,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-beautiful-heart-design-gold-plated-crystal",
     slug: "mz-beautiful-heart-design-gold-plated-crystal",
-    name: "Beautiful Heart Design Gold Plated Crystal",
+    name: "Beautiful Heart Design Gold Plated Crystal Bracelet",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Bracelet",
@@ -2815,7 +2815,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-luminous-unique-heart-design-crystal-stones",
     slug: "mz-luminous-unique-heart-design-crystal-stones",
-    name: "Luminous Unique Heart Design Crystal Stones",
+    name: "Luminous Unique Heart Design Crystal Stones Pendant",
     category: 'womens-jewelry',
     variant: "simple",
     tagline: "Pendant",
@@ -3131,7 +3131,7 @@ export const meerzahJewelry: Product[] = [
   {
     id: "mz-gorgeous-unique-design-22k-rp-2-5-gram-gold",
     slug: "mz-gorgeous-unique-design-22k-rp-2-5-gram-gold",
-    name: "Gorgeous Unique Design 22K RP 2.5 Gram Gold Plated",
+    name: "Gorgeous Unique Design 22K RP 2.5 Gram Gold Plated Ring",
     category: 'womens-jewelry',
     variant: "apparel",
     tagline: "Ring",

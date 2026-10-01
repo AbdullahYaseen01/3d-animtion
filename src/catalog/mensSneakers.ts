@@ -15,7 +15,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
+    description: "Men's Contrast Sneakers: black jogger-style lace-up sneakers from Ndure (style M-PR-KAY-0003). They have a mesh and synthetic upper on an EVA foam and thermoplastic rubber (TPR) sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 8800,
     compareAtPriceCents: 12600,
     colors: [
@@ -57,12 +57,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-len-0013-grey",
     slug: "ndure-len-0013-grey",
-    name: "Men's Retro Sneakers",
+    name: "Men's Retro Sneakers in Grey",
     category: 'shoes',
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A grey men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Retro Sneakers in Grey: jogger-style lace-up sneakers from Ndure (style M-PR-LEN-0013). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -104,12 +104,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-lok-0017-navy",
     slug: "ndure-lok-0017-navy",
-    name: "Men's Mesh Sneakers",
+    name: "Men's Mesh Sneakers in Navy",
     category: 'shoes',
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A navy men's lace-up sneaker. Upper: Mesh. Sole: EVA.",
+    description: "Men's Mesh Sneakers in Navy: jogger-style lace-up sneakers from Ndure (style M-PR-LOK-0017). They have a mesh upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -156,7 +156,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up shoe. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
+    description: "Men's Heel Detail Sneakers: black jogger-style lace-up shoes from Ndure (style M-PR-ALR-0007). They have a mesh and synthetic upper on an EVA foam and thermoplastic rubber (TPR) sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 10100,
     compareAtPriceCents: 14400,
     colors: [
@@ -198,12 +198,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-len-0014-white",
     slug: "ndure-len-0014-white",
-    name: "Men's Retro Sneakers",
+    name: "Men's Retro Sneakers in White",
     category: 'shoes',
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A white men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Retro Sneakers in White: jogger-style lace-up sneakers from Ndure (style M-PR-LEN-0014). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 8800,
     compareAtPriceCents: 12600,
     colors: [
@@ -245,12 +245,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-alr-0005-blk-wht",
     slug: "ndure-alr-0005-blk-wht",
-    name: "Men's Lace-up Sneakers",
+    name: "Men's Lace-Up Sneakers in Black and White",
     category: 'shoes',
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A blk/wht men's lace-up sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
+    description: "Men's Lace-Up Sneakers in Black and White: jogger-style lace-up sneakers from Ndure (style M-PR-ALR-0005). They have an engineered knit upper on an EVA foam and thermoplastic rubber (TPR) sole. Available in US men's sizes 7–13, standard width only. Best for everyday training and all-day wear.",
     priceCents: 10700,
     compareAtPriceCents: 15300,
     colors: [
@@ -297,7 +297,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Polyurethane.",
+    description: "Men's Basic Sneakers: black jogger-style lace-up sneakers from Ndure (style M-SN-TRN-0011). They have a mesh and synthetic upper on a polyurethane (PU) sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -344,7 +344,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A navy men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Casual Sneakers: navy jogger-style lace-up sneakers from Ndure (style M-PR-LEO-0026). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 5700,
     compareAtPriceCents: 8100,
     colors: [
@@ -386,12 +386,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-trn-0015-navy",
     slug: "ndure-trn-0015-navy",
-    name: "Men's Lace-Up Sneakers",
+    name: "Men's Lace-Up Sneakers in Navy",
     category: 'shoes',
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A navy men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Polyurethane.",
+    description: "Men's Lace-Up Sneakers in Navy: jogger-style lace-up sneakers from Ndure (style M-SN-TRN-0015). They have a mesh and synthetic upper on a polyurethane (PU) sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -433,12 +433,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-lok-0015-beige",
     slug: "ndure-lok-0015-beige",
-    name: "Men's Lace-up Sneakers",
+    name: "Men's Lace-Up Sneakers in Beige",
     category: 'shoes',
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A beige men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Lace-Up Sneakers in Beige: jogger-style lace-up sneakers from Ndure (style M-PR-LOK-0015). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 5900,
     compareAtPriceCents: 8500,
     colors: [
@@ -485,7 +485,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A blk/blk men's lace-up sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
+    description: "Vega Active Sneakers: black and black men's jogger-style lace-up sneakers from Ndure (style M-PR-VEG-0001). They have an engineered knit upper on an EVA foam and thermoplastic rubber (TPR) sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 12600,
     compareAtPriceCents: 18000,
     colors: [
@@ -532,7 +532,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Man-Made Sole/Thermoplastic.",
+    description: "Men's Chunky Lace up Sneakers: black jogger-style lace-up sneakers from Ndure (style M-PR-ERI-0001). They have a mesh and synthetic upper on a man-made sole and thermoplastic sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -579,7 +579,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A off white men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
+    description: "Men's NRG+ Active Sneakers: off white jogger-style lace-up sneakers from Ndure (style M-PR-ALR-0008). They have a mesh and synthetic upper on an EVA foam and thermoplastic rubber (TPR) sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 10100,
     compareAtPriceCents: 14400,
     colors: [
@@ -626,7 +626,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A navy men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Man-Made Sole/Thermoplastic.",
+    description: "Men's Panel-Detail Sneakers: navy jogger-style lace-up sneakers from Ndure (style M-SN-DOR-0003). They have a mesh and synthetic upper on a man-made sole and thermoplastic sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 6300,
     compareAtPriceCents: 9000,
     colors: [
@@ -673,7 +673,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Lace-Up Mesh Sneakers: black jogger-style lace-up sneakers from Ndure (style M-PR-ALP-0004). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 5700,
     compareAtPriceCents: 8100,
     colors: [
@@ -720,7 +720,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A beige men's jogger.",
+    description: "Men's Mesh Mule Sneakers: beige jogger-style sneakers from Ndure (style M-PR-ULT-0005). Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 6300,
     compareAtPriceCents: 9000,
     colors: [
@@ -759,12 +759,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-loc-0002-black",
     slug: "ndure-loc-0002-black",
-    name: "Men's Lace-up Sneakers",
+    name: "Men's Lace-Up Sneakers in Black (LOC-0002)",
     category: 'shoes',
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Lace-Up Sneakers in Black (LOC-0002): jogger-style lace-up sneakers from Ndure (style M-SC-LOC-0002). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–11, standard width only. Best for everyday training and all-day wear.",
     priceCents: 5700,
     compareAtPriceCents: 8100,
     colors: [
@@ -811,7 +811,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A grey men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Man-Made Sole/Thermoplastic.",
+    description: "Men's Monochrome Sneakers: grey jogger-style lace-up sneakers from Ndure (style M-PR-TYL-0020). They have a mesh and synthetic upper on a man-made sole and thermoplastic sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 6300,
     compareAtPriceCents: 9000,
     colors: [
@@ -853,12 +853,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-vel-0038-khaki",
     slug: "ndure-vel-0038-khaki",
-    name: "Men's Contrast Sole Sneakers",
+    name: "Men's Contrast Sole Sneakers in Khaki",
     category: 'shoes',
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A khaki men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Polyurethane.",
+    description: "Men's Contrast Sole Sneakers in Khaki: jogger-style lace-up sneakers from Ndure (style M-PR-VEL-0038). They have a mesh and synthetic upper on a polyurethane (PU) sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -905,7 +905,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A white men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/Thermoplastic Rubber.",
+    description: "Men's Chunky Sole Sneakers: white jogger-style lace-up sneakers from Ndure (style M-PR-KAY-0004). They have a mesh and synthetic upper on an EVA foam and thermoplastic rubber (TPR) sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 8800,
     compareAtPriceCents: 12600,
     colors: [
@@ -948,12 +948,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-ult-0009-black",
     slug: "ndure-ult-0009-black",
-    name: "Men's Lace-up Sneakers",
+    name: "Men's Lace-Up Sneakers in Black (ULT-0009)",
     category: 'shoes',
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Lace-Up Sneakers in Black (ULT-0009): jogger-style lace-up sneakers from Ndure (style M-PR-ULT-0009). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -996,12 +996,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-psc-0008-grey",
     slug: "ndure-psc-0008-grey",
-    name: "Men's Lace-Up Sneakers",
+    name: "Men's Lace-Up Sneakers in Grey",
     category: 'shoes',
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A grey men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Lace-Up Sneakers in Grey: jogger-style lace-up sneakers from Ndure (style M-PR-PSC-0008). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -1049,7 +1049,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A grey men's lace-up sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Sculpted-Sole Sneakers: grey jogger-style lace-up sneakers from Ndure (style M-PR-MIS-0008). They have an engineered knit upper on an EVA foam sole. Available in US men's sizes 8–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 8800,
     compareAtPriceCents: 12600,
     colors: [
@@ -1096,7 +1096,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's lace-up sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate/ Thermoplastic.",
+    description: "Men's Color-Combination Sneakers: black jogger-style lace-up sneakers from Ndure (style M-SN-MYK-0001). They have a mesh and synthetic upper on an EVA foam and thermoplastic sole. Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 9500,
     compareAtPriceCents: 13500,
     colors: [
@@ -1141,12 +1141,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-len-0006-black",
     slug: "ndure-len-0006-black",
-    name: "Men's Mesh Sneakers",
+    name: "Men's Mesh Sneakers in Black",
     category: 'shoes',
     shoeUse: "running",
     variant: 'footwear',
     tagline: "Jogger-style sneaker",
-    description: "A black men's jogger.",
+    description: "Men's Mesh Sneakers in Black: jogger-style sneakers from Ndure (style M-PR-LEN-0006). Available in US men's sizes 7–12, standard width only. Best for everyday training and all-day wear.",
     priceCents: 9500,
     compareAtPriceCents: 13500,
     colors: [
@@ -1193,7 +1193,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A black men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Black Slip-On Sneakers: slip-on sneakers from Ndure (style M-PR-LEO-0024). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 5100,
     compareAtPriceCents: 7200,
     colors: [
@@ -1235,12 +1235,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-lok-0014-black",
     slug: "ndure-lok-0014-black",
-    name: "Men's Everyday Sneakers",
+    name: "Men's Everyday Sneakers in Black (LOK-0014)",
     category: 'shoes',
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A black men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Everyday Sneakers in Black (LOK-0014): slip-on sneakers from Ndure (style M-PR-LOK-0014). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 6300,
     compareAtPriceCents: 9000,
     colors: [
@@ -1282,12 +1282,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-mis-0006-grey",
     slug: "ndure-mis-0006-grey",
-    name: "Men's Slip-On Sneakers",
+    name: "Men's Slip-On Sneakers in Grey (MIS-0006)",
     category: 'shoes',
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A grey men's slip-on sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Slip-On Sneakers in Grey (MIS-0006): slip-on sneakers from Ndure (style M-PR-MIS-0006). They have an engineered knit upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 8200,
     compareAtPriceCents: 11700,
     colors: [
@@ -1329,12 +1329,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-len-0009-black",
     slug: "ndure-len-0009-black",
-    name: "Men's Easy Fit Sneakers",
+    name: "Men's Easy Fit Sneakers in Black",
     category: 'shoes',
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A black men's slip-on sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Easy Fit Sneakers in Black: slip-on sneakers from Ndure (style M-PR-LEN-0009). They have an engineered knit upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 8200,
     compareAtPriceCents: 11700,
     colors: [
@@ -1376,12 +1376,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-rig-0001-nvy-ofwht",
     slug: "ndure-rig-0001-nvy-ofwht",
-    name: "Men's Contrast Sole Sneakers",
+    name: "Men's Contrast Sole Sneakers in Navy and Off-White",
     category: 'shoes',
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A nvy/ofwht men's lace-up sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber.",
+    description: "Men's Contrast Sole Sneakers in Navy and Off-White: lace-up sneakers from Ndure (style M-SN-RIG-0001). They have a polyurethane upper on a thermoplastic rubber (TPR) sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -1423,12 +1423,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-grn-0003-navy",
     slug: "ndure-grn-0003-navy",
-    name: "Men's Easy Fit Sneakers",
+    name: "Men's Easy Fit Sneakers in Navy",
     category: 'shoes',
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A navy men's slip-on sneaker. Upper: Engineered Knit. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Easy Fit Sneakers in Navy: slip-on sneakers from Ndure (style M-PR-GRN-0003). They have an engineered knit upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -1470,12 +1470,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-ult-0007-beige",
     slug: "ndure-ult-0007-beige",
-    name: "Men's Slip-On Sneakers",
+    name: "Men's Slip-On Sneakers in Beige",
     category: 'shoes',
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A beige men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Slip-On Sneakers in Beige: slip-on sneakers from Ndure (style M-PR-ULT-0007). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -1517,12 +1517,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-leo-0025-grey",
     slug: "ndure-leo-0025-grey",
-    name: "Men's Slip-On Sneakers",
+    name: "Men's Slip-On Sneakers in Grey (LEO-0025)",
     category: 'shoes',
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A grey men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Slip-On Sneakers in Grey (LEO-0025): slip-on sneakers from Ndure (style M-PR-LEO-0025). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 5100,
     compareAtPriceCents: 7200,
     colors: [
@@ -1569,7 +1569,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A tan men's smart casual shoe. Upper: Polyurethane. Sole: Thermoplastic Rubber.",
+    description: "Men's Contrast Sole Shoes: tan smart casual shoes from Ndure (style M-SN-NIT-0008). They have a polyurethane upper on a thermoplastic rubber (TPR) sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 10100,
     compareAtPriceCents: 14400,
     colors: [
@@ -1611,12 +1611,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-lok-0019-black",
     slug: "ndure-lok-0019-black",
-    name: "Men's Slip-On Sneakers",
+    name: "Men's Slip-On Sneakers in Black (LOK-0019)",
     category: 'shoes',
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A black men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Slip-On Sneakers in Black (LOK-0019): slip-on sneakers from Ndure (style M-PR-LOK-0019). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -1663,7 +1663,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A blk/olv men's court sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber.",
+    description: "Hasan Raheem Men's Tonal Black Sneaker: court sneakers from Ndure (style M-SN-RON-0001). They have a polyurethane upper on a thermoplastic rubber (TPR) sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 12600,
     colors: [
       {
@@ -1704,12 +1704,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-ron-0002-blk-ofwht",
     slug: "ndure-ron-0002-blk-ofwht",
-    name: "Hasan Raheem Men's Contrast Detail",
+    name: "Hasan Raheem Men's Contrast Detail in Black and Off-White",
     category: 'shoes',
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A blk/ofwht men's court sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber.",
+    description: "Hasan Raheem Men's Contrast Detail in Black and Off-White: court sneakers from Ndure (style M-SN-RON-0002). They have a polyurethane upper on a thermoplastic rubber (TPR) sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 12600,
     colors: [
       {
@@ -1750,12 +1750,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-ron-0003-o-wht-beg",
     slug: "ndure-ron-0003-o-wht-beg",
-    name: "Hasan Raheem Men's Contrast Detail",
+    name: "Hasan Raheem Men's Contrast Detail in Off-White and Beige",
     category: 'shoes',
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A o.wht/beg men's mid-top sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber.",
+    description: "Hasan Raheem Men's Contrast Detail in Off-White and Beige: mid-top sneakers from Ndure (style M-SN-RON-0003). They have a polyurethane upper on a thermoplastic rubber (TPR) sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 12600,
     colors: [
       {
@@ -1796,12 +1796,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-lok-0018-grey",
     slug: "ndure-lok-0018-grey",
-    name: "Men's Mesh Sneakers",
+    name: "Men's Mesh Sneakers in Grey",
     category: 'shoes',
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A grey men's slip-on sneaker. Upper: Mesh. Sole: EVA.",
+    description: "Men's Mesh Sneakers in Grey: slip-on sneakers from Ndure (style M-PR-LOK-0018). They have a mesh upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 5700,
     compareAtPriceCents: 8100,
     colors: [
@@ -1843,12 +1843,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-psc-0009-black",
     slug: "ndure-psc-0009-black",
-    name: "Men's Everyday Sneakers",
+    name: "Men's Everyday Sneakers in Black (PSC-0009)",
     category: 'shoes',
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A black men's sneaker.",
+    description: "Men's Everyday Sneakers in Black (PSC-0009): sneakers from Ndure (style M-PR-PSC-0009). Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 8800,
     compareAtPriceCents: 12600,
     colors: [
@@ -1887,12 +1887,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-bra-0023-wht-blk",
     slug: "ndure-bra-0023-wht-blk",
-    name: "Men's Contrast Panel Sneakers",
+    name: "Men's Contrast Panel Sneakers in White and Black",
     category: 'shoes',
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A wht/blk men's lace-up sneaker. Upper: Polyurethane. Sole: Man-Made Sole/Thermoplastic.",
+    description: "Men's Contrast Panel Sneakers in White and Black: lace-up sneakers from Ndure (style M-SN-BRA-0023). They have a polyurethane upper on a man-made sole and thermoplastic sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 5100,
     compareAtPriceCents: 7200,
     colors: [
@@ -1934,12 +1934,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-nit-0010-sand",
     slug: "ndure-nit-0010-sand",
-    name: "Men's Contrast Panel Sneakers",
+    name: "Men's Contrast Panel Sneakers in Sand",
     category: 'shoes',
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A sand men's lace-up sneaker. Upper: Polyurethane. Sole: Thermoplastic Rubber.",
+    description: "Men's Contrast Panel Sneakers in Sand: lace-up sneakers from Ndure (style M-SN-NIT-0010). They have a polyurethane upper on a thermoplastic rubber (TPR) sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 10100,
     compareAtPriceCents: 14400,
     colors: [
@@ -1986,7 +1986,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A d.brown men's lace-up sneaker. Upper: Polyurethane. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Thick Sole Sneakers: dark brown lace-up sneakers from Ndure (style M-PR-ORI-0004). They have a polyurethane upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -2033,7 +2033,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A coffee men's low-top sneaker. Upper: Polyurethane. Sole: Man-Made Sole/Thermoplastic.",
+    description: "Men's Smart Sneakers: coffee low-top sneakers from Ndure (style M-SN-BRA-0019). They have a polyurethane upper on a man-made sole and thermoplastic sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 5700,
     compareAtPriceCents: 8100,
     colors: [
@@ -2075,12 +2075,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-trn-0005-grey",
     slug: "ndure-trn-0005-grey",
-    name: "Men's Contrast Sole Sneakers",
+    name: "Men's Contrast Sole Sneakers in Grey",
     category: 'shoes',
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A grey men's sneaker.",
+    description: "Men's Contrast Sole Sneakers in Grey: sneakers from Ndure (style M-SN-TRN-0005). Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 6300,
     compareAtPriceCents: 9000,
     colors: [
@@ -2124,7 +2124,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A navy men's slip-on sneaker. Upper: Mesh with Synthetic. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Laceless Sneakers: navy slip-on sneakers from Ndure (style M-PR-LEO-0028). They have a mesh and synthetic upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 5700,
     compareAtPriceCents: 8100,
     colors: [
@@ -2171,7 +2171,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A khaki men's casual slip-ons. Upper: Polyurethane. Sole: Man-Made Sole/Thermoplastic.",
+    description: "Men's Slip-On Shoes: khaki casual slip-ons from Ndure (style M-PR-LUC-0027). They have a polyurethane upper on a man-made sole and thermoplastic sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 5100,
     compareAtPriceCents: 7200,
     colors: [
@@ -2218,7 +2218,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A black men's slip-on sneaker. Upper: Engineered Knit. Sole: Polyurethane.",
+    description: "Men's Monochrome Slip-On Sneakers: black slip-on sneakers from Ndure (style M-SN-TRN-0014). They have an engineered knit upper on a polyurethane (PU) sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 7600,
     compareAtPriceCents: 10800,
     colors: [
@@ -2265,7 +2265,7 @@ export const mensSneakers: Product[] = [
     shoeUse: "lifestyle",
     variant: 'footwear',
     tagline: "Everyday sneaker",
-    description: "A blk/wht men's lace-up sneaker. Upper: Polyurethane. Sole: Ethylene Vinyl Acetate.",
+    description: "Men's Chunky Sneakers: black and white lace-up sneakers from Ndure (style M-PR-ORI-0001). They have a polyurethane upper on an EVA foam sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 6900,
     compareAtPriceCents: 9900,
     colors: [
@@ -2307,12 +2307,12 @@ export const mensSneakers: Product[] = [
   {
     id: "ndure-luc-0010-black",
     slug: "ndure-luc-0010-black",
-    name: "Men's Slip-On Sneakers",
+    name: "Men's Slip-On Sneakers in Black (LUC-0010)",
     category: 'shoes',
     shoeUse: "everyday",
     variant: 'footwear',
     tagline: "Slip-on sneaker",
-    description: "A black men's slip-on sneaker. Upper: Polyurethane. Sole: Man-Made Sole/Thermoplastic.",
+    description: "Men's Slip-On Sneakers in Black (LUC-0010): slip-on sneakers from Ndure (style M-SC-LUC-0010). They have a polyurethane upper on a man-made sole and thermoplastic sole. Available in US men's sizes 7–12, standard width only. Best for everyday wear.",
     priceCents: 4400,
     compareAtPriceCents: 6300,
     colors: [

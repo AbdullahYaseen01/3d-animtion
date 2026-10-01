@@ -1,3 +1,4 @@
+import { departmentKeywords as dk, shoeKeywords as sk } from '../lib/seoKeywords.js'
 import type { Category, Product } from './types.js'
 import { bagxHandbags } from './bagxHandbags.js'
 import { meerzahJewelry } from './meerzahJewelry.js'
@@ -16,64 +17,71 @@ export const categories: Category[] = [
     slug: 'shoes',
     name: 'Shoes',
     kind: 'department',
-    summary: 'Sneakers and joggers for every day',
-    intro: 'Cushioned sneakers and jogger-style shoes with breathable uppers and clean lines. Made for long days, easy outfits, and the miles in between.',
-    seoTitle: 'Sneakers & Jogger Shoes',
-    seoDescription: 'Shop sneakers and jogger-style shoes with cushioned soles, breathable uppers, and a full range of sizes.',
+    summary: "Men's sneakers and joggers",
+    intro:
+      "Men's sneakers from Ndure, a Pakistani footwear brand: jogger-style lace-ups with mesh uppers, casual low-tops, and slip-ons. Every pair lists its upper and sole materials and comes in standard width, US men's sizes.",
+    seoTitle: dk.shoes.title,
+    seoDescription: dk.shoes.description,
   },
   {
     slug: 'handbags',
     name: 'Handbags',
     kind: 'department',
-    summary: 'Bags for the day and the evening',
-    intro: 'Totes, hobos, and crossbody bags in suede, leather, and polished hardware. Shapes that carry the day and still look considered.',
-    seoTitle: 'Handbags & Crossbody Bags',
-    seoDescription: 'Shop handbags, shoulder bags, and crossbody bags in suede and leather, with polished hardware and everyday shapes.',
+    summary: 'Hobo, shoulder, and crossbody bags',
+    intro:
+      "Women's handbags from Bag X in hobo, shoulder, crossbody, and top-handle shapes, plus three-piece sets. Each bag lists the material, closure, and hardware the brand publishes, and measurements in inches where they are given.",
+    seoTitle: dk.handbags.title,
+    seoDescription: dk.handbags.description,
   },
   {
     slug: 'wallets',
     name: 'Wallets',
     kind: 'department',
-    summary: 'Slim wallets for cards and cash',
-    intro: 'Bifolds, card holders, and money clips in supple leather. Slim enough for a pocket, finished enough to keep.',
-    seoTitle: "Men's Wallets & Bifolds",
-    seoDescription: "Shop men's bifold wallets, card holders, and money clips in leather, made for everyday carry.",
+    summary: 'Wallets for cards and cash',
+    intro:
+      "Men's wallets, bifolds, and money clips from Metro. Each one lists its exact dimensions in centimeters so you can check pocket fit. Where Metro does not publish a material, we say so instead of guessing.",
+    seoTitle: dk.wallets.title,
+    seoDescription: dk.wallets.description,
   },
   {
     slug: 'jackets',
     name: 'Jackets',
     kind: 'department',
-    summary: 'Bombers, field jackets, and shirt-jackets',
-    intro: 'Jackets with a stated color, fabric, and size range. Each style uses its own S–XL chart, not the shoe chart.',
-    seoTitle: 'Jackets',
-    seoDescription: 'Shop jackets, bombers, and shirt-jackets in denim, wool, nylon, and suede, with S–XL sizing.',
+    summary: 'Bombers, denim, and faux leather',
+    intro:
+      "Men's jackets from ZED: bombers, denim and trucker jackets, Harringtons, faux leather racers, field and safari jackets, and puffers. Each style shows ZED's listed fabric blend, fit, and care, with letter sizes S to XL.",
+    seoTitle: dk.jackets.title,
+    seoDescription: dk.jackets.description,
   },
   {
     slug: 'hoodies',
     name: 'Hoodies',
     kind: 'department',
-    summary: 'Hooded sweatshirts for every day',
-    intro: 'Pullover and long-line hoodies in solid colors. Each style lists its sizes from the label, not the shoe chart.',
-    seoTitle: 'Hoodies',
-    seoDescription: 'Shop hoodies in solid colors, from essential pullovers to long-line styles, with S–XL sizing.',
+    summary: 'Pullover and long-line hoodies',
+    intro:
+      "Men's hoodies from ZED in essential pullover, henley, cropped, and long-line cuts. Sizes run S to XL on each style's own chart, and the listed fit is on every product page.",
+    seoTitle: dk.hoodies.title,
+    seoDescription: dk.hoodies.description,
   },
   {
     slug: 'coats',
     name: 'Coats',
     kind: 'department',
-    summary: 'Wool coats and trenches',
-    intro: 'Pea coats, overcoats, and trenches with a stated color and size range. Use the coat’s own size list, not the shoe chart.',
-    seoTitle: 'Coats',
-    seoDescription: 'Shop wool pea coats, overcoats, and trench coats, with S–XL sizing.',
+    summary: 'Pea coats, overcoats, and trenches',
+    intro:
+      "Men's coats from ZED: pea coats, single- and double-breasted overcoats, trench coats, and a hooded parka. The fabric blend ZED lists is shown on each coat, so you can see how much wool it actually contains.",
+    seoTitle: dk.coats.title,
+    seoDescription: dk.coats.description,
   },
   {
     slug: 'womens-jewelry',
     name: "Women's Jewelry",
     kind: 'department',
     summary: 'Rings, bangles, and necklace sets',
-    intro: 'Gold-plated rings, pearl strands, kundan sets, and bracelets with a polished finish. Pieces meant to catch the light and finish an outfit.',
-    seoTitle: "Women's Jewelry: Rings, Bracelets & Necklace Sets",
-    seoDescription: "Shop women's jewelry: rings, bangles, earrings, pendants, and necklace sets in gold plate, pearls, and stones.",
+    intro:
+      "Women's jewelry from Meerzah: 925 sterling silver rings, gold-plated bangles and karas, kundan and zircon necklace sets, and earrings. Weight, finish, and sizes are listed where Meerzah publishes them.",
+    seoTitle: dk['womens-jewelry'].title,
+    seoDescription: dk['womens-jewelry'].description,
   },
   {
     slug: 'backpacks',
@@ -81,62 +89,57 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Carry for the commute',
     intro: 'Backpacks with stated capacity, dimensions and laptop fit. Only the compatibility written on the product is claimed.',
-    seoTitle: 'Laptop & Commuter Backpacks',
-    seoDescription:
-      'Shop Westora Style commuter backpacks. Each pack lists its capacity in liters, dimensions and measured laptop sleeve fit, plus pockets and straps.',
+    seoTitle: dk.backpacks.title,
+    seoDescription: dk.backpacks.description,
   },
   {
     slug: 'watches',
     name: 'Watches',
     kind: 'department',
-    summary: 'Men’s watches for every day',
-    intro: 'Crisp dials, leather and metal straps, and cases made to be worn every day. From slim dress watches to sport chronographs.',
-    seoTitle: "Men's Watches",
-    seoDescription: "Shop men's watches with leather and metal straps, clean dials, and cases for work and the weekend.",
+    summary: 'Quartz, analog, and digital',
+    intro:
+      "Men's watches from Casio, Naviforce, Daniel Klein, Curren, Fossil, and other named brands. Each listing shows the model number, movement, strap, and the water resistance rating only when the maker publishes one.",
+    seoTitle: dk.watches.title,
+    seoDescription: dk.watches.description,
   },
   {
     slug: 'running',
     name: 'Running',
     kind: 'shoe-use',
-    summary: 'Cushioned trainers for road miles',
+    summary: 'Jogger-style mesh sneakers',
     intro:
-      'Road shoes built around a high-rebound foam midsole and a breathable mesh upper. Start here if you log regular miles on pavement or treadmill and want a shoe that also works for the rest of your day.',
-    seoTitle: 'Running Shoes: Cushioned Road Trainers',
-    seoDescription:
-      'Shop Westora Style running shoes: cushioned road trainers with breathable mesh uppers, US sizing and standard or wide widths.',
+      'Jogger-style lace-up sneakers with mesh or knit uppers and EVA or PU soles. They suit gym sessions, walks, and long days on your feet. They are casual sneakers, not specialist distance-running shoes.',
+    seoTitle: sk.running.title,
+    seoDescription: sk.running.description,
   },
   {
     slug: 'trail',
     name: 'Trail',
     kind: 'shoe-use',
     summary: 'Grip and protection off-road',
-    intro:
-      'Trail shoes with a lugged rubber outsole, a protective toe cap and a firmer, more stable platform for dirt, gravel and rocky paths.',
-    seoTitle: 'Trail Running Shoes with Lugged Grip',
-    seoDescription:
-      'Shop Westora Style trail shoes with lugged outsoles, protective toe caps and ripstop uppers for dirt, gravel and mixed terrain.',
+    intro: 'Trail shoes with the outsole, upper, and protection listed on every product page.',
+    seoTitle: sk.trail.title,
+    seoDescription: sk.trail.description,
   },
   {
     slug: 'lifestyle',
     name: 'Lifestyle',
     kind: 'shoe-use',
-    summary: 'Leather and suede everyday classics',
+    summary: 'Casual lace-ups and low-tops',
     intro:
-      'Clean low- and high-top silhouettes in leather and suede, set on durable rubber cupsoles. Designed to pair with denim, chinos and everything in between.',
-    seoTitle: 'Leather & Suede Lifestyle Sneakers',
-    seoDescription:
-      'Shop Westora Style lifestyle sneakers: a minimalist leather court shoe and a suede and leather high-top on durable rubber soles, in US men’s sizing.',
+      'Casual lace-up and contrast-sole sneakers with synthetic or PU uppers. Pair them with jeans or chinos. Upper and sole materials are listed on each pair.',
+    seoTitle: sk.lifestyle.title,
+    seoDescription: sk.lifestyle.description,
   },
   {
     slug: 'everyday',
     name: 'Everyday',
     kind: 'shoe-use',
-    summary: 'Lightweight knits for all-day wear',
+    summary: 'Slip-ons and easy-fit sneakers',
     intro:
-      'Soft knit uppers and lightweight foam soles for commuting, travel and long days on your feet. Easy on, easy to live in.',
-    seoTitle: 'Everyday Knit Sneakers & Slip-Ons',
-    seoDescription:
-      'Shop Westora Style everyday shoes: lightweight knit sneakers and slip-ons with soft foam midsoles for all-day wear, in standard and wide widths.',
+      'Slip-on and easy-fit sneakers with knit or mesh uppers for errands, travel, and long days. No laces to tie, and the upper and sole materials are on every pair.',
+    seoTitle: sk.everyday.title,
+    seoDescription: sk.everyday.description,
   },
 ]
 

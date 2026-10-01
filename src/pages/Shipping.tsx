@@ -2,6 +2,7 @@ import { Link } from 'react-router'
 import { store } from '../config/store'
 import { InfoPage } from '../components/layout/InfoPage'
 import { formatMoney } from '../lib/money'
+import { pageKeywords } from '../lib/seoKeywords'
 
 export default function Shipping() {
   const { standard, express, freeThresholdCents, processingBusinessDays: proc } = store.shipping
@@ -10,12 +11,12 @@ export default function Shipping() {
   return (
     <InfoPage
       seo={{
-        title: 'Shipping Information',
-        description: `Shipping rates and delivery times for Westora Style orders. ${standard.priceCents === 0 ? 'Free standard shipping' : 'Standard shipping'}. Choose your country at checkout.`,
+        title: pageKeywords.shipping.title,
+        description: pageKeywords.shipping.description,
         path: '/shipping',
       }}
       eyebrow="Help"
-      title="Shipping"
+      title={pageKeywords.shipping.h1}
       intro={<p>Choose your country at checkout. Rates and delivery estimates are shown below and again before you pay.</p>}
     >
       <h2 id="rates">Rates and delivery times</h2>

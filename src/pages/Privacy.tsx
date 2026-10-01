@@ -1,13 +1,14 @@
 import { Link } from 'react-router'
 import { store } from '../config/store'
 import { DraftNotice, InfoPage } from '../components/layout/InfoPage'
+import { pageKeywords } from '../lib/seoKeywords'
 
 export default function Privacy() {
   return (
     <InfoPage
-      seo={{ title: 'Privacy Policy', description: 'How Westora Style collects, uses and protects your personal information, which service providers we use, how long we keep data and the choices you have.', path: '/privacy' }}
+      seo={{ title: pageKeywords.privacy.title, description: pageKeywords.privacy.description, path: '/privacy' }}
       eyebrow="Legal"
-      title="Privacy policy"
+      title={pageKeywords.privacy.h1}
       intro={<p>Last updated {store.legal.updated}</p>}
     >
       <DraftNotice />

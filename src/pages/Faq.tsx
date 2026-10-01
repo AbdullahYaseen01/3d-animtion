@@ -2,6 +2,7 @@ import { Link } from 'react-router'
 import { store } from '../config/store'
 import { InfoPage } from '../components/layout/InfoPage'
 import { faqLd } from '../lib/seo'
+import { pageKeywords } from '../lib/seoKeywords'
 import { formatMoney } from '../lib/money'
 
 /** Plain text, or a link whose label reads as part of the sentence. */
@@ -26,18 +27,26 @@ export function faqGroups(): { title: string; items: QA[] }[] {
           a: [
             'Shoes use US men’s sizing. Women should pick their usual US women’s size in our ',
             { to: '/fit-guide', label: 'size chart' },
-            ', which converts it for you. Jackets use their own sizes. Bags, jewelry and watches do not use a shoe size.',
+            ', which converts it for you. Jackets, hoodies, and coats use letter sizes S to XL. Bags, wallets, jewelry, and watches do not use a shoe size.',
           ],
         },
         {
           q: 'Do you offer wide sizes?',
           a: [
-            'Yes, several styles come in Wide (2E) as well as Standard (D). Width options appear on the product page when available. Our ',
+            'Not at the moment. Every sneaker we sell comes in a standard (D) width. Knit and slip-on styles have a little more give. Our ',
             { to: '/guides/standard-vs-wide-shoes', label: 'shoe width guide' },
-            ' explains how to choose.',
+            ' explains how to check your width.',
           ],
         },
-        { q: 'I’m between sizes. What should I do?', a: ['For running and trail styles, choose the larger size. For leather styles, the smaller size usually works better as leather softens.'] },
+        {
+          q: 'How do jackets and coats fit?',
+          a: [
+            'Each product lists its fit, such as regular or tailored, and on most styles the model is 5′11″ and wears a medium. Our ',
+            { to: '/guides/mens-jacket-and-coat-size-guide', label: 'jacket and coat size guide' },
+            ' shows how to compare with a jacket you own.',
+          ],
+        },
+        { q: 'I’m between sizes. What should I do?', a: ['For sneakers and tailored jackets, choose the larger size. For regular-fit and boxy styles, your usual size is usually right.'] },
       ],
     },
     {
@@ -81,11 +90,15 @@ export function faqGroups(): { title: string; items: QA[] }[] {
       items: [
         {
           q: 'How do I clean my shoes?',
-          a: ['Each product page lists care instructions for its materials. Our ', { to: '/guides/how-to-care-for-leather-sneakers', label: 'leather and suede care guide' }, ' covers the basics.'],
+          a: ['Each product page lists care instructions for its materials. Our ', { to: '/guides/how-to-care-for-leather-sneakers', label: 'sneaker cleaning guide' }, ' covers mesh, knit, synthetic, and leather uppers.'],
         },
         {
           q: 'Can I put my shoes in the washing machine?',
           a: ['We do not recommend machine washing. Heat and agitation can damage foams and adhesives. Hand clean with a soft brush and mild soap instead.'],
+        },
+        {
+          q: 'How do I care for gold-plated jewelry?',
+          a: ['Wipe it with a soft dry cloth, keep it away from perfume and water, and store pieces separately. Our ', { to: '/guides/how-to-clean-gold-plated-jewelry', label: 'jewelry care guide' }, ' has the details.'],
         },
       ],
     },
@@ -97,13 +110,13 @@ export default function Faq() {
   return (
     <InfoPage
       seo={{
-        title: 'Frequently Asked Questions',
-        description: `Answers about Westora Style shoe sizing and wide widths, payment, US shipping times, ${store.returns.windowDays}-day returns, and cleaning leather and suede shoes.`,
+        title: pageKeywords.faq.title,
+        description: pageKeywords.faq.description,
         path: '/faq',
         jsonLd: [faqLd(groups.flatMap((g) => g.items.map((it) => ({ question: it.q, answer: answerText(it.a) }))))],
       }}
       eyebrow="Help"
-      title="FAQ"
+      title={pageKeywords.faq.h1}
       intro={<p>Answers to the questions we hear most. Can’t find yours? Contact us and we’ll get back to you.</p>}
     >
       {groups.map((g) => (
