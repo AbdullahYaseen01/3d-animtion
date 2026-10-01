@@ -71,7 +71,7 @@ function cacheControl(urlPath) {
 /** Mirrors the X-Robots-Tag rules in vercel.json. */
 const FACET_KEYS = ['q', 'color', 'size', 'width', 'price', 'availability', 'sort', 'category', 'use', 'trait', 'page']
 function robotsHeader(url) {
-  if (/^\/(cart|wishlist|search|admin|checkout\/success)$/.test(url.pathname)) return 'noindex, follow'
+  if (/^\/(cart|wishlist|search|admin|admin\/.*|checkout|checkout\/.*)$/.test(url.pathname)) return 'noindex, follow'
   if (url.pathname.startsWith('/api/')) return 'noindex'
   if (/^\/(shop|collections\/.+)$/.test(url.pathname) && FACET_KEYS.some((k) => url.searchParams.has(k))) return 'noindex, follow'
   return undefined
@@ -99,6 +99,11 @@ http
     const url = new URL(req.url ?? '/', 'http://localhost')
     if (url.pathname !== '/' && url.pathname.endsWith('/')) {
       res.writeHead(301, { Location: url.pathname.replace(/\/+$/, '') + url.search })
+      return res.end()
+    }
+    // Windows and macOS disks are case-insensitive; Vercel is not, so mixed-case page URLs must not resolve here either.
+    if (/[A-Z]/.test(url.pathname) && !path.extname(url.pathname)) {
+      res.writeHead(301, { Location: url.pathname.toLowerCase() + url.search })
       return res.end()
     }
     if (url.pathname.endsWith('.html')) {

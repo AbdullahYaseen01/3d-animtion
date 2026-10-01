@@ -3,8 +3,7 @@ import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
 import { App } from './App'
 import { campaignHero, collectionOgImage } from './campaign/styleInMotion'
-import { activeCategories, allProducts, productImagePath, shoeCollections } from './catalog'
-import { categories } from './catalog/products'
+import { activeCategories, allProducts, productImagePath, productsInCategory, shoeCollections } from './catalog'
 import { store } from './config/store'
 import { guides } from './data/guides'
 import { HeadContext, headToString, type HeadCollector } from './lib/seo'
@@ -49,14 +48,23 @@ export function prerenderRoutes(): PrerenderRoute[] {
   const indexable: Omit<PrerenderRoute, 'sitemap'>[] = [
     { path: '/', lastmod: content, images: [campaignHero.src.replace(/\.png$/, '-1600.webp')] },
     { path: '/shop', lastmod: content },
-    ...activeCategories().map((c) => ({ path: `/collections/${c.slug}`, lastmod: content, images: [collectionOgImage(c.slug)?.src].filter((x): x is string => !!x) })),
-    ...shoeCollections().map((c) => ({ path: `/collections/${c.slug}`, lastmod: content, images: [collectionOgImage(c.slug)?.src].filter((x): x is string => !!x) })),
+    ...[...activeCategories(), ...shoeCollections()].map((c) => ({
+      path: `/collections/${c.slug}`,
+      lastmod: content,
+      images: [
+        collectionOgImage(c.slug)?.src,
+        ...productsInCategory(c.slug)
+          .slice(0, 4)
+          .map((p) => productImagePath(p.colors[0].images[0], 1024)),
+      ].filter((x): x is string => !!x),
+    })),
     ...allProducts().map((p) => ({
       path: `/products/${p.slug}`,
       lastmod: content,
       images: [...new Set(p.colors.flatMap((c) => c.images))].map((k) => productImagePath(k, 1024)),
     })),
     { path: '/about', lastmod: content },
+    { path: '/press', lastmod: content, images: ['/og/home.jpg'] },
     { path: '/fit-guide', lastmod: content },
     { path: '/shipping', lastmod: content },
     { path: '/returns', lastmod: content },
@@ -65,15 +73,9 @@ export function prerenderRoutes(): PrerenderRoute[] {
     { path: '/privacy', lastmod: legal },
     { path: '/terms', lastmod: legal },
     { path: '/guides', lastmod: latestGuide },
-    ...guides.map((g) => ({ path: `/guides/${g.slug}`, lastmod: g.updated })),
+    ...guides.map((g) => ({ path: `/guides/${g.slug}`, lastmod: g.updated, images: [g.image] })),
   ]
+  // Empty departments are not prerendered: they fall through to the real 404 instead of a soft 404.
   const utility = ['/search', '/cart', '/wishlist', '/checkout/success', '/admin']
-  const active = new Set(activeCategories().map((category) => category.slug))
-  const emptyDepartments = categories
-    .filter((category) => category.kind === 'department' && !active.has(category.slug))
-    .map((category) => `/collections/${category.slug}`)
-  return [
-    ...indexable.map((r) => ({ ...r, sitemap: true })),
-    ...[...utility, ...emptyDepartments].map((path) => ({ path, sitemap: false })),
-  ]
+  return [...indexable.map((r) => ({ ...r, sitemap: true })), ...utility.map((path) => ({ path, sitemap: false }))]
 }

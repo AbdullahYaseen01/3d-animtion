@@ -23,6 +23,8 @@ ${routes
 export function buildRobots(allowIndexing, siteUrl) {
   return allowIndexing
     ? `User-agent: *
+Allow: /
+Disallow: /admin
 Disallow: /cart
 Disallow: /checkout
 Disallow: /search

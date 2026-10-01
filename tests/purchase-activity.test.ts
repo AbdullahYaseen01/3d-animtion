@@ -19,8 +19,8 @@ describe('confirmed purchase activity', () => {
       at,
     )
     expect(regionFromShipTo('Austin, TX')).toBe('Texas')
-    expect(activity).toMatchObject({ firstName: 'Sarah', region: 'Texas', productName: 'Monaco Choco' })
-    expect(purchaseSentence(activity, new Date(at.getTime() + 8 * 60_000))).toBe('Sarah from Texas purchased Monaco Choco 8 minutes ago.')
+    expect(activity).toMatchObject({ firstName: 'Sarah', region: 'Texas', productName: product.name })
+    expect(purchaseSentence(activity, new Date(at.getTime() + 8 * 60_000))).toBe(`Sarah from Texas purchased ${product.name} 8 minutes ago.`)
   })
 
   it('ignores unpaid orders and orders with no ship-to region', () => {

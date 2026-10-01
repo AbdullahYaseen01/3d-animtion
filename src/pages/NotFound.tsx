@@ -9,11 +9,11 @@ export default function NotFound() {
   const [q, setQ] = useState('')
   return (
     <>
-      <Seo title="Page Not Found" description="The page you were looking for could not be found." path="/404" noindex />
+      <Seo title="Page Not Found" description="The page you were looking for could not be found." path="/404" noindex canonical={false} />
       <div className="container container--narrow" style={{ paddingBlock: 'var(--space-section)' }}>
         <div className="empty-state" style={{ background: 'transparent', padding: 0 }}>
           <p className="eyebrow eyebrow--ember">Error 404</p>
-          <h1 style={{ fontSize: 'var(--display-lg)' }}>Off the trail</h1>
+          <h1 style={{ fontSize: 'var(--display-lg)' }}>Page not found</h1>
           <p>We could not find that page. It may have moved, or the link may be mistyped. Try a search or pick a category below.</p>
           <form
             role="search"

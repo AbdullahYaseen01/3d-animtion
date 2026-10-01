@@ -10,7 +10,9 @@ describe('server import graph', () => {
   it('uses explicit .js relative imports that resolve to real files', () => {
     const seen = new Set<string>()
     const problems: string[] = []
-    const queue = readdirSync('api').map((f) => path.resolve('api', f))
+    const queue = readdirSync('api', { recursive: true, withFileTypes: true })
+      .filter((d) => d.isFile() && d.name.endsWith('.ts'))
+      .map((d) => path.resolve(d.parentPath, d.name))
     while (queue.length) {
       const file = queue.pop()!
       if (seen.has(file)) continue

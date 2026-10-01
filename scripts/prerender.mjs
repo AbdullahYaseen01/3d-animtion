@@ -15,7 +15,7 @@ const ssrDir = path.join(root, 'dist-ssr')
 // Same .env resolution as vite.config.ts, so the sitemap origin matches the canonicals in the SSR bundle.
 for (const [k, v] of Object.entries(loadEnv('production', root, ''))) if (process.env[k] === undefined) process.env[k] = v
 
-const siteUrl = (process.env.VITE_SITE_URL || 'https://core-seven-henna.vercel.app').replace(/\/$/, '')
+const siteUrl = (process.env.VITE_SITE_URL || 'https://westorastyle.com').replace(/\/$/, '')
 const override = process.env.ALLOW_INDEXING
 const allowIndexing = override ? override === 'true' : process.env.VERCEL_ENV === 'production'
 
