@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useMemo } from 'react'
 import { store } from '../config/store'
 
-export const SITE_URL = ((import.meta.env.VITE_SITE_URL as string | undefined) || 'https://core-seven-henna.vercel.app').replace(/\/$/, '')
+export const SITE_URL = ((import.meta.env.VITE_SITE_URL as string | undefined) || 'https://westorastyle.com').replace(/\/$/, '')
 
 /** Set at build time: true only for the intentional production deployment. */
 export const ALLOW_INDEXING = __ALLOW_INDEXING__
@@ -15,6 +15,8 @@ export interface SeoProps {
   imageAlt?: string
   type?: 'website' | 'product' | 'article'
   noindex?: boolean
+  /** Set false on pages with no indexable equivalent, such as the 404 page. */
+  canonical?: boolean
   jsonLd?: object | object[]
   /** Use the title verbatim instead of appending the brand. */
   rawTitle?: boolean
@@ -88,7 +90,7 @@ export function buildHead(p: SeoProps): HeadData {
     { tag: 'meta', attrs: { property: 'og:description', content: description } },
     { tag: 'meta', attrs: { property: 'og:url', content: canonical } },
     { tag: 'meta', attrs: { property: 'og:image', content: image } },
-    { tag: 'meta', attrs: { property: 'og:image:alt', content: p.imageAlt ?? `${store.name} footwear` } },
+    { tag: 'meta', attrs: { property: 'og:image:alt', content: p.imageAlt ?? store.name } },
     { tag: 'meta', attrs: { property: 'og:locale', content: 'en_US' } },
     { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
     { tag: 'meta', attrs: { name: 'twitter:title', content: title } },
@@ -97,7 +99,8 @@ export function buildHead(p: SeoProps): HeadData {
   )
   if (p.published) tags.push({ tag: 'meta', attrs: { property: 'article:published_time', content: p.published } })
   if (p.modified) tags.push({ tag: 'meta', attrs: { property: 'article:modified_time', content: p.modified } })
-  if (!p.noindex) tags.push({ tag: 'link', attrs: { rel: 'canonical', href: canonical } })
+  // Filtered, sorted, and paginated views are noindex but still point at the clean collection URL.
+  if (p.canonical !== false) tags.push({ tag: 'link', attrs: { rel: 'canonical', href: canonical } })
   if (p.prev) tags.push({ tag: 'link', attrs: { rel: 'prev', href: absoluteUrl(p.prev) } })
   if (p.next) tags.push({ tag: 'link', attrs: { rel: 'next', href: absoluteUrl(p.next) } })
   const ld = p.jsonLd ? (Array.isArray(p.jsonLd) ? p.jsonLd : [p.jsonLd]) : []
@@ -212,6 +215,22 @@ export function itemListLd(name: string, items: { name: string; path: string }[]
     name,
     numberOfItems: items.length,
     itemListElement: items.map((it, i) => ({ '@type': 'ListItem', position: i + 1, url: absoluteUrl(it.path), name: it.name })),
+  }
+}
+
+/** Collection landing page, with the visible product list as its main entity. */
+export function collectionPageLd(p: { name: string; description: string; path: string; items: { name: string; path: string }[] }) {
+  const url = absoluteUrl(p.path)
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${url}#collection`,
+    name: p.name,
+    description: p.description,
+    url,
+    inLanguage: store.locale,
+    isPartOf: { '@id': WEBSITE_ID },
+    mainEntity: { ...itemListLd(p.name, p.items), '@context': undefined },
   }
 }
 

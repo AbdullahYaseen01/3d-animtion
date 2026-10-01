@@ -40,6 +40,9 @@ function checkOffer(offer, label, errors) {
   if (!/^[A-Z]{3}$/.test(offer.priceCurrency ?? '')) errors.push(`${label}: offer has no ISO priceCurrency`)
   if (!/^https:\/\/schema\.org\/(InStock|OutOfStock|PreOrder|BackOrder|LimitedAvailability|SoldOut|Discontinued)$/.test(offer.availability ?? ''))
     errors.push(`${label}: offer availability is not a schema.org URL`)
+  if (!isAbsolute(offer.url)) errors.push(`${label}: offer url is not absolute`)
+  if (offer.shippingDetails?.['@type'] !== 'OfferShippingDetails') errors.push(`${label}: offer has no shippingDetails`)
+  if (offer.hasMerchantReturnPolicy?.['@type'] !== 'MerchantReturnPolicy') errors.push(`${label}: offer has no hasMerchantReturnPolicy`)
 }
 
 /** Returns human-readable problems; an empty array means the block passes. */
@@ -67,8 +70,19 @@ export function validateJsonLd(block) {
       checkList(block.itemListElement, 'ItemList', errors, 'url')
       if (block.numberOfItems !== block.itemListElement?.length) errors.push('ItemList: numberOfItems does not match the list')
       break
+    case 'CollectionPage': {
+      if (!nonEmpty(block.name) || !isAbsolute(block.url) || !nonEmpty(block.description)) errors.push('CollectionPage: needs name, description and absolute url')
+      const list = block.mainEntity
+      if (list?.['@type'] !== 'ItemList') errors.push('CollectionPage: mainEntity must be an ItemList')
+      else {
+        checkList(list.itemListElement, 'CollectionPage ItemList', errors, 'url')
+        if (list.numberOfItems !== list.itemListElement?.length) errors.push('CollectionPage: numberOfItems does not match the list')
+      }
+      break
+    }
     case 'ProductGroup':
       if (!nonEmpty(block.name) || !nonEmpty(block.image) || !nonEmpty(block.productGroupID)) errors.push('ProductGroup: needs name, image and productGroupID')
+      if (!nonEmpty(block.brand?.name)) errors.push('ProductGroup: brand needs a name')
       if (!nonEmpty(block.hasVariant)) errors.push('ProductGroup: hasVariant is empty')
       for (const v of block.hasVariant ?? []) {
         const vl = `ProductGroup variant ${v.sku}`

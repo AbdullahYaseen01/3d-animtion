@@ -1,6 +1,7 @@
 import { store } from '../config/store'
 import { buildSku, formatSize, getCategory, productImagePath, stockFor, type Product } from '../catalog'
 import { centsToDecimal } from './money'
+import { brandOf } from './productText'
 import { absoluteUrl, orgRef } from './seo'
 
 function shippingDetails() {
@@ -45,7 +46,7 @@ export function productGroupLd(product: Product) {
           '@type': 'Product',
           sku,
           inProductGroupWithID: product.id,
-          name: `${store.name} ${product.name} – ${color.name}${sizeName ? `, ${sizeName}` : ''}${widthText}`,
+          name: `${product.name} – ${color.name}${sizeName ? `, ${sizeName}` : ''}${widthText}`,
           color: color.name,
           ...(product.variant === 'simple'
             ? {}
@@ -84,10 +85,10 @@ export function productGroupLd(product: Product) {
     '@context': 'https://schema.org',
     '@type': 'ProductGroup',
     '@id': `${url}#product`,
-    name: `${store.name} ${product.name}`,
+    name: product.name,
     description: product.description,
     url,
-    brand: { '@type': 'Brand', name: store.name },
+    brand: { '@type': 'Brand', name: brandOf(product) },
     productGroupID: product.id,
     category: category?.name,
     material: product.materials,
