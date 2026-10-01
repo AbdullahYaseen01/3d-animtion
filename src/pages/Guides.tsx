@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { guides } from '../data/guides'
+import { pageKeywords } from '../lib/seoKeywords'
 import { InfoPage } from '../components/layout/InfoPage'
 import { Icon } from '../components/ui/Icon'
 
@@ -7,16 +8,15 @@ export default function Guides() {
   return (
     <InfoPage
       seo={{
-        title: 'Shoe, Bag & Watch Buying Guides',
-        description:
-          'Practical Westora Style guides: measure your feet, choose a shoe width and running shoe, care for leather, and check bag, backpack and watch fit before you buy.',
+        title: pageKeywords.guides.title,
+        description: pageKeywords.guides.description,
         path: '/guides',
         image: '/og/collection-shoes.jpg',
         imageAlt: 'Cream sneakers worn on stone steps',
       }}
       eyebrow="Guides"
-      title="Guides"
-      intro={<p>Practical advice for choosing the right size, fit and style, and making it last.</p>}
+      title={pageKeywords.guides.h1}
+      intro={<p>Practical advice for choosing the right size, fit, and style, caring for what you buy, and picking gifts, written around the products we actually sell.</p>}
       help={false}
     >
       <ul role="list" className="guide-list">

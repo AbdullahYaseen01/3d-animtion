@@ -6,7 +6,8 @@ import { ProductCard } from '../components/product/ProductCard'
 import { QuickShop, type QuickShopTarget } from '../components/product/QuickShop'
 import { Breadcrumbs } from '../components/ui/Breadcrumbs'
 import { Icon } from '../components/ui/Icon'
-import { breadcrumbLd, absoluteUrl, orgRef, Seo } from '../lib/seo'
+import { breadcrumbLd, absoluteUrl, faqLd, orgRef, Seo } from '../lib/seo'
+import { keywordsFor } from '../lib/seoKeywords'
 import { store } from '../config/store'
 import NotFound from './NotFound'
 import '../components/product/ProductCard.css'
@@ -45,6 +46,7 @@ export default function Guide() {
           {
             '@context': 'https://schema.org',
             '@type': 'Article',
+            '@id': `${absoluteUrl(path)}#article`,
             headline: guide.title,
             description: guide.description,
             image: [absoluteUrl(guide.image)],
@@ -56,6 +58,7 @@ export default function Guide() {
             publisher: { ...orgRef(), logo: { '@type': 'ImageObject', url: absoluteUrl('/favicon.svg') } },
           },
           breadcrumbLd(crumbs),
+          ...(guide.faq?.length ? [faqLd(guide.faq)] : []),
         ]}
       />
       <article className="container info-page">
@@ -93,13 +96,24 @@ export default function Guide() {
               )}
             </section>
           ))}
+          {guide.faq && guide.faq.length > 0 && (
+            <section aria-labelledby="guide-faq">
+              <h2 id="guide-faq">Common questions</h2>
+              {guide.faq.map((q) => (
+                <div key={q.question}>
+                  <h3>{q.question}</h3>
+                  <p>{q.answer}</p>
+                </div>
+              ))}
+            </section>
+          )}
           {collections.length > 0 && (
             <p>
               Ready to compare styles?{' '}
               {collections.map((c, i) => (
                 <span key={c.slug}>
-                  {i > 0 && ' or '}
-                  <Link to={`/collections/${c.slug}`}>browse {c.name.toLowerCase()}</Link>
+                  {i > 0 && (i === collections.length - 1 ? ' or ' : ', ')}
+                  <Link to={`/collections/${c.slug}`}>shop {keywordsFor(c.slug)?.primary ?? c.name.toLowerCase()}</Link>
                 </span>
               ))}
               .

@@ -3,7 +3,11 @@ import { Link, useParams, useSearchParams } from 'react-router'
 import { allProducts, getCategory, getColor, getProduct, isProductAvailable, productImagePath, type Product as ProductT } from '../catalog'
 import { cardScarcityLabel } from '../catalog/urgency'
 import { store } from '../config/store'
-import { getGuide } from '../data/guides'
+import { getGuide, guidesForCategory } from '../data/guides'
+import { GALLERY_SIZES, productPreload } from '../lib/images'
+import { productAlt, productMetaDescription, productSeoTitle } from '../lib/productText'
+import { RelatedCollections } from '../components/catalog/RelatedCollections'
+import { keywordsFor } from '../lib/seoKeywords'
 import { productItem, track } from '../lib/analytics'
 import { deliveryWindow } from '../lib/delivery'
 import { formatMoney } from '../lib/money'
@@ -109,30 +113,38 @@ function ProductView({ product }: { product: ProductT }) {
     if (sel.addToCart()) openCart()
   }
 
-  const related = [
-    ...allProducts().filter((p) => p.id !== product.id && p.category === product.category),
-    ...allProducts().filter((p) => p.id !== product.id && p.category !== product.category),
-  ].slice(0, 4)
-  const guides = (product.relatedGuides ?? []).map(getGuide).filter((g) => !!g)
+  // The next styles in catalog order, wrapping around, so every product is linked from another product page.
+  const siblings = allProducts().filter((p) => p.category === product.category)
+  const at = siblings.findIndex((p) => p.id === product.id)
+  const ring = [...siblings.slice(at + 1), ...siblings.slice(0, at)]
+  const sameUse = ring.filter((p) => product.shoeUse != null && p.shoeUse === product.shoeUse)
+  const related = [...new Set([...ring.slice(0, 1), ...sameUse, ...ring])].slice(0, 4)
+  const guides = [
+    ...(product.relatedGuides ?? []).map(getGuide).filter((g) => !!g),
+    ...(product.shoeUse ? guidesForCategory(product.shoeUse) : []),
+    ...guidesForCategory(product.category),
+  ]
+    .filter((g, i, all) => all.findIndex((x) => x.slug === g.slug) === i)
+    .slice(0, 4)
+  const useCollection = product.shoeUse ? getCategory(product.shoeUse) : undefined
   const crumbs = [
     { name: 'Home', path: '/' },
     { name: category.name, path: `/collections/${category.slug}` },
+    ...(useCollection ? [{ name: useCollection.name, path: `/collections/${useCollection.slug}` }] : []),
     { name: product.name, path: `/products/${product.slug}` },
   ]
+  const lcpImage = color.images[0] ?? product.colors[0].images[0]
 
   return (
     <>
       <Seo
-        title={`${product.name} – ${product.tagline}`}
-        description={
-          `Shop the Westora Style ${product.name}, ${product.tagline.toLowerCase()}. ` +
-          `${formatMoney(product.priceCents)}${product.variant === 'footwear' ? `, US sizes ${product.sizes[0]}–${product.sizes[product.sizes.length - 1]}${product.widths.length > 1 ? ' in standard and wide' : ''}` : ''}. ` +
-          `${s.priceCents === 0 ? 'Free US shipping and ' : ''}${store.returns.windowDays}-day returns.`
-        }
+        title={productSeoTitle(product)}
+        description={productMetaDescription(product)}
         path={`/products/${product.slug}`}
         type="product"
         image={productImagePath(product.colors[0].images[0], 1024)}
-        imageAlt={`${product.name} in ${product.colors[0].name}`}
+        imageAlt={productAlt(product)}
+        preloadImage={productPreload(lcpImage, GALLERY_SIZES)}
         jsonLd={[productGroupLd(product), breadcrumbLd(crumbs)]}
       />
 
@@ -339,6 +351,12 @@ function ProductView({ product }: { product: ProductT }) {
             </ul>
           </section>
         )}
+
+        <RelatedCollections
+          slug={useCollection?.slug ?? category.slug}
+          title={`Shop the category: ${category.name.toLowerCase()}`}
+          extra={useCollection ? [{ href: `/collections/${useCollection.slug}`, label: `More ${keywordsFor(useCollection.slug)?.primary ?? useCollection.name.toLowerCase()}` }] : []}
+        />
 
         <section className="section" aria-labelledby="related-title">
           <div className="section-head">

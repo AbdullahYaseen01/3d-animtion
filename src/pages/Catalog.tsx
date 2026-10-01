@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router'
 import { activeCategories, allProducts, formatSize, getCategory, productsInCategory, shoeCollections, type Category } from '../catalog'
-import { categories } from '../catalog/products'
 import {
   activeFilterCount,
   applyFilters,
@@ -14,15 +13,17 @@ import {
   type SortKey,
 } from '../catalog/filters'
 import { FilterPanel } from '../components/catalog/FilterPanel'
+import { RelatedCollections } from '../components/catalog/RelatedCollections'
 import { ProductCard } from '../components/product/ProductCard'
 import { QuickShop, type QuickShopTarget } from '../components/product/QuickShop'
 import { Breadcrumbs } from '../components/ui/Breadcrumbs'
 import { Dialog } from '../components/ui/Dialog'
 import { Icon } from '../components/ui/Icon'
 import { productItem, track } from '../lib/analytics'
-import { breadcrumbLd, itemListLd, Seo } from '../lib/seo'
+import { breadcrumbLd, collectionPageLd, Seo } from '../lib/seo'
+import { CARD_SIZES, productPreload } from '../lib/images'
+import { keywordsFor, pageKeywords } from '../lib/seoKeywords'
 import { campaignHero, collectionOgImage } from '../campaign/styleInMotion'
-import { store } from '../config/store'
 import { guidesForCategory } from '../data/guides'
 import { useAnnounce } from '../state/Announcer'
 import NotFound from './NotFound'
@@ -33,7 +34,7 @@ type Mode = { kind: 'shop' } | { kind: 'collection'; slug: string } | { kind: 's
 
 export default function Catalog({ mode }: { mode: Mode }) {
   const category: Category | undefined =
-    mode.kind === 'collection' ? (getCategory(mode.slug) ?? categories.find((item) => item.slug === mode.slug)) : undefined
+    mode.kind === 'collection' ? getCategory(mode.slug) : undefined
   if (mode.kind === 'collection' && !category) return <NotFound />
   return <CatalogView mode={mode} category={category} />
 }
@@ -77,7 +78,7 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
   }, [result.items])
 
   const basePath = category ? `/collections/${category.slug}` : isSearch ? '/search' : '/shop'
-  const title = category ? category.name : isSearch ? (state.q ? `Results for “${state.q}”` : 'Search') : 'Shop all'
+  const title = category ? (keywordsFor(category.slug)?.h1 ?? category.name) : isSearch ? (state.q ? `Results for “${state.q}”` : 'Search') : 'Shop all'
   const crumbs = [
     { name: 'Home', path: '/' },
     ...(category || isSearch ? [{ name: 'Shop', path: '/shop' }] : []),
@@ -90,9 +91,8 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
     : isSearch
       ? { title: state.q ? `Search: ${state.q}` : 'Search', description: 'Search shoes, bags, jewelry, and watches.' }
       : {
-          title: 'Shop All Shoes, Bags, Jackets & Watches',
-          description:
-            `Shop shoes, handbags, wallets, jewelry, and watches, with US shipping and ${store.returns.windowDays}-day returns.`,
+          title: pageKeywords.shop.title,
+          description: pageKeywords.shop.description,
         }
   const guideLinks = category ? guidesForCategory(category.slug) : []
   const jsonLd = isSearch
@@ -101,7 +101,14 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
         breadcrumbLd(crumbs),
         ...(hasRefinements || result.items.length === 0
           ? []
-          : [itemListLd(category?.name ?? 'Shop all', result.items.map((p) => ({ name: `${store.name} ${p.name}`, path: `/products/${p.slug}` })))]),
+          : [
+              collectionPageLd({
+                name: category?.name ?? 'Shop all',
+                description: seo.description,
+                path: basePath,
+                items: result.items.map((p) => ({ name: p.name, path: `/products/${p.slug}` })),
+              }),
+            ]),
       ]
 
   const chips = [
@@ -135,6 +142,7 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
         next={result.pageCount > 1 && state.page < result.pageCount ? pageHref(state.page + 1) : undefined}
         image={og?.src}
         imageAlt={og?.alt}
+        preloadImage={productPreload(result.items[0]?.colors[0].images[0], CARD_SIZES)}
         jsonLd={jsonLd}
       />
       <div className="container">
@@ -156,7 +164,7 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
             </nav>
           )}
           {!category && !isSearch && (
-            <p className="lede">Shoes, bags, jewelry, and watches. Filter by what each category actually offers.</p>
+            <p className="lede">Men’s sneakers, jackets, hoodies, and coats, plus women’s handbags and jewelry, wallets, and watches. Filter by what each category actually offers.</p>
           )}
           {isSearch && <SearchBox initial={state.q} onSearch={(q) => update({ q, page: 1 })} />}
         </div>
@@ -258,7 +266,7 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
                     key={p.id}
                     product={p}
                     headingLevel="h2"
-                    priority={i < 2}
+                    priority={i === 0}
                     onQuickShop={(product, colorSlug) => setQuick({ product, colorSlug })}
                   />
                 ))}
@@ -281,6 +289,8 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
             )}
           </div>
         </div>
+
+        {category && <RelatedCollections slug={category.slug} title={`Shop related to ${category.name.toLowerCase()}`} />}
 
         {guideLinks.length > 0 && (
           <section className="catalog-more" aria-labelledby="collection-guides">

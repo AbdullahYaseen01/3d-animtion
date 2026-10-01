@@ -33,7 +33,7 @@ export function Footer() {
           <nav aria-labelledby="footer-help">
             <h3 id="footer-help">Help</h3>
             <ul role="list">
-              <li><Link to="/fit-guide">Shoe size & fit</Link></li>
+              <li><Link to="/fit-guide">Size & fit guide</Link></li>
               <li><Link to="/shipping">Shipping</Link></li>
               <li><Link to="/returns">Returns</Link></li>
               <li><Link to="/faq">FAQ</Link></li>
@@ -43,8 +43,11 @@ export function Footer() {
           <nav aria-labelledby="footer-about">
             <h3 id="footer-about">{store.name}</h3>
             <ul role="list">
-              <li><Link to="/about">Our craft</Link></li>
-              <li><Link to="/guides">Guides</Link></li>
+              <li><Link to="/about">About us</Link></li>
+              <li><Link to="/guides">Style & care guides</Link></li>
+              <li><Link to="/guides/holiday-gift-guide-for-him">Gift guide for him</Link></li>
+              <li><Link to="/guides/holiday-gift-guide-for-her">Gift guide for her</Link></li>
+              <li><Link to="/press">Press</Link></li>
               {store.social.map((s) => (
                 <li key={s.href}>
                   <a href={s.href} rel="noopener me" target="_blank">
