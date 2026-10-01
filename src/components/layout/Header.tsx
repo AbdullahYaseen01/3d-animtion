@@ -17,7 +17,13 @@ const BAG_LINKS = [
   { slug: 'wallets', label: 'Wallets' },
 ] as const
 
-const MOBILE_CATS = ['shoes', 'handbags', 'wallets', 'jackets', 'womens-jewelry', 'backpacks', 'watches'] as const
+const OUTERWEAR_LINKS = [
+  { slug: 'jackets', label: 'Jackets' },
+  { slug: 'hoodies', label: 'Hoodies' },
+  { slug: 'coats', label: 'Coats' },
+] as const
+
+const MOBILE_CATS = ['shoes', 'handbags', 'wallets', 'jackets', 'hoodies', 'coats', 'womens-jewelry', 'backpacks', 'watches'] as const
 const MOBILE_LABELS: Partial<Record<(typeof MOBILE_CATS)[number], string>> = {
   'womens-jewelry': 'Jewelry',
 }
@@ -28,12 +34,15 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [bagsOpen, setBagsOpen] = useState(false)
+  const [outerOpen, setOuterOpen] = useState(false)
   const bagsRef = useRef<HTMLLIElement>(null)
+  const outerRef = useRef<HTMLLIElement>(null)
   const location = useLocation()
   useEffect(() => {
     setMenuOpen(false)
     setSearchOpen(false)
     setBagsOpen(false)
+    setOuterOpen(false)
   }, [location.pathname, location.search])
 
   useEffect(() => {
@@ -51,6 +60,22 @@ export function Header() {
       document.removeEventListener('pointerdown', onPointer)
     }
   }, [bagsOpen])
+
+  useEffect(() => {
+    if (!outerOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOuterOpen(false)
+    }
+    const onPointer = (e: PointerEvent) => {
+      if (!outerRef.current?.contains(e.target as Node)) setOuterOpen(false)
+    }
+    document.addEventListener('keydown', onKey)
+    document.addEventListener('pointerdown', onPointer)
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.removeEventListener('pointerdown', onPointer)
+    }
+  }, [outerOpen])
 
   const count = hydrated ? cart.itemCount : 0
   const editorial = location.pathname === '/'
@@ -126,13 +151,40 @@ export function Header() {
                 ))}
               </ul>
             </li>
-            {editorial && (
-              <li>
-                <NavLink to="/collections/jackets" className="nav-link nav-link--jackets">
-                  Jackets
-                </NavLink>
-              </li>
-            )}
+            <li
+              className={`nav-drop${outerOpen ? ' is-open' : ''}`}
+              ref={outerRef}
+              onMouseEnter={() => setOuterOpen(true)}
+              onMouseLeave={() => setOuterOpen(false)}
+              onBlur={(e) => {
+                if (!outerRef.current?.contains(e.relatedTarget as Node)) setOuterOpen(false)
+              }}
+            >
+              <NavLink
+                to="/collections/jackets"
+                className="nav-link nav-link--jackets"
+                aria-expanded={outerOpen}
+                aria-haspopup="true"
+                onFocus={() => setOuterOpen(true)}
+                onClick={(event) => {
+                  if (window.matchMedia('(hover: none)').matches && !outerOpen) {
+                    event.preventDefault()
+                    setOuterOpen(true)
+                  }
+                }}
+              >
+                Outerwear
+              </NavLink>
+              <ul className="nav-drop__panel" role="list">
+                {OUTERWEAR_LINKS.map((item) => (
+                  <li key={item.slug}>
+                    <Link to={`/collections/${item.slug}`} className={`nav-drop__link nav-drop__link--${item.slug}`}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
             <li>
               <NavLink to="/collections/womens-jewelry" className="nav-link nav-link--jewelry">
                 Jewelry

@@ -4,6 +4,7 @@ import { meerzahJewelry } from './meerzahJewelry.js'
 import { mensSneakers } from './mensSneakers.js'
 import { mensWallets } from './mensWallets.js'
 import { mensWatches } from './mensWatches.js'
+import { zedOuterwear } from './zedOuterwear.js'
 
 /**
  * Live assortment. Placeholder styles are not included.
@@ -42,11 +43,28 @@ export const categories: Category[] = [
     slug: 'jackets',
     name: 'Jackets',
     kind: 'department',
-    summary: 'Light layers for changing weather',
-    intro: 'Jackets with a stated fit, fabric and size range. The size chart on each product is the one to use — not the shoe chart.',
-    seoTitle: 'Lightweight Jackets for Fall',
-    seoDescription:
-      'Shop Westora Style lightweight jackets for mild fall days. Each style lists its fit, fabric, lining and XS–XL size range, with its own size chart.',
+    summary: 'Bombers, field jackets, and shirt-jackets',
+    intro: 'Jackets with a stated color, fabric, and size range. Each style uses its own S–XL chart, not the shoe chart.',
+    seoTitle: 'Jackets',
+    seoDescription: 'Shop jackets, bombers, and shirt-jackets in denim, wool, nylon, and suede, with S–XL sizing.',
+  },
+  {
+    slug: 'hoodies',
+    name: 'Hoodies',
+    kind: 'department',
+    summary: 'Hooded sweatshirts for every day',
+    intro: 'Pullover and long-line hoodies in solid colors. Each style lists its sizes from the label, not the shoe chart.',
+    seoTitle: 'Hoodies',
+    seoDescription: 'Shop hoodies in solid colors, from essential pullovers to long-line styles, with S–XL sizing.',
+  },
+  {
+    slug: 'coats',
+    name: 'Coats',
+    kind: 'department',
+    summary: 'Wool coats and trenches',
+    intro: 'Pea coats, overcoats, and trenches with a stated color and size range. Use the coat’s own size list, not the shoe chart.',
+    seoTitle: 'Coats',
+    seoDescription: 'Shop wool pea coats, overcoats, and trench coats, with S–XL sizing.',
   },
   {
     slug: 'womens-jewelry',
@@ -128,4 +146,5 @@ export const products: Product[] = [
   ...mensSneakers,
   ...bagxHandbags,
   ...meerzahJewelry,
+  ...zedOuterwear,
 ]

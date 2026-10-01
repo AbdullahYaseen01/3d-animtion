@@ -16,6 +16,8 @@ const THING: Record<string, string> = {
   wallets: 'wallet',
   'womens-jewelry': 'piece',
   jackets: 'jacket',
+  hoodies: 'hoodie',
+  coats: 'coat',
   backpacks: 'backpack',
   shoes: 'pair',
   running: 'pair',

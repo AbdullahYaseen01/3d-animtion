@@ -90,6 +90,14 @@
   --nav-accent: #7a5528;
   --nav-tint: #f6efe3;
 }
+.nav-link--hoodies {
+  --nav-accent: #3d4a44;
+  --nav-tint: #e7eeea;
+}
+.nav-link--coats {
+  --nav-accent: #4a3b32;
+  --nav-tint: #f3ece6;
+}
 .nav-link--jewelry {
   --nav-accent: #8a6414;
   --nav-tint: #f8f1dc;
@@ -181,6 +189,18 @@
 .nav-drop__link--wallets {
   --nav-accent: #8b3722;
   --nav-tint: #f8ebe4;
+}
+.nav-drop__link--jackets {
+  --nav-accent: #7a5528;
+  --nav-tint: #f6efe3;
+}
+.nav-drop__link--hoodies {
+  --nav-accent: #3d4a44;
+  --nav-tint: #e7eeea;
+}
+.nav-drop__link--coats {
+  --nav-accent: #4a3b32;
+  --nav-tint: #f3ece6;
 }
 .nav-drop__link--backpacks {
   --nav-accent: #1f3a4d;
@@ -299,6 +319,8 @@
 .mobile-menu__cat--handbags,
 .mobile-menu__cat--wallets { --nav-accent: #7a2430; }
 .mobile-menu__cat--jackets { --nav-accent: #7a5528; }
+.mobile-menu__cat--hoodies { --nav-accent: #3d4a44; }
+.mobile-menu__cat--coats { --nav-accent: #4a3b32; }
 .mobile-menu__cat--womens-jewelry { --nav-accent: #8a6414; }
 .mobile-menu__cat--backpacks,
 .mobile-menu__cat--watches { --nav-accent: #1f3a4d; }
@@ -307,6 +329,8 @@
 .mobile-menu__cat--handbags,
 .mobile-menu__cat--wallets,
 .mobile-menu__cat--jackets,
+.mobile-menu__cat--hoodies,
+.mobile-menu__cat--coats,
 .mobile-menu__cat--womens-jewelry,
 .mobile-menu__cat--backpacks,
 .mobile-menu__cat--watches {

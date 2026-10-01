@@ -1,4 +1,4 @@
-export type DepartmentSlug = 'shoes' | 'handbags' | 'wallets' | 'jackets' | 'womens-jewelry' | 'backpacks' | 'watches'
+export type DepartmentSlug = 'shoes' | 'handbags' | 'wallets' | 'jackets' | 'hoodies' | 'coats' | 'womens-jewelry' | 'backpacks' | 'watches'
 export type ShoeUse = 'running' | 'trail' | 'lifestyle' | 'everyday'
 /** Departments plus the existing shoe-activity collections. */
 export type CategorySlug = DepartmentSlug | ShoeUse

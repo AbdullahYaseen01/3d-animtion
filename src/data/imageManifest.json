@@ -6207,5 +6207,1785 @@
       1024
     ],
     "bg": "#ae713b"
+  },
+  "zed-black-belted-safari-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-beige-canvas-jacket-with-brown-collar-deta-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-beige-canvas-jacket-with-brown-collar-deta-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-denim-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-belted-safari-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-denim-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-faux-leather-racer-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-faux-leather-racer-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-field-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-field-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-harrington-jacket-with-funnel-neck-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-harrington-jacket-with-funnel-neck-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-nylon-bomber-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-nylon-bomber-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-grey-hybrid-utility-shacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-grey-hybrid-utility-shacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-grey-wool-cropped-fit-zipper-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-grey-wool-cropped-fit-zipper-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-khaki-canvas-jacket-with-brown-suede-colla-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-khaki-canvas-jacket-with-brown-suede-colla-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-belted-safari-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-belted-safari-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-harrington-jacket-with-funnel-ne-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-harrington-jacket-with-funnel-ne-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-royal-blue-down-workwear-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-royal-blue-down-workwear-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-stone-harrington-jacket-with-funnel-neck-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-stone-harrington-jacket-with-funnel-neck-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-suede-front-heritage-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-suede-two-button-shacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-suede-front-heritage-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-suede-two-button-shacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-down-workwear-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-down-workwear-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-dark-green-fleece-biker-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-dark-green-fleece-biker-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-bomber-jacket-with-poppers-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-bomber-jacket-with-poppers-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-twill-regular-fit-jacket-with-pockets-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-twill-regular-fit-jacket-with-pockets-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-stone-bomber-jacket-with-poppers-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-stone-bomber-jacket-with-poppers-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-wool-cropped-fit-zipper-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-wool-cropped-fit-zipper-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-racer-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-racer-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-fleece-biker-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-fleece-biker-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-belted-safari-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-belted-safari-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-down-workwear-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-down-workwear-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-trucker-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#ffffff"
+  },
+  "zed-navy-blue-trucker-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-beige-canvas-jacket-with-black-suede-colla-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-beige-canvas-jacket-with-black-suede-colla-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-blazer-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-blazer-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-denim-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-denim-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-racer-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-racer-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-classic-two-button-brown-suede-blazer-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-classic-two-button-brown-suede-blazer-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-grey-cropped-fit-zipper-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-grey-cropped-fit-zipper-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-the-langdon-wool-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-the-langdon-wool-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-racer-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-racer-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-beige-high-collar-puffer-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-beige-high-collar-puffer-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-green-bomber-jacket-with-poppers-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-green-bomber-jacket-with-poppers-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-olive-double-pocket-polyamide-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-olive-double-pocket-polyamide-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-khaki-green-field-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-fleece-biker-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-khaki-green-field-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-fleece-biker-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-stone-caban-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-stone-caban-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-suede-zip-through-collared-shacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-suede-zip-through-collared-shacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-cropped-wool-asil-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-cropped-wool-asil-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-puffer-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-puffer-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-dark-brown-zip-up-raglan-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-burgundy-nylon-bomber-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-burgundy-nylon-bomber-jacket-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-dark-brown-zip-up-raglan-jacket-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-button-down-pullover-henley-hoodie-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-button-down-pullover-henley-hoodie-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-essential-hoodie-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-essential-hoodie-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-button-down-pullover-henley-hoodi-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-button-down-pullover-henley-hoodi-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-essential-hoodie-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-green-essential-hoodie-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-essential-hoodie-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-green-essential-hoodie-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-button-down-pullover-henley-hood-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-button-down-pullover-henley-hood-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-essential-hoodie-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-essential-hoodie-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-royal-blue-cropped-pronounced-shoulder-hoo-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-royal-blue-cropped-pronounced-shoulder-hoo-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-cropped-pronounced-shoulder-hoodi-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-cropped-pronounced-shoulder-hoodi-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-white-long-line-hoodie-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-essential-hoodie-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-white-long-line-hoodie-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-essential-hoodie-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-khaki-green-long-line-hoodie-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-khaki-green-long-line-hoodie-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-long-line-hoodie-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-long-line-hoodie-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-long-line-hoodie-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-long-line-hoodie-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-beige-technical-trench-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-cropped-pronounced-shoulder-hoodie-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-cropped-pronounced-shoulder-hoodie-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-beige-technical-trench-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-over-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-over-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-maroon-pea-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-maroon-pea-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-pea-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-cropped-trench-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-cropped-trench-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-pea-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-wool-pea-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-khaki-green-twill-trench-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-wool-pea-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-khaki-green-twill-trench-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-beige-twill-trench-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-beige-twill-trench-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-over-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-over-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-pea-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-pea-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-trench-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-trench-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-technical-trench-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-technical-trench-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-trench-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-trench-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-the-black-canvas-hooded-parka-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-the-black-canvas-hooded-parka-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-pea-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-charcoal-pea-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-over-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-technical-trench-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-technical-trench-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-over-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-wool-pea-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-wool-pea-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-khaki-green-cropped-trench-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-khaki-green-cropped-trench-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-beige-cropped-trench-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-beige-cropped-trench-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-double-breasted-wool-over-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-double-breasted-wool-over-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-double-breasted-wool-over-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-cropped-trench-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-double-breasted-wool-over-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-cropped-trench-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-wool-over-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-black-wool-over-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-wool-pea-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-wool-funnel-neck-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-wool-pea-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-wool-funnel-neck-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-wool-over-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-brown-wool-over-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-wool-over-coat-1": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
+  },
+  "zed-navy-blue-wool-over-coat-2": {
+    "w": 1200,
+    "h": 1200,
+    "widths": [
+      400,
+      700,
+      1024
+    ],
+    "bg": "#f4f1ea"
   }
 }
