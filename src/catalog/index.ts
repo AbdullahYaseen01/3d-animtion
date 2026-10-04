@@ -1,5 +1,8 @@
+import { liveStyleCollections, productsInStyle } from './discover.js'
 import { categories, products } from './products.js'
-import type { Category, CategorySlug, ColorOption, Product, Variant } from './types.js'
+import type { Category, CategorySlug, ColorOption, Product, StyleSlug, Variant } from './types.js'
+
+export { getBrand, liveBrands, moreFromBrand, productsForBrand, styleCollectionsFor } from './discover.js'
 
 export { CATALOG_IS_SAMPLE } from './products.js'
 export type * from './types.js'
@@ -36,11 +39,21 @@ export function shoeCollections(): (Category & { count: number })[] {
   return withCount(categories.filter((c) => c.kind === 'shoe-use')).filter((c) => c.count > 0)
 }
 
+export function styleCollections(): (Category & { count: number })[] {
+  return liveStyleCollections()
+}
+
 export function getCategory(slug: string): (Category & { count: number }) | undefined {
-  return activeCategories().find((c) => c.slug === slug) ?? shoeCollections().find((c) => c.slug === slug)
+  return (
+    activeCategories().find((c) => c.slug === slug) ??
+    shoeCollections().find((c) => c.slug === slug) ??
+    styleCollections().find((c) => c.slug === slug)
+  )
 }
 
 export function productsInCategory(slug: CategorySlug): Product[] {
+  const style = liveStyleCollections().find((c) => c.slug === slug)
+  if (style) return productsInStyle(slug as StyleSlug)
   const category = categories.find((c) => c.slug === slug)
   if (!category) return []
   if (category.kind === 'shoe-use') return products.filter((p) => p.shoeUse === slug)

@@ -1,7 +1,14 @@
 export type DepartmentSlug = 'shoes' | 'handbags' | 'wallets' | 'jackets' | 'hoodies' | 'coats' | 'womens-jewelry' | 'backpacks' | 'watches'
 export type ShoeUse = 'running' | 'trail' | 'lifestyle' | 'everyday'
-/** Departments plus the existing shoe-activity collections. */
-export type CategorySlug = DepartmentSlug | ShoeUse
+export type StyleSlug =
+  | 'shoulder-bags'
+  | 'crossbody-bags'
+  | 'digital-watches'
+  | 'leather-strap-watches'
+  | 'metal-bracelet-watches'
+  | 'watches-under-50'
+/** Departments, shoe-activity collections, and style sub-collections. */
+export type CategorySlug = DepartmentSlug | ShoeUse | StyleSlug
 export type VariantKind = 'footwear' | 'apparel' | 'simple'
 
 export interface Category {
@@ -14,7 +21,7 @@ export interface Category {
   seoTitle: string
   seoDescription: string
   /** Shoe-activity collections stay linked, but they are not top-level departments. */
-  kind: 'department' | 'shoe-use'
+  kind: 'department' | 'shoe-use' | 'style'
 }
 
 export interface ColorOption {

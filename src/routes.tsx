@@ -52,6 +52,8 @@ export const pages = {
   terms: { src: 'src/pages/Terms.tsx', page: lazyPage(() => import('./pages/Terms')) },
   guides: { src: 'src/pages/Guides.tsx', page: lazyPage(() => import('./pages/Guides')) },
   guide: { src: 'src/pages/Guide.tsx', page: lazyPage(() => import('./pages/Guide')) },
+  brand: { src: 'src/pages/Brand.tsx', page: lazyPage(() => import('./pages/Brand')) },
+  shoeSizeConverter: { src: 'src/pages/ShoeSizeConverter.tsx', page: lazyPage(() => import('./pages/ShoeSizeConverter')) },
   notFound: { src: 'src/pages/NotFound.tsx', page: lazyPage(() => import('./pages/NotFound')) },
 } as const
 
@@ -75,6 +77,7 @@ const STATIC: Record<string, PageKey> = {
   '/privacy': 'privacy',
   '/terms': 'terms',
   '/guides': 'guides',
+  '/tools/shoe-size-converter': 'shoeSizeConverter',
 }
 
 /** Which page module a URL renders. Must agree with the <Routes> in App.tsx. */
@@ -82,6 +85,7 @@ export function pageFor(pathname: string): PageKey {
   const path = pathname.replace(/\/+$/, '') || '/'
   if (STATIC[path]) return STATIC[path]
   if (/^\/collections\/[^/]+$/.test(path)) return 'catalog'
+  if (/^\/brands\/[^/]+$/.test(path)) return 'brand'
   if (/^\/products\/[^/]+$/.test(path)) return 'product'
   if (/^\/guides\/[^/]+$/.test(path)) return 'guide'
   return 'notFound'

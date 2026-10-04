@@ -3,7 +3,7 @@ import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
 import { App } from './App'
 import { campaignHero, collectionOgImage } from './campaign/styleInMotion'
-import { activeCategories, allProducts, productImagePath, productsInCategory, shoeCollections } from './catalog'
+import { activeCategories, allProducts, liveBrands, productImagePath, productsInCategory, shoeCollections, styleCollections } from './catalog'
 import { store } from './config/store'
 import { guides } from './data/guides'
 import { HeadContext, headToString, type HeadCollector } from './lib/seo'
@@ -48,7 +48,7 @@ export function prerenderRoutes(): PrerenderRoute[] {
   const indexable: Omit<PrerenderRoute, 'sitemap'>[] = [
     { path: '/', lastmod: content, images: [campaignHero.src.replace(/\.png$/, '-1600.webp')] },
     { path: '/shop', lastmod: content },
-    ...[...activeCategories(), ...shoeCollections()].map((c) => ({
+    ...[...activeCategories(), ...shoeCollections(), ...styleCollections()].map((c) => ({
       path: `/collections/${c.slug}`,
       lastmod: content,
       images: [
@@ -74,6 +74,12 @@ export function prerenderRoutes(): PrerenderRoute[] {
     { path: '/terms', lastmod: legal },
     { path: '/guides', lastmod: latestGuide },
     ...guides.map((g) => ({ path: `/guides/${g.slug}`, lastmod: g.updated, images: [g.image] })),
+    { path: '/tools/shoe-size-converter', lastmod: content },
+    ...liveBrands().map((b) => ({
+      path: `/brands/${b.slug}`,
+      lastmod: content,
+      images: b.products.slice(0, 4).map((p) => productImagePath(p.colors[0].images[0], 1024)),
+    })),
   ]
   // Empty departments are not prerendered: they fall through to the real 404 instead of a soft 404.
   const utility = ['/search', '/cart', '/wishlist', '/checkout/success', '/admin']

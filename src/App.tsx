@@ -12,6 +12,7 @@ import { WishlistProvider } from './state/WishlistProvider'
 
 const Admin = pages.admin.page.Component
 const About = pages.about.page.Component
+const Brand = pages.brand.page.Component
 const Cart = pages.cart.page.Component
 const Catalog = pages.catalog.page.Component
 const CheckoutSuccess = pages.checkoutSuccess.page.Component
@@ -26,6 +27,7 @@ const Press = pages.press.page.Component
 const Privacy = pages.privacy.page.Component
 const Product = pages.product.page.Component
 const Returns = pages.returns.page.Component
+const ShoeSizeConverter = pages.shoeSizeConverter.page.Component
 const Shipping = pages.shipping.page.Component
 const Terms = pages.terms.page.Component
 const Wishlist = pages.wishlist.page.Component
@@ -117,6 +119,8 @@ export function App() {
               <Route path="terms" element={<Terms />} />
               <Route path="guides" element={<Guides />} />
               <Route path="guides/:slug" element={<Guide />} />
+              <Route path="brands/:slug" element={<Brand />} />
+              <Route path="tools/shoe-size-converter" element={<ShoeSizeConverter />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>

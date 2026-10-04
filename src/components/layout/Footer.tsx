@@ -1,11 +1,12 @@
 import { Link } from 'react-router'
-import { activeCategories, CATALOG_IS_SAMPLE } from '../../catalog'
+import { activeCategories, CATALOG_IS_SAMPLE, liveBrands } from '../../catalog'
 import { store } from '../../config/store'
 import { NewsletterForm } from '../forms/NewsletterForm'
 import './Footer.css'
 
 export function Footer() {
   const categories = activeCategories()
+  const brands = liveBrands()
   return (
     <footer className="site-footer on-night">
       <div className="container">
@@ -28,12 +29,18 @@ export function Footer() {
                 </li>
               ))}
               <li><Link to="/wishlist">Saved items</Link></li>
+              {brands.map((b) => (
+                <li key={b.slug}>
+                  <Link to={`/brands/${b.slug}`}>{b.name}</Link>
+                </li>
+              ))}
             </ul>
           </nav>
           <nav aria-labelledby="footer-help">
             <h3 id="footer-help">Help</h3>
             <ul role="list">
               <li><Link to="/fit-guide">Size & fit guide</Link></li>
+              <li><Link to="/tools/shoe-size-converter">Shoe size converter</Link></li>
               <li><Link to="/shipping">Shipping</Link></li>
               <li><Link to="/returns">Returns</Link></li>
               <li><Link to="/faq">FAQ</Link></li>
