@@ -1,6 +1,6 @@
 import type { ColorOption, DepartmentSlug, Product } from '../catalog/types'
-import { store } from '../config/store'
-import { formatMoney } from './money'
+import { store } from '../config/store.js'
+import { formatMoney } from './money.js'
 
 const NOUN: Record<DepartmentSlug, { one: string; title: string; word: RegExp }> = {
   shoes: { one: "men's sneakers", title: "Men's Sneakers", word: /sneaker|shoe/i },
@@ -37,6 +37,18 @@ export function productAlt(p: Product, color: ColorOption = p.colors[0], view?: 
 export function productSeoTitle(p: Product): string {
   const noun = NOUN[p.category]
   const brand = brandOf(p)
+  if (p.category === 'watches') {
+    const model = spec(p, /^Model$/)
+    const movement = spec(p, /Movement/)
+    const watchOptions = [
+      model && `${brand} ${model} Watch`,
+      model && movement && `${brand} ${model} ${movement}`,
+      `${p.name} Watch`,
+      p.name,
+    ].filter((t): t is string => !!t)
+    const brandedLen = (t: string) => (t.length + ` | ${store.name}`.length <= 60 ? t.length + ` | ${store.name}`.length : t.length)
+    return watchOptions.find((t) => t.length <= 44 && brandedLen(t) >= 30) ?? watchOptions[0].slice(0, 44)
+  }
   const base = withColor(p)
   const hasBrand = base.toLowerCase().includes(brand.toLowerCase())
   const options = [
