@@ -138,3 +138,68 @@ BFS from the homepage over indexable pages, ignoring any link with a query strin
 - Should compare-at prices stay? If yes, what is the honest basis for them?
 - Is the NF5053 you sell the men's "G" variant? Naviforce's spec sheet lists NF5053 as a 35 mm women's watch.
 - Is the legal entity name and address available for a Google Business Profile and the Organization markup?
+
+## Phase 2–4 actions taken (2026-10-04)
+
+Trust: generated purchase lines and random "Only N left" counts are removed. Compare-at prices stay in the data but are hidden (`store.pricing.showCompareAt = false`) until Westora has charged the higher price. Support email is `hello@westorastyle.com`.
+
+Keywords: every indexable URL has a tier, intent, volume label, and winnability note in `src/lib/seoKeywords.ts`. Head terms are no longer primaries. Invented phrases ("jogger-style sneakers", "running-style sneakers", "easy-fit shoes") are off collection titles and H1s.
+
+Skipped brand pages (under 5 products): Curren (4), Fossil (3), Seiko (1), and smaller watch labels. Skipped style collections are created only when 8+ products match (see `src/catalog/discover.ts`).
+
+Linkable assets planned, not built this quarter: a watch case size visualizer (Q1) and a "what a 'wool' coat is actually made of" study from the ZED fabric lines (Q2). Q4 asset shipped: `/tools/shoe-size-converter`.
+
+### Example pitch emails
+
+1. **Small watch YouTuber (sample, disclosed)**  
+   Subject: Casio / Naviforce quartz — sample for a disclosed review  
+   We retail Casio, Naviforce, and Daniel Klein quartz at westorastyle.com. Happy to send one in-stock model for a disclosed sample review. We will not ask for a rating. Specs on the product page are the only claims to quote.
+
+2. **Menswear blog (pea coat fabric)**  
+   Subject: A pea coat whose "wool" line is 80% cotton  
+   Guest or link idea: our guide on reading a pea-coat fabric line, with ZED coats that list 60/40 wool-poly vs 80/20 cotton-poly. No affiliate ask.
+
+3. **Gift-guide editor (November)**  
+   Subject: Size-free gifts under $100 with published specs  
+   Holiday gift guides for him and her list watches, wallets, bags, and jewelry we actually stock, with prices and materials. Happy to provide product images and a fact sheet.
+
+4. **Journalist request (Qwoted / Featured / Help a B2B Writer)**  
+   Reply only when the ask matches a catalog fact (sizing, fabric labels, gold-plating care). One or two sentences plus a link to the relevant guide. No invented expert titles.
+
+5. **Pakistan fashion desk (US expansion)**  
+   Subject: Pakistani labels shipping to the US through a small retailer  
+   Ndure, ZED, Bag X, Metro, and Meerzah are on westorastyle.com. Press page has verified facts. We can share import dates and category counts, not traffic or revenue.
+
+### Google Business Profile (you complete)
+
+1. Go to https://www.google.com/business/ and sign in.  
+2. Create a profile for the legal entity. Business category: Clothing store or Online clothing shop.  
+3. Add the legal name, a real US address (or mark as service-area / online only if there is no public storefront), `hello@westorastyle.com`, and https://westorastyle.com.  
+4. Verify by postcard, phone, or email as Google offers.  
+5. Do not add photos or reviews we did not take or collect.
+
+### Bing Webmaster (you complete)
+
+1. Go to https://www.bing.com/webmasters and add https://westorastyle.com.  
+2. Verify with the DNS CNAME Bing provides, or a meta tag we can add later.  
+3. Submit https://westorastyle.com/sitemap.xml.  
+4. Import Search Console data if GSC is already verified.
+
+### Search Console sitemap (you complete)
+
+1. Open https://search.google.com/search-console.  
+2. Add the URL-prefix property `https://westorastyle.com` or the Domain property `westorastyle.com` (DNS verification).  
+3. Sitemaps → enter `sitemap.xml` → Submit.  
+4. Confirm Coverage / Pages is not "Excluded by noindex". Production must stay `ALLOW_INDEXING=true`.
+
+### Measurement plan
+
+Check weekly in Search Console: Performance (query, page, country = US), Pages (indexed vs not), and the sitemap.
+
+Expected impressions for a ~1-week-old domain with no links (estimates, not promises):
+
+- 30 days: mostly brand and accidental impressions; low double digits to low hundreds if the sitemap is submitted.  
+- 60 days: first long-tail model-number and guide impressions if pages are indexed.  
+- 90 days: measurable non-brand impressions on Tier 1 pages only if a few links exist. Category head terms will still be invisible.
+
+If a page gets impressions and no clicks, re-optimize that title and description first (usually too vague or too similar to a bigger retailer). Start with watch model pages, then pea-coat and kundan pages, then the shoe-size converter.

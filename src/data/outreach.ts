@@ -11,6 +11,10 @@ export type OutreachType =
   | 'watch-publication'
   | 'craft-story'
   | 'journalist-requests'
+  | 'youtube-review'
+  | 'local-listing'
+  | 'forum'
+  | 'pakistani-press'
 
 export interface OutreachTarget {
   name: string
@@ -19,6 +23,8 @@ export interface OutreachTarget {
   /** The page on our site worth pitching to this outlet. */
   asset: string
   angle: string
+  /** How to reach them. Check current guidelines before sending. */
+  contact?: string
 }
 
 export const outreachTargets: OutreachTarget[] = [
@@ -41,7 +47,7 @@ export const outreachTargets: OutreachTarget[] = [
   { name: 'Refinery29', url: 'https://www.refinery29.com', type: 'womens-style', asset: '/collections/womens-jewelry', angle: 'Kundan and zircon necklace sets for weddings and festive events, with weight and finish listed.' },
   { name: 'InStyle', url: 'https://www.instyle.com', type: 'womens-style', asset: '/guides/what-fits-in-a-crossbody-bag', angle: 'What really fits in a small crossbody bag.' },
   { name: 'Byrdie', url: 'https://www.byrdie.com', type: 'womens-style', asset: '/guides/how-to-clean-gold-plated-jewelry', angle: 'Why perfume and showers wear out plated jewelry.' },
-  { name: "Runner's World", url: 'https://www.runnersworld.com', type: 'running-community', asset: '/guides/how-to-choose-running-shoes', angle: 'When a jogger-style sneaker is enough and when you need a real running shoe.' },
+  { name: "Runner's World", url: 'https://www.runnersworld.com', type: 'running-community', asset: '/guides/how-to-choose-running-shoes', angle: 'When a casual mesh sneaker is enough and when you need a specialist running shoe.' },
   { name: "Women's Running", url: 'https://www.womensrunning.com', type: 'running-community', asset: '/guides/how-to-measure-your-feet', angle: 'Measure your feet at home before ordering shoes online.' },
   { name: 'Trail Runner Magazine', url: 'https://www.trailrunnermag.com', type: 'running-community', asset: '/guides/how-to-choose-running-shoes', angle: 'Road vs trail shoe basics for new runners.' },
   { name: 'iRunFar', url: 'https://www.irunfar.com', type: 'running-community', asset: '/guides/how-to-choose-running-shoes', angle: 'Beginner explainer on drop, cushioning, and lugs.' },
@@ -52,5 +58,25 @@ export const outreachTargets: OutreachTarget[] = [
   { name: 'The Juggernaut (South Asian diaspora stories)', url: 'https://www.thejuggernaut.com', type: 'craft-story', asset: '/press', angle: 'South Asian brands and diaspora shoppers in the US.' },
   { name: 'Help a B2B Writer / journalist request services (formerly HARO)', url: 'https://helpab2bwriter.com', type: 'journalist-requests', asset: '/press', angle: 'Answer only requests where we have verifiable facts: sizing, fabric labels, gift ideas.' },
   { name: 'Qwoted', url: 'https://www.qwoted.com', type: 'journalist-requests', asset: '/press', angle: 'Expert quotes on reading clothing care and fabric labels.' },
-  { name: 'Featured.com', url: 'https://featured.com', type: 'journalist-requests', asset: '/press', angle: 'Short expert answers on gift buying and sizing online.' },
+  { name: 'Featured.com', url: 'https://featured.com', type: 'journalist-requests', asset: '/press', angle: 'Short expert answers on gift buying and sizing online.', contact: 'Join Featured and answer only on-brief requests' },
+  { name: 'Teddy Baldassarre', url: 'https://teddybaldassarre.com', type: 'youtube-review', asset: '/brands/casio', angle: 'Affordable Casio quartz we stock, with published model numbers. Sample offered, must be disclosed.', contact: 'YouTube / site contact' },
+  { name: 'Watchfinder & Co. editorial (US readers)', url: 'https://www.watchfinder.com/articles', type: 'watch-publication', asset: '/guides/watch-case-size-and-strap-fit', angle: 'Case size primer using only published diameters.', contact: 'Editorial pitch form' },
+  { name: 'The Slanted Wrist', url: 'https://theslantedwrist.com', type: 'watch-publication', asset: '/brands/naviforce', angle: 'Naviforce quartz models with listed water resistance.', contact: 'Blog contact' },
+  { name: 'Just One More Watch (YouTube)', url: 'https://www.youtube.com', type: 'youtube-review', asset: '/collections/watches', angle: 'Under-$200 quartz roundup. Sample offered, disclosed.', contact: 'YouTube about email' },
+  { name: 'Urban Gents', url: 'https://www.urbangents.com', type: 'menswear-blog', asset: '/guides/types-of-mens-jackets', angle: 'Bomber vs shacket vs trucker, using ZED examples.', contact: 'Site contact' },
+  { name: 'Gentleman\'s Gazette (reader Qs)', url: 'https://www.gentlemansgazette.com', type: 'menswear-blog', asset: '/guides/how-to-choose-a-mens-pea-coat', angle: 'How to read a pea-coat fabric line.', contact: 'Editorial email on site' },
+  { name: 'The Modest Man YouTube', url: 'https://www.youtube.com/@themodestman', type: 'youtube-review', asset: '/collections/coats', angle: 'Cotton-blend vs wool-rich pea coats. Sample offered, disclosed.', contact: 'YouTube about' },
+  { name: 'Fashionista gift guides', url: 'https://fashionista.com', type: 'gift-guide', asset: '/guides/holiday-gift-guide-for-her', angle: 'Kundan and plated jewelry gifts with honest care notes.', contact: 'Tips@ / editorial' },
+  { name: 'The Cut gift guides', url: 'https://www.thecut.com', type: 'gift-guide', asset: '/guides/holiday-gift-guide-for-her', angle: 'Handbags and jewelry under a set budget.', contact: 'Editorial pitch' },
+  { name: 'Wirecutter extras / gift ideas', url: 'https://www.nytimes.com/wirecutter', type: 'gift-guide', asset: '/tools/shoe-size-converter', angle: 'A free US-UK-EU-cm converter as a useful tool mention, not a product push.', contact: 'Wirecutter contact' },
+  { name: 'Helo / Help a Reporter (if still used)', url: 'https://www.helpareporter.com', type: 'journalist-requests', asset: '/press', angle: 'Same rule: answer only when we have a catalog fact.', contact: 'Query desk' },
+  { name: 'Something Haute (Pakistan fashion)', url: 'https://www.somethinghaute.com', type: 'pakistani-press', asset: '/press', angle: 'Pakistani labels (ZED, Bag X, Meerzah, Ndure) sold to US shoppers.', contact: 'Editorial email' },
+  { name: 'Images.dawn.com style desk follow-up', url: 'https://images.dawn.com', type: 'pakistani-press', asset: '/brands/zed', angle: 'ZED coats with fabric blends stated for a US reader.', contact: 'Images desk' },
+  { name: 'Tribune Lifestyle (Pakistan)', url: 'https://tribune.com.pk', type: 'pakistani-press', asset: '/press', angle: 'US-facing retailer carrying Pakistani fashion brands.', contact: 'lifestyle@' },
+  { name: 'Google Business Profile', url: 'https://www.google.com/business/', type: 'local-listing', asset: '/contact', angle: 'Create the GBP for the legal entity once an address exists.', contact: 'GBP dashboard' },
+  { name: 'Bing Places / Webmaster', url: 'https://www.bing.com/webmasters', type: 'local-listing', asset: '/press', angle: 'Submit https://westorastyle.com/sitemap.xml after Bing verification.', contact: 'Bing Webmaster Tools' },
+  { name: 'Apple Business Connect', url: 'https://businessconnect.apple.com', type: 'local-listing', asset: '/contact', angle: 'Optional listing if a pickup or office address exists.', contact: 'Business Connect' },
+  { name: 'r/Watches (US buyers, disclosed retailer)', url: 'https://www.reddit.com/r/Watches', type: 'forum', asset: '/guides/watch-case-size-and-strap-fit', angle: 'Answer size questions with the guide. Disclose affiliation. No link spam.', contact: 'Subreddit rules first' },
+  { name: 'r/malefashionadvice', url: 'https://www.reddit.com/r/malefashionadvice', type: 'forum', asset: '/guides/types-of-mens-jackets', angle: 'Helpful jacket-type answers only, disclosed if asked.', contact: 'Subreddit rules first' },
+  { name: 'Watchuseek quartz forum', url: 'https://www.watchuseek.com', type: 'forum', asset: '/brands/casio', angle: 'Model-number answers from published specs only.', contact: 'Forum PM after contributing' },
 ]

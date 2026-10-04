@@ -9,7 +9,7 @@ import { outreachTargets } from '../src/data/outreach'
 import { faqGroups } from '../src/pages/Faq'
 import { preloadAllPages, prerenderRoutes } from '../src/entry-server'
 import { DESCRIPTION_MAX, metaDescription, pageTitle, SITE_URL, TITLE_MAX } from '../src/lib/seo'
-import { departmentKeywords, keywordsFor, pageKeywords, shoeKeywords } from '../src/lib/seoKeywords'
+import { brandKeywords, departmentKeywords, keywordPlanForPath, keywordsFor, pageKeywords, productKeywordPlan, shoeKeywords, subCollectionKeywords } from '../src/lib/seoKeywords'
 import { cachedRender as render } from './renderCache'
 
 const indexable = () => prerenderRoutes().filter((r) => r.sitemap)
@@ -34,7 +34,13 @@ beforeAll(async () => {
 
 describe('keyword map', () => {
   it('keeps every target within title and description limits once the brand is added', () => {
-    const targets = [...Object.values(pageKeywords), ...Object.values(departmentKeywords), ...Object.values(shoeKeywords)]
+    const targets = [
+      ...Object.values(pageKeywords),
+      ...Object.values(departmentKeywords),
+      ...Object.values(shoeKeywords),
+      ...Object.values(brandKeywords),
+      ...Object.values(subCollectionKeywords),
+    ]
     for (const t of targets) {
       expect(pageTitle(t.title).length, t.title).toBeGreaterThanOrEqual(50)
       expect(pageTitle(t.title).length, t.title).toBeLessThanOrEqual(TITLE_MAX)
@@ -43,6 +49,11 @@ describe('keyword map', () => {
       expect(t.description.length, t.description).toBeLessThanOrEqual(DESCRIPTION_MAX)
     }
     expect(new Set(targets.map((t) => t.primary)).size).toBe(targets.length)
+    for (const t of targets) {
+      expect([1, 2, 3, 'info'], t.primary).toContain(t.tier)
+      expect(t.winnability.length, t.primary).toBeGreaterThan(10)
+      expect(t.currentRank, t.primary).toBe('unknown')
+    }
   })
 })
 
@@ -225,8 +236,8 @@ describe('content', () => {
     }
   })
 
-  it('keeps a manual outreach list of thirty US targets, each with an asset that exists', () => {
-    expect(outreachTargets.length).toBeGreaterThanOrEqual(30)
+  it('keeps a manual outreach list of fifty US targets, each with an asset that exists', () => {
+    expect(outreachTargets.length).toBeGreaterThanOrEqual(50)
     const known = new Set(prerenderRoutes().map((r) => r.path))
     for (const t of outreachTargets) {
       expect(known.has(t.asset), `${t.name} asset ${t.asset}`).toBe(true)
@@ -297,6 +308,45 @@ describe('internal links', () => {
     for (const c of activeCategories()) expect(footer, c.slug).toContain(`href="/collections/${c.slug}"`)
     expect(footer).toContain('href="/guides"')
     expect(footer).toContain('href="/press"')
+  })
+
+  it('assigns a tiered keyword to every indexable page', () => {
+    const products = new Map(allProducts().map((p) => [`/products/${p.slug}`, p]))
+    for (const { path } of indexable()) {
+      const plan = products.has(path) ? productKeywordPlan(products.get(path)!) : keywordPlanForPath(path)
+      expect(plan, path).toBeDefined()
+      expect([1, 2, 3, 'info'], path).toContain(plan!.tier)
+    }
+  })
+
+  it('reaches every product in three clicks or fewer from home', () => {
+    const known = new Set(indexable().map((r) => r.path))
+    const depth = new Map<string, number>([['/', 0]])
+    const queue = ['/']
+    while (queue.length) {
+      const from = queue.shift()!
+      const next = (depth.get(from) ?? 0) + 1
+      if (next > 3) continue
+      for (const [, href] of render(from).html.matchAll(/<a [^>]*href="(\/[^"#?]*)/g)) {
+        const path = href.replace(/\/$/, '') || '/'
+        if (!known.has(path) || depth.has(path)) continue
+        depth.set(path, next)
+        queue.push(path)
+      }
+    }
+    for (const p of allProducts()) {
+      const path = `/products/${p.slug}`
+      expect(depth.get(path), path).toBeLessThanOrEqual(3)
+    }
+  })
+
+  it('does not render generated social proof or the old support domain', () => {
+    for (const { path } of prerenderRoutes()) {
+      const html = render(path).html
+      expect(html, path).not.toMatch(/purchased this (pair|watch|bag|wallet|piece|jacket|hoodie|coat|item)/i)
+      expect(html, path).not.toMatch(/Only [2-9] left</)
+      expect(html, path).not.toContain('novafootwear.com')
+    }
   })
 
   it('leaves no indexable page orphaned', () => {
