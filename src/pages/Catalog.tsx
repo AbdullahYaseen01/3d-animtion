@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router'
-import { activeCategories, allProducts, formatSize, getCategory, productsInCategory, shoeCollections, type Category } from '../catalog'
+import { activeCategories, allProducts, formatSize, getCategory, productsInCategory, shoeCollections, styleCollectionsFor, type Category, type DepartmentSlug } from '../catalog'
 import {
   activeFilterCount,
   applyFilters,
@@ -22,6 +22,7 @@ import { Icon } from '../components/ui/Icon'
 import { productItem, track } from '../lib/analytics'
 import { breadcrumbLd, collectionPageLd, Seo } from '../lib/seo'
 import { CARD_SIZES, productPreload } from '../lib/images'
+import { collectionCopy } from '../lib/collectionCopy'
 import { keywordsFor, pageKeywords } from '../lib/seoKeywords'
 import { campaignHero, collectionOgImage } from '../campaign/styleInMotion'
 import { guidesForCategory } from '../data/guides'
@@ -44,6 +45,9 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
   const state = useMemo(() => parseFilters(params), [params])
   const source = useMemo(() => (category ? productsInCategory(category.slug) : allProducts()), [category])
   const result = useMemo(() => applyFilters(source, state), [source, state])
+  const allMatches = useMemo(() => applyFilters(source, { ...state, page: 1 }, Math.max(source.length, 1)), [source, state])
+  const copy = category ? collectionCopy(category) : null
+  const styles = category && category.kind === 'department' ? styleCollectionsFor(category.slug as DepartmentSlug) : []
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [quick, setQuick] = useState<QuickShopTarget | null>(null)
   const announce = useAnnounce()
@@ -106,7 +110,7 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
                 name: category?.name ?? 'Shop all',
                 description: seo.description,
                 path: basePath,
-                items: result.items.map((p) => ({ name: p.name, path: `/products/${p.slug}` })),
+                items: allMatches.items.map((p) => ({ name: p.name, path: `/products/${p.slug}` })),
               }),
             ]),
       ]
@@ -149,7 +153,24 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
         <div className="page-head catalog-head">
           <Breadcrumbs items={crumbs} />
           <h1>{title}</h1>
-          {category && <p className="lede">{category.intro}</p>}
+          {copy?.intro.map((p) => (
+            <p key={p.slice(0, 28)} className="lede">
+              {p}
+            </p>
+          ))}
+          {styles.length > 0 && (
+            <nav aria-label="Styles in this collection" className="catalog-cats">
+              <ul role="list" className="chip-list">
+                {styles.map((c) => (
+                  <li key={c.slug}>
+                    <Link className="chip" to={`/collections/${c.slug}`}>
+                      {c.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
           {category?.slug === 'shoes' && (
             <nav aria-label="Shoe types" className="catalog-cats">
               <ul role="list" className="chip-list">
@@ -273,6 +294,23 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
               </div>
             )}
 
+            {category && allMatches.items.length > result.items.length && state.page === 1 && !hasRefinements && (
+              <section className="catalog-more" aria-labelledby="collection-all">
+                <h2 id="collection-all" className="eyebrow">
+                  All {category.name.toLowerCase()} styles
+                </h2>
+                <ul role="list" className="chip-list">
+                  {allMatches.items.map((p) => (
+                    <li key={p.id}>
+                      <Link className="chip" to={`/products/${p.slug}`}>
+                        {p.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
             {result.pageCount > 1 && (
               <nav className="pagination" aria-label="Pagination">
                 <ul role="list">
@@ -289,6 +327,12 @@ function CatalogView({ mode, category }: { mode: Mode; category?: Category }) {
             )}
           </div>
         </div>
+
+        {category && copy?.footer.map((p) => (
+          <p key={p.slice(0, 20)} className="lede">
+            {p}
+          </p>
+        ))}
 
         {category && <RelatedCollections slug={category.slug} title={`Shop related to ${category.name.toLowerCase()}`} />}
 

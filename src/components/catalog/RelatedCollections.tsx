@@ -6,6 +6,7 @@ import { relatedCollections } from '../../lib/seoKeywords'
 export function RelatedCollections({ slug, title, extra = [] }: { slug: string; title: string; extra?: { href: string; label: string }[] }) {
   const links = [
     ...(relatedCollections[slug] ?? []).filter((l) => {
+      if (l.href.startsWith('/brands/') || l.href.startsWith('/tools/')) return true
       const target = l.href.replace('/collections/', '')
       return target !== slug && !!getCategory(target)
     }),

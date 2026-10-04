@@ -43,7 +43,7 @@ export interface FilterState {
   page: number
 }
 
-export const PAGE_SIZE = 12
+export const PAGE_SIZE = 24
 
 const list = (params: URLSearchParams, key: string) =>
   (params.get(key) ?? '')
@@ -200,7 +200,7 @@ export interface FilterResult {
   pageCount: number
 }
 
-export function applyFilters(source: Product[], s: FilterState): FilterResult {
+export function applyFilters(source: Product[], s: FilterState, pageSize = PAGE_SIZE): FilterResult {
   let items = source.filter((p) => matchesQuery(p, s.q))
   if (s.category.length) items = items.filter((p) => s.category.some((c) => p.category === c || p.shoeUse === c))
   if (s.use.length) items = items.filter((p) => p.shoeUse != null && s.use.includes(p.shoeUse))
@@ -245,10 +245,10 @@ export function applyFilters(source: Product[], s: FilterState): FilterResult {
       break
   }
 
-  const pageCount = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE))
+  const pageCount = Math.max(1, Math.ceil(sorted.length / pageSize))
   const page = Math.min(s.page, pageCount)
   return {
-    items: sorted.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE),
+    items: sorted.slice((page - 1) * pageSize, page * pageSize),
     total: sorted.length,
     pageCount,
   }

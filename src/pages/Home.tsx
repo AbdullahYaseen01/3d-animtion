@@ -5,7 +5,7 @@ import { activeCategories, getProduct } from '../catalog'
 import { store } from '../config/store'
 import { productItem, track } from '../lib/analytics'
 import { organizationLd, Seo, websiteLd } from '../lib/seo'
-import { pageKeywords } from '../lib/seoKeywords'
+import { pageKeywords, seasonalLinksFor } from '../lib/seoKeywords'
 import { EditorialOpening } from '../components/home/EditorialOpening'
 import { editorialOpening, editorialSrcSet, HERO_SIZES } from '../components/home/cityEdit'
 import { ProductCard } from '../components/product/ProductCard'
@@ -140,6 +140,28 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {seasonalLinksFor().length > 0 && (
+        <section className="section section--tight" aria-labelledby="season-title">
+          <div className="container">
+            <div className="section-head">
+              <div>
+                <p className="eyebrow">This season</p>
+                <h2 id="season-title">Guides and collections to open now</h2>
+              </div>
+            </div>
+            <ul role="list" className="chip-list">
+              {seasonalLinksFor().map((entry) => (
+                <li key={entry.id}>
+                  <Link className="chip" to={entry.href}>
+                    {entry.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       <section className="section section--tight assurance" aria-labelledby="assure-title">
         <div className="container">
