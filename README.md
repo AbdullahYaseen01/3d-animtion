@@ -121,7 +121,7 @@ Each of these must be resolved by the business. None can be settled in code.
 
 1. **Real catalog.** `src/catalog/products.ts` is sample data (styles, prices, stock and sizes). The product images are
    generated renders. Replace both with real products and photography, then set `CATALOG_IS_SAMPLE = false`.
-2. **Support email.** Confirm that `hello@novafootwear.com` exists and is monitored (`store.supportEmail`).
+2. **Support email.** Confirm that `hello@westorastyle.com` exists and is monitored (`store.supportEmail`).
 3. **Shipping.** Confirm free standard shipping, 3–7 business days, processing time (1 business day) and US-only delivery.
    All are set in `store.shipping` and shown site-wide.
 4. **Returns.** Confirm the 30-day window, the "unworn" condition and the 7-day window for damaged or incorrect items

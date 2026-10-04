@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { LOW_STOCK_THRESHOLD, allProducts, buildSku, getProduct, stockFor } from '../src/catalog'
-import { cardScarcityCount, cardScarcityLabel, stockUrgencyLabel } from '../src/catalog/urgency'
+import { stockUrgencyLabel } from '../src/catalog/urgency'
 import { sizeForLength } from '../src/catalog/sizing'
 import { applyFilters, parseFilters } from '../src/catalog/filters'
 import { deliveryWindow } from '../src/lib/delivery'
@@ -25,17 +25,6 @@ describe('stock, delivery, size', () => {
     const soldOut = getProduct('ndure-kay-0004-white')!
     expect(stockUrgencyLabel(soldOut, 'white', 10, 'D')).toBeNull()
     expect(allProducts().every((item) => stockUrgencyLabel(item, item.colors[0].slug, item.variant === 'simple' ? 0 : null, item.widths[0].code) == null)).toBe(true)
-  })
-
-  it('shows a different Only N left line on every product', () => {
-    const products = allProducts()
-    const labels = products.map((item) => cardScarcityLabel(item.id))
-    expect(labels.every((label) => /^Only [2-9] left$/.test(label))).toBe(true)
-    expect(new Set(labels).size).toBeGreaterThan(1)
-    for (const item of products) {
-      expect(cardScarcityCount(item.id)).toBe(cardScarcityCount(item.id))
-      expect(cardScarcityLabel(item.id)).toBe(`Only ${cardScarcityCount(item.id)} left`)
-    }
   })
 
   it('searches across categories and respects a written budget', () => {

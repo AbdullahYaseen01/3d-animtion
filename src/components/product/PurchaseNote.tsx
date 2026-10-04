@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react'
 import { latestPurchaseFor, purchaseSentence, subscribePurchases } from '../../commerce/purchaseActivity'
-import { productPurchaseLine } from '../../commerce/samplePurchases'
 
-/** Shows a recent purchase line for this product. A real paid order replaces the preview line. */
+/** Shows a recent purchase only after a real paid order in this browser. */
 export function PurchaseNote({ productId, className }: { productId: string; className?: string }) {
-  const [line, setLine] = useState<string | null>(() => productPurchaseLine(productId))
+  const [line, setLine] = useState<string | null>(null)
 
   useEffect(() => {
     const update = () => {
       const latest = latestPurchaseFor(productId)
-      setLine(latest ? purchaseSentence(latest) : productPurchaseLine(productId))
+      setLine(latest ? purchaseSentence(latest) : null)
     }
     update()
     const interval = window.setInterval(update, 60_000)
