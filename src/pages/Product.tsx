@@ -1,18 +1,20 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router'
-import { allProducts, getCategory, getColor, getProduct, isProductAvailable, productImagePath, type Product as ProductT } from '../catalog'
+import { allProducts, getCategory, getColor, getProduct, isProductAvailable, moreFromBrand, productImagePath, type Product as ProductT } from '../catalog'
 import { stockUrgencyLabel } from '../catalog/urgency'
 import { store } from '../config/store'
 import { getGuide, guidesForCategory } from '../data/guides'
 import { GALLERY_SIZES, productPreload } from '../lib/images'
-import { productAlt, productMetaDescription, productSeoTitle } from '../lib/productText'
+import { productFaqs, siblingComparison, watchLead } from '../lib/productFaqs'
+import { brandOf, productAlt, productMetaDescription, productSeoTitle } from '../lib/productText'
 import { RelatedCollections } from '../components/catalog/RelatedCollections'
-import { keywordsFor } from '../lib/seoKeywords'
+import { brandKeywords, keywordsFor } from '../lib/seoKeywords'
 import { productItem, track } from '../lib/analytics'
 import { deliveryWindow } from '../lib/delivery'
 import { formatMoney } from '../lib/money'
 import { productGroupLd } from '../lib/productLd'
-import { breadcrumbLd, Seo } from '../lib/seo'
+import { brandSlug } from '../catalog/discover'
+import { breadcrumbLd, faqLd, Seo } from '../lib/seo'
 import { useWishlist } from '../state/WishlistProvider'
 import { Gallery } from '../components/product/Gallery'
 import { ProductCard } from '../components/product/ProductCard'
@@ -118,7 +120,13 @@ function ProductView({ product }: { product: ProductT }) {
   const at = siblings.findIndex((p) => p.id === product.id)
   const ring = [...siblings.slice(at + 1), ...siblings.slice(0, at)]
   const sameUse = ring.filter((p) => product.shoeUse != null && p.shoeUse === product.shoeUse)
-  const related = [...new Set([...ring.slice(0, 1), ...sameUse, ...ring])].slice(0, 4)
+  const brandMates = moreFromBrand(product, 4)
+  const related = [...new Set([...brandMates, ...ring.slice(0, 1), ...sameUse, ...ring])].slice(0, 4)
+  const sibling = related.find((p) => p.id !== product.id)
+  const faqs = productFaqs(product)
+  const lead = watchLead(product)
+  const brandName = brandOf(product)
+  const brandPath = brandKeywords[brandSlug(brandName)] ? `/brands/${brandSlug(brandName)}` : null
   const guides = [
     ...(product.relatedGuides ?? []).map(getGuide).filter((g) => !!g),
     ...(product.shoeUse ? guidesForCategory(product.shoeUse) : []),
@@ -131,6 +139,7 @@ function ProductView({ product }: { product: ProductT }) {
     { name: 'Home', path: '/' },
     { name: category.name, path: `/collections/${category.slug}` },
     ...(useCollection ? [{ name: useCollection.name, path: `/collections/${useCollection.slug}` }] : []),
+    ...(brandPath ? [{ name: brandName, path: brandPath }] : []),
     { name: product.name, path: `/products/${product.slug}` },
   ]
   const lcpImage = color.images[0] ?? product.colors[0].images[0]
@@ -145,7 +154,7 @@ function ProductView({ product }: { product: ProductT }) {
         image={productImagePath(product.colors[0].images[0], 1024)}
         imageAlt={productAlt(product)}
         preloadImage={productPreload(lcpImage, GALLERY_SIZES)}
-        jsonLd={[productGroupLd(product), breadcrumbLd(crumbs)]}
+        jsonLd={[productGroupLd(product), breadcrumbLd(crumbs), faqLd(faqs)]}
       />
 
       <div className="container">
@@ -165,7 +174,7 @@ function ProductView({ product }: { product: ProductT }) {
                 {product.isNew && <span className="badge badge--ink">New</span>}
               </p>
               <h1>{product.name}</h1>
-              <p className="pdp__tagline">{product.tagline}</p>
+              <p className="pdp__tagline">{lead ?? product.tagline}</p>
               <Price cents={product.priceCents} compareAtCents={product.compareAtPriceCents} className="pdp__price" />
               {available && stockUrgencyLabel(product, sel.colorSlug, sel.size, sel.widthCode) && (
                 <p className="pdp__stock">{stockUrgencyLabel(product, sel.colorSlug, sel.size, sel.widthCode)}</p>
@@ -253,7 +262,58 @@ function ProductView({ product }: { product: ProductT }) {
         <section className="pdp-details" aria-labelledby="details-title">
           <div className="pdp-details__overview">
             <h2 id="details-title">About the {product.name}</h2>
+            {lead && <p className="lede">{lead}</p>}
             <p className="lede">{product.description}</p>
+            {sibling && (
+              <p>
+                Compared with <Link to={`/products/${sibling.slug}`}>{sibling.name}</Link>: {siblingComparison(product, sibling)}
+              </p>
+            )}
+            {brandPath && (
+              <p>
+                <Link to={brandPath}>More from {brandName}</Link>
+                {useCollection ? (
+                  <>
+                    {' '}
+                    · <Link to={`/collections/${useCollection.slug}`}>More {useCollection.name.toLowerCase()}</Link>
+                  </>
+                ) : null}
+              </p>
+            )}
+
+            <h3>Specifications</h3>
+            <div className="table-wrap" tabIndex={0} role="region" aria-label="Specifications">
+              <table className="data-table">
+                <tbody>
+                  {product.specs.map((sp) => (
+                    <tr key={sp.label}>
+                      <th scope="row">{sp.label}</th>
+                      <td>{sp.value}</td>
+                    </tr>
+                  ))}
+                  {product.variant === 'footwear' && (
+                    <>
+                      <tr>
+                        <th scope="row">Sizes</th>
+                        <td>
+                          US men's {product.sizes[0]}–{product.sizes[product.sizes.length - 1]}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Widths</th>
+                        <td>{product.widths.map((w) => `${w.label} (${w.code})`).join(', ')}</td>
+                      </tr>
+                    </>
+                  )}
+                  {product.variant === 'apparel' && (
+                    <tr>
+                      <th scope="row">Sizes</th>
+                      <td>{product.sizes.map((s) => product.sizeLabels?.[s] ?? s).join(', ')}</td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
             <ul role="list" className="pdp-highlights">
               {product.highlights.map((h) => (
                 <li key={h}>
@@ -322,6 +382,15 @@ function ProductView({ product }: { product: ProductT }) {
               <p>{product.materials}</p>
               <p>{product.care}</p>
             </details>
+            <section className="pdp-faq" aria-labelledby="pdp-faq-title">
+              <h3 id="pdp-faq-title">Questions about this {category.name.toLowerCase().replace(/s$/, '')}</h3>
+              {faqs.map((q) => (
+                <div key={q.question}>
+                  <h4>{q.question}</h4>
+                  <p>{q.answer}</p>
+                </div>
+              ))}
+            </section>
             <details className="accordion">
               <summary>
                 <h3>Shipping & returns</h3>
@@ -357,7 +426,10 @@ function ProductView({ product }: { product: ProductT }) {
         <RelatedCollections
           slug={useCollection?.slug ?? category.slug}
           title={`Shop the category: ${category.name.toLowerCase()}`}
-          extra={useCollection ? [{ href: `/collections/${useCollection.slug}`, label: `More ${keywordsFor(useCollection.slug)?.primary ?? useCollection.name.toLowerCase()}` }] : []}
+          extra={[
+            ...(brandPath ? [{ href: brandPath, label: `More from ${brandName}` }] : []),
+            ...(useCollection ? [{ href: `/collections/${useCollection.slug}`, label: `More ${keywordsFor(useCollection.slug)?.primary ?? useCollection.name.toLowerCase()}` }] : []),
+          ]}
         />
 
         <section className="section" aria-labelledby="related-title">

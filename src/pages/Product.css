@@ -68,6 +68,16 @@
   background: var(--color-ember);
 }
 
+.pdp-faq {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.pdp-faq h4 {
+  margin: 0;
+  font-size: var(--text-sm);
+}
+
 .pdp__fit {
   padding: var(--space-3) var(--space-4);
   border-left: 3px solid var(--color-ember);

@@ -50,6 +50,7 @@ export default function FitGuide() {
         <li>Measure from the wall to the mark in centimeters. Use the longer foot.</li>
       </ol>
       <p>
+        <Link to="/tools/shoe-size-converter">Use the US, UK, EU, and cm converter</Link> ·{' '}
         <Link to="/guides/how-to-measure-your-feet">Read the full measuring guide</Link>.
       </p>
 

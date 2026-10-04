@@ -85,7 +85,9 @@ export default function Guide() {
             <section key={s.heading}>
               <h2>{s.heading}</h2>
               {s.body.map((p) => (
-                <p key={p.slice(0, 32)}>{p}</p>
+                <p key={p.slice(0, 32)}>
+                  <LinkedText text={p} />
+                </p>
               ))}
               {s.list && (
                 <ul>
@@ -102,7 +104,9 @@ export default function Guide() {
               {guide.faq.map((q) => (
                 <div key={q.question}>
                   <h3>{q.question}</h3>
-                  <p>{q.answer}</p>
+                  <p>
+                    <LinkedText text={q.answer} />
+                  </p>
                 </div>
               ))}
             </section>
@@ -164,6 +168,24 @@ export default function Guide() {
         </section>
       )}
       <QuickShop target={quick} onClose={() => setQuick(null)} />
+    </>
+  )
+}
+
+/** Turns [label](/path) markers in editorial copy into in-sentence links. */
+function LinkedText({ text }: { text: string }) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g)
+  return (
+    <>
+      {parts.map((part, i) => {
+        const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+        if (!match) return <span key={i}>{part}</span>
+        return (
+          <Link key={i} to={match[2]}>
+            {match[1]}
+          </Link>
+        )
+      })}
     </>
   )
 }

@@ -72,6 +72,35 @@ export const guides: Guide[] = [
         ],
         list: ['Between sizes in mesh or knit sneakers: consider the larger size.', 'Between sizes in stiffer synthetic uppers: the larger size is usually safer, since they give less than knit.'],
       },
+      {
+        heading: 'How the numbers map to a US size',
+        body: [
+          'Our [shoe size converter](/tools/shoe-size-converter) uses the same chart as the [fit guide](/fit-guide). A 27 cm foot matches US men 9 / UK 8 / EU 42.5. A 26 cm foot matches US men 8. If your length sits between two rows, choose the larger row so the toe is not against the end of the shoe.',
+          'Women who usually wear a US women 10 should look at US men 8.5 on that chart. The offset is about 1.5 sizes. [Ndure men\'s sneakers](/collections/shoes) are sold in US men\'s sizes only, in standard width, typically 7 through 12.',
+          'Do not convert from the size printed in an old pair unless you have measured that pair against the chart. Brands stamp different lasts. A "9" in one brand can match an 8.5 in another. The centimeter column is the only number that travels.',
+        ],
+      },
+      {
+        heading: 'Width, even when the shop only stocks standard',
+        body: [
+          'Every sneaker we sell is standard (D) width. We do not stock 2E. If the paper width is well above the average for your length, a knit or slip-on upper usually gives more room than a stiff synthetic one. Read [standard vs wide shoes](/guides/standard-vs-wide-shoes) before you order a structured lace-up.',
+          'A mesh lace-up from the [lightweight mesh sneakers](/collections/running) collection will give more than a coated low-top. If your foot spills over the sole of shoes you already own, measuring width first saves a return.',
+        ],
+      },
+      {
+        heading: 'A worked example',
+        body: [
+          'Suppose the longer foot is 27.2 cm and the width at the ball is 10.2 cm. The next chart row at or above 27.2 cm is 27.5 cm, US men 9.5. That is the size to start with. If you swell at the end of a standing shift, do not size down to make the shoe look neater.',
+          'If you already own a pair that fits, measure the insole length and compare it with the foot length. You want a little space in front of the toe. Then open the product you are considering — for example the [Ndure KAY-0003](/products/ndure-kay-0003-black) — and read the fit note on that page. The note is about that last, not a generic "runs large" claim.',
+        ],
+      },
+      {
+        heading: 'What this method does not do',
+        body: [
+          'It does not replace trying shoes on. It does not tell you how a high instep will feel under a tight lace. It does not convert kids\' sizes. It is a way to stop guessing when you order [men\'s sneakers](/collections/shoes) online and want the first pair to be close.',
+          'If the measurement is below 25 cm or above 31 cm, our current sneakers are outside that range. Do not force a size at the end of the chart.',
+        ],
+      },
     ],
     faq: [
       {
@@ -90,7 +119,7 @@ export const guides: Guide[] = [
     image: '/og/collection-shoes.jpg',
     imageAlt: 'Cream sneakers worn on stone steps',
     published: '2026-09-24',
-    updated: '2026-10-01',
+    updated: '2026-10-04',
   },
   {
     slug: 'how-to-choose-running-shoes',
@@ -375,6 +404,32 @@ export const guides: Guide[] = [
           'Treat water resistance as only the rating written on that page. If none is listed, keep the watch dry.',
         ],
       },
+      {
+        heading: 'A simple comparison of sizes we actually sell',
+        body: [
+          'Think in three buckets. Compact (about 35–38 mm) sits inside the wrist and suits a slimmer dress shirt. Mid (39–42 mm) is the everyday default. Large (43–45 mm) reads as sport and needs a longer lug-to-lug or it will overhang.',
+          'Open [Casio, Naviforce, and Daniel Klein watches](/collections/watches) and read the case field when it is published. If a listing has no case diameter, we do not invent one. The [Casio brand page](/brands/casio) is the shortest path to digital models; [Naviforce](/brands/naviforce) is mostly metal-bracelet quartz.',
+        ],
+        list: [
+          'Compact example: a 35 mm digital Casio on a steel bracelet.',
+          'Mid example: a Daniel Klein analog on leather, often listed around 40 mm when the maker publishes it.',
+          'Large example: a Ferro or similar sport quartz near 45 mm.',
+        ],
+      },
+      {
+        heading: 'Strap fit without guessing',
+        body: [
+          'A leather strap is a hole-and-buckle system. Count the unused holes after you try it: two holes on each side of the working hole is a comfortable range. A metal bracelet is a link system. If the product does not list a wrist range, assume you may need a jeweler to remove links.',
+          'Shop [Daniel Klein watches](/brands/daniel-klein) if you want leather straps we actually list, or [all men\'s watches](/collections/watches) and filter by the strap field on each page. Keep leather dry; rinse salt off a steel bracelet and dry it.',
+        ],
+      },
+      {
+        heading: 'Water resistance is not a swimming claim',
+        body: [
+          '30 meters usually means splash resistance. 50 meters is still not a dive rating. If the [product page](/collections/watches) has no water-resistance line, treat the watch as dry-only. Do not operate the crown in water.',
+          'This page is the Q4 visualizer stand-in: we will add a wrist diagram in a later quarter. Until then, a paper wrist measurement plus the published case size is the honest method.',
+        ],
+      },
     ],
     faq: [
       {
@@ -389,7 +444,7 @@ export const guides: Guide[] = [
     image: '/og/collection-watches.jpg',
     imageAlt: 'Watch worn on a wrist',
     published: '2026-09-26',
-    updated: '2026-10-01',
+    updated: '2026-10-04',
   },
   {
     slug: 'how-to-choose-a-mens-pea-coat',
@@ -426,6 +481,31 @@ export const guides: Guide[] = [
       {
         heading: 'Care',
         body: ['ZED lists these coats as dry clean. Between cleanings, brush the coat after wear, hang it on a wide hanger, and let it air out before closing it in a wardrobe.'],
+      },
+      {
+        heading: 'Pea coat versus the rest of the coat rack',
+        body: [
+          'A pea coat is hip length. An overcoat is closer to the knee. A trench is usually cotton and built for rain, not insulation. If you want the full comparison, read [pea coat vs overcoat](/guides/trench-coat-vs-overcoat). Shop the live list on [men\'s cotton pea coats](/collections/coats).',
+          'For a city commute in rain plus cold, a pea coat over a sweater plus an umbrella is more honest than expecting a cotton-blend pea coat to replace a parka. We have one hooded parka in the coat collection; it is the outlier, not the default.',
+        ],
+        list: [
+          'Wool-rich pea coat (60% wool / 40% polyester in the two ZED styles that list that blend): colder dry days.',
+          'Cotton-blend pea coat (80% cotton / 20% polyester on the rest): fall and mild winter.',
+          'Trench (100% cotton where listed): rain and shoulder seasons.',
+        ],
+      },
+      {
+        heading: 'Color and what to wear it with',
+        body: [
+          'Navy and charcoal sit over almost any knit. Black is the most formal of the current colors. Maroon and brown need a simpler layer underneath so the coat stays the loud piece. A [bomber jacket](/guides/types-of-mens-jackets) is the wrong comparison: it is a jacket, not a coat, and it does not cover the seat.',
+          'Letter sizes are S to XL. Measure a coat you already own and use the [jacket and coat size guide](/guides/mens-jacket-and-coat-size-guide). ZED\'s model notes on each product say which size the photographed person wears.',
+        ],
+      },
+      {
+        heading: 'Price and what you are paying for',
+        body: [
+          'These are ZED coats sold by a US retailer, not heritage naval cloth. The value is a named fabric blend, a published fit, and [free US shipping](/shipping) with a [30-day return](/returns) if the size is wrong. Open the specification table on a coat such as the [Black Wool Pea Coat](/products/zed-black-wool-pea-coat) before you compare it with a nameless "wool" listing elsewhere.',
+        ],
       },
     ],
     faq: [
@@ -484,6 +564,31 @@ export const guides: Guide[] = [
         body: [
           'Try a long coat over the thickest layer you will wear with it. The coat should button without strain and the sleeves should cover a shirt cuff.',
           'Single-breasted coats can be worn open; double-breasted coats look best buttoned, so they need a closer chest fit.',
+        ],
+      },
+      {
+        heading: 'Side-by-side: trench, overcoat, pea coat',
+        body: [
+          'Use this as a decision table, then open the live [men\'s coats](/collections/coats). A [cotton pea coat](/guides/how-to-choose-a-mens-pea-coat) is shorter and more casual. A trench is the rain piece. An overcoat is the long layer over a shirt or knit.',
+        ],
+        list: [
+          'Trench: 100% cotton where ZED published it; storm flap and belt on classic cuts; not sold as waterproof.',
+          'Overcoat: knee-ish length; our current ZED overcoats list 80% cotton / 20% polyester, so they are mid-weight, not heavy wool.',
+          'Pea coat: hip length, double-breasted; two ZED styles list 60% wool / 40% polyester, the rest 80/20 cotton-poly.',
+        ],
+      },
+      {
+        heading: 'Climate, not the catalog photo',
+        body: [
+          'If your coldest regular month is wet and around 45–55°F, a cotton trench plus a sweater covers more days than an overcoat you only wear twice. If you walk to work in dry cold below freezing, the overcoat or a wool-rich pea coat is the better single buy.',
+          'None of these coats is a ski layer. If you need a hood every day, look at the hooded parka in the same collection rather than forcing a trench to do that job.',
+        ],
+      },
+      {
+        heading: 'How to try the length at home',
+        body: [
+          'When the coat arrives, put on the thickest knit you will wear with it and button the front. The trench belt should sit near the natural waist. An overcoat hem should clear the knee or sit just on it — check the product photos and any length note rather than assuming.',
+          'Return it unused if the length is wrong. The [return policy](/returns) is 30 days. Care for the cloth with the [wool and cotton-blend coat guide](/guides/how-to-care-for-a-wool-coat), which follows the dry-clean line ZED prints.',
         ],
       },
     ],
@@ -771,6 +876,32 @@ export const guides: Guide[] = [
           'Store each piece separately in a soft pouch or lined box so pieces do not scratch each other.',
         ],
         body: [],
+      },
+      {
+        heading: 'Kundan, zircon, and plated jewelry are not the same job',
+        body: [
+          'Kundan and stone-set necklace sets are for events. They have foil behind stones and do not like water. Gold-plated hoops and jhumkas are everyday pieces that still hate perfume and the gym. 925 silver rings can be worn more often; they tarnish and polish back.',
+          'Shop [kundan necklace sets](/collections/womens-jewelry) and open a product for weight and finish. [Meerzah jewelry](/brands/meerzah) is the full brand list. Pair a set with a [shoulder or crossbody bag](/collections/handbags) if you need a complete gift, and keep the care card with the box.',
+        ],
+        list: [
+          '925 silver: tarnish is normal; a silver cloth is fine on unplated silver.',
+          '18K gold plated over silver: wipe dry; no dip, no toothpaste.',
+          'Kundan / foil-backed stones: dry cloth only.',
+        ],
+      },
+      {
+        heading: 'A weekly and a seasonal routine',
+        body: [
+          'Weekly: wipe what you wore, check clasps, and put each piece back in its pouch. Seasonal: look at plated rings and bracelets for a bright base metal showing through. That is wear, not dirt. You cannot plate it back at home.',
+          'If you are gifting, include this care note. A [holiday gift guide for her](/guides/holiday-gift-guide-for-her) is the shorter list; this page is the care manual that should travel with the box.',
+        ],
+      },
+      {
+        heading: 'What we will not claim',
+        body: [
+          'We do not claim plating lasts a lifetime. Meerzah\'s own warranty language on plated 925 rings covers the silver for the life of the piece and the plating for three months. We repeat that, we do not stretch it.',
+          'We do not sell solid gold kundan. If a listing says gold plated, it is plated. Read the specification table on the product page before you compare our price with a solid-gold jeweler.',
+        ],
       },
     ],
     faq: [
