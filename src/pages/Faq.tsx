@@ -81,7 +81,11 @@ export function faqGroups(): { title: string; items: QA[] }[] {
         { q: 'Do you ship internationally?', a: ['Yes. Choose your country at checkout and enter the full street address, phone number, and postal code.'] },
         {
           q: 'What is your return policy?',
-          a: [`Eligible items can be returned within ${store.returns.windowDays} days of delivery. Shoes must be unworn. `, { to: '/returns', label: 'Read the full policy' }, '.'],
+          a: [
+            `Eligible items can be returned within ${store.returns.windowDays} days of delivery if they are unused or unworn, in original condition and packaging. Shoes must be tried on indoors only. Email ${store.supportEmail} to start a return. `,
+            { to: '/returns', label: 'Read the full policy' },
+            '.',
+          ],
         },
       ],
     },

@@ -33,7 +33,8 @@ export default function Terms() {
 
       <h2>Returns</h2>
       <p>
-        Returns are handled under our <Link to="/returns">returns policy</Link>.
+        Unused or unworn items in original condition may be returned within {store.returns.windowDays} days of delivery for a refund to the original payment method. You pay
+        return postage unless we sent the wrong or damaged item. The full terms are in our <Link to="/returns">return policy</Link>.
       </p>
 
       <h2>Product information</h2>
