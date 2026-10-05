@@ -31,12 +31,6 @@ export default function Terms() {
         Choose the delivery country at checkout and enter a complete street address. Delivery estimates are provided in good faith but are not guaranteed. See <Link to="/shipping">shipping information</Link>.
       </p>
 
-      <h2>Returns</h2>
-      <p>
-        Unused or unworn items in original condition may be returned within {store.returns.windowDays} days of delivery for a refund to the original payment method. You pay
-        return postage unless we sent the wrong or damaged item. The full terms are in our <Link to="/returns">return policy</Link>.
-      </p>
-
       <h2>Product information</h2>
       <p>We try to describe and display products accurately. Colors can vary slightly between screens, and sizing conversions are approximate.</p>
 

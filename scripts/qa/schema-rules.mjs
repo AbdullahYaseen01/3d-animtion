@@ -42,7 +42,6 @@ function checkOffer(offer, label, errors) {
     errors.push(`${label}: offer availability is not a schema.org URL`)
   if (!isAbsolute(offer.url)) errors.push(`${label}: offer url is not absolute`)
   if (offer.shippingDetails?.['@type'] !== 'OfferShippingDetails') errors.push(`${label}: offer has no shippingDetails`)
-  if (offer.hasMerchantReturnPolicy?.['@type'] !== 'MerchantReturnPolicy') errors.push(`${label}: offer has no hasMerchantReturnPolicy`)
 }
 
 /** Returns human-readable problems; an empty array means the block passes. */

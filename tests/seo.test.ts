@@ -178,7 +178,7 @@ describe('structured data', () => {
     }
   })
 
-  it('names the real brand on products, with shipping and return policy on every offer', () => {
+  it('names the real brand on products, with shipping details on every offer', () => {
     for (const p of allProducts()) {
       const group = extractJsonLd(render(`/products/${p.slug}`).head).find((b) => b['@type'] === 'ProductGroup')
       const brand = p.specs.find((s) => s.label === 'Brand')?.value

@@ -31,7 +31,7 @@ export function brandCopy(name: string, items: import('../catalog').Product[]): 
   const intro = [
     `${name} has ${items.length} styles in this store, priced from ${formatMoney(Math.min(...prices))} to ${formatMoney(Math.max(...prices))}. Westora Style is a US retailer, not ${name}; we sell these pieces and list the specifications the brand published.`,
     `You will find ${list(departments)} from this brand below. Open a product for the model or style name, materials, and care. We do not add reviews, ratings, or facts the listing does not support.`,
-    `${ship} Unused items can be returned within ${store.returns.windowDays} days in original condition. If ${name} did not publish a measurement or water-resistance rating, that field is omitted.`,
+    `${ship} If ${name} did not publish a measurement or water-resistance rating, that field is omitted.`,
   ]
   const footer = [
     `More ${name} pieces may be added when the catalog is updated. Until then, this page is the complete list we sell. Questions about a model or an order go to ${store.supportEmail}.`,
@@ -50,7 +50,7 @@ export function collectionCopy(category: Category): { intro: string[]; footer: s
   const prices = items.map((p) => p.priceCents)
   const min = Math.min(...prices)
   const max = Math.max(...prices)
-  const brands = unique(items.map(brandOf)).filter((b) => b !== store.name)
+  const brands = unique(items.map(brandOf))
   const materials = unique(items.map((p) => specOf(p, /^Fabric$|^Material$|^Upper$/) ?? p.materials.split('.')[0]))
   const styles = unique(items.map((p) => specOf(p, /^Style$|^Type$/)))
   const shoe = items[0].variant === 'footwear'
@@ -64,13 +64,9 @@ export function collectionCopy(category: Category): { intro: string[]; footer: s
     store.shipping.standard.priceCents === 0
       ? `Standard shipping is free to US addresses and usually arrives in ${store.shipping.standard.minBusinessDays}–${store.shipping.standard.maxBusinessDays} business days after we process the order.`
       : `Orders ship to US addresses.`
-  const returns = `Unused items can be returned within ${store.returns.windowDays} days in original condition.`
-
   const intro: string[] = []
   intro.push(
-    brands.length
-      ? `This collection has ${items.length} ${items.length === 1 ? 'style' : 'styles'} from ${list(brands)}. Prices run from ${formatMoney(min)} to ${formatMoney(max)}.`
-      : `This collection has ${items.length} ${items.length === 1 ? 'style' : 'styles'} at ${store.name}. Prices run from ${formatMoney(min)} to ${formatMoney(max)}.`,
+    `This collection has ${items.length} ${items.length === 1 ? 'style' : 'styles'} from ${list(brands)}. Prices run from ${formatMoney(min)} to ${formatMoney(max)}.`,
   )
   if (styles.length) intro.push(`Shapes in stock: ${list(styles, 8)}.`)
   intro.push(`Sizes: ${sizes}. We do not stock wide footwear widths.`)
@@ -82,10 +78,10 @@ export function collectionCopy(category: Category): { intro: string[]; footer: s
     )
   }
   if (materials.length) intro.push(`Materials that appear on the listings include ${list(materials, 5)}.`)
-  intro.push(`${ship} ${returns} Every specification on a product page is a fact published for that style. If a measurement or material was not published, we leave it off.`)
+  intro.push(`${ship} Every specification on a product page comes from the brand listing we imported; if a maker did not publish a fact, we leave it off.`)
 
   const footer: string[] = [
-    `Looking for a specific style or color? Open a product for the full specification table, care notes, and a similar piece in this collection. ${ship} Questions about fit or an order go to ${store.supportEmail}.`,
+    `Looking for a specific model or color? Open a product for the full specification table, care notes, and a comparison with a sibling style from the same brand. ${ship} Questions about fit or an order go to ${store.supportEmail}.`,
   ]
 
   let text = [...intro, ...footer].join(' ')

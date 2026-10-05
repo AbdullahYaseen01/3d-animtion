@@ -64,7 +64,7 @@ export function publicText(input: string): string {
 
 function padDescription(text: string): string {
   if (text.length >= 100) return text
-  return `${text} Free US shipping and 30-day returns on unused items.`
+  return `${text} Free US shipping to US addresses.`
 }
 
 /** Customer-facing product: supplier brand is Westora's own catalog, not the source label. */

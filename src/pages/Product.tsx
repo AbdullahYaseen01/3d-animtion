@@ -239,12 +239,6 @@ function ProductView({ product }: { product: ProductT }) {
                   <DeliveryLine /> <Link to="/shipping">Details</Link>
                 </span>
               </li>
-              <li>
-                <Icon name="return" size={20} />
-                <span>
-                  <strong>{store.returns.windowDays}-day returns</strong> on items in original condition. <Link to="/returns">Return policy</Link>
-                </span>
-              </li>
                 {product.variant === 'footwear' && (
                 <li>
                   <Icon name="ruler" size={20} />
@@ -391,14 +385,11 @@ function ProductView({ product }: { product: ProductT }) {
             </section>
             <details className="accordion">
               <summary>
-                <h3>Shipping & returns</h3>
+                <h3>Shipping</h3>
               </summary>
               <p>
                 {s.priceCents === 0 ? 'Standard shipping is free' : `${s.label} is ${formatMoney(s.priceCents)}`} to US addresses and typically arrives in{' '}
                 {s.minBusinessDays}–{s.maxBusinessDays} business days after dispatch. Sales tax, where applicable, is calculated at checkout.
-              </p>
-              <p>
-                Return eligible items within {store.returns.windowDays} days of delivery. <Link to="/returns">Read the return policy</Link>.
               </p>
             </details>
           </div>

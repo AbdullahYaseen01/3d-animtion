@@ -2,7 +2,6 @@ import { store } from '../config/store'
 import { buildSku, formatSize, getCategory, productImagePath, stockFor, type Product } from '../catalog'
 import { centsToDecimal } from './money'
 import { brandOf } from './productText'
-import { isSupplierBrand } from './publicCopy'
 import { absoluteUrl, orgRef } from './seo'
 
 function shippingDetails() {
@@ -19,23 +18,11 @@ function shippingDetails() {
   }
 }
 
-function returnPolicy() {
-  return {
-    '@type': 'MerchantReturnPolicy',
-    applicableCountry: 'US',
-    returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
-    merchantReturnDays: store.returns.windowDays,
-    returnMethod: 'https://schema.org/ReturnByMail',
-    returnFees: 'https://schema.org/ReturnFeesCustomerResponsibility',
-  }
-}
-
 /** ProductGroup with one Product per purchasable variant, mirroring what the page shows. */
 export function productGroupLd(product: Product) {
   const url = absoluteUrl(`/products/${product.slug}`)
   const category = getCategory(product.category)
   const shipping = shippingDetails()
-  const returns = returnPolicy()
   const variesBy = product.variant === 'simple' ? ['https://schema.org/color'] : ['https://schema.org/color', 'https://schema.org/size']
   const variants = product.colors.flatMap((color) =>
     product.sizes.flatMap((size) =>
@@ -76,7 +63,6 @@ export function productGroupLd(product: Product) {
             availability: stockFor(product, sku) > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
             seller: orgRef(),
             shippingDetails: shipping,
-            hasMerchantReturnPolicy: returns,
           },
         }
       }),
@@ -89,7 +75,7 @@ export function productGroupLd(product: Product) {
     name: product.name,
     description: product.description,
     url,
-    brand: { '@type': 'Brand', name: isSupplierBrand(brandOf(product)) ? store.name : brandOf(product) },
+    brand: { '@type': 'Brand', name: brandOf(product) },
     productGroupID: product.id,
     category: category?.name,
     material: product.materials,

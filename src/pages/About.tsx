@@ -34,7 +34,7 @@ const principles = [
   },
   {
     title: 'Straight answers',
-    body: 'Clear prices, delivery estimates, and return terms before checkout. No fake countdown timers, no invented reviews, and no ratings we have not earned.',
+    body: 'Clear prices and delivery estimates before checkout. No fake countdown timers, no invented reviews, and no ratings we have not earned.',
   },
 ]
 
@@ -62,7 +62,7 @@ export default function About() {
             <h1>{kw.h1}</h1>
             <p className="lede">
               {store.name} is a US online store. We sell men's sneakers, outerwear, and wallets, plus women's handbags and jewelry, and men's watches, with the
-              measurements and materials listed on each product, clear prices, and {store.returns.windowDays}-day returns.
+              measurements and materials listed on each product, and clear prices.
             </p>
           </div>
           <div className="about-hero__media">
@@ -125,8 +125,7 @@ export default function About() {
         <div className="container container--narrow about-promise">
           <h2 id="promise-title">Our promise to you</h2>
           <p className="lede">
-            {s.priceCents === 0 ? 'Free standard shipping' : 'Standard shipping'} to US addresses in {s.minBusinessDays}–{s.maxBusinessDays} business days after processing, and{' '}
-            {store.returns.windowDays}-day returns on items in original condition. Questions go to a real inbox: <a href={`mailto:${store.supportEmail}`}>{store.supportEmail}</a>.
+            {s.priceCents === 0 ? 'Free standard shipping' : 'Standard shipping'} to US addresses in {s.minBusinessDays}–{s.maxBusinessDays} business days after processing. Questions go to a real inbox: <a href={`mailto:${store.supportEmail}`}>{store.supportEmail}</a>.
           </p>
           <div className="hero__ctas" style={{ justifyContent: 'center' }}>
             <Link to="/shop" className="btn btn--lg">

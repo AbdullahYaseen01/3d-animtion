@@ -28,12 +28,6 @@ export const store = {
     allowedCountries: ['US'] as const,
   },
 
-  returns: {
-    /** LAUNCH BLOCKER: "30-day returns" was claimed on the previous site; confirm the terms below. */
-    windowDays: 30,
-    condition: 'unused or unworn, in original condition and packaging',
-  },
-
   checkout: {
     maxQuantityPerLine: 10,
     maxLines: 20,

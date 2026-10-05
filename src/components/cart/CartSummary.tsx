@@ -65,12 +65,6 @@ export function CartAssurances() {
           <Link to="/shipping">Shipping details</Link>
         </span>
       </li>
-      <li>
-        <Icon name="return" size={20} />
-        <span>
-          {store.returns.windowDays}-day returns on eligible items. <Link to="/returns">Return policy</Link>
-        </span>
-      </li>
     </ul>
   )
 }

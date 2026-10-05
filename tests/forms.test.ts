@@ -63,7 +63,7 @@ describe('POST /api/newsletter', () => {
 })
 
 describe('POST /api/contact', () => {
-  const valid = { name: 'Pat', email: 'pat@example.com', topic: 'Returns', message: 'Where do I send my return?', submissionId: 'sub_12345678' }
+  const valid = { name: 'Pat', email: 'pat@example.com', topic: 'An existing order', message: 'Where is my order?', submissionId: 'sub_12345678' }
 
   it('returns field errors', async () => {
     const res = await contact(post('/api/contact', { name: '', email: 'x', message: 'short' }))

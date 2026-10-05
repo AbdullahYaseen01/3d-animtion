@@ -26,8 +26,7 @@ const NotFound = pages.notFound.page.Component
 const Press = pages.press.page.Component
 const Privacy = pages.privacy.page.Component
 const Product = pages.product.page.Component
-const Returns = pages.returns.page.Component
-const ShoeSizeConverter = pages.shoeSizeConverter.page.Component
+      const ShoeSizeConverter = pages.shoeSizeConverter.page.Component
 const Shipping = pages.shipping.page.Component
 const Terms = pages.terms.page.Component
 const Wishlist = pages.wishlist.page.Component
@@ -112,7 +111,6 @@ export function App() {
               <Route path="press" element={<Press />} />
               <Route path="fit-guide" element={<FitGuide />} />
               <Route path="shipping" element={<Shipping />} />
-              <Route path="returns" element={<Returns />} />
               <Route path="faq" element={<Faq />} />
               <Route path="contact" element={<Contact />} />
               <Route path="privacy" element={<Privacy />} />

@@ -90,9 +90,6 @@ export default function FitGuide() {
         Outerwear uses letter sizes, usually S to XL. Each product page lists the fit, such as regular or tailored, and on most styles the height and size the model wears. The
         easiest check is to measure a jacket you already own and compare. See our <Link to="/guides/mens-jacket-and-coat-size-guide">men’s jacket and coat size guide</Link>.
       </p>
-      <p>
-        Still unsure? Unworn items can be returned within our return window. See the <Link to="/returns">return policy</Link>.
-      </p>
     </InfoPage>
   )
 }

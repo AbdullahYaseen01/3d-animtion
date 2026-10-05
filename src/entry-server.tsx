@@ -67,7 +67,6 @@ export function prerenderRoutes(): PrerenderRoute[] {
     { path: '/press', lastmod: content, images: ['/og/home.jpg'] },
     { path: '/fit-guide', lastmod: content },
     { path: '/shipping', lastmod: content },
-    { path: '/returns', lastmod: content },
     { path: '/faq', lastmod: content },
     { path: '/contact', lastmod: content },
     { path: '/privacy', lastmod: legal },

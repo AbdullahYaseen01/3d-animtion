@@ -264,7 +264,7 @@ const guideSource: Guide[] = [
         heading: 'Widths in our shop',
         body: [
           'Every sneaker we currently sell is offered in a standard (D) width only. We do not stock wide fittings at the moment.',
-          'Knit and slip-on uppers stretch a little more than stiff synthetic ones, so they may suit a slightly broader foot. If you normally need a 2E, check the measurements before you order and use our 30-day returns if the fit is wrong.',
+          'Knit and slip-on uppers stretch a little more than stiff synthetic ones, so they may suit a slightly broader foot. If you normally need a 2E, check the measurements before you order.',
         ],
       },
     ],
@@ -505,7 +505,7 @@ const guideSource: Guide[] = [
       {
         heading: 'Price and what you are paying for',
         body: [
-          'These are ZED coats sold by a US retailer, not heritage naval cloth. The value is a named fabric blend, a published fit, and [free US shipping](/shipping) with a [30-day return](/returns) if the size is wrong. Open the specification table on a coat such as the [Black Wool Pea Coat](/products/zed-black-wool-pea-coat) before you compare it with a nameless "wool" listing elsewhere.',
+          'These are ZED coats sold by a US retailer, not heritage naval cloth. The value is a named fabric blend, a published fit, and [free US shipping](/shipping). Open the specification table on a coat such as the [Black Wool Pea Coat](/products/zed-black-wool-pea-coat) before you compare it with a nameless "wool" listing elsewhere.',
         ],
       },
     ],
@@ -589,7 +589,7 @@ const guideSource: Guide[] = [
         heading: 'How to try the length at home',
         body: [
           'When the coat arrives, put on the thickest knit you will wear with it and button the front. The trench belt should sit near the natural waist. An overcoat hem should clear the knee or sit just on it — check the product photos and any length note rather than assuming.',
-          'Return it unused if the length is wrong. The [return policy](/returns) is 30 days. Care for the cloth with the [wool and cotton-blend coat guide](/guides/how-to-care-for-a-wool-coat), which follows the dry-clean line ZED prints.',
+          'Care for the cloth with the [wool and cotton-blend coat guide](/guides/how-to-care-for-a-wool-coat), which follows the dry-clean line ZED prints.',
         ],
       },
     ],

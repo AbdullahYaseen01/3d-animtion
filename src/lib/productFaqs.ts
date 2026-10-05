@@ -105,10 +105,6 @@ export function productFaqs(p: Product): { question: string; answer: string }[] 
         ? `Standard shipping is free to US addresses and typically arrives in ${ship.minBusinessDays}–${ship.maxBusinessDays} business days after we process the order.`
         : `${ship.label} is ${formatMoney(ship.priceCents)}.`,
   })
-  items.push({
-    question: 'What is the return window?',
-    answer: `Return eligible unused items within ${store.returns.windowDays} days in original condition.`,
-  })
 
   return items.slice(0, 5)
 }

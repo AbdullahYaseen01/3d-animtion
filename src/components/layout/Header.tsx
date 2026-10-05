@@ -278,7 +278,6 @@ export function Header() {
             <li><Link to="/about">Our craft</Link></li>
             <li><Link to="/guides">Guides</Link></li>
             <li><Link to="/shipping">Shipping</Link></li>
-            <li><Link to="/returns">Returns</Link></li>
             <li><Link to="/faq">FAQ</Link></li>
             <li><Link to="/contact">Contact us</Link></li>
           </ul>

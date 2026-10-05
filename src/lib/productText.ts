@@ -101,7 +101,7 @@ export function productMetaDescription(p: Product): string {
   const sizes = sizeLine(p)
   const text = [
     `Shop the ${withColor(p)} from ${brandOf(p)}.`,
-    `${formatMoney(p.priceCents)}${free ? ' with free US shipping' : ''} and ${store.returns.windowDays}-day returns.`,
+    `${formatMoney(p.priceCents)}${free ? ' with free US shipping' : ''}.`,
     facts ? `${facts[0].toUpperCase()}${facts.slice(1)}.` : '',
     sizes ? `${sizes}.` : '',
   ]

@@ -12,7 +12,7 @@ const axeSource = readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8')
 const base = process.argv[2] || 'http://localhost:4173'
 const routes = [
   '/', '/shop', '/collections/trail', '/search?q=leather', '/products/stride-runner', '/products/arc-high',
-  '/cart', '/wishlist', '/checkout/success', '/about', '/fit-guide', '/shipping', '/returns', '/faq',
+  '/cart', '/wishlist', '/checkout/success', '/about', '/fit-guide', '/shipping', '/faq',
   '/contact', '/privacy', '/terms', '/guides', '/guides/how-to-measure-your-feet', '/missing-page',
 ]
 

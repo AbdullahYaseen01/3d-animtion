@@ -39,7 +39,7 @@ export default function Privacy() {
 
       <h2>How we use information</h2>
       <ul>
-        <li>To process, ship and support your orders, including returns.</li>
+        <li>To process, ship and support your orders.</li>
         <li>To reply to your messages.</li>
         <li>To send marketing emails, only if you have opted in. Every email includes an unsubscribe link.</li>
         <li>To understand how the site is used and improve it.</li>

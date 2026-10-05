@@ -83,7 +83,7 @@ export default function Contact() {
       seo={{ title: pageKeywords.contact.title, description: pageKeywords.contact.description, path: '/contact' }}
       eyebrow="Help"
       title="Contact us"
-      intro={<p>Questions about sizing, an order or a return? Send us a message and we will reply by email.</p>}
+      intro={<p>Questions about sizing or an order? Send us a message and we will reply by email.</p>}
       help={false}
       aside={
         <>
@@ -93,7 +93,7 @@ export default function Contact() {
           </p>
           <p className="muted">Include your order number if your question is about an order.</p>
           <p>
-            Helpful pages: <Link to="/faq">FAQ</Link> · <Link to="/fit-guide">Size & fit</Link> · <Link to="/shipping">Shipping</Link> · <Link to="/returns">Returns</Link>
+            Helpful pages: <Link to="/faq">FAQ</Link> · <Link to="/fit-guide">Size & fit</Link> · <Link to="/shipping">Shipping</Link>
           </p>
         </>
       }

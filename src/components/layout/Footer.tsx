@@ -42,7 +42,6 @@ export function Footer() {
               <li><Link to="/fit-guide">Size & fit guide</Link></li>
               <li><Link to="/tools/shoe-size-converter">Shoe size converter</Link></li>
               <li><Link to="/shipping">Shipping</Link></li>
-              <li><Link to="/returns">Returns</Link></li>
               <li><Link to="/faq">FAQ</Link></li>
               <li><Link to="/contact">Contact us</Link></li>
             </ul>

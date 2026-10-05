@@ -185,12 +185,6 @@ export default function Home() {
               <Link to="/shipping">Shipping details</Link>
             </li>
             <li>
-              <Icon name="return" size={28} />
-              <h3>{store.returns.windowDays}-day returns</h3>
-              <p>Return eligible items in original condition within {store.returns.windowDays} days. Shoes still need to be unworn.</p>
-              <Link to="/returns">Return policy</Link>
-            </li>
-            <li>
               <Icon name="mail" size={28} />
               <h3>Questions before you buy?</h3>
               <p>Ask about a product or an order and we will reply by email.</p>

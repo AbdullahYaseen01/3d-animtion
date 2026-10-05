@@ -31,7 +31,6 @@ export type PageKey =
   | 'about'
   | 'faq'
   | 'shipping'
-  | 'returns'
   | 'fitGuide'
   | 'contact'
   | 'privacy'
@@ -51,7 +50,7 @@ export const pageKeywords: Record<PageKey, SeoTarget> = {
     supporting: ["men's sneakers", "men's coats", "women's handbags", "men's watches", "women's gold plated jewelry"],
     title: 'Sneakers, Coats, Handbags & Watches',
     description:
-      "Shop men's sneakers, jackets, coats, and watches plus women's handbags and gold-plated jewelry. Free US standard shipping and 30-day returns.",
+      "Shop men's sneakers, jackets, coats, and watches plus women's handbags and gold-plated jewelry. Free US standard shipping on every US order.",
     h1: 'Sneakers, coats, handbags & watches',
     tier: 2,
     intent: 'navigational',
@@ -96,10 +95,10 @@ export const pageKeywords: Record<PageKey, SeoTarget> = {
   },
   faq: {
     primary: 'Westora Style FAQ',
-    supporting: ['sizing questions', 'shipping questions', 'return questions', 'payment methods'],
-    title: 'FAQ: Sizing, Shipping, Returns & Payment',
+    supporting: ['sizing questions', 'shipping questions', 'payment methods'],
+    title: 'FAQ: Sizing, Shipping, and Payment',
     description:
-      'Answers to common questions about shoe and apparel sizing, US shipping times, 30-day returns, payment methods, and product care at Westora Style.',
+      'Answers to common questions about shoe and apparel sizing, US shipping times, payment methods, and product care at Westora Style. We reply by email.',
     h1: 'Frequently asked questions',
     tier: 'info',
     intent: 'informational',
@@ -118,18 +117,6 @@ export const pageKeywords: Record<PageKey, SeoTarget> = {
     ...UNKNOWN,
     winnability: 'Policy page; ranks for brand + shipping once the domain is known.',
   },
-  returns: {
-    primary: '30-day return policy',
-    supporting: ['how to return an order', 'refund timing', 'return eligibility', 'unworn shoes'],
-    title: '30-Day Return Policy & How to Return',
-    description:
-      'Return eligible Westora Style items within 30 days in original condition. See what qualifies, how to start a return, and when your refund is issued.',
-    h1: '30-day return policy',
-    tier: 'info',
-    intent: 'informational',
-    ...UNKNOWN,
-    winnability: 'Policy page; brand + returns is the realistic query.',
-  },
   fitGuide: {
     primary: 'US to EU shoe size men',
     supporting: ['US to UK shoe size', 'shoe size chart', 'how to measure feet', 'jacket size guide'],
@@ -146,10 +133,10 @@ export const pageKeywords: Record<PageKey, SeoTarget> = {
   },
   contact: {
     primary: 'contact Westora Style',
-    supporting: ['customer service', 'sizing help', 'order help', 'return help'],
-    title: 'Contact Us: Sizing, Order & Return Help',
+    supporting: ['customer service', 'sizing help', 'order help'],
+    title: 'Contact Us: Sizing, Order & Shipping Help',
     description:
-      'Email Westora Style with questions about sizing, an order, shipping, or a return. Include your order number and we will reply with a clear answer.',
+      'Email Westora Style with questions about sizing, an order, or shipping. Include your order number and we will reply with a clear answer by email.',
     h1: 'Contact us',
     tier: 2,
     intent: 'navigational',
@@ -170,10 +157,10 @@ export const pageKeywords: Record<PageKey, SeoTarget> = {
   },
   terms: {
     primary: 'Westora Style terms of service',
-    supporting: ['order terms', 'pricing', 'returns terms'],
+    supporting: ['order terms', 'pricing', 'shipping terms'],
     title: 'Terms of Service for Orders & Site Use',
     description:
-      'The terms that apply when you browse westorastyle.com or place an order, covering pricing, payment, shipping, returns, and use of the website.',
+      'The terms that apply when you browse westorastyle.com or place an order, covering pricing, payment, shipping, and use of the website. Read them before you buy.',
     h1: 'Terms of service',
     tier: 'info',
     intent: 'informational',
@@ -214,7 +201,7 @@ export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
     supporting: ['mens mesh sneakers', 'mens slip-on sneakers', 'mens casual lace-up sneakers', "men's sneakers"],
     title: "Men's Mesh and Casual Sneakers, US",
     description:
-      "Shop men's mesh lace-ups, casual low-tops, and slip-ons in standard width, US men's sizes. Free US shipping and 30-day returns on unused pairs.",
+      "Shop men's mesh lace-ups, casual low-tops, and slip-ons in standard width, US men's sizes. Free US shipping on every unused pair we ship to the US.",
     h1: "Men's mesh and casual sneakers",
     tier: 1,
     intent: 'commercial',
@@ -228,7 +215,7 @@ export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
     supporting: ['hobo bag', 'small crossbody bag with zipper', 'womens crossbody bags under 50', "women's handbags"],
     title: 'Women\'s Shoulder, Hobo & Crossbody Bags',
     description:
-      "Shop women's shoulder, hobo, and crossbody bags. Each listing shows material, closure, and size where they are published. Free US shipping and returns.",
+      "Shop women's shoulder, hobo, and crossbody bags. Each listing shows material, closure, and size where they are published. Free US shipping to US addresses.",
     h1: "Women's shoulder, hobo & crossbody bags",
     tier: 1,
     intent: 'commercial',
@@ -242,7 +229,7 @@ export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
     supporting: ['slim card wallet', 'mens bifold wallet', "men's wallets"],
     title: 'Men\'s Bifold Leather & Card Wallets',
     description:
-      "Shop men's bifold and slim card wallets in brown, black, and other colors. Every wallet lists its dimensions. Free US shipping and 30-day returns.",
+      "Shop men's bifold and slim card wallets in brown, black, and other colors. Every wallet lists its dimensions. Free US shipping to US addresses.",
     h1: "Men's bifold and slim card wallets",
     tier: 1,
     intent: 'commercial',
@@ -266,7 +253,7 @@ export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
     supporting: ['mens pullover hoodie', 'mens zip hoodie', "men's hoodies"],
     title: "Men's Zip and Pullover Hoodies, US",
     description:
-      "Shop men's zip and pullover hoodies in sizes S to XL. Each page lists the fabric, fit, and care. Free US standard shipping and 30-day returns.",
+      "Shop men's zip and pullover hoodies in sizes S to XL. Each page lists the fabric, fit, and care. Free US standard shipping on every US order.",
     h1: "Men's zip and pullover hoodies",
     tier: 2,
     intent: 'commercial',
@@ -292,7 +279,7 @@ export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
     supporting: ['polki necklace set', 'gold plated jhumka earrings', "women's gold plated jewelry"],
     title: 'Kundan Necklace Sets & Gold Jhumkas',
     description:
-      "Shop kundan and zircon necklace sets, gold-plated jhumkas, and 925 silver rings. Weight and finish are listed. Free US shipping and 30-day returns.",
+      "Shop kundan and zircon necklace sets, gold-plated jhumkas, and 925 silver rings. Weight and finish are listed. Free US shipping to US addresses.",
     h1: 'Kundan necklace sets and gold-plated jewelry',
     tier: 1,
     intent: 'commercial',
@@ -335,7 +322,7 @@ export const shoeKeywords: Record<ShoeUse, SeoTarget> = {
     supporting: ['mens mesh gym sneakers', 'lightweight sneakers for walking'],
     title: 'Men\'s Lightweight Mesh Gym Sneakers',
     description:
-      "Shop men's mesh lace-up sneakers with EVA or PU soles for gym sessions and walks. Standard width, US men's sizes. Free US shipping and 30-day returns.",
+      "Shop men's mesh lace-up sneakers with EVA or PU soles for gym sessions and walks. Standard width, US men's sizes. Free US shipping to US addresses.",
     h1: "Men's lightweight mesh sneakers",
     tier: 1,
     intent: 'commercial',
@@ -347,7 +334,7 @@ export const shoeKeywords: Record<ShoeUse, SeoTarget> = {
     supporting: ['hiking sneakers', 'outdoor shoes', 'grippy sneakers'],
     title: 'Men\'s Trail Shoes & Outdoor Sneakers',
     description:
-      "Shop men's trail and outdoor sneakers with the upper and sole materials listed on every page, in US sizes, with free standard US shipping and returns.",
+      "Shop men's trail and outdoor sneakers with the upper and sole materials listed on every page, in US sizes, with free standard US shipping to US addresses.",
     h1: "Men's trail sneakers",
     tier: 3,
     intent: 'commercial',
@@ -371,7 +358,7 @@ export const shoeKeywords: Record<ShoeUse, SeoTarget> = {
     supporting: ['mens slip-on sneakers', 'laceless sneakers'],
     title: "Men's Slip-On Sneakers Under $50, US",
     description:
-      "Shop men's slip-on sneakers for errands and travel. Knit or mesh uppers, standard width, US men's sizes. Free US shipping and 30-day returns.",
+      "Shop men's slip-on sneakers for errands and travel. Knit or mesh uppers, standard width, US men's sizes. Free US shipping on every US order.",
     h1: "Men's slip-on sneakers under $50",
     tier: 2,
     intent: 'commercial',
@@ -386,7 +373,7 @@ export const brandKeywords: Record<string, SeoTarget> = {
     supporting: ['Curren metal band watch', 'Curren quartz watch'],
     title: "Curren Men's Quartz Watches in the US",
     description:
-      "Shop Curren men's quartz watches on metal bracelets. Dial, case, and water resistance are listed when published. Free US shipping and 30-day returns.",
+      "Shop Curren men's quartz watches on metal bracelets. Dial, case, and water resistance are listed when published. Free US shipping to US addresses.",
     h1: "Curren men's watches",
     tier: 1,
     intent: 'commercial',
@@ -398,7 +385,7 @@ export const brandKeywords: Record<string, SeoTarget> = {
     supporting: ['Fossil retro digital watch', 'Fossil leather watch'],
     title: "Fossil Men's Watches Sold in the US",
     description:
-      "Shop Fossil men's quartz watches, including retro digital models, with the published specs on each page. Free US shipping and 30-day returns.",
+      "Shop Fossil men's quartz watches, including retro digital models, with the published specs on each page. Free US shipping on every US order.",
     h1: "Fossil men's watches",
     tier: 2,
     intent: 'commercial',
@@ -410,7 +397,7 @@ export const brandKeywords: Record<string, SeoTarget> = {
     supporting: ['Seiko metal band watch'],
     title: "Seiko Men's Watch We Sell in the US",
     description:
-      "Shop the Seiko men's watch we stock, with the dial and strap listed as published. Free US standard shipping and 30-day returns on unused watches.",
+      "Shop the Seiko men's watch we stock, with the dial and strap listed as published. Free US standard shipping on every unused watch we ship to the US.",
     h1: "Seiko men's watches",
     tier: 2,
     intent: 'commercial',
@@ -422,7 +409,7 @@ export const brandKeywords: Record<string, SeoTarget> = {
     supporting: ['Mini Focus quartz watch'],
     title: "Mini Focus Men's Quartz Watches, US",
     description:
-      "Shop Mini Focus men's quartz watches with the published case, dial, and strap on each page. Free US standard shipping and 30-day returns on unused watches.",
+      "Shop Mini Focus men's quartz watches with the published case, dial, and strap on each page. Free US standard shipping on every unused watch we ship to the US.",
     h1: "Mini Focus men's watches",
     tier: 1,
     intent: 'commercial',
@@ -434,7 +421,7 @@ export const brandKeywords: Record<string, SeoTarget> = {
     supporting: ['Skmei quartz watch'],
     title: "Skmei Men's Quartz Watches in the US",
     description:
-      "Shop Skmei men's quartz watches with listed model details, dials, and straps. Free US standard shipping and 30-day returns on unused watches.",
+      "Shop Skmei men's quartz watches with listed model details, dials, and straps. Free US standard shipping on every unused watch we ship to the US.",
     h1: "Skmei men's watches",
     tier: 1,
     intent: 'commercial',
@@ -446,7 +433,7 @@ export const brandKeywords: Record<string, SeoTarget> = {
     supporting: ['Omax quartz watch'],
     title: "Omax Men's Quartz Watches Sold in US",
     description:
-      "Shop Omax men's quartz watches with the published dial, strap, and water resistance where the maker listed them. Free US shipping and 30-day returns.",
+      "Shop Omax men's quartz watches with the published dial, strap, and water resistance where the maker listed them. Free US shipping to US addresses.",
     h1: "Omax men's watches",
     tier: 1,
     intent: 'commercial',
@@ -458,7 +445,7 @@ export const brandKeywords: Record<string, SeoTarget> = {
     supporting: ['Bonito quartz watch'],
     title: "Bonito Men's Quartz Watches in the US",
     description:
-      "Shop Bonito men's quartz watches with the published dial and strap on each page. Free US standard shipping and 30-day returns on unused watches.",
+      "Shop Bonito men's quartz watches with the published dial and strap on each page. Free US standard shipping on every unused watch we ship to the US.",
     h1: "Bonito men's watches",
     tier: 1,
     intent: 'commercial',
@@ -470,7 +457,7 @@ export const brandKeywords: Record<string, SeoTarget> = {
     supporting: ['Ferro sport quartz watch'],
     title: "Ferro Men's Sport Quartz Watches, US",
     description:
-      "Shop Ferro men's sport quartz watches with the published case and strap on each page. Free US standard shipping and 30-day returns on unused watches.",
+      "Shop Ferro men's sport quartz watches with the published case and strap on each page. Free US standard shipping on every unused watch we ship to the US.",
     h1: "Ferro men's watches",
     tier: 1,
     intent: 'commercial',
@@ -482,7 +469,7 @@ export const brandKeywords: Record<string, SeoTarget> = {
     supporting: ['Crysma quartz watch'],
     title: "Crysma Men's Quartz Watches in the US",
     description:
-      "Shop Crysma men's quartz watches with the published dial, case, and strap on each page. Free US standard shipping and 30-day returns on unused watches.",
+      "Shop Crysma men's quartz watches with the published dial, case, and strap on each page. Free US standard shipping on every unused watch we ship to the US.",
     h1: "Crysma men's watches",
     tier: 1,
     intent: 'commercial',
@@ -494,7 +481,7 @@ export const brandKeywords: Record<string, SeoTarget> = {
     supporting: ['Slazenger quartz watch'],
     title: "Slazenger Men's Watches Sold in the US",
     description:
-      "Shop Slazenger men's quartz watches with the published dial and strap on each page. Free US standard shipping and 30-day returns on unused watches.",
+      "Shop Slazenger men's quartz watches with the published dial and strap on each page. Free US standard shipping on every unused watch we ship to the US.",
     h1: "Slazenger men's watches",
     tier: 1,
     intent: 'commercial',
@@ -506,7 +493,7 @@ export const brandKeywords: Record<string, SeoTarget> = {
     supporting: ['Royal London quartz watch'],
     title: "Royal London Men's Watches in the US",
     description:
-      "Shop Royal London men's watches with the published dial and strap on each page. Free US standard shipping and 30-day returns on unused watches.",
+      "Shop Royal London men's watches with the published dial and strap on each page. Free US standard shipping on every unused watch we ship to the US.",
     h1: "Royal London men's watches",
     tier: 1,
     intent: 'commercial',
@@ -521,7 +508,7 @@ export const subCollectionKeywords: Record<string, SeoTarget> = {
     supporting: ['shoulder bag with zipper', 'small shoulder bag'],
     title: 'Women\'s Shoulder Bags With Zippers',
     description:
-      "Shop women's shoulder bags. Closures, materials, and measurements are listed where they were published. Free US shipping and 30-day returns.",
+      "Shop women's shoulder bags. Closures, materials, and measurements are listed where they were published. Free US shipping on every order we ship.",
     h1: "Women's shoulder bags",
     tier: 1,
     intent: 'commercial',
@@ -535,7 +522,7 @@ export const subCollectionKeywords: Record<string, SeoTarget> = {
     supporting: ['small crossbody bag with zipper', 'hobo crossbody bags for women'],
     title: 'Women\'s Small Crossbody Bags, Zipper',
     description:
-      "Shop women's crossbody bags with listed closures, materials, and measurements. Free US standard shipping and 30-day returns on every unused bag.",
+      "Shop women's crossbody bags with listed closures, materials, and measurements. Free US standard shipping on every unused bag we ship to the US.",
     h1: "Women's crossbody bags",
     tier: 2,
     intent: 'commercial',
@@ -549,7 +536,7 @@ export const subCollectionKeywords: Record<string, SeoTarget> = {
     supporting: ['mens digital watches', 'digital sport watch'],
     title: 'Casio Digital Watches and Sport Models',
     description:
-      "Shop digital watches with the published model number, movement, and water resistance on each page. Free US standard shipping and 30-day returns.",
+      "Shop digital watches with the published model number, movement, and water resistance on each page. Free US standard shipping to US addresses.",
     h1: "Men's digital watches",
     tier: 2,
     intent: 'commercial',
@@ -561,7 +548,7 @@ export const subCollectionKeywords: Record<string, SeoTarget> = {
     supporting: ['leather strap quartz watch', 'daniel klein leather watch'],
     title: 'Men\'s Leather Strap Quartz Watches',
     description:
-      "Shop men's quartz watches on leather straps. Case, crystal, and water resistance are listed when the maker published them. Free US shipping, 30-day returns.",
+      "Shop men's quartz watches on leather straps. Case, crystal, and water resistance are listed when the maker published them. Free US shipping to US addresses.",
     h1: "Men's leather-strap watches",
     tier: 1,
     intent: 'commercial',
@@ -573,7 +560,7 @@ export const subCollectionKeywords: Record<string, SeoTarget> = {
     supporting: ['stainless steel bracelet watch', 'naviforce metal band watch'],
     title: 'Men\'s Metal Bracelet Quartz Watches',
     description:
-      "Shop men's quartz watches on metal bracelets. Model number, movement, and water resistance are listed where published. Free US shipping and 30-day returns.",
+      "Shop men's quartz watches on metal bracelets. Model number, movement, and water resistance are listed where published. Free US shipping to US addresses.",
     h1: "Men's metal-bracelet watches",
     tier: 1,
     intent: 'commercial',
@@ -585,7 +572,7 @@ export const subCollectionKeywords: Record<string, SeoTarget> = {
     supporting: ['affordable mens quartz watch', 'casio digital watch under 50'],
     title: 'Affordable Men\'s Watches Under $50',
     description:
-      "Shop men's watches priced under $50, each with a published model number and movement. Free US standard shipping and 30-day returns on unused watches.",
+      "Shop men's watches priced under $50, each with a published model number and movement. Free US standard shipping on every unused watch we ship to the US.",
     h1: "Men's watches under $50",
     tier: 2,
     intent: 'commercial',
@@ -985,7 +972,6 @@ const PAGE_PATHS: Record<string, PageKey> = {
   '/about': 'about',
   '/faq': 'faq',
   '/shipping': 'shipping',
-  '/returns': 'returns',
   '/fit-guide': 'fitGuide',
   '/contact': 'contact',
   '/privacy': 'privacy',

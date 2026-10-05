@@ -41,7 +41,7 @@ export function InfoPage({ seo, eyebrow, title, intro, children, aside, help = t
             <div>
               <h2 id="help-title">Still have a question?</h2>
               <p>
-                Our team answers sizing, order and returns questions by email. Write to{' '}
+                Our team answers sizing and order questions by email. Write to{' '}
                 <a href={`mailto:${store.supportEmail}`}>{store.supportEmail}</a> or <Link to="/contact">use the contact form</Link>.
               </p>
             </div>

@@ -204,14 +204,11 @@ function OrderResult({ order }: { order: OrderView }) {
       <section className="order__section order__next">
         <h2>Need help?</h2>
         <p className="muted">
-          Questions about sizing, delivery or returns? Email <a href={`mailto:${store.supportEmail}`}>{store.supportEmail}</a> with your order number.
+          Questions about sizing or delivery? Email <a href={`mailto:${store.supportEmail}`}>{store.supportEmail}</a> with your order number.
         </p>
         <div className="hero__ctas">
           <Link to="/shop" className="btn">
             Continue shopping
-          </Link>
-          <Link to="/returns" className="btn btn--secondary">
-            Returns policy
           </Link>
         </div>
       </section>

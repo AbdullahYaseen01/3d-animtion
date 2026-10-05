@@ -32,7 +32,7 @@ export default function Press() {
         <li>Watch brands include Casio, Daniel Klein, Naviforce, Fossil, and others. Shoes, bags, jewelry, wallets, and outerwear are listed with materials and sizes on each product page.</li>
         <li>
           {s.priceCents === 0 ? 'Free standard shipping' : 'Standard shipping'} to US addresses in {s.minBusinessDays}–{s.maxBusinessDays} business days after{' '}
-          {store.shipping.processingBusinessDays} business day of processing, and {store.returns.windowDays}-day returns.
+          {store.shipping.processingBusinessDays} business day of processing.
         </li>
         <li>We do not publish customer ratings or reviews on product pages, and we do not run fake countdown timers.</li>
       </ul>
