@@ -408,7 +408,7 @@ export const guides: Guide[] = [
         heading: 'A simple comparison of sizes we actually sell',
         body: [
           'Think in three buckets. Compact (about 35–38 mm) sits inside the wrist and suits a slimmer dress shirt. Mid (39–42 mm) is the everyday default. Large (43–45 mm) reads as sport and needs a longer lug-to-lug or it will overhang.',
-          'Open [Casio, Naviforce, and Daniel Klein watches](/collections/watches) and read the case field when it is published. If a listing has no case diameter, we do not invent one. The [Casio brand page](/brands/casio) is the shortest path to digital models; [Naviforce](/brands/naviforce) is mostly metal-bracelet quartz.',
+          'Open [men\'s watches](/collections/watches) and read the case field when it is published. If a listing has no case diameter, we do not invent one. [Fossil](/brands/fossil), [Seiko](/brands/seiko), and [Curren](/brands/curren) each have their own page.',
         ],
         list: [
           'Compact example: a 35 mm digital Casio on a steel bracelet.',
@@ -420,7 +420,7 @@ export const guides: Guide[] = [
         heading: 'Strap fit without guessing',
         body: [
           'A leather strap is a hole-and-buckle system. Count the unused holes after you try it: two holes on each side of the working hole is a comfortable range. A metal bracelet is a link system. If the product does not list a wrist range, assume you may need a jeweler to remove links.',
-          'Shop [Daniel Klein watches](/brands/daniel-klein) if you want leather straps we actually list, or [all men\'s watches](/collections/watches) and filter by the strap field on each page. Keep leather dry; rinse salt off a steel bracelet and dry it.',
+          'Shop [all men\'s watches](/collections/watches) and read the strap field on each page. Keep leather dry; rinse salt off a steel bracelet and dry it.',
         ],
       },
       {
@@ -881,7 +881,7 @@ export const guides: Guide[] = [
         heading: 'Kundan, zircon, and plated jewelry are not the same job',
         body: [
           'Kundan and stone-set necklace sets are for events. They have foil behind stones and do not like water. Gold-plated hoops and jhumkas are everyday pieces that still hate perfume and the gym. 925 silver rings can be worn more often; they tarnish and polish back.',
-          'Shop [kundan necklace sets](/collections/womens-jewelry) and open a product for weight and finish. [Meerzah jewelry](/brands/meerzah) is the full brand list. Pair a set with a [shoulder or crossbody bag](/collections/handbags) if you need a complete gift, and keep the care card with the box.',
+          'Shop [kundan necklace sets](/collections/womens-jewelry) and open a product for weight and finish. Pair a set with a [shoulder or crossbody bag](/collections/handbags) if you need a complete gift, and keep the care card with the box.',
         ],
         list: [
           '925 silver: tarnish is normal; a silver cloth is fine on unplated silver.',

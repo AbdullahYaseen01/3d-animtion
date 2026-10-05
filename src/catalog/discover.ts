@@ -3,7 +3,6 @@ import { brandOf } from '../lib/productText.js'
 import { products } from './products.js'
 import type { Category, DepartmentSlug, Product, StyleSlug } from './types.js'
 
-const MIN_BRAND_PRODUCTS = 5
 const MIN_STYLE_PRODUCTS = 8
 
 export function brandSlug(name: string): string {
@@ -32,9 +31,9 @@ export function allBrandGroups(): BrandInfo[] {
   return [...groups.values()].sort((a, b) => b.products.length - a.products.length)
 }
 
-/** Brands with enough live products to justify a landing page. */
+/** Brand pages are an allowlist in brandKeywords, including labels with fewer than five products. */
 export function liveBrands(): BrandInfo[] {
-  return allBrandGroups().filter((b) => b.products.length >= MIN_BRAND_PRODUCTS && brandKeywords[b.slug])
+  return allBrandGroups().filter((b) => brandKeywords[b.slug])
 }
 
 export function getBrand(slug: string): BrandInfo | undefined {
