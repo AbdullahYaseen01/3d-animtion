@@ -1,4 +1,5 @@
 import type { CategorySlug } from '../catalog/types'
+import { publicText } from '../lib/publicCopy'
 
 export interface GuideSection {
   heading: string
@@ -36,7 +37,7 @@ export interface Guide {
 }
 
 /** Original editorial content. Product-specific statements refer to the catalog. */
-export const guides: Guide[] = [
+const guideSource: Guide[] = [
   {
     slug: 'how-to-measure-your-feet',
     title: 'How to measure your feet at home',
@@ -1148,6 +1149,26 @@ export const guides: Guide[] = [
     updated: '2026-10-01',
   },
 ]
+
+function presentGuide(guide: Guide): Guide {
+  return {
+    ...guide,
+    title: publicText(guide.title),
+    description: publicText(guide.description),
+    intro: publicText(guide.intro),
+    imageAlt: publicText(guide.imageAlt),
+    productsHeading: guide.productsHeading ? publicText(guide.productsHeading) : undefined,
+    sections: guide.sections.map((section) => ({
+      ...section,
+      heading: publicText(section.heading),
+      body: section.body.map(publicText),
+      list: section.list?.map(publicText),
+    })),
+    faq: guide.faq?.map((item) => ({ question: publicText(item.question), answer: publicText(item.answer) })),
+  }
+}
+
+export const guides: Guide[] = guideSource.map(presentGuide)
 
 export function getGuide(slug: string): Guide | undefined {
   return guides.find((g) => g.slug === slug)

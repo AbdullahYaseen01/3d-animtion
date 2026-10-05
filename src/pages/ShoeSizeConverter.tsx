@@ -42,7 +42,7 @@ export default function ShoeSizeConverter() {
       intro={
         <p>
           Convert a shoe size between US men, US women, UK, EU, and foot length in centimeters. The table is the same chart we use for{' '}
-          <Link to="/collections/shoes">Ndure men&apos;s sneakers</Link>. Conversions are approximate. Confirm against a pair you already own
+          <Link to="/collections/shoes">men&apos;s sneakers</Link>. Conversions are approximate. Confirm against a pair you already own
           when you can.
         </p>
       }

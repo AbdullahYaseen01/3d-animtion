@@ -2,6 +2,7 @@ import { store } from '../config/store'
 import { buildSku, formatSize, getCategory, productImagePath, stockFor, type Product } from '../catalog'
 import { centsToDecimal } from './money'
 import { brandOf } from './productText'
+import { isSupplierBrand } from './publicCopy'
 import { absoluteUrl, orgRef } from './seo'
 
 function shippingDetails() {
@@ -88,7 +89,7 @@ export function productGroupLd(product: Product) {
     name: product.name,
     description: product.description,
     url,
-    brand: { '@type': 'Brand', name: brandOf(product) },
+    brand: { '@type': 'Brand', name: isSupplierBrand(brandOf(product)) ? store.name : brandOf(product) },
     productGroupID: product.id,
     category: category?.name,
     material: product.materials,

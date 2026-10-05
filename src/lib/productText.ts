@@ -37,6 +37,7 @@ export function productAlt(p: Product, color: ColorOption = p.colors[0], view?: 
 export function productSeoTitle(p: Product): string {
   const noun = NOUN[p.category]
   const brand = brandOf(p)
+  const houseBrand = brand === store.name
   if (p.category === 'watches') {
     const model = spec(p, /^Model$/)
     const movement = spec(p, /Movement/)
@@ -50,10 +51,10 @@ export function productSeoTitle(p: Product): string {
     return watchOptions.find((t) => t.length <= 44 && brandedLen(t) >= 30) ?? watchOptions[0].slice(0, 44)
   }
   const base = withColor(p)
-  const hasBrand = base.toLowerCase().includes(brand.toLowerCase())
+  const hasBrand = !houseBrand && base.toLowerCase().includes(brand.toLowerCase())
   const options = [
-    hasBrand || noun.word.test(base) ? null : `${base} – ${brand} ${noun.title}`,
-    hasBrand ? null : `${base} by ${brand}`,
+    houseBrand || hasBrand || noun.word.test(base) ? null : `${base} – ${brand} ${noun.title}`,
+    houseBrand || hasBrand ? null : `${base} by ${brand}`,
     noun.word.test(base) ? null : `${base} – ${noun.title}`,
     base,
     p.name,

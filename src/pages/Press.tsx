@@ -29,7 +29,7 @@ export default function Press() {
         <li>
           We currently list {total} products across {departments.length} departments: {departments.map((c) => c.name.toLowerCase()).join(', ')}.
         </li>
-        <li>Brands include Ndure, ZED, Bag X, Meerzah, and Metro, many based in Pakistan, plus watches from Casio, Daniel Klein, Naviforce, Fossil, and others.</li>
+        <li>Watch brands include Casio, Daniel Klein, Naviforce, Fossil, and others. Shoes, bags, jewelry, wallets, and outerwear are listed with materials and sizes on each product page.</li>
         <li>
           {s.priceCents === 0 ? 'Free standard shipping' : 'Standard shipping'} to US addresses in {s.minBusinessDays}–{s.maxBusinessDays} business days after{' '}
           {store.shipping.processingBusinessDays} business day of processing, and {store.returns.windowDays}-day returns.

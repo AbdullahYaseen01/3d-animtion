@@ -50,7 +50,7 @@ export function collectionCopy(category: Category): { intro: string[]; footer: s
   const prices = items.map((p) => p.priceCents)
   const min = Math.min(...prices)
   const max = Math.max(...prices)
-  const brands = unique(items.map(brandOf))
+  const brands = unique(items.map(brandOf)).filter((b) => b !== store.name)
   const materials = unique(items.map((p) => specOf(p, /^Fabric$|^Material$|^Upper$/) ?? p.materials.split('.')[0]))
   const styles = unique(items.map((p) => specOf(p, /^Style$|^Type$/)))
   const shoe = items[0].variant === 'footwear'
@@ -68,7 +68,9 @@ export function collectionCopy(category: Category): { intro: string[]; footer: s
 
   const intro: string[] = []
   intro.push(
-    `This collection has ${items.length} ${items.length === 1 ? 'style' : 'styles'} from ${list(brands)}. Prices run from ${formatMoney(min)} to ${formatMoney(max)}.`,
+    brands.length
+      ? `This collection has ${items.length} ${items.length === 1 ? 'style' : 'styles'} from ${list(brands)}. Prices run from ${formatMoney(min)} to ${formatMoney(max)}.`
+      : `This collection has ${items.length} ${items.length === 1 ? 'style' : 'styles'} at ${store.name}. Prices run from ${formatMoney(min)} to ${formatMoney(max)}.`,
   )
   if (styles.length) intro.push(`Shapes in stock: ${list(styles, 8)}.`)
   intro.push(`Sizes: ${sizes}. We do not stock wide footwear widths.`)
@@ -80,10 +82,10 @@ export function collectionCopy(category: Category): { intro: string[]; footer: s
     )
   }
   if (materials.length) intro.push(`Materials that appear on the listings include ${list(materials, 5)}.`)
-  intro.push(`${ship} ${returns} Every specification on a product page comes from the brand listing we imported; if a maker did not publish a fact, we leave it off.`)
+  intro.push(`${ship} ${returns} Every specification on a product page is a fact published for that style. If a measurement or material was not published, we leave it off.`)
 
   const footer: string[] = [
-    `Looking for a specific model or color? Open a product for the full specification table, care notes, and a comparison with a sibling style from the same brand. ${ship} Questions about fit or an order go to ${store.supportEmail}.`,
+    `Looking for a specific style or color? Open a product for the full specification table, care notes, and a similar piece in this collection. ${ship} Questions about fit or an order go to ${store.supportEmail}.`,
   ]
 
   let text = [...intro, ...footer].join(' ')

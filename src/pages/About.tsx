@@ -10,23 +10,23 @@ import './About.css'
 
 const kw = pageKeywords.about
 
-const BRANDS = [
-  { name: 'Ndure', what: "men's sneakers", href: '/collections/shoes' },
-  { name: 'ZED', what: "men's jackets, hoodies, and coats", href: '/collections/jackets' },
-  { name: 'Bag X', what: "women's handbags", href: '/collections/handbags' },
-  { name: 'Meerzah', what: "women's jewelry", href: '/collections/womens-jewelry' },
-  { name: 'Metro', what: "men's wallets", href: '/collections/wallets' },
+const LINES = [
+  { name: "Men's sneakers", what: 'mesh lace-ups, low-tops, and slip-ons', href: '/collections/shoes' },
+  { name: "Men's outerwear", what: 'jackets, hoodies, and coats', href: '/collections/jackets' },
+  { name: "Women's handbags", what: 'hobo, shoulder, and crossbody bags', href: '/collections/handbags' },
+  { name: "Women's jewelry", what: 'kundan sets, plated earrings, and silver rings', href: '/collections/womens-jewelry' },
+  { name: "Men's wallets", what: 'bifold and card wallets', href: '/collections/wallets' },
   { name: 'Casio, Daniel Klein, Naviforce, Fossil, and others', what: "men's watches", href: '/collections/watches' },
 ]
 
 const principles = [
   {
-    title: 'We name the brand',
-    body: 'We do not design or manufacture what we sell. Every product page names the brand that made it, so you know exactly what you are buying.',
+    title: 'Listed on the product',
+    body: 'Materials, sizes, fabric blends, and care are written on the product page. When a detail was not published, we leave it off instead of guessing.',
   },
   {
     title: 'Only published facts',
-    body: 'Materials, fabric blends, dimensions, and water resistance come from the brand’s own listing. When a brand does not publish a detail, we say so rather than guess.',
+    body: 'Dimensions, fabric blends, and water resistance are the facts published for that style. We do not add a measurement that is not on the listing.',
   },
   {
     title: 'Sizing that matches the product',
@@ -61,8 +61,8 @@ export default function About() {
             <p className="eyebrow eyebrow--ember">About us</p>
             <h1>{kw.h1}</h1>
             <p className="lede">
-              {store.name} is a small online store for US customers. We pick sneakers, outerwear, bags, jewelry, and watches from named brands, many of them based in
-              Pakistan, and sell them with the facts each brand publishes, clear prices, and {store.returns.windowDays}-day returns.
+              {store.name} is a US online store. We sell men's sneakers, outerwear, and wallets, plus women's handbags and jewelry, and men's watches, with the
+              measurements and materials listed on each product, clear prices, and {store.returns.windowDays}-day returns.
             </p>
           </div>
           <div className="about-hero__media">
@@ -96,10 +96,10 @@ export default function About() {
             <ProductImage group="editorial" image="editorial-materials" alt="Mesh, suede, laces, foam and outsole samples laid out beside a shoe sketch" sizes="(min-width: 64rem) 50vw, 100vw" />
           </div>
           <div className="about-materials__copy">
-            <p className="eyebrow">The brands we carry</p>
-            <h2 id="brands-title">Who makes what we sell</h2>
+            <p className="eyebrow">The catalog</p>
+            <h2 id="brands-title">What you can shop</h2>
             <ul role="list" className="about-materials__list">
-              {BRANDS.map((b) => (
+              {LINES.map((b) => (
                 <li key={b.name}>
                   <Link to={b.href}>
                     {b.name}: {b.what} <Icon name="arrow" size={16} />

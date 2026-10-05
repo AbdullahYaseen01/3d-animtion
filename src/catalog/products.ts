@@ -1,3 +1,4 @@
+import { asStoreProduct } from '../lib/publicCopy.js'
 import { departmentKeywords as dk, shoeKeywords as sk } from '../lib/seoKeywords.js'
 import type { Category, Product } from './types.js'
 import { bagxHandbags } from './bagxHandbags.js'
@@ -19,7 +20,7 @@ export const categories: Category[] = [
     kind: 'department',
     summary: "Men's sneakers",
     intro:
-      "Men's sneakers from Ndure, a Pakistani footwear brand: mesh lace-ups, casual low-tops, and slip-ons. Every pair lists its upper and sole materials and comes in standard width, US men's sizes.",
+      "Men's mesh lace-ups, casual low-tops, and slip-ons. Every pair lists its upper and sole materials and comes in standard width, US men's sizes.",
     seoTitle: dk.shoes.title,
     seoDescription: dk.shoes.description,
   },
@@ -29,7 +30,7 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Hobo, shoulder, and crossbody bags',
     intro:
-      "Women's handbags from Bag X in hobo, shoulder, crossbody, and top-handle shapes, plus three-piece sets. Each bag lists the material, closure, and hardware the brand publishes, and measurements in inches where they are given.",
+      "Women's handbags in hobo, shoulder, crossbody, and top-handle shapes, plus three-piece sets. Each bag lists the material, closure, and hardware, and measurements in inches where they are given.",
     seoTitle: dk.handbags.title,
     seoDescription: dk.handbags.description,
   },
@@ -39,7 +40,7 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Wallets for cards and cash',
     intro:
-      "Men's wallets, bifolds, and money clips from Metro. Each one lists its exact dimensions in centimeters so you can check pocket fit. Where Metro does not publish a material, we say so instead of guessing.",
+      "Men's wallets, bifolds, and money clips. Each one lists its exact dimensions in centimeters so you can check pocket fit. Where a material is not published, we say so instead of guessing.",
     seoTitle: dk.wallets.title,
     seoDescription: dk.wallets.description,
   },
@@ -49,7 +50,7 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Bombers, denim, and faux leather',
     intro:
-      "Men's jackets from ZED: bombers, denim and trucker jackets, Harringtons, faux leather racers, field and safari jackets, and puffers. Each style shows ZED's listed fabric blend, fit, and care, with letter sizes S to XL.",
+      "Men's jackets: bombers, denim and trucker jackets, Harringtons, faux leather racers, field and safari jackets, and puffers. Each style shows the listed fabric blend, fit, and care, with letter sizes S to XL.",
     seoTitle: dk.jackets.title,
     seoDescription: dk.jackets.description,
   },
@@ -59,7 +60,7 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Pullover and long-line hoodies',
     intro:
-      "Men's hoodies from ZED in essential pullover, henley, cropped, and long-line cuts. Sizes run S to XL on each style's own chart, and the listed fit is on every product page.",
+      "Men's hoodies in essential pullover, henley, cropped, and long-line cuts. Sizes run S to XL on each style's own chart, and the listed fit is on every product page.",
     seoTitle: dk.hoodies.title,
     seoDescription: dk.hoodies.description,
   },
@@ -69,7 +70,7 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Pea coats, overcoats, and trenches',
     intro:
-      "Men's coats from ZED: pea coats, single- and double-breasted overcoats, trench coats, and a hooded parka. The fabric blend ZED lists is shown on each coat, so you can see how much wool it actually contains.",
+      "Men's pea coats, single- and double-breasted overcoats, trench coats, and a hooded parka. The listed fabric blend is shown on each coat, so you can see how much wool it actually contains.",
     seoTitle: dk.coats.title,
     seoDescription: dk.coats.description,
   },
@@ -79,7 +80,7 @@ export const categories: Category[] = [
     kind: 'department',
     summary: 'Rings, bangles, and necklace sets',
     intro:
-      "Women's jewelry from Meerzah: 925 sterling silver rings, gold-plated bangles and karas, kundan and zircon necklace sets, and earrings. Weight, finish, and sizes are listed where Meerzah publishes them.",
+      "Women's jewelry: 925 sterling silver rings, gold-plated bangles and karas, kundan and zircon necklace sets, and earrings. Weight, finish, and sizes are listed where they are published.",
     seoTitle: dk['womens-jewelry'].title,
     seoDescription: dk['womens-jewelry'].description,
   },
@@ -150,4 +151,4 @@ export const products: Product[] = [
   ...bagxHandbags,
   ...meerzahJewelry,
   ...zedOuterwear,
-]
+].map(asStoreProduct)

@@ -197,7 +197,7 @@ export const pageKeywords: Record<PageKey, SeoTarget> = {
     supporting: ['US to UK shoe size men', 'shoe size conversion chart', 'cm to US shoe size'],
     title: 'Shoe Size Converter: US, UK, EU, cm',
     description:
-      "Convert men's and women's shoe sizes between US, UK, EU, and centimeters. Use the same chart as our Ndure sneakers, then open the fit guide for measuring tips.",
+      "Convert men's and women's shoe sizes between US, UK, EU, and centimeters. Use the same chart as our sneakers, then open the fit guide for measuring tips.",
     h1: 'Shoe size converter: US, UK, EU, and cm',
     tier: 1,
     intent: 'informational',
@@ -210,12 +210,12 @@ export const pageKeywords: Record<PageKey, SeoTarget> = {
 
 export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
   shoes: {
-    primary: 'Ndure mens sneakers',
+    primary: 'mens mesh and casual sneakers',
     supporting: ['mens mesh sneakers', 'mens slip-on sneakers', 'mens casual lace-up sneakers', "men's sneakers"],
-    title: 'Ndure Men\'s Sneakers, US Sizes 7–12',
+    title: "Men's Mesh and Casual Sneakers, US",
     description:
-      "Shop Ndure men's sneakers: mesh lace-ups, casual low-tops, and slip-ons in standard width, US sizes 7–12. Free US shipping and 30-day returns.",
-    h1: "Ndure men's sneakers",
+      "Shop men's mesh lace-ups, casual low-tops, and slip-ons in standard width, US men's sizes. Free US shipping and 30-day returns on unused pairs.",
+    h1: "Men's mesh and casual sneakers",
     tier: 1,
     intent: 'commercial',
     estimatedVolume: 'unknown',
@@ -228,7 +228,7 @@ export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
     supporting: ['hobo bag', 'small crossbody bag with zipper', 'womens crossbody bags under 50', "women's handbags"],
     title: 'Women\'s Shoulder, Hobo & Crossbody Bags',
     description:
-      "Shop Bag X women's shoulder, hobo, and crossbody bags. Each listing shows material, closure, and size where the brand published them. Free US shipping.",
+      "Shop women's shoulder, hobo, and crossbody bags. Each listing shows material, closure, and size where they are published. Free US shipping and returns.",
     h1: "Women's shoulder, hobo & crossbody bags",
     tier: 1,
     intent: 'commercial',
@@ -242,7 +242,7 @@ export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
     supporting: ['slim card wallet', 'mens bifold wallet', "men's wallets"],
     title: 'Men\'s Bifold Leather & Card Wallets',
     description:
-      "Shop Metro men's bifold and slim card wallets in brown, black, and other colors. Every wallet lists its dimensions. Free US shipping and 30-day returns.",
+      "Shop men's bifold and slim card wallets in brown, black, and other colors. Every wallet lists its dimensions. Free US shipping and 30-day returns.",
     h1: "Men's bifold and slim card wallets",
     tier: 1,
     intent: 'commercial',
@@ -252,10 +252,10 @@ export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
   jackets: {
     primary: 'mens bomber jacket and shacket',
     supporting: ['mens bomber jacket', 'mens shacket', 'mens faux leather jacket', "men's jackets"],
-    title: 'ZED Men\'s Bomber Jackets & Shackets',
+    title: "Men's Bomber Jackets and Shackets, US",
     description:
-      "Shop ZED men's bomber jackets, shackets, denim, and faux leather styles in sizes S to XL. Fabric blend, fit, and care are listed. Free US shipping.",
-    h1: "ZED men's bomber jackets and shackets",
+      "Shop men's bomber jackets, shackets, denim, and faux leather styles in sizes S to XL. Fabric blend, fit, and care are listed. Free US shipping.",
+    h1: "Men's bomber jackets and shackets",
     tier: 1,
     intent: 'commercial',
     ...UNKNOWN,
@@ -264,10 +264,10 @@ export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
   hoodies: {
     primary: 'mens zip hoodie under 50',
     supporting: ['mens pullover hoodie', 'mens zip hoodie', "men's hoodies"],
-    title: 'ZED Men\'s Zip and Pullover Hoodies',
+    title: "Men's Zip and Pullover Hoodies, US",
     description:
-      "Shop ZED men's zip and pullover hoodies in sizes S to XL. Each page lists the fabric, fit, and care. Free US standard shipping and 30-day returns.",
-    h1: "ZED men's zip and pullover hoodies",
+      "Shop men's zip and pullover hoodies in sizes S to XL. Each page lists the fabric, fit, and care. Free US standard shipping and 30-day returns.",
+    h1: "Men's zip and pullover hoodies",
     tier: 2,
     intent: 'commercial',
     ...UNKNOWN,
@@ -278,7 +278,7 @@ export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
     supporting: ['affordable mens pea coat', 'pea coat vs overcoat', "men's coats"],
     title: 'Men\'s Cotton Pea Coats & Overcoats',
     description:
-      "Shop ZED men's pea coats, overcoats, and cotton twill trenches in sizes S to XL. Most coats are 80% cotton / 20% polyester, not 100% wool. Free US shipping.",
+      "Shop men's pea coats, overcoats, and cotton twill trenches in sizes S to XL. Most coats are 80% cotton / 20% polyester, not 100% wool. Free US shipping.",
     h1: "Men's cotton pea coats and overcoats",
     tier: 1,
     intent: 'commercial',
@@ -292,7 +292,7 @@ export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
     supporting: ['polki necklace set', 'gold plated jhumka earrings', "women's gold plated jewelry"],
     title: 'Kundan Necklace Sets & Gold Jhumkas',
     description:
-      "Shop Meerzah kundan and zircon necklace sets, gold-plated jhumkas, and 925 silver rings. Weight and finish are listed. Free US shipping, 30-day returns.",
+      "Shop kundan and zircon necklace sets, gold-plated jhumkas, and 925 silver rings. Weight and finish are listed. Free US shipping and 30-day returns.",
     h1: 'Kundan necklace sets and gold-plated jewelry',
     tier: 1,
     intent: 'commercial',
@@ -335,7 +335,7 @@ export const shoeKeywords: Record<ShoeUse, SeoTarget> = {
     supporting: ['mens mesh gym sneakers', 'lightweight sneakers for walking'],
     title: 'Men\'s Lightweight Mesh Gym Sneakers',
     description:
-      "Shop Ndure men's mesh lace-up sneakers with EVA or PU soles for gym sessions and walks. Standard width, US sizes 7–12. Free US shipping, 30-day returns.",
+      "Shop men's mesh lace-up sneakers with EVA or PU soles for gym sessions and walks. Standard width, US men's sizes. Free US shipping and 30-day returns.",
     h1: "Men's lightweight mesh sneakers",
     tier: 1,
     intent: 'commercial',
@@ -357,10 +357,10 @@ export const shoeKeywords: Record<ShoeUse, SeoTarget> = {
   lifestyle: {
     primary: 'mens casual lace-up sneakers',
     supporting: ['low-top sneakers', 'contrast sole sneakers', "men's casual sneakers"],
-    title: 'Ndure Men\'s Casual Lace-Up Sneakers',
+    title: "Men's Casual Lace-Up Low-Top Sneakers",
     description:
-      "Shop Ndure men's casual lace-up low-tops for jeans and chinos. Standard width, US sizes 7–12. Upper and sole materials listed. Free US shipping.",
-    h1: "Ndure men's casual lace-up sneakers",
+      "Shop men's casual lace-up low-tops for jeans and chinos. Standard width, US men's sizes. Upper and sole materials are listed. Free US shipping.",
+    h1: "Men's casual lace-up sneakers",
     tier: 1,
     intent: 'commercial',
     ...UNKNOWN,
@@ -369,9 +369,9 @@ export const shoeKeywords: Record<ShoeUse, SeoTarget> = {
   everyday: {
     primary: 'mens slip-on sneakers under 50',
     supporting: ['mens slip-on sneakers', 'laceless sneakers'],
-    title: 'Ndure Men\'s Slip-On Sneakers Under $50',
+    title: "Men's Slip-On Sneakers Under $50, US",
     description:
-      "Shop Ndure men's slip-on sneakers for errands and travel. Knit or mesh uppers, standard width, US sizes 7–12. Free US shipping and 30-day returns.",
+      "Shop men's slip-on sneakers for errands and travel. Knit or mesh uppers, standard width, US men's sizes. Free US shipping and 30-day returns.",
     h1: "Men's slip-on sneakers under $50",
     tier: 2,
     intent: 'commercial',
@@ -521,21 +521,21 @@ export const subCollectionKeywords: Record<string, SeoTarget> = {
     supporting: ['shoulder bag with zipper', 'small shoulder bag'],
     title: 'Women\'s Shoulder Bags With Zippers',
     description:
-      "Shop Bag X women's shoulder bags. Closures, materials, and measurements are listed where the brand published them. Free US shipping and 30-day returns.",
+      "Shop women's shoulder bags. Closures, materials, and measurements are listed where they were published. Free US shipping and 30-day returns.",
     h1: "Women's shoulder bags",
     tier: 1,
     intent: 'commercial',
     estimatedVolume: 'unknown',
     volumeSource: 'estimate: Google Trends — shoulder bag interest spiked to 100 in Feb 2026 vs tote 73 and crossbody 55',
     currentRank: 'unknown',
-    winnability: 'Shoulder-bag style demand is real; we have 8+ Bag X shoulder bags.',
+    winnability: 'Shoulder-bag style demand is real; we have 8+ shoulder bags in the catalog.',
   },
   'crossbody-bags': {
     primary: 'womens crossbody bags under 50',
     supporting: ['small crossbody bag with zipper', 'hobo crossbody bags for women'],
     title: 'Women\'s Small Crossbody Bags, Zipper',
     description:
-      "Shop Bag X women's crossbody bags with listed closures, materials, and measurements. Free US standard shipping and 30-day returns on unused bags.",
+      "Shop women's crossbody bags with listed closures, materials, and measurements. Free US standard shipping and 30-day returns on every unused bag.",
     h1: "Women's crossbody bags",
     tier: 2,
     intent: 'commercial',
@@ -626,7 +626,7 @@ export const guideKeywords: Record<string, SeoTarget> = {
     supporting: ['clean knit sneakers', 'leather sneaker care'],
     title: 'How to clean mesh, knit, and leather sneakers',
     description:
-      'Care steps for mesh, knit, and synthetic sneakers using only methods that match the materials listed on our Ndure pairs.',
+      'Care steps for mesh, knit, and synthetic sneakers using only methods that match the materials listed on each pair we sell.',
     h1: 'How to clean mesh, knit, and leather sneakers',
     tier: 'info',
     intent: 'informational',
@@ -650,7 +650,7 @@ export const guideKeywords: Record<string, SeoTarget> = {
     supporting: ['small crossbody bag capacity'],
     title: 'What fits in a crossbody bag and wallet?',
     description:
-      'What actually fits in the Bag X crossbody bags we sell, using the measurements published on each product page.',
+      'What actually fits in the crossbody bags we sell, using the measurements published on each product page.',
     h1: 'What fits in a crossbody bag and wallet?',
     tier: 'info',
     intent: 'informational',
@@ -688,7 +688,7 @@ export const guideKeywords: Record<string, SeoTarget> = {
     supporting: ['mens cotton pea coat', 'pea coat fabric blend'],
     title: 'How to choose a men\'s pea coat',
     description:
-      'How to read a pea-coat fabric line, including coats labeled wool that are mostly cotton-polyester, using the ZED coats we sell.',
+      'How to read a pea-coat fabric line, including coats labeled wool that are mostly cotton-polyester, using the coats we sell.',
     h1: "How to choose a men's pea coat",
     tier: 'info',
     intent: 'informational',
@@ -700,7 +700,7 @@ export const guideKeywords: Record<string, SeoTarget> = {
     supporting: ['trench coat vs overcoat', 'when to wear a pea coat'],
     title: 'Trench coat vs overcoat: which do you need?',
     description:
-      'Pea coat, trench, and overcoat compared by cloth, closure, and weather, using the ZED coats in this catalog rather than generic fashion claims.',
+      'Pea coat, trench, and overcoat compared by cloth, closure, and weather, using the coats in this catalog rather than generic fashion claims.',
     h1: 'Trench coat vs overcoat: which do you need?',
     tier: 'info',
     intent: 'informational',
@@ -714,7 +714,7 @@ export const guideKeywords: Record<string, SeoTarget> = {
     supporting: ['dry clean pea coat', 'cotton polyester coat care'],
     title: 'How to care for a wool or cotton-blend coat',
     description:
-      'Care for coats whose labels say wool or 80% cotton / 20% polyester. We follow the care line ZED publishes, not a generic wool ritual.',
+      'Care for coats whose labels say wool or 80% cotton / 20% polyester. We follow the care line on the product, not a generic wool ritual.',
     h1: 'How to care for a wool or cotton-blend coat',
     tier: 'info',
     intent: 'informational',
@@ -726,7 +726,7 @@ export const guideKeywords: Record<string, SeoTarget> = {
     supporting: ['how to measure a jacket you own', 'S M L XL jacket fit'],
     title: 'Men\'s jacket, hoodie, and coat size guide',
     description:
-      'How to pick ZED letter sizes S to XL by measuring a jacket you already own, plus the fit notes printed on each product page.',
+      'How to pick letter sizes S to XL by measuring a jacket you already own, plus the fit notes printed on each product page.',
     h1: "Men's jacket, hoodie, and coat size guide",
     tier: 'info',
     intent: 'informational',
@@ -738,7 +738,7 @@ export const guideKeywords: Record<string, SeoTarget> = {
     supporting: ['types of mens jackets', 'shacket vs jacket'],
     title: 'Types of men\'s jackets: bomber to trucker',
     description:
-      'Bomber, shacket, trucker, racer, and field jackets explained with the ZED styles we stock, including what to wear with a bomber jacket.',
+      'Bomber, shacket, trucker, racer, and field jackets explained with the styles we stock, including what to wear with a bomber jacket.',
     h1: "Types of men's jackets: bomber to trucker",
     tier: 'info',
     intent: 'informational',
@@ -752,7 +752,7 @@ export const guideKeywords: Record<string, SeoTarget> = {
     supporting: ['how to choose a hoodie'],
     title: 'Essential, henley, cropped, or long-line hoodie?',
     description:
-      'How the ZED hoodie cuts we sell differ — pullover, henley, cropped, and long-line — using the fit notes on each product page.',
+      'How the hoodie cuts we sell differ — pullover, henley, cropped, and long-line — using the fit notes on each product page.',
     h1: 'Essential, henley, cropped, or long-line hoodie?',
     tier: 'info',
     intent: 'informational',
@@ -764,7 +764,7 @@ export const guideKeywords: Record<string, SeoTarget> = {
     supporting: ['synthetic wallet care'],
     title: 'How to care for a leather or synthetic wallet',
     description:
-      'Care for Metro wallets when the material is listed, and what we do not claim when Metro does not publish a material.',
+      'Care for wallets when the material is listed, and what we do not claim when a listing does not publish a material.',
     h1: 'How to care for a leather or synthetic wallet',
     tier: 'info',
     intent: 'informational',
@@ -776,7 +776,7 @@ export const guideKeywords: Record<string, SeoTarget> = {
     supporting: ['gold plated jewelry care', 'kundan jewelry care'],
     title: 'How to clean gold-plated and silver jewelry',
     description:
-      'How to clean gold-plated and 925 silver jewelry without stripping the finish, written for the Meerzah pieces we sell.',
+      'How to clean gold-plated and 925 silver jewelry without stripping the finish, written for the pieces we sell.',
     h1: 'How to clean gold-plated and silver jewelry',
     tier: 'info',
     intent: 'informational',
@@ -802,7 +802,7 @@ export const guideKeywords: Record<string, SeoTarget> = {
     supporting: ['handbag styles explained', 'hobo bag'],
     title: 'Hobo, shoulder, crossbody: handbag styles',
     description:
-      'Hobo, shoulder, crossbody, and top-handle bags explained using the Bag X styles in this catalog and the measurements on each page.',
+      'Hobo, shoulder, crossbody, and top-handle bags explained using the styles in this catalog and the measurements on each page.',
     h1: 'Hobo, shoulder, crossbody: handbag styles',
     tier: 'info',
     intent: 'informational',
@@ -882,7 +882,7 @@ export const relatedCollections: Record<string, RelatedLink[]> = {
   ],
   watches: [
     { href: '/collections/wallets', label: "Men's bifold and card wallets" },
-    { href: '/collections/shoes', label: "Ndure men's sneakers" },
+    { href: '/collections/shoes', label: "Men's mesh and casual sneakers" },
     { href: '/collections/digital-watches', label: "Men's digital watches" },
     { href: '/collections/metal-bracelet-watches', label: "Men's metal-bracelet watches" },
     { href: '/brands/fossil', label: 'Fossil watches' },
@@ -899,30 +899,30 @@ export const relatedCollections: Record<string, RelatedLink[]> = {
     { href: '/collections/everyday', label: "Men's slip-on sneakers under $50" },
   ],
   running: [
-    { href: '/collections/shoes', label: "All Ndure men's sneakers" },
+    { href: '/collections/shoes', label: "All men's sneakers" },
     { href: '/collections/lifestyle', label: "Men's casual lace-up sneakers" },
     { href: '/collections/everyday', label: "Men's slip-on sneakers" },
   ],
   trail: [
-    { href: '/collections/shoes', label: "All Ndure men's sneakers" },
+    { href: '/collections/shoes', label: "All men's sneakers" },
     { href: '/collections/running', label: "Men's lightweight mesh sneakers" },
   ],
   lifestyle: [
-    { href: '/collections/shoes', label: "All Ndure men's sneakers" },
+    { href: '/collections/shoes', label: "All men's sneakers" },
     { href: '/collections/running', label: "Men's lightweight mesh sneakers" },
     { href: '/collections/everyday', label: "Men's slip-on sneakers" },
   ],
   everyday: [
-    { href: '/collections/shoes', label: "All Ndure men's sneakers" },
+    { href: '/collections/shoes', label: "All men's sneakers" },
     { href: '/collections/lifestyle', label: "Men's casual lace-up sneakers" },
     { href: '/collections/running', label: "Men's lightweight mesh sneakers" },
   ],
   'shoulder-bags': [
-    { href: '/collections/handbags', label: 'All Bag X handbags' },
+    { href: '/collections/handbags', label: "All women's handbags" },
     { href: '/collections/crossbody-bags', label: "Women's crossbody bags" },
   ],
   'crossbody-bags': [
-    { href: '/collections/handbags', label: 'All Bag X handbags' },
+    { href: '/collections/handbags', label: "All women's handbags" },
     { href: '/collections/shoulder-bags', label: "Women's shoulder bags" },
   ],
   'digital-watches': [
