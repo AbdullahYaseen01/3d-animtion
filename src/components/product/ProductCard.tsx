@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { getCategory, isColorAvailable, isProductAvailable, type Product } from '../../catalog'
+import { cardScarcityLabel } from '../../catalog/urgency'
 import { store } from '../../config/store'
 import { CARD_SIZES } from '../../lib/images'
 import { productAlt } from '../../lib/productText'
@@ -29,6 +30,7 @@ export function ProductCard({ product, onQuickShop, priority = false, headingLev
   const [primary, secondary] = color.images
   const onSale = store.pricing.showCompareAt && !!product.compareAtPriceCents && product.compareAtPriceCents > product.priceCents
   const badge = !available ? 'Sold out' : onSale ? 'Sale' : product.isNew ? 'New' : null
+  const stockLabel = available ? cardScarcityLabel(product.id) : null
 
   return (
     <article className="product-card">
@@ -71,6 +73,7 @@ export function ProductCard({ product, onQuickShop, priority = false, headingLev
         <p className="product-card__meta">
           {category?.name} · {product.tagline}
         </p>
+        {stockLabel && <p className="product-card__stock">{stockLabel}</p>}
         <PurchaseNote productId={product.id} className="product-card__purchase" />
         {product.colors.length > 1 ? (
           <div className="product-card__swatches" role="group" aria-label={`${product.name} colors`}>

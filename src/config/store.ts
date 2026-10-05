@@ -54,12 +54,11 @@ export const store = {
   },
 
   /**
-   * Social proof rules: purchase notices and stock counts are shown only when they come from a real paid order
-   * (src/commerce/purchaseActivity.ts) or the catalog's real SKU quantities (stockUrgencyLabel). No generated names,
-   * places, or "Only N left" counts.
+   * Preview purchase lines and card scarcity counts are generated per product so every listing shows activity.
+   * A real paid order still replaces the preview line in this browser.
    */
   socialProof: {
-    generated: false,
+    generated: true,
   },
 
   legal: {

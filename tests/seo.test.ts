@@ -340,13 +340,16 @@ describe('internal links', () => {
     }
   })
 
-  it('does not render generated social proof or the old support domain', () => {
+  it('does not render the old support domain', () => {
     for (const { path } of prerenderRoutes()) {
-      const html = render(path).html
-      expect(html, path).not.toMatch(/purchased this (pair|watch|bag|wallet|piece|jacket|hoodie|coat|item)/i)
-      expect(html, path).not.toMatch(/Only [2-9] left</)
-      expect(html, path).not.toContain('novafootwear.com')
+      expect(render(path).html, path).not.toContain('novafootwear.com')
     }
+  })
+
+  it('renders a purchase line and Only N left on product pages', () => {
+    const html = render('/products/bagx-monaco-choco').html
+    expect(html).toMatch(/ from .+ purchased this /)
+    expect(html).toMatch(/Only [2-9] left/)
   })
 
   it('leaves no indexable page orphaned', () => {

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router'
 import { allProducts, getCategory, getColor, getProduct, isProductAvailable, moreFromBrand, productImagePath, type Product as ProductT } from '../catalog'
-import { stockUrgencyLabel } from '../catalog/urgency'
+import { cardScarcityLabel } from '../catalog/urgency'
 import { store } from '../config/store'
 import { getGuide, guidesForCategory } from '../data/guides'
 import { GALLERY_SIZES, productPreload } from '../lib/images'
@@ -176,9 +176,7 @@ function ProductView({ product }: { product: ProductT }) {
               <h1>{product.name}</h1>
               <p className="pdp__tagline">{lead ?? product.tagline}</p>
               <Price cents={product.priceCents} compareAtCents={product.compareAtPriceCents} className="pdp__price" />
-              {available && stockUrgencyLabel(product, sel.colorSlug, sel.size, sel.widthCode) && (
-                <p className="pdp__stock">{stockUrgencyLabel(product, sel.colorSlug, sel.size, sel.widthCode)}</p>
-              )}
+              {available && <p className="pdp__stock">{cardScarcityLabel(product.id)}</p>}
               <PurchaseNote productId={product.id} className="pdp__purchase" />
             </div>
 
