@@ -1,0 +1,29 @@
+/* Compact layout for the iframe widget: no header or footer, fits in ~340px of height. */
+.embed-page {
+  box-sizing: border-box;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: var(--space-4);
+}
+
+.embed-page__title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--display-xs);
+}
+
+.embed-page__lede {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.embed-page .size-tool {
+  max-width: none;
+  margin-bottom: var(--space-4);
+}
+
+.embed-page__credit {
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}

@@ -81,6 +81,7 @@ export function prerenderRoutes(): PrerenderRoute[] {
     })),
   ]
   // Empty departments are not prerendered: they fall through to the real 404 instead of a soft 404.
-  const utility = ['/search', '/cart', '/wishlist', '/checkout/success', '/admin']
+  // The embed widget is noindex: the canonical converter is the /tools page its credit line links to.
+  const utility = ['/search', '/cart', '/wishlist', '/checkout/success', '/admin', '/embed/shoe-size-converter']
   return [...indexable.map((r) => ({ ...r, sitemap: true })), ...utility.map((path) => ({ path, sitemap: false }))]
 }

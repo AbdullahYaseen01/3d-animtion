@@ -26,7 +26,8 @@ const NotFound = pages.notFound.page.Component
 const Press = pages.press.page.Component
 const Privacy = pages.privacy.page.Component
 const Product = pages.product.page.Component
-      const ShoeSizeConverter = pages.shoeSizeConverter.page.Component
+const ShoeSizeConverter = pages.shoeSizeConverter.page.Component
+const ShoeSizeConverterEmbed = pages.shoeSizeConverterEmbed.page.Component
 const Shipping = pages.shipping.page.Component
 const Terms = pages.terms.page.Component
 const Wishlist = pages.wishlist.page.Component
@@ -98,6 +99,8 @@ export function App() {
         <WishlistProvider>
           <Routes>
             <Route path="admin" element={<Admin />} />
+            {/* Widget for other sites' iframes: no header, footer, or cart. */}
+            <Route path="embed/shoe-size-converter" element={<ShoeSizeConverterEmbed />} />
             <Route element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="shop" element={<Catalog mode={{ kind: 'shop' }} />} />

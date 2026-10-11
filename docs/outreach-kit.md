@@ -26,7 +26,7 @@ Brands: **ZED** (outerwear), **Ndure** (sneakers), **Bag X** (handbags), **Meerz
 >
 > We're Westora Style (westorastyle.com), a US-facing online store. We currently carry [N] [Brand] styles, including [product name 1] and [product name 2], at full price with free US shipping.
 >
-> Could you add us to your stockists / where-to-buy page as the US online retailer? Our collection page is https://westorastyle.com/collections/[slug] and a short brand page is https://westorastyle.com/brands/[brand-slug].
+> Could you add us to your stockists / where-to-buy page as the US online retailer? Our collection page is https://westorastyle.com/collections/[slug]. [Watch brands only: and a short brand page is https://westorastyle.com/brands/[brand-slug].]
 >
 > Happy to send our logo, product photography, or a brand mention on our side in return. Thank you,
 > [Your name], Westora Style
@@ -47,6 +47,46 @@ Send to: running-club newsletters on Strava (US), school and college athletics d
 >
 > Thanks for your time,
 > [Your name], Westora Style
+
+### 3b. Embed pitch (the converter as a widget)
+
+`/tools/shoe-size-converter` now has an "Embed this converter" block. The copied snippet is an iframe of `/embed/shoe-size-converter` (header-less, noindex) plus a credit line in the host page's own HTML: `Tool: <a href="https://westorastyle.com/tools/shoe-size-converter">Shoe size converter: US, UK, EU and cm</a> by Westora Style`. A site that embeds it publishes a normal link to the tool page. Offer this to anyone who would rather host the tool than send readers away: school athletics pages, run-club sites, ESL resource pages, sewing and cosplay wikis.
+
+> Subject: Free shoe size converter you can embed (no sign-up, no ads)
+>
+> Hi [Name],
+>
+> Your [page] helps people [buy team shoes / order from overseas / pick boots for a costume], and the size question comes up every time. We built a converter for US men's, US women's, UK, EU and cm that you can drop onto the page as a widget, so readers never leave your site: https://westorastyle.com/tools/shoe-size-converter (scroll to "Embed this converter" and copy the two lines).
+>
+> It is free, has no ads or sign-up, and the only thing we ask is the one-line credit that comes with the snippet. Happy to answer any questions.
+>
+> [Your name], Westora Style
+
+### 3c. Ready to send: first five emails
+
+Fill in the bracketed parts from the outlet's current page, then send from `hello@westorastyle.com`. One per outlet, no follow-up before 10 days.
+
+**1. Ndure (stockist link)** — find the official Ndure site, Contact or Stockists page.
+> Subject: Westora Style now stocking Ndure for US customers
+>
+> Hi [Name], we're Westora Style (westorastyle.com), a US-facing online store. We currently carry [N] Ndure sneaker styles including [two product names from /collections/shoes], at full price with free US shipping. Could you add us to your stockists / where-to-buy page as the US online retailer? Collection: https://westorastyle.com/collections/shoes. Happy to send our logo or a brand mention in return. Thank you, [Your name]
+
+**2. ZED (stockist link)** — same email, swap in ZED, https://westorastyle.com/collections/coats, and two coat names.
+
+**3. Women's Running — "measure your feet at home" resource**
+> Subject: A free measuring guide for readers ordering shoes online
+>
+> Hi [Editor], your [date] piece on [shoe topic] told readers to size up; the step most skip is measuring. We wrote a plain how-to with a cm-to-size chart underneath and no products in the body: https://westorastyle.com/guides/how-to-measure-your-feet. If it's useful as a link in that article or a future one, great. If you'd like a short quote on measuring at home, I can send one the same day. Thanks, [Your name], Westora Style
+
+**4. Put This On — reading a coat's fabric line**
+> Subject: Why a "wool" pea coat can be 70% cotton
+>
+> Hi [Name], your readers ask about pea coats every autumn. We stock coats whose fabric lines show exactly how much wool is in them, and wrote up how to read those lines before buying: https://westorastyle.com/guides/how-to-choose-a-mens-pea-coat. The examples are real listings with the blends stated. If it fits a reader Q&A or a roundup, a link would be appreciated. Thanks, [Your name], Westora Style
+
+**5. Real Simple — gold-plated jewelry care**
+> Subject: Short expert source: making gold plating last
+>
+> Hi [Editor], for a future piece on jewelry care: we sell gold-plated pieces and publish an honest care note on each one (perfume, showers, and sweat wear plating down). The full guide is here: https://westorastyle.com/guides/how-to-clean-gold-plated-jewelry. I can give you a quote with specifics on cleaning and storage within a day of your request. Thanks, [Your name], Westora Style
 
 ## 4. Guide pitches to the 50 targets in `src/data/outreach.ts`
 

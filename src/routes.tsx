@@ -53,6 +53,7 @@ export const pages = {
   guide: { src: 'src/pages/Guide.tsx', page: lazyPage(() => import('./pages/Guide')) },
   brand: { src: 'src/pages/Brand.tsx', page: lazyPage(() => import('./pages/Brand')) },
   shoeSizeConverter: { src: 'src/pages/ShoeSizeConverter.tsx', page: lazyPage(() => import('./pages/ShoeSizeConverter')) },
+  shoeSizeConverterEmbed: { src: 'src/pages/ShoeSizeConverterEmbed.tsx', page: lazyPage(() => import('./pages/ShoeSizeConverterEmbed')) },
   notFound: { src: 'src/pages/NotFound.tsx', page: lazyPage(() => import('./pages/NotFound')) },
 } as const
 
@@ -76,6 +77,7 @@ const STATIC: Record<string, PageKey> = {
   '/terms': 'terms',
   '/guides': 'guides',
   '/tools/shoe-size-converter': 'shoeSizeConverter',
+  '/embed/shoe-size-converter': 'shoeSizeConverterEmbed',
 }
 
 /** Which page module a URL renders. Must agree with the <Routes> in App.tsx. */
