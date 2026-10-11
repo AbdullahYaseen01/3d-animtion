@@ -2,6 +2,7 @@ import { Link } from 'react-router'
 import { productsInCategory } from '../catalog'
 import { fmt, SIZE_CHART } from '../catalog/sizing'
 import { InfoPage } from '../components/layout/InfoPage'
+import { LinkToThis } from '../components/ui/LinkToThis'
 import { pageKeywords } from '../lib/seoKeywords'
 
 const kw = pageKeywords.fitGuide
@@ -90,6 +91,8 @@ export default function FitGuide() {
         Outerwear uses letter sizes, usually S to XL. Each product page lists the fit, such as regular or tailored, and on most styles the height and size the model wears. The
         easiest check is to measure a jacket you already own and compare. See our <Link to="/guides/mens-jacket-and-coat-size-guide">men’s jacket and coat size guide</Link>.
       </p>
+
+      <LinkToThis path="/fit-guide" label="US, UK and EU shoe size chart" noun="this size chart" />
     </InfoPage>
   )
 }

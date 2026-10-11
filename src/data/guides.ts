@@ -158,12 +158,58 @@ const guideSource: Guide[] = [
           'They are not specialist distance-running shoes, and no drop or lug depth is published for them. If you train for races or run technical trails, choose a dedicated running shoe for those sessions.',
         ],
       },
+      {
+        heading: 'How much cushioning do you need?',
+        body: [
+          'Stack height is the thickness of the sole under the heel, measured in millimeters, and most running brands publish it. Daily trainers tend to sit around 30 to 38 mm at the heel. Max-cushion shoes run past 40 mm. Lightweight racing shoes and track-style flats sit well below 30 mm.',
+          'More foam is not automatically better. A tall, soft stack smooths long easy miles but can feel unstable on cambered roads and slows down direction changes. A firmer, lower stack gives more ground feel and a quicker turnover, at the cost of comfort late in a long run.',
+          'A practical rule: if most of your weekly miles are easy and on pavement, start in the middle of the range. Add a softer shoe for recovery days or a firmer one for faster sessions only once you know what your legs prefer.',
+        ],
+      },
+      {
+        heading: 'Fit rules that apply to every running shoe',
+        body: [
+          'Running feet lengthen and spread under load, so the fit targets differ from a dress shoe. Measure your feet first with the [foot measuring guide](/guides/how-to-measure-your-feet), then check these points when the shoes arrive.',
+        ],
+        list: [
+          'About a thumb’s width (roughly 1 to 1.5 cm) between your longest toe and the end of the shoe while standing.',
+          'The heel stays put when you walk briskly. A little lift is normal; a heel that slaps against the counter is not.',
+          'The widest part of your foot lines up with the widest part of the shoe, so the shoe flexes where your toes bend.',
+          'The upper over the midfoot feels snug once laced but does not press on the top of the foot or the small-toe knuckle.',
+          'Try shoes late in the day, in the socks you run in. Morning feet are smaller.',
+        ],
+      },
+      {
+        heading: 'When to replace running shoes',
+        body: [
+          'Foam loses resilience with use. Most brands quote 300 to 500 miles (roughly 480 to 800 km) for a daily trainer. Lighter runners and softer surfaces push a pair toward the top of that range; heavier runners and hard pavement push it toward the bottom.',
+          'The mileage is a guideline. The real signals are in the shoe and in you: deep horizontal creases in the midsole that do not spring back, outsole rubber worn through to the foam at the heel or forefoot, a shoe that leans when set on a flat table, or new aches in the shins, knees, or arches that ease in a fresh pair.',
+          'Running in two pairs on alternate days lets the foam recover between runs and gives you a direct comparison when one pair starts to feel flat.',
+        ],
+      },
+      {
+        heading: 'Buying running shoes online without trying them on',
+        body: [
+          'Three numbers get you close: your foot length in centimeters, the brand’s published stack height and drop, and the weight of the shoe in your size. Size by the centimeter length, not by the US number from another brand, and use the [shoe size converter](/tools/shoe-size-converter) if the listing is in UK or EU sizes.',
+          'If a listing publishes no stack, drop, or weight, treat the shoe as a casual sneaker, which is exactly what our [lightweight mesh sneakers](/collections/running) are. They are honest everyday shoes for walking, gym floors, and travel days, and we describe them that way.',
+        ],
+      },
     ],
     faq: [
       {
         question: 'Can I run in jogger-style sneakers?',
         answer:
           'For short, easy runs on pavement many people do. For regular training or long distances, a dedicated running shoe with published cushioning and drop is the better choice.',
+      },
+      {
+        question: 'What does heel-to-toe drop mean?',
+        answer:
+          'Drop is the difference in sole thickness between the heel and the forefoot. A 10 mm drop shoe has 10 mm more foam under the heel. Lower drops shift load toward the calves and Achilles, so change drop gradually.',
+      },
+      {
+        question: 'How many miles do running shoes last?',
+        answer:
+          'Most daily trainers are rated for 300 to 500 miles. Replace sooner if the midsole shows deep creases that do not recover, the outsole is worn to the foam, or the shoe feels flat compared with a new pair.',
       },
     ],
     relatedProducts: ['ndure-kay-0003-black', 'ndure-len-0013-grey', 'ndure-alr-0008-off-white'],
@@ -173,7 +219,7 @@ const guideSource: Guide[] = [
     image: '/og/collection-shoes.jpg',
     imageAlt: 'Cream sneakers worn on stone steps',
     published: '2026-09-24',
-    updated: '2026-10-01',
+    updated: '2026-10-11',
   },
   {
     slug: 'how-to-care-for-leather-sneakers',
@@ -211,12 +257,59 @@ const guideSource: Guide[] = [
           'Store shoes away from direct sunlight and heat, which fade color. Crumpled paper helps pairs keep their shape.',
         ],
       },
+      {
+        heading: 'A ten-minute routine',
+        body: ['You need a soft brush (an old toothbrush works for seams), a bowl of lukewarm water, a few drops of mild dish soap or laundry detergent, two cloths, and paper to stuff the shoes.'],
+        list: [
+          'Remove the laces and insoles. Clean them separately so you can reach the tongue and the inside of the eyelets.',
+          'Bang the soles together outside and brush off all dry dirt. Wet dirt smears; dry dirt lifts.',
+          'Dip the brush, shake off excess water, and work the upper in small circles. Rinse the brush often so you are not spreading grime around.',
+          'Wipe with a clean damp cloth to lift the soap, then blot with a dry cloth.',
+          'Scrub the midsole and outsole last, with a firmer brush if the material allows.',
+          'Stuff with paper and leave to dry at room temperature, 12 to 24 hours, away from radiators and sun.',
+        ],
+      },
+      {
+        heading: 'Stains by type',
+        body: [
+          'Mud: let it dry completely, then brush it off before any water touches the shoe. Wet mud driven into mesh is far harder to remove than dry mud knocked off.',
+          'Grass: a little mild soap and a soft brush usually lifts it from synthetic and knit uppers. Work from the outside of the mark inward so it does not spread.',
+          'Oil and grease: do not add water first. Cover the spot with cornstarch or baking soda, leave it for a few hours to draw the oil out, brush it away, then clean as normal.',
+          'Winter salt lines on leather or synthetic uppers: wipe with a cloth dampened in equal parts white vinegar and water, then plain water, then let dry. Condition leather afterward because salt dries it out.',
+          'Scuffs on rubber midsoles: a melamine foam eraser, used gently, removes most marks. Keep it off knit, suede, and printed logos, where it abrades the surface.',
+        ],
+      },
+      {
+        heading: 'Odor and the inside of the shoe',
+        body: [
+          'Smell comes from moisture that never fully leaves the footbed. Pull the insoles out after sweaty wear and let both shoe and insole dry separately overnight.',
+          'A spoonful of baking soda inside each shoe overnight absorbs odor; tip it out and tap the shoe clean in the morning. Rotating between two pairs so each gets a full day to dry does more than any spray.',
+          'Washable insoles can be hand-washed in soapy water, pressed in a towel, and air dried flat. Do not wring foam insoles.',
+        ],
+      },
+      {
+        heading: 'How long should sneakers last?',
+        body: [
+          'A casual pair worn most days typically shows real wear after a year or so: compressed foam, a smooth outsole at the heel, and an upper that creases at the flex point. Cleaning does not restore foam, but it does stop grit from cutting fibers and slows down the point where the shoe looks tired before it is worn out.',
+          'Lace loosely enough that the eyelets do not tear the upper, store pairs out of direct sun, and keep them off radiators. Those three habits add more life than any cleaning product.',
+        ],
+      },
     ],
     faq: [
       {
         question: 'Can I put sneakers in the washing machine?',
         answer:
           'We advise against it. Machine washing can loosen the glue between upper and sole and warp foam soles. Hand-clean with a brush and mild soap, then air dry.',
+      },
+      {
+        question: 'How do I get yellowed white soles clean?',
+        answer:
+          'Scrub with soapy water first, then a melamine eraser for scuffs. Yellowing that remains is oxidation of the rubber or foam itself and does not come out with household cleaners. Keep soles out of direct sun to slow it.',
+      },
+      {
+        question: 'Can I use bleach or a magic eraser on knit uppers?',
+        answer:
+          'No. Bleach weakens and yellows synthetic fibers, and a melamine eraser abrades the knit. Use mild soap, a soft brush, and patience, and accept that light knit shows wear sooner than coated uppers.',
       },
     ],
     relatedProducts: ['ndure-kay-0003-black', 'ndure-mis-0006-grey', 'ndure-rig-0001-nvy-ofwht'],
@@ -226,7 +319,7 @@ const guideSource: Guide[] = [
     image: '/og/collection-shoes.jpg',
     imageAlt: 'Cream sneakers worn on stone steps',
     published: '2026-09-24',
-    updated: '2026-10-01',
+    updated: '2026-10-11',
   },
   {
     slug: 'standard-vs-wide-shoes',
@@ -267,6 +360,65 @@ const guideSource: Guide[] = [
           'Knit and slip-on uppers stretch a little more than stiff synthetic ones, so they may suit a slightly broader foot. If you normally need a 2E, check the measurements before you order.',
         ],
       },
+      {
+        heading: 'The full US width scale',
+        body: [
+          'Widths step in letters, and each step adds roughly 5 mm (about 3/16 inch) across the ball of the foot. The letters are the same on both scales but mean different widths, which is where most confusion comes from.',
+        ],
+        list: [
+          'Men’s: B is narrow, D is standard (medium), 2E is wide, 4E is extra wide.',
+          'Women’s: 2A is narrow, B is standard (medium), D is wide, 2E is extra wide.',
+          'So a women’s D is a wide fitting, while a men’s D is the default. Compare like with like.',
+          'Many brands print only the letter on the box or tongue label. If there is no letter at all, the shoe is almost always the standard width for its scale.',
+        ],
+      },
+      {
+        heading: 'Why sizing up does not fix a width problem',
+        body: [
+          'Going up half a size adds a few millimeters of length and only a sliver of width. The extra length moves the shoe’s flex point ahead of the ball of your foot, so the shoe bends in the wrong place and the heel starts to slip. You end up with a shoe that is both too long and still snug across the forefoot.',
+          'If the length is right and the forefoot is tight, the fix is a different upper or a genuine wide fitting, not a bigger number.',
+        ],
+      },
+      {
+        heading: 'Upper construction that gives more room',
+        body: ['When a shop only stocks standard widths, as we do, the construction of the upper decides how forgiving a shoe will be.'],
+        list: [
+          'Engineered knit and open mesh stretch across the forefoot; coated synthetics and leather do not.',
+          'Slip-ons and styles with elastic gussets spread with the foot instead of resisting it.',
+          'Fewer stitched overlays at the small-toe side means fewer stiff edges to press on the widest point.',
+          'A rounder toe box leaves more room for toes to splay than a tapered one, even at the same measured width.',
+        ],
+      },
+      {
+        heading: 'Lacing tricks for a wide forefoot',
+        body: [
+          'Skip the bottom one or two eyelets so the laces start above the ball of the foot. The forefoot opens up while the midfoot stays locked.',
+          'If the pressure is on the top of the foot rather than the sides, use window lacing: run the laces straight up on the outside, skipping the crossover at the tight spot, then resume crossing above it.',
+          'Lace from the toe toward the ankle and only pull tight at the top eyelets. Tightening every row evenly squeezes the forefoot more than you need.',
+        ],
+      },
+      {
+        heading: 'Signs the shoe is too wide',
+        body: [
+          'Width can be wrong in the other direction too. If the foot slides sideways on turns, the upper wrinkles across the midfoot when laced tight, or the lace eyelets nearly touch, the shoe is wider than you need. Standard width is the right call for most feet, which is why it is the default.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Is 2E the same as EE?',
+        answer: 'Yes. 2E and EE both mean a men’s wide fitting. 4E, sometimes written EEEE, is extra wide.',
+      },
+      {
+        question: 'Does going up half a size equal a wide width?',
+        answer:
+          'No. A half size adds length first and very little width, and it moves the flex point of the shoe away from the ball of your foot. If the length fits and the forefoot is tight, choose a stretchier upper or a true wide fitting.',
+      },
+      {
+        question: 'Are Westora Style sneakers available in wide?',
+        answer:
+          'Not at the moment. Every sneaker we sell is a standard (D) men’s width. Knit and slip-on styles give the most room across the forefoot.',
+      },
     ],
     relatedProducts: ['ndure-mis-0006-grey', 'ndure-len-0009-black', 'ndure-trn-0014-black'],
     productsHeading: 'Knit and slip-on sneakers with more give',
@@ -275,7 +427,7 @@ const guideSource: Guide[] = [
     image: '/og/collection-shoes.jpg',
     imageAlt: 'Cream sneakers worn on stone steps',
     published: '2026-09-26',
-    updated: '2026-10-01',
+    updated: '2026-10-11',
   },
   {
     slug: 'what-fits-in-a-crossbody-bag',
@@ -650,6 +802,58 @@ const guideSource: Guide[] = [
         ],
         body: [],
       },
+      {
+        heading: 'Rain, snow, and road salt',
+        body: [
+          'Wool sheds light rain on its own, so a wet coat is not an emergency. Shake off the surface water, hang the coat on its shaped hanger somewhere with air moving around it, and leave it a full day. Never dry a coat on a radiator or with a hair dryer; fast heat shrinks wool fibers and sets creases.',
+          'Once the coat is fully dry, brush it. Dried rain leaves a faint dust line that brushing removes. White tide marks from road salt or de-icing spray come off with a cloth barely dampened in cool water, worked from the outside of the mark inward, followed by brushing when dry.',
+          'Snow should be brushed off before it melts into the fabric. If a shoulder or hem has soaked through, blot with a towel first; do not wring any part of a tailored coat.',
+        ],
+      },
+      {
+        heading: 'Pilling, lint, and pet hair',
+        body: [
+          'Small bobbles at the cuffs, pockets, and under the arms are loose fibers that have rubbed into knots. A fabric comb or a pumice-style sweater stone, drawn lightly in one direction, lifts them without thinning the cloth. Avoid electric shavers on fine wool; they are easy to press too hard.',
+          'For lint and hair, a bristle brush does a better job than a sticky roller on wool and leaves no residue. Brush downward in short strokes. On a cotton-blend coat a roller is fine.',
+        ],
+      },
+      {
+        heading: 'Steam, do not iron',
+        body: [
+          'Wrinkles from travel or a packed closet fall out with steam. A handheld steamer held a few centimeters from the fabric, or the coat hung in a bathroom during a hot shower, relaxes the fibers in minutes. Let the coat dry before wearing or storing it.',
+          'If you must iron, use the wool setting, a damp press cloth between the iron and the coat, and lift the iron rather than sliding it. Direct iron contact flattens the nap and leaves shine on dark wool that does not come out.',
+        ],
+      },
+      {
+        heading: 'Buttons, lining, and small repairs',
+        body: [
+          'Check buttons at the start of each season. A button on a loosened shank is cheap to re-sew and expensive to replace once it falls off in the street. Reinforce the thread with a few extra passes and a wrap around the shank so the button sits off the fabric.',
+          'Lining seams at the armhole and hem take the most strain. A split seam is a five-minute hand repair with matching thread; left alone, it lengthens every time you put the coat on.',
+        ],
+      },
+      {
+        heading: 'Cotton-blend coats are more forgiving',
+        body: [
+          'Cotton and cotton-blend coats tolerate a damp cloth and mild soap better than wool, do not felt, and rarely attract moths. They do crease more and hold water longer, so give them extra drying time and steam rather than tumble dry. Follow the label: a blend with a bonded lining or structured shoulders may still be dry clean only.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Can I wash a wool coat at home?',
+        answer:
+          'Not a tailored coat. Water, agitation, and heat shrink wool and distort the interfacing in the shoulders and lapels. Spot-clean with a cool damp cloth, brush regularly, and dry clean once or twice a season or when a stain will not lift.',
+      },
+      {
+        question: 'How often should a wool coat be dry cleaned?',
+        answer:
+          'Once or twice per winter is enough for most people, plus a clean before summer storage. Dry-cleaning solvents remove natural oils from wool, so more than that shortens the life of the fabric.',
+      },
+      {
+        question: 'How do I get wrinkles out of a wool coat?',
+        answer:
+          'Hang it and steam it, either with a handheld steamer or in a steamy bathroom. If ironing, use the wool setting with a damp press cloth and lift rather than slide the iron.',
+      },
     ],
     relatedProducts: ['zed-black-wool-pea-coat', 'zed-brown-wool-over-coat', 'zed-wool-funnel-neck-coat'],
     productsHeading: 'Coats in this guide',
@@ -658,7 +862,7 @@ const guideSource: Guide[] = [
     image: '/images/products/zed-brown-wool-over-coat-1-1024.webp',
     imageAlt: 'Brown Wool Over Coat by ZED, front view',
     published: '2026-10-01',
-    updated: '2026-10-01',
+    updated: '2026-10-11',
   },
   {
     slug: 'mens-jacket-and-coat-size-guide',

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link } from 'react-router'
 import { fmt, SIZE_CHART, sizeForLength, type SizeRow } from '../catalog/sizing'
 import { InfoPage } from '../components/layout/InfoPage'
+import { LinkToThis } from '../components/ui/LinkToThis'
 import { pageKeywords } from '../lib/seoKeywords'
 
 type System = 'usM' | 'usW' | 'uk' | 'eu' | 'cm'
@@ -107,6 +108,8 @@ export default function ShoeSizeConverter() {
         <Link to="/guides/how-to-measure-your-feet">Full measuring guide</Link> · <Link to="/fit-guide">Size and fit notes by sneaker</Link>.
       </p>
       <p>Every sneaker we sell is standard width (D). We do not stock wide (2E) sizes.</p>
+
+      <LinkToThis path="/tools/shoe-size-converter" label="Shoe size converter: US, UK, EU and cm" noun="this converter" />
     </InfoPage>
   )
 }

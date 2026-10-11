@@ -6,6 +6,7 @@ import { ProductCard } from '../components/product/ProductCard'
 import { QuickShop, type QuickShopTarget } from '../components/product/QuickShop'
 import { Breadcrumbs } from '../components/ui/Breadcrumbs'
 import { Icon } from '../components/ui/Icon'
+import { LinkToThis } from '../components/ui/LinkToThis'
 import { breadcrumbLd, absoluteUrl, faqLd, orgRef, Seo } from '../lib/seo'
 import { keywordsFor } from '../lib/seoKeywords'
 import { store } from '../config/store'
@@ -123,6 +124,7 @@ export default function Guide() {
               .
             </p>
           )}
+          <LinkToThis path={path} label={guide.title} noun="this guide" />
         </div>
         {nextGuides.length > 0 && (
           <nav className="guide-next" aria-labelledby="guide-next-title">
