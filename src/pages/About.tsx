@@ -15,7 +15,7 @@ const LINES = [
   { name: "Men's outerwear", what: 'jackets, hoodies, and coats', href: '/collections/jackets' },
   { name: "Women's handbags", what: 'hobo, shoulder, and crossbody bags', href: '/collections/handbags' },
   { name: "Women's jewelry", what: 'kundan sets, plated earrings, and silver rings', href: '/collections/womens-jewelry' },
-  { name: "Men's wallets", what: 'bifold and card wallets', href: '/collections/wallets' },
+  { name: "Men's wallets", what: 'wallets, including bifolds', href: '/collections/wallets' },
   { name: 'Casio, Daniel Klein, Naviforce, Fossil, and others', what: "men's watches", href: '/collections/watches' },
 ]
 

@@ -182,6 +182,13 @@ function LinkedText({ text }: { text: string }) {
       {parts.map((part, i) => {
         const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
         if (!match) return <span key={i}>{part}</span>
+        if (/^https?:\/\//.test(match[2])) {
+          return (
+            <a key={i} href={match[2]} rel="noopener noreferrer">
+              {match[1]}
+            </a>
+          )
+        }
         return (
           <Link key={i} to={match[2]}>
             {match[1]}

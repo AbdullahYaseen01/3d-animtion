@@ -1147,7 +1147,16 @@ const guideSource: Guide[] = [
         heading: 'Digital: numbers on a display',
         body: [
           'A digital watch shows the time as numbers and usually adds a stopwatch, alarm, backlight, and calendar. It is practical for training and travel.',
-          'The Casio AE-1000W models list a 41 mm plastic case and 100 meters of water resistance, which makes them good everyday sport watches. The Fossil Retro Digital models put a digital display in a square stainless steel case for a dressier look.',
+          'Five Casio listings set the movement to Digital. Two AE-1000W models, including the [Casio AE-1000W-1A](/products/casio-mens-ae-1000w-1avcf-resin-sport-watc), list a 41 mm plastic case and 100 meters of water resistance. Where a listing omits water resistance, Casio did not publish it.',
+          'Fossil FS-5843 is named Retro Digital, and the listing says quartz, a 38 mm stainless steel case, and a gold dial. Read the movement field. The word digital in a model name is not the same fact.',
+        ],
+      },
+      {
+        heading: 'A flying-car demo is not a watch',
+        body: [
+          'On October 16, 2026, [NBC News](https://www.nbcnews.com/tech/tech-news/elon-musk-shows-flying-tesla-roadster-years-delays-rcna603905) reported that Elon Musk showed a Tesla Roadster prototype that briefly left a ramp using thrusters developed with SpaceX. The same report said he put production at 2028, that the flying features are not approved for public roads, and that Tesla described three versions: a road-ready Performance model, a race-ready Thrust model with rear thrusters, and an invite-only, one-seat Rocket model used for the aerial demo. [Kelley Blue Book](https://www.kbb.com/car-news/what-the-flying-tesla-roadster-is-and-isnt/), the same day, reported that the Rocket in those videos is not a car you can buy, and that a reservation is a deposit rather than a delivery promise.',
+          'Tesla\'s [Roadster reservation page](https://www.tesla.com/en_US/roadster/reserve), read on October 17, 2026, describes a two-seat road-ready car with active aero and a suction system, a two-seat race-ready car with acceleration thrusters, and a one-seat "air ready" configuration that includes a full flight system. That page is Tesla\'s. Westora Style does not sell cars, reservations, or Tesla merchandise, and none of the watches below are made for a vehicle.',
+          'If the part you actually want is a watch that shows numbers, use the Casio models whose movement field says Digital, on the [men\'s watches](/collections/watches) page. If you want something that goes in a pocket, the [men\'s wallets](/collections/wallets) list dimensions only when Metro published them. Neither is a flying-car accessory.',
         ],
       },
       {
@@ -1169,6 +1178,11 @@ const guideSource: Guide[] = [
         question: 'Is a quartz watch accurate?',
         answer: 'Yes. Quartz movements are battery powered and typically accurate to within seconds per month, which is more accurate than most mechanical watches.',
       },
+      {
+        question: 'Are these digital watches smartwatches or Tesla accessories?',
+        answer:
+          'No. The digital watches in this shop are quartz watches with a number display. Current listings do not describe a phone connection, and none of them are Tesla products or car accessories.',
+      },
     ],
     relatedProducts: ['casio-mens-ae-1000w-1avcf-resin-sport-watc', 'fossil-fs-5843-retro-digital', 'daniel-klein-dk13738-1', 'daniel-klein-dk12330-4'],
     productsHeading: 'Analog and digital watches',
@@ -1177,7 +1191,7 @@ const guideSource: Guide[] = [
     image: '/og/collection-watches.jpg',
     imageAlt: 'Watch worn on a wrist',
     published: '2026-10-01',
-    updated: '2026-10-01',
+    updated: '2026-10-17',
   },
   {
     slug: 'handbag-styles-explained',

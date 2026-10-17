@@ -68,8 +68,21 @@ export function collectionCopy(category: Category): { intro: string[]; footer: s
   intro.push(
     `This collection has ${items.length} ${items.length === 1 ? 'style' : 'styles'} from ${list(brands)}. Prices run from ${formatMoney(min)} to ${formatMoney(max)}.`,
   )
+  if (category.slug === 'watches' || category.slug === 'digital-watches') {
+    const digital = items.filter((p) => /digital/i.test(specOf(p, /^Movement$/) ?? '')).length
+    intro.push(
+      category.slug === 'digital-watches'
+        ? 'Every watch in this collection lists a digital movement. These are quartz watches with a number display, not smartwatches, and they are not car accessories. Case size, strap, and water resistance appear only when the maker published them.'
+        : `${digital} of these list a digital movement. The other ${items.length - digital} list analog quartz. A digital display is not a phone connection, and none of these watches are vehicle collaborations.`,
+    )
+  } else if (category.slug === 'wallets') {
+    const bifolds = items.filter((p) => /bifold/i.test(p.name + (specOf(p, /^Style$|^Type$/) ?? ''))).length
+    intro.push(
+      `${bifolds} of these are named as bifolds. Dimensions and material are on a product page only when Metro published them. A listing called a wallet is not automatically a card sleeve.`,
+    )
+  }
   if (styles.length) intro.push(`Shapes in stock: ${list(styles, 8)}.`)
-  intro.push(`Sizes: ${sizes}. We do not stock wide footwear widths.`)
+  intro.push(shoe ? `Sizes: ${sizes}. We do not stock wide footwear widths.` : `Sizes: ${sizes}.`)
   if (category.slug === 'coats' || category.slug === 'jackets' || category.slug === 'hoodies') {
     const woolish = items.filter((p) => /wool/i.test(p.name + p.materials + (specOf(p, /^Fabric$/) ?? '')))
     const cottonPoly = items.filter((p) => /80%\s*cotton/i.test(p.materials + (specOf(p, /^Fabric$/) ?? '')))

@@ -225,16 +225,16 @@ export const departmentKeywords: Record<DepartmentSlug, SeoTarget> = {
     winnability: 'Style terms (shoulder, hobo, crossbody) have demonstrated demand; the head term does not.',
   },
   wallets: {
-    primary: 'mens bifold leather wallet brown',
-    supporting: ['slim card wallet', 'mens bifold wallet', "men's wallets"],
-    title: 'Men\'s Bifold Leather & Card Wallets',
+    primary: 'mens wallets with listed dimensions',
+    supporting: ['mens bifold wallet', 'metro wallet', "men's wallets"],
+    title: "Men's Wallets With Listed Dimensions",
     description:
-      "Shop men's bifold and slim card wallets in brown, black, and other colors. Every wallet lists its dimensions. Free US shipping to US addresses.",
-    h1: "Men's bifold and slim card wallets",
+      "Shop men's Metro wallets, including bifold styles. Dimensions and material are shown only when Metro published them. Free US shipping to US addresses.",
+    h1: "Men's wallets with listed dimensions",
     tier: 1,
     intent: 'commercial',
     ...UNKNOWN,
-    winnability: 'Style plus material plus color is the rankable shape; "men\'s wallets" is a head term.',
+    winnability: 'Metro wallets, some named as bifolds. Dimensions are published on some listings, not all. The bare head term is too broad.',
   },
   jackets: {
     primary: 'mens bomber jacket and shacket',
@@ -536,7 +536,7 @@ export const subCollectionKeywords: Record<string, SeoTarget> = {
     supporting: ['mens digital watches', 'digital sport watch'],
     title: 'Casio Digital Watches and Sport Models',
     description:
-      "Shop digital watches with the published model number, movement, and water resistance on each page. Free US standard shipping to US addresses.",
+      'Shop watches marked digital in the movement or the model name. Case, strap, and water resistance are listed only when published. Free US shipping.',
     h1: "Men's digital watches",
     tier: 2,
     intent: 'commercial',
@@ -854,7 +854,7 @@ export const relatedCollections: Record<string, RelatedLink[]> = {
     { href: '/collections/coats', label: "Men's cotton pea coats" },
   ],
   handbags: [
-    { href: '/collections/wallets', label: "Men's bifold and card wallets" },
+    { href: '/collections/wallets', label: "Men's wallets with listed dimensions" },
     { href: '/collections/womens-jewelry', label: 'Kundan necklace sets and gold-plated jewelry' },
     { href: '/collections/shoulder-bags', label: "Women's shoulder bags" },
     { href: '/collections/crossbody-bags', label: "Women's crossbody bags" },
@@ -865,10 +865,10 @@ export const relatedCollections: Record<string, RelatedLink[]> = {
   ],
   backpacks: [
     { href: '/collections/handbags', label: "Women's handbags" },
-    { href: '/collections/wallets', label: "Men's bifold wallets" },
+    { href: '/collections/wallets', label: "Men's wallets with listed dimensions" },
   ],
   watches: [
-    { href: '/collections/wallets', label: "Men's bifold and card wallets" },
+    { href: '/collections/wallets', label: "Men's wallets with listed dimensions" },
     { href: '/collections/shoes', label: "Men's mesh and casual sneakers" },
     { href: '/collections/digital-watches', label: "Men's digital watches" },
     { href: '/collections/metal-bracelet-watches', label: "Men's metal-bracelet watches" },
@@ -915,6 +915,7 @@ export const relatedCollections: Record<string, RelatedLink[]> = {
   'digital-watches': [
     { href: '/collections/watches', label: "All men's watches" },
     { href: '/brands/fossil', label: 'Fossil watches' },
+    { href: '/collections/wallets', label: "Men's wallets with listed dimensions" },
   ],
   'leather-strap-watches': [
     { href: '/collections/watches', label: "All men's watches" },
